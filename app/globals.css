@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap');
+@import "tailwindcss";
+
+@theme inline {
+  --color-primary: #15803D;
+  --color-secondary: #92400E;
+  --color-accent: #F59E0B;
+  --color-bg: #F0FDF4;
+  --color-background: #F0FDF4;
+  --color-foreground: #1a1a1a;
+  --font-sans: "Noto Sans JP", sans-serif;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-foreground);
+  font-family: var(--font-sans);
+}
