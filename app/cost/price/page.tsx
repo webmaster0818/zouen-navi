@@ -8,10 +8,17 @@ export const metadata: Metadata = {
     "庭工事（剪定・伐採・草刈り・造園・外構）の料金相場を2024年最新版でまとめました。項目別の費用目安・業者に依頼する際の注意点も解説。",
 };
 
+const CategoryIcon = ({ title }: { title: string }) => {
+  if (title.includes("剪定")) return <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M14.121 14.121L19 19m-7-7l7-7m-7 7l-2.879 2.879M12 12L9.121 9.121m0 5.758a3 3 0 10-4.243 4.243 3 3 0 004.243-4.243zm0-5.758a3 3 0 10-4.243-4.243 3 3 0 004.243 4.243z"/></svg>;
+  if (title.includes("伐採")) return <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>;
+  if (title.includes("草刈り")) return <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M12 22V12m0 0C12 7 7 5 7 5s1 5 5 7zm0 0c0-5 5-7 5-7s-1 5-5 7z"/></svg>;
+  if (title.includes("デザイン") || title.includes("リフォーム")) return <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"/></svg>;
+  return <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>;
+};
+
 const priceCategories = [
   {
     title: "剪定・刈り込み",
-    icon: "",
     items: [
       { name: "低木剪定（1m以下）", price: "500〜2,000円", unit: "1本" },
       { name: "中木剪定（1〜3m）", price: "2,000〜10,000円", unit: "1本" },
@@ -23,7 +30,6 @@ const priceCategories = [
   },
   {
     title: "伐採・根株除去",
-    icon: "",
     items: [
       { name: "低木伐採（1m以下）", price: "3,000〜10,000円", unit: "1本" },
       { name: "中木伐採（1〜3m）", price: "10,000〜30,000円", unit: "1本" },
@@ -35,7 +41,6 @@ const priceCategories = [
   },
   {
     title: "草刈り・除草",
-    icon: "",
     items: [
       { name: "草刈り（30㎡未満）", price: "5,000〜15,000円", unit: "1回" },
       { name: "草刈り（30〜50㎡）", price: "10,000〜30,000円", unit: "1回" },
@@ -46,7 +51,6 @@ const priceCategories = [
   },
   {
     title: "庭のデザイン・リフォーム",
-    icon: "",
     items: [
       { name: "小庭リフォーム（10㎡）", price: "50〜200万円", unit: "全体" },
       { name: "中庭リフォーム（20〜50㎡）", price: "200〜500万円", unit: "全体" },
@@ -58,7 +62,6 @@ const priceCategories = [
   },
   {
     title: "廃棄・処分費用",
-    icon: "",
     items: [
       { name: "剪定ゴミ処分（軽トラ1台）", price: "5,000〜15,000円", unit: "1回" },
       { name: "剪定ゴミ処分（2トン車1台）", price: "15,000〜40,000円", unit: "1回" },
@@ -94,7 +97,7 @@ export default function PricePage() {
           {priceCategories.map((cat) => (
             <div key={cat.title} className="bg-white rounded-2xl shadow-md overflow-hidden">
               <div className="bg-[#15803D] text-white px-6 py-4 flex items-center gap-2">
-                <span className="text-2xl">{cat.icon}</span>
+                <CategoryIcon title={cat.title} />
                 <h2 className="text-lg font-bold">{cat.title}</h2>
               </div>
               <div className="divide-y divide-gray-100">
