@@ -79,7 +79,7 @@ export default async function ServicePage({ params }: Props) {
           <ul className="space-y-2">
             {service.tips.map((tip, i) => (
               <li key={i} className="flex items-start gap-2 text-sm text-gray-700">
-                <span className="text-[#F59E0B] font-bold mt-0.5 text-base">💡</span>
+                <span className="text-[#F59E0B] font-bold mt-0.5 text-base"></span>
                 {tip}
               </li>
             ))}
@@ -110,11 +110,11 @@ export default async function ServicePage({ params }: Props) {
           <h2 className="font-bold text-gray-800 text-lg mb-4">このサービスに強いおすすめ業者</h2>
           <div className="space-y-3">
             {recCompanies.map((company, i) => {
-              const medals = ["🥇", "🥈", "🥉"];
+              const medals = ["", "", ""];
               return (
                 <div key={company.slug} className="flex items-center justify-between p-3 bg-[#F0FDF4] rounded-xl">
                   <div className="flex items-center gap-3">
-                    <span className="text-xl">{medals[i] || "⭐"}</span>
+                    <span className="text-xl">{medals[i] || ""}</span>
                     <div>
                       <p className="font-bold text-gray-800">{company.name}</p>
                       <p className="text-xs text-gray-500">{company.tagline}</p>

@@ -70,13 +70,13 @@ export default function PruningRankingPage() {
         <h2 className="text-xl font-bold text-gray-800 mb-4">剪定業者おすすめ TOP5</h2>
         <div className="space-y-4 mb-8">
           {pruningSpecialists.map((company, i) => {
-            const medals = ["🥇", "🥈", "🥉", "4位", "5位"];
+            const medals = ["", "", "", "4位", "5位"];
             return (
               <div key={company.slug} className={`bg-white rounded-2xl shadow-md overflow-hidden border-2 ${i === 0 ? "border-yellow-400" : "border-transparent"}`}>
                 <div className="flex flex-col md:flex-row">
                   <div className={`${i === 0 ? "bg-gradient-to-b from-yellow-400 to-yellow-500" : "bg-[#15803D]"} flex items-center justify-center p-4 md:w-20 text-white`}>
                     <div className="text-center">
-                      <span className="text-2xl">{["🥇", "🥈", "🥉", "🏅", "🏅"][i]}</span>
+                      <span className="text-2xl">{["", "", "", "", ""][i]}</span>
                       <p className="text-xs font-bold mt-1">{medals[i]}</p>
                     </div>
                   </div>
@@ -87,14 +87,14 @@ export default function PruningRankingPage() {
                         <p className="text-sm text-gray-500">{company.tagline}</p>
                       </div>
                       <div className="flex items-center gap-1">
-                        <span className="text-yellow-400 text-sm">{"★".repeat(Math.round(company.rating))}</span>
+                        <span className="text-yellow-400 text-sm">{"".repeat(Math.round(company.rating))}</span>
                         <span className="font-bold text-gray-800">{company.rating}</span>
                       </div>
                     </div>
                     <ul className="text-xs text-gray-600 space-y-1 mb-3">
                       {company.pros.slice(0, 2).map((p) => (
                         <li key={p} className="flex items-start gap-1">
-                          <span className="text-green-500">✓</span> {p}
+                          <span className="text-green-500"></span> {p}
                         </li>
                       ))}
                     </ul>

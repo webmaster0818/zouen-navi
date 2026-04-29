@@ -50,7 +50,7 @@ export default async function CompanyPage({ params }: Props) {
             </div>
             <div className="text-right">
               <div className="flex items-center gap-1 justify-end">
-                <span className="text-yellow-400">{"★".repeat(Math.round(company.rating))}</span>
+                <span className="text-yellow-400">{"".repeat(Math.round(company.rating))}</span>
                 <span className="text-lg font-bold text-gray-800">{company.rating}</span>
               </div>
               <p className="text-sm text-gray-500">{company.reviewCount}件のレビュー</p>
@@ -60,7 +60,7 @@ export default async function CompanyPage({ params }: Props) {
           <div className="mt-4 flex flex-wrap gap-2">
             {company.features.map((f) => (
               <span key={f} className="bg-[#F0FDF4] text-[#15803D] border border-green-200 rounded-full px-3 py-1 text-sm font-medium">
-                ✓ {f}
+                 {f}
               </span>
             ))}
           </div>
@@ -70,7 +70,7 @@ export default async function CompanyPage({ params }: Props) {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
           <div className="bg-[#F0FDF4] rounded-xl p-5 border border-green-200">
             <h2 className="font-bold text-[#15803D] text-lg mb-3 flex items-center gap-2">
-              <span>👍</span> メリット
+              <span></span> メリット
             </h2>
             <ul className="space-y-2">
               {company.pros.map((p) => (
@@ -83,7 +83,7 @@ export default async function CompanyPage({ params }: Props) {
           </div>
           <div className="bg-orange-50 rounded-xl p-5 border border-orange-200">
             <h2 className="font-bold text-[#92400E] text-lg mb-3 flex items-center gap-2">
-              <span>👎</span> デメリット
+              <span></span> デメリット
             </h2>
             <ul className="space-y-2">
               {company.cons.map((c) => (
@@ -111,7 +111,7 @@ export default async function CompanyPage({ params }: Props) {
                 <span className="w-28 text-sm text-gray-600 flex-shrink-0">{r.label}</span>
                 <div className="flex gap-1">
                   {[1, 2, 3, 4, 5].map((star) => (
-                    <span key={star} className={`text-lg ${star <= r.score ? "text-yellow-400" : "text-gray-200"}`}>★</span>
+                    <span key={star} className={`text-lg ${star <= r.score ? "text-yellow-400" : "text-gray-200"}`}></span>
                   ))}
                 </div>
                 <span className="text-sm font-bold text-gray-700">{r.score}.0</span>
@@ -148,15 +148,15 @@ export default async function CompanyPage({ params }: Props) {
           <h2 className="font-bold text-gray-800 text-lg mb-4">関連サービスガイド</h2>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
             <Link href="/service/pruning/" className="bg-white rounded-xl p-4 border border-green-100 hover:border-[#15803D] transition-colors text-sm text-center">
-              <span className="text-2xl">✂️</span>
+              <span className="text-2xl"></span>
               <p className="font-medium text-gray-700 mt-1">剪定費用ガイド</p>
             </Link>
             <Link href="/cost/price/" className="bg-white rounded-xl p-4 border border-green-100 hover:border-[#15803D] transition-colors text-sm text-center">
-              <span className="text-2xl">💰</span>
+              <span className="text-2xl"></span>
               <p className="font-medium text-gray-700 mt-1">料金相場一覧</p>
             </Link>
             <Link href="/ranking/" className="bg-white rounded-xl p-4 border border-green-100 hover:border-[#15803D] transition-colors text-sm text-center">
-              <span className="text-2xl">🏆</span>
+              <span className="text-2xl"></span>
               <p className="font-medium text-gray-700 mt-1">全業者ランキング</p>
             </Link>
           </div>

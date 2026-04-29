@@ -204,7 +204,7 @@ export default function DIYPage() {
               </div>
               <div className="bg-yellow-50 rounded-lg p-3 border border-yellow-200">
                 <p className="text-xs text-yellow-800">
-                  <span className="font-bold">💡 ポイント：</span>{project.points}
+                  <span className="font-bold"> ポイント：</span>{project.points}
                 </p>
               </div>
             </div>

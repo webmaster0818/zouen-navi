@@ -11,19 +11,19 @@ export const metadata: Metadata = {
 const top3 = companiesData.slice(0, 3);
 
 const plantNav = [
-  { icon: "🌳", label: "シンボルツリー", href: "/plant/symbol-tree/" },
-  { icon: "🌿", label: "生垣", href: "/plant/hedge/" },
-  { icon: "🌸", label: "花壇", href: "/plant/flower-bed/" },
-  { icon: "🌑", label: "日陰向き", href: "/plant/shade/" },
-  { icon: "✂️", label: "手入れ楽", href: "/plant/low-maintenance/" },
+  { icon: "", label: "シンボルツリー", href: "/plant/symbol-tree/" },
+  { icon: "", label: "生垣", href: "/plant/hedge/" },
+  { icon: "", label: "花壇", href: "/plant/flower-bed/" },
+  { icon: "", label: "日陰向き", href: "/plant/shade/" },
+  { icon: "", label: "手入れ楽", href: "/plant/low-maintenance/" },
 ];
 
 const services = [
-  { icon: "✂️", label: "剪定", href: "/service/pruning/", desc: "費用と時期の完全ガイド" },
-  { icon: "🪚", label: "伐採", href: "/service/felling/", desc: "費用相場と業者の選び方" },
-  { icon: "🏡", label: "庭デザイン", href: "/service/garden-design/", desc: "プロへの依頼方法と費用" },
-  { icon: "⛩️", label: "和庭園", href: "/service/japanese-garden/", desc: "坪庭から本格庭園まで" },
-  { icon: "📅", label: "年間管理", href: "/service/maintenance/", desc: "月別メンテナンスカレンダー" },
+  { icon: "", label: "剪定", href: "/service/pruning/", desc: "費用と時期の完全ガイド" },
+  { icon: "", label: "伐採", href: "/service/felling/", desc: "費用相場と業者の選び方" },
+  { icon: "", label: "庭デザイン", href: "/service/garden-design/", desc: "プロへの依頼方法と費用" },
+  { icon: "", label: "和庭園", href: "/service/japanese-garden/", desc: "坪庭から本格庭園まで" },
+  { icon: "", label: "年間管理", href: "/service/maintenance/", desc: "月別メンテナンスカレンダー" },
 ];
 
 const costCards = [
@@ -108,13 +108,13 @@ export default function HomePage() {
           {/* Trust badges */}
           <div className="flex flex-wrap justify-center gap-6 mt-10 text-sm text-green-100">
             <span className="flex items-center gap-1.5">
-              <span className="text-[#F59E0B]">✓</span> 全国対応
+              <span className="text-[#F59E0B]"></span> 全国対応
             </span>
             <span className="flex items-center gap-1.5">
-              <span className="text-[#F59E0B]">✓</span> 無料見積もり
+              <span className="text-[#F59E0B]"></span> 無料見積もり
             </span>
             <span className="flex items-center gap-1.5">
-              <span className="text-[#F59E0B]">✓</span> 複数業者を比較
+              <span className="text-[#F59E0B]"></span> 複数業者を比較
             </span>
           </div>
         </div>
@@ -148,7 +148,7 @@ export default function HomePage() {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {top3.map((company, i) => {
-            const medals = ["🥇", "🥈", "🥉"];
+            const medals = ["", "", ""];
             const rankBorder = [
               "border-2 border-yellow-400 shadow-yellow-100 shadow-lg",
               "border border-gray-200 shadow-md",
@@ -180,7 +180,7 @@ export default function HomePage() {
                 <p className="text-sm text-gray-500 mb-3 leading-relaxed">{company.tagline}</p>
                 {/* Rating */}
                 <div className="flex items-center gap-2 mb-4 bg-[#F0FDF4] rounded-lg px-3 py-2">
-                  <span className="text-yellow-400 text-base">{"★".repeat(Math.round(company.rating))}</span>
+                  <span className="text-yellow-400 text-base">{"".repeat(Math.round(company.rating))}</span>
                   <span className="text-sm font-bold text-gray-800">{company.rating}</span>
                   <span className="text-xs text-gray-400">（{company.reviewCount}件の口コミ）</span>
                 </div>
@@ -188,7 +188,7 @@ export default function HomePage() {
                 <ul className="text-sm text-gray-600 space-y-2 mb-5 flex-1">
                   {company.features.slice(0, 3).map((f) => (
                     <li key={f} className="flex items-start gap-2">
-                      <span className="text-[#15803D] font-bold mt-0.5 flex-shrink-0">✓</span>
+                      <span className="text-[#15803D] font-bold mt-0.5 flex-shrink-0"></span>
                       <span>{f}</span>
                     </li>
                   ))}

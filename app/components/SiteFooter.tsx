@@ -6,7 +6,7 @@ export default function SiteFooter() {
       <div className="max-w-6xl mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           <div>
-            <h3 className="text-xl font-bold mb-3">🌿 造園ナビ</h3>
+            <h3 className="text-xl font-bold mb-3"> 造園ナビ</h3>
             <p className="text-green-200 text-sm leading-relaxed">
               庭づくりのプロを見つける総合ガイド。剪定・造園・外構のおすすめ業者を徹底比較。
             </p>
@@ -43,7 +43,7 @@ export default function SiteFooter() {
           </div>
         </div>
         <div className="border-t border-green-700 pt-6 flex flex-col md:flex-row justify-between items-center gap-3 text-sm text-green-300">
-          <p>© 2024 造園ナビ All rights reserved.</p>
+          <p> 2024 造園ナビ All rights reserved.</p>
           <div className="flex gap-4">
             <Link href="/privacy/" className="hover:text-white transition-colors">プライバシーポリシー</Link>
             <Link href="/terms/" className="hover:text-white transition-colors">利用規約</Link>

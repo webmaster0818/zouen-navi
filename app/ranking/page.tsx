@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     "造園ナビ編集部が厳選した庭師・造園業者ランキング。料金・実績・口コミを総合的に比較した10社をご紹介。無料で一括見積もりができる業者も掲載。",
 };
 
-const medals = ["🥇", "🥈", "🥉"];
+const medals = ["", "", ""];
 
 export default function RankingPage() {
   return (
@@ -38,7 +38,7 @@ export default function RankingPage() {
               <div className="flex flex-col md:flex-row">
                 <div className={`${i < 3 ? "bg-gradient-to-b from-[#15803D] to-[#166534]" : "bg-gray-100"} flex items-center justify-center p-4 md:w-20`}>
                   <div className="text-center">
-                    <span className="text-3xl">{medals[i] || "🏅"}</span>
+                    <span className="text-3xl">{medals[i] || ""}</span>
                     <p className={`text-xs font-bold mt-1 ${i < 3 ? "text-white" : "text-gray-500"}`}>第{i + 1}位</p>
                   </div>
                 </div>
@@ -50,7 +50,7 @@ export default function RankingPage() {
                     </div>
                     <div className="text-right flex-shrink-0">
                       <div className="flex items-center gap-1">
-                        <span className="text-yellow-400 text-sm">{"★".repeat(Math.round(company.rating))}</span>
+                        <span className="text-yellow-400 text-sm">{"".repeat(Math.round(company.rating))}</span>
                         <span className="font-bold text-gray-800">{company.rating}</span>
                       </div>
                       <p className="text-xs text-gray-400">{company.reviewCount}件</p>
@@ -94,7 +94,7 @@ export default function RankingPage() {
           <p className="text-green-100 text-sm mb-4">複数業者に一括見積もりを依頼して比較検討しましょう。</p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Link href="/company/oniwa-master/" className="bg-[#F59E0B] hover:bg-amber-500 text-white font-bold px-6 py-3 rounded-full transition-all text-sm">
-              🥇 お庭マスターに相談する
+               お庭マスターに相談する
             </Link>
             <Link href="/company/oniwa-madoguchi/" className="bg-white/20 hover:bg-white/30 text-white font-bold px-6 py-3 rounded-full border border-white/30 transition-all text-sm">
               お庭の窓口に相談する

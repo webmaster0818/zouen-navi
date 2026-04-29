@@ -145,14 +145,14 @@ export default function PruningPricePage() {
         {/* Related */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
           <Link href="/service/pruning/" className="bg-white rounded-xl p-4 border border-green-100 hover:border-[#15803D] transition-colors shadow-sm flex items-center gap-3">
-            <span className="text-3xl">✂️</span>
+            <span className="text-3xl"></span>
             <div>
               <p className="font-bold text-gray-700">剪定の完全ガイド</p>
               <p className="text-xs text-gray-500">時期・方法・業者の選び方</p>
             </div>
           </Link>
           <Link href="/ranking/pruning/" className="bg-white rounded-xl p-4 border border-green-100 hover:border-[#15803D] transition-colors shadow-sm flex items-center gap-3">
-            <span className="text-3xl">🏆</span>
+            <span className="text-3xl"></span>
             <div>
               <p className="font-bold text-gray-700">剪定業者ランキング</p>
               <p className="text-xs text-gray-500">おすすめ5社の比較</p>

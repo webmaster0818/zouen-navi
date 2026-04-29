@@ -85,7 +85,7 @@ export default async function PlantPage({ params }: Props) {
           <ul className="space-y-2">
             {plant.tips.map((tip, i) => (
               <li key={i} className="flex items-start gap-2 text-sm text-gray-700">
-                <span className="text-[#15803D] font-bold mt-0.5 text-base">💡</span>
+                <span className="text-[#15803D] font-bold mt-0.5 text-base"></span>
                 {tip}
               </li>
             ))}

@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 const priceCategories = [
   {
     title: "剪定・刈り込み",
-    icon: "✂️",
+    icon: "",
     items: [
       { name: "低木剪定（1m以下）", price: "500〜2,000円", unit: "1本" },
       { name: "中木剪定（1〜3m）", price: "2,000〜10,000円", unit: "1本" },
@@ -23,7 +23,7 @@ const priceCategories = [
   },
   {
     title: "伐採・根株除去",
-    icon: "🪚",
+    icon: "",
     items: [
       { name: "低木伐採（1m以下）", price: "3,000〜10,000円", unit: "1本" },
       { name: "中木伐採（1〜3m）", price: "10,000〜30,000円", unit: "1本" },
@@ -35,7 +35,7 @@ const priceCategories = [
   },
   {
     title: "草刈り・除草",
-    icon: "🌿",
+    icon: "",
     items: [
       { name: "草刈り（30㎡未満）", price: "5,000〜15,000円", unit: "1回" },
       { name: "草刈り（30〜50㎡）", price: "10,000〜30,000円", unit: "1回" },
@@ -46,7 +46,7 @@ const priceCategories = [
   },
   {
     title: "庭のデザイン・リフォーム",
-    icon: "🏡",
+    icon: "",
     items: [
       { name: "小庭リフォーム（10㎡）", price: "50〜200万円", unit: "全体" },
       { name: "中庭リフォーム（20〜50㎡）", price: "200〜500万円", unit: "全体" },
@@ -58,7 +58,7 @@ const priceCategories = [
   },
   {
     title: "廃棄・処分費用",
-    icon: "🗑️",
+    icon: "",
     items: [
       { name: "剪定ゴミ処分（軽トラ1台）", price: "5,000〜15,000円", unit: "1回" },
       { name: "剪定ゴミ処分（2トン車1台）", price: "15,000〜40,000円", unit: "1回" },
@@ -124,7 +124,7 @@ export default function PricePage() {
               "見積もりは最低3社以上から取って比較する",
             ].map((tip, i) => (
               <div key={i} className="flex items-start gap-2 text-sm text-gray-700">
-                <span className="text-[#F59E0B] font-bold flex-shrink-0">💡</span>
+                <span className="text-[#F59E0B] font-bold flex-shrink-0"></span>
                 {tip}
               </div>
             ))}
@@ -134,15 +134,15 @@ export default function PricePage() {
         {/* Related Links */}
         <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-4">
           <Link href="/cost/pruning-price/" className="bg-white rounded-xl p-4 border border-green-100 hover:border-[#15803D] transition-colors text-center shadow-sm">
-            <span className="text-2xl">✂️</span>
+            <span className="text-2xl"></span>
             <p className="font-bold text-gray-700 mt-2 text-sm">剪定費用の詳細ガイド</p>
           </Link>
           <Link href="/cost/diy/" className="bg-white rounded-xl p-4 border border-green-100 hover:border-[#15803D] transition-colors text-center shadow-sm">
-            <span className="text-2xl">🔨</span>
+            <span className="text-2xl"></span>
             <p className="font-bold text-gray-700 mt-2 text-sm">DIY庭づくりガイド</p>
           </Link>
           <Link href="/ranking/" className="bg-white rounded-xl p-4 border border-green-100 hover:border-[#15803D] transition-colors text-center shadow-sm">
-            <span className="text-2xl">🏆</span>
+            <span className="text-2xl"></span>
             <p className="font-bold text-gray-700 mt-2 text-sm">業者ランキング</p>
           </Link>
         </div>
