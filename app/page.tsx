@@ -57,43 +57,79 @@ const faqs = [
 export default function HomePage() {
   return (
     <div>
-      {/* Hero */}
-      <section className="bg-gradient-to-br from-[#15803D] to-[#166534] text-white py-16 md:py-24">
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <p className="text-[#F59E0B] font-bold text-sm mb-3 tracking-wider">庭づくりの総合ガイド</p>
-          <h1 className="text-3xl md:text-5xl font-bold leading-tight mb-4">
+      {/* Hero - full-width background image with dark green gradient overlay */}
+      <section
+        className="relative text-white overflow-hidden"
+        style={{
+          minHeight: "560px",
+        }}
+      >
+        {/* Background image */}
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: "url('/images/hero-b.png')" }}
+          aria-hidden="true"
+        />
+        {/* Dark green gradient overlay */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(135deg, rgba(21,128,61,0.88) 0%, rgba(22,101,52,0.80) 50%, rgba(20,83,45,0.70) 100%)",
+          }}
+          aria-hidden="true"
+        />
+        {/* Content */}
+        <div className="relative z-10 max-w-4xl mx-auto px-4 py-20 md:py-32 text-center">
+          <p className="inline-block bg-[#F59E0B] text-white text-xs font-bold px-4 py-1.5 rounded-full mb-5 tracking-wider shadow-md">
+            庭づくりの総合ガイド
+          </p>
+          <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-5 drop-shadow-lg">
             庭づくりのプロが見つかる。
           </h1>
-          <p className="text-green-100 text-base md:text-lg mb-8 max-w-2xl mx-auto">
-            剪定・造園・外構工事のおすすめ業者を徹底比較。費用相場から業者の選び方まで、プロが丁寧に解説します。
+          <p className="text-green-100 text-base md:text-xl mb-10 max-w-2xl mx-auto leading-relaxed drop-shadow">
+            剪定・造園・外構工事のおすすめ業者を徹底比較。<br className="hidden sm:inline" />
+            費用相場から業者の選び方まで、プロが丁寧に解説します。
           </p>
-          <div className="flex flex-col sm:flex-row gap-3 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/ranking/"
-              className="bg-[#F59E0B] hover:bg-amber-500 text-white font-bold px-8 py-4 rounded-full text-lg transition-all shadow-lg hover:shadow-xl"
+              className="bg-[#F59E0B] hover:bg-amber-500 text-white font-bold px-10 py-4 rounded-full text-lg transition-all shadow-xl hover:shadow-2xl hover:-translate-y-0.5 active:translate-y-0"
             >
               業者ランキングを見る
             </Link>
             <Link
               href="/cost/price/"
-              className="bg-white/20 hover:bg-white/30 text-white font-bold px-8 py-4 rounded-full text-lg transition-all border border-white/30"
+              className="bg-white/20 hover:bg-white/30 text-white font-bold px-10 py-4 rounded-full text-lg transition-all border-2 border-white/50 backdrop-blur-sm hover:-translate-y-0.5 active:translate-y-0"
             >
               料金相場を確認する
             </Link>
+          </div>
+          {/* Trust badges */}
+          <div className="flex flex-wrap justify-center gap-6 mt-10 text-sm text-green-100">
+            <span className="flex items-center gap-1.5">
+              <span className="text-[#F59E0B]">✓</span> 全国対応
+            </span>
+            <span className="flex items-center gap-1.5">
+              <span className="text-[#F59E0B]">✓</span> 無料見積もり
+            </span>
+            <span className="flex items-center gap-1.5">
+              <span className="text-[#F59E0B]">✓</span> 複数業者を比較
+            </span>
           </div>
         </div>
       </section>
 
       {/* Plant Type Nav */}
-      <section className="bg-white border-b border-green-100 py-6">
+      <section className="bg-white border-b border-green-100 py-6 shadow-sm">
         <div className="max-w-6xl mx-auto px-4">
-          <p className="text-center text-sm text-gray-500 mb-4">植物・テーマ別ガイド</p>
+          <p className="text-center text-xs font-semibold text-gray-400 uppercase tracking-widest mb-4">植物・テーマ別ガイド</p>
           <div className="flex flex-wrap justify-center gap-3">
             {plantNav.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="flex items-center gap-2 bg-[#F0FDF4] hover:bg-[#dcfce7] border border-green-200 rounded-full px-4 py-2 text-sm font-medium text-[#15803D] transition-colors"
+                className="flex items-center gap-2 bg-[#F0FDF4] hover:bg-[#15803D] hover:text-white border border-green-200 hover:border-[#15803D] rounded-full px-5 py-2.5 text-sm font-medium text-[#15803D] transition-all shadow-sm hover:shadow-md"
               >
                 <span>{item.icon}</span>
                 <span>{item.label}</span>
@@ -104,73 +140,100 @@ export default function HomePage() {
       </section>
 
       {/* TOP3 Ranking */}
-      <section className="max-w-6xl mx-auto px-4 py-12">
-        <div className="text-center mb-8">
-          <span className="bg-[#F59E0B] text-white text-xs font-bold px-3 py-1 rounded-full">編集部おすすめ</span>
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mt-3">造園業者ランキング TOP3</h2>
-          <p className="text-gray-500 mt-2">口コミ・費用・対応の総合評価で厳選</p>
+      <section className="max-w-6xl mx-auto px-4 py-16">
+        <div className="text-center mb-10">
+          <span className="bg-[#F59E0B] text-white text-xs font-bold px-4 py-1.5 rounded-full shadow-md">編集部おすすめ</span>
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mt-4">造園業者ランキング TOP3</h2>
+          <p className="text-gray-500 mt-2 text-sm">口コミ・費用・対応の総合評価で厳選</p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {top3.map((company, i) => {
             const medals = ["🥇", "🥈", "🥉"];
+            const rankBorder = [
+              "border-2 border-yellow-400 shadow-yellow-100 shadow-lg",
+              "border border-gray-200 shadow-md",
+              "border border-gray-200 shadow-md",
+            ];
+            const rankBadge = [
+              "bg-yellow-400 text-white",
+              "bg-gray-400 text-white",
+              "bg-amber-700 text-white",
+            ];
             return (
               <div
                 key={company.slug}
-                className={`bg-white rounded-2xl shadow-md p-6 border-2 ${i === 0 ? "border-yellow-400" : "border-transparent"} flex flex-col`}
+                className={`bg-white rounded-2xl ${rankBorder[i]} p-6 flex flex-col transition-transform hover:-translate-y-1`}
               >
-                <div className="flex items-center justify-between mb-3">
-                  <span className="text-3xl">{medals[i]}</span>
-                  <span className="text-sm font-bold text-white bg-[#15803D] px-2 py-0.5 rounded-full">
+                {/* Rank header */}
+                <div className="flex items-center justify-between mb-4">
+                  <div className="flex items-center gap-2">
+                    <span className="text-3xl">{medals[i]}</span>
+                    <span className={`text-xs font-bold px-2.5 py-1 rounded-full ${rankBadge[i]}`}>
+                      第{i + 1}位
+                    </span>
+                  </div>
+                  <span className="text-xs font-bold text-white bg-[#15803D] px-3 py-1 rounded-full">
                     {company.coverage}
                   </span>
                 </div>
                 <h3 className="text-xl font-bold text-gray-800 mb-1">{company.name}</h3>
-                <p className="text-sm text-gray-500 mb-3">{company.tagline}</p>
-                <div className="flex items-center gap-1 mb-3">
-                  <span className="text-yellow-400 text-sm">{"★".repeat(Math.round(company.rating))}</span>
-                  <span className="text-sm font-bold text-gray-700">{company.rating}</span>
-                  <span className="text-xs text-gray-400">({company.reviewCount}件)</span>
+                <p className="text-sm text-gray-500 mb-3 leading-relaxed">{company.tagline}</p>
+                {/* Rating */}
+                <div className="flex items-center gap-2 mb-4 bg-[#F0FDF4] rounded-lg px-3 py-2">
+                  <span className="text-yellow-400 text-base">{"★".repeat(Math.round(company.rating))}</span>
+                  <span className="text-sm font-bold text-gray-800">{company.rating}</span>
+                  <span className="text-xs text-gray-400">（{company.reviewCount}件の口コミ）</span>
                 </div>
-                <ul className="text-xs text-gray-600 space-y-1 mb-4 flex-1">
+                {/* Features */}
+                <ul className="text-sm text-gray-600 space-y-2 mb-5 flex-1">
                   {company.features.slice(0, 3).map((f) => (
-                    <li key={f} className="flex items-start gap-1">
-                      <span className="text-[#15803D] font-bold mt-0.5">✓</span>
-                      {f}
+                    <li key={f} className="flex items-start gap-2">
+                      <span className="text-[#15803D] font-bold mt-0.5 flex-shrink-0">✓</span>
+                      <span>{f}</span>
                     </li>
                   ))}
                 </ul>
                 <Link
                   href={`/company/${company.slug}/`}
-                  className="block text-center bg-[#F59E0B] hover:bg-amber-500 text-white font-bold py-2.5 rounded-full text-sm transition-colors"
+                  className={`block text-center font-bold py-3 rounded-full text-sm transition-all shadow-md hover:shadow-lg ${
+                    i === 0
+                      ? "bg-[#F59E0B] hover:bg-amber-500 text-white"
+                      : "bg-[#15803D] hover:bg-green-700 text-white"
+                  }`}
                 >
-                  詳細を見る
+                  詳細・口コミを見る →
                 </Link>
               </div>
             );
           })}
         </div>
-        <div className="text-center mt-6">
-          <Link href="/ranking/" className="text-[#15803D] font-bold hover:underline text-sm">
+        <div className="text-center mt-8">
+          <Link
+            href="/ranking/"
+            className="inline-flex items-center gap-2 text-[#15803D] font-bold hover:underline text-sm border border-[#15803D] px-6 py-2.5 rounded-full hover:bg-[#F0FDF4] transition-colors"
+          >
             全10社のランキングを見る →
           </Link>
         </div>
       </section>
 
       {/* Service Overview */}
-      <section className="bg-white py-12">
+      <section className="bg-white py-16 border-t border-green-50">
         <div className="max-w-6xl mx-auto px-4">
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-2 text-center">庭工事サービスガイド</h2>
-          <p className="text-gray-500 text-center mb-8">目的別に詳しく解説</p>
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+          <div className="text-center mb-10">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-2">庭工事サービスガイド</h2>
+            <p className="text-gray-500 text-sm">目的別に詳しく解説</p>
+          </div>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
             {services.map((svc) => (
               <Link
                 key={svc.href}
                 href={svc.href}
-                className="bg-[#F0FDF4] hover:bg-[#dcfce7] rounded-xl p-4 text-center transition-colors border border-green-100"
+                className="group bg-[#F0FDF4] hover:bg-[#15803D] rounded-2xl p-5 text-center transition-all border border-green-100 hover:border-[#15803D] shadow-sm hover:shadow-lg hover:-translate-y-1"
               >
-                <div className="text-3xl mb-2">{svc.icon}</div>
-                <p className="font-bold text-[#15803D] text-sm">{svc.label}</p>
-                <p className="text-xs text-gray-500 mt-1">{svc.desc}</p>
+                <div className="text-4xl mb-3">{svc.icon}</div>
+                <p className="font-bold text-[#15803D] group-hover:text-white text-sm mb-1 transition-colors">{svc.label}</p>
+                <p className="text-xs text-gray-500 group-hover:text-green-100 transition-colors leading-relaxed">{svc.desc}</p>
               </Link>
             ))}
           </div>
@@ -178,40 +241,54 @@ export default function HomePage() {
       </section>
 
       {/* Cost Comparison */}
-      <section className="max-w-6xl mx-auto px-4 py-12">
-        <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-2 text-center">庭工事の費用相場</h2>
-        <p className="text-gray-500 text-center mb-8">目安料金一覧（業者・条件により異なります）</p>
+      <section className="max-w-6xl mx-auto px-4 py-16">
+        <div className="text-center mb-10">
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-2">庭工事の費用相場</h2>
+          <p className="text-gray-500 text-sm">目安料金一覧（業者・条件により異なります）</p>
+        </div>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
           {costCards.map((c) => (
-            <div key={c.label} className="bg-white rounded-xl shadow-sm border border-green-100 p-4 text-center">
-              <p className="text-sm text-gray-500 mb-1">{c.label}</p>
-              <p className="text-xl font-bold text-[#15803D]">{c.range}</p>
-              <p className="text-xs text-gray-400">/ {c.unit}</p>
+            <div
+              key={c.label}
+              className="bg-white rounded-2xl shadow-sm border border-green-100 p-5 text-center hover:shadow-md hover:border-green-300 transition-all"
+            >
+              <p className="text-xs text-gray-400 font-medium mb-2 uppercase tracking-wide">{c.label}</p>
+              <p className="text-xl md:text-2xl font-bold text-[#15803D] leading-tight">{c.range}</p>
+              <p className="text-xs text-gray-400 mt-1.5 bg-green-50 inline-block px-2 py-0.5 rounded-full">/ {c.unit}</p>
             </div>
           ))}
         </div>
-        <div className="text-center mt-6">
-          <Link href="/cost/price/" className="text-[#15803D] font-bold hover:underline text-sm">
+        <div className="text-center mt-8">
+          <Link
+            href="/cost/price/"
+            className="inline-flex items-center gap-2 text-[#15803D] font-bold hover:underline text-sm border border-[#15803D] px-6 py-2.5 rounded-full hover:bg-[#F0FDF4] transition-colors"
+          >
             詳細な費用相場ガイドを見る →
           </Link>
         </div>
       </section>
 
       {/* FAQ */}
-      <section className="bg-white py-12">
+      <section className="bg-white py-16 border-t border-green-50">
         <div className="max-w-3xl mx-auto px-4">
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-8 text-center">よくある質問</h2>
+          <div className="text-center mb-10">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-2">よくある質問</h2>
+            <p className="text-gray-500 text-sm">お客様からよく寄せられる疑問にお答えします</p>
+          </div>
           <div className="space-y-4">
             {faqs.map((faq, i) => (
-              <div key={i} className="bg-[#F0FDF4] rounded-xl p-5 border border-green-100">
-                <p className="font-bold text-[#15803D] mb-2 flex items-start gap-2">
-                  <span className="bg-[#15803D] text-white rounded-full w-5 h-5 flex items-center justify-center text-xs flex-shrink-0 mt-0.5">Q</span>
-                  {faq.q}
-                </p>
-                <p className="text-gray-700 text-sm leading-relaxed flex items-start gap-2">
-                  <span className="bg-[#F59E0B] text-white rounded-full w-5 h-5 flex items-center justify-center text-xs flex-shrink-0 mt-0.5">A</span>
-                  {faq.a}
-                </p>
+              <div key={i} className="bg-[#F0FDF4] rounded-2xl border border-green-100 overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                <div className="p-5">
+                  <p className="font-bold text-gray-800 mb-3 flex items-start gap-3">
+                    <span className="bg-[#15803D] text-white rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5 shadow-sm">Q</span>
+                    <span>{faq.q}</span>
+                  </p>
+                  <div className="ml-9 border-l-2 border-[#F59E0B] pl-4">
+                    <p className="text-gray-700 text-sm leading-relaxed">
+                      {faq.a}
+                    </p>
+                  </div>
+                </div>
               </div>
             ))}
           </div>
@@ -219,17 +296,31 @@ export default function HomePage() {
       </section>
 
       {/* CTA Banner */}
-      <section className="bg-gradient-to-r from-[#15803D] to-[#166534] text-white py-12">
-        <div className="max-w-3xl mx-auto px-4 text-center">
-          <h2 className="text-2xl md:text-3xl font-bold mb-3">庭のことで困ったら、まず比較</h2>
-          <p className="text-green-100 mb-6">無料で複数の業者から見積もりを取って、最適な業者を選びましょう。</p>
+      <section className="relative overflow-hidden">
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: "url('/images/hero-b.png')" }}
+          aria-hidden="true"
+        />
+        <div
+          className="absolute inset-0"
+          style={{
+            background: "linear-gradient(135deg, rgba(21,128,61,0.93) 0%, rgba(22,101,52,0.90) 100%)",
+          }}
+          aria-hidden="true"
+        />
+        <div className="relative z-10 max-w-3xl mx-auto px-4 py-16 text-center text-white">
+          <h2 className="text-2xl md:text-3xl font-bold mb-3 drop-shadow">庭のことで困ったら、まず比較</h2>
+          <p className="text-green-100 mb-8 text-base leading-relaxed">
+            無料で複数の業者から見積もりを取って、最適な業者を選びましょう。
+          </p>
           <Link
             href="/ranking/"
-            className="bg-[#F59E0B] hover:bg-amber-500 text-white font-bold px-10 py-4 rounded-full text-lg transition-all shadow-lg inline-block"
+            className="bg-[#F59E0B] hover:bg-amber-500 text-white font-bold px-12 py-4 rounded-full text-lg transition-all shadow-xl hover:shadow-2xl inline-block hover:-translate-y-0.5 active:translate-y-0"
           >
             無料で業者を比較する
           </Link>
-          <p className="text-xs text-green-300 mt-3">※当サイトはアフィリエイト広告を含みます</p>
+          <p className="text-xs text-green-300 mt-5">※当サイトはアフィリエイト広告を含みます</p>
         </div>
       </section>
     </div>
