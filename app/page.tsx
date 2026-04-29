@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import type { Metadata } from "next";
 import companiesData from "@/data/companies.json";
 
@@ -11,19 +12,19 @@ export const metadata: Metadata = {
 const top3 = companiesData.slice(0, 3);
 
 const plantNav = [
-  { icon: "", label: "シンボルツリー", href: "/plant/symbol-tree/" },
-  { icon: "", label: "生垣", href: "/plant/hedge/" },
-  { icon: "", label: "花壇", href: "/plant/flower-bed/" },
-  { icon: "", label: "日陰向き", href: "/plant/shade/" },
-  { icon: "", label: "手入れ楽", href: "/plant/low-maintenance/" },
+  { icon: "/images/icon-tree.png", label: "シンボルツリー", href: "/plant/symbol-tree/" },
+  { icon: "/images/icon-hedge.png", label: "生垣", href: "/plant/hedge/" },
+  { icon: "/images/icon-flower.png", label: "花壇", href: "/plant/flower-bed/" },
+  { icon: "/images/icon-tree.png", label: "日陰向き", href: "/plant/shade/" },
+  { icon: "/images/icon-pruning.png", label: "手入れ楽", href: "/plant/low-maintenance/" },
 ];
 
 const services = [
-  { icon: "", label: "剪定", href: "/service/pruning/", desc: "費用と時期の完全ガイド" },
-  { icon: "", label: "伐採", href: "/service/felling/", desc: "費用相場と業者の選び方" },
-  { icon: "", label: "庭デザイン", href: "/service/garden-design/", desc: "プロへの依頼方法と費用" },
-  { icon: "", label: "和庭園", href: "/service/japanese-garden/", desc: "坪庭から本格庭園まで" },
-  { icon: "", label: "年間管理", href: "/service/maintenance/", desc: "月別メンテナンスカレンダー" },
+  { icon: "/images/icon-pruning.png", label: "剪定", href: "/service/pruning/", desc: "費用と時期の完全ガイド" },
+  { icon: "/images/icon-tree.png", label: "伐採", href: "/service/felling/", desc: "費用相場と業者の選び方" },
+  { icon: "/images/icon-flower.png", label: "庭デザイン", href: "/service/garden-design/", desc: "プロへの依頼方法と費用" },
+  { icon: "/images/icon-japanese.png", label: "和庭園", href: "/service/japanese-garden/", desc: "坪庭から本格庭園まで" },
+  { icon: "/images/icon-hedge.png", label: "年間管理", href: "/service/maintenance/", desc: "月別メンテナンスカレンダー" },
 ];
 
 const costCards = [
@@ -131,7 +132,7 @@ export default function HomePage() {
                 href={item.href}
                 className="flex items-center gap-2 bg-[#F0FDF4] hover:bg-[#15803D] hover:text-white border border-green-200 hover:border-[#15803D] rounded-full px-5 py-2.5 text-sm font-medium text-[#15803D] transition-all shadow-sm hover:shadow-md"
               >
-                <span>{item.icon}</span>
+                {item.icon && <Image src={item.icon} alt={item.label} width={24} height={24} className="w-6 h-6 inline-block" />}
                 <span>{item.label}</span>
               </Link>
             ))}
@@ -231,7 +232,9 @@ export default function HomePage() {
                 href={svc.href}
                 className="group bg-[#F0FDF4] hover:bg-[#15803D] rounded-2xl p-5 text-center transition-all border border-green-100 hover:border-[#15803D] shadow-sm hover:shadow-lg hover:-translate-y-1"
               >
-                <div className="text-4xl mb-3">{svc.icon}</div>
+                <div className="mb-3 flex justify-center">
+                  {svc.icon && <Image src={svc.icon} alt={svc.label} width={40} height={40} className="w-10 h-10" />}
+                </div>
                 <p className="font-bold text-[#15803D] group-hover:text-white text-sm mb-1 transition-colors">{svc.label}</p>
                 <p className="text-xs text-gray-500 group-hover:text-green-100 transition-colors leading-relaxed">{svc.desc}</p>
               </Link>
