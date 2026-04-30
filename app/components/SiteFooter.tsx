@@ -44,9 +44,10 @@ export default function SiteFooter() {
         </div>
         <div className="border-t border-green-700 pt-6 flex flex-col md:flex-row justify-between items-center gap-3 text-sm text-green-300">
           <p> 2024 造園ナビ All rights reserved.</p>
-          <div className="flex gap-4">
+          <div className="flex flex-wrap gap-4">
             <Link href="/privacy/" className="hover:text-white transition-colors">プライバシーポリシー</Link>
             <Link href="/terms/" className="hover:text-white transition-colors">利用規約</Link>
+            <Link href="/content-policy/" className="hover:text-white transition-colors">記事の制作ポリシー</Link>
             <Link href="/about/" className="hover:text-white transition-colors">運営者情報</Link>
           </div>
         </div>
