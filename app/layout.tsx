@@ -4,6 +4,7 @@ import SiteHeader from "./components/SiteHeader";
 import SiteFooter from "./components/SiteFooter";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://zouen-navi.com"),
   title: {
     default: "造園ナビ｜庭づくりのプロが見つかる総合ガイド",
     template: "%s | 造園ナビ",

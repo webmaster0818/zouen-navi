@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://zouen-navi-deploy.pages.dev/sitemap.xml
+Sitemap: https://zouen-navi.com/sitemap.xml
