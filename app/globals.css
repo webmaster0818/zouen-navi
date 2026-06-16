@@ -8,8 +8,20 @@
   --color-bg: #F0FDF4;
   --color-background: #F0FDF4;
   --color-foreground: #1a1a1a;
+  --color-surface: #FFFFFF;
+  --color-surface-alt: #F0FAF2;
+  --color-border: #D6EBDB;
+  --color-text-primary: #14241A;
+  --color-text-secondary: #4A5B50;
+  --color-text-muted: #8AA395;
+  --color-warning: #F59E0B;
+  --color-primary-dark: #136634;
   --font-sans: "Noto Sans JP", sans-serif;
+  --font-mono: ui-monospace, "SFMono-Regular", Menlo, monospace;
 }
+
+.label { font-family: var(--font-mono); font-size: 0.6875rem; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 600; }
+.mono { font-family: var(--font-mono); font-feature-settings: "tnum" 1; }
 
 body {
   background: var(--color-bg);
