@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import companiesData from "@/data/companies.json";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/" },
   title: "造園ナビ｜庭づくりのプロが見つかる総合ガイド",
   description:
     "庭の剪定・造園・外構工事のおすすめ業者を徹底比較。費用相場・口コミ・特徴を詳しく解説。あなたにぴったりの造園業者がすぐに見つかります。",

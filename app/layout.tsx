@@ -5,7 +5,6 @@ import SiteFooter from "./components/SiteFooter";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://zouen-navi.com"),
-  alternates: { canonical: "/" },
   twitter: {
     card: "summary_large_image",
   },

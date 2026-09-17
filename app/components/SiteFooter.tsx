@@ -42,6 +42,24 @@ export default function SiteFooter() {
             </ul>
           </div>
         </div>
+        <div className="border-t border-green-700 pt-6 mb-6">
+          <h4 className="font-bold mb-3 text-[#F59E0B] text-sm">エリア別ガイド</h4>
+          <ul className="flex flex-wrap gap-x-5 gap-y-2 text-sm text-green-200 mb-5">
+            <li><Link href="/area/tokyo/" className="hover:text-white transition-colors">東京</Link></li>
+            <li><Link href="/area/osaka/" className="hover:text-white transition-colors">大阪</Link></li>
+            <li><Link href="/area/nagoya/" className="hover:text-white transition-colors">名古屋</Link></li>
+            <li><Link href="/area/yokohama/" className="hover:text-white transition-colors">横浜</Link></li>
+            <li><Link href="/area/sapporo/" className="hover:text-white transition-colors">札幌</Link></li>
+          </ul>
+          <h4 className="font-bold mb-3 text-[#F59E0B] text-sm">庭づくりガイド（お手入れ）</h4>
+          <ul className="flex flex-wrap gap-x-5 gap-y-2 text-sm text-green-200">
+            <li><Link href="/guide/lawn-care/" className="hover:text-white transition-colors">芝生の手入れ</Link></li>
+            <li><Link href="/guide/weed-control/" className="hover:text-white transition-colors">庭の雑草対策</Link></li>
+            <li><Link href="/guide/neighbor-branch/" className="hover:text-white transition-colors">越境した枝と根</Link></li>
+            <li><Link href="/review/" className="hover:text-white transition-colors">口コミ・評判まとめ</Link></li>
+          </ul>
+        </div>
+
         <div className="border-t border-green-700 pt-6 flex flex-col md:flex-row justify-between items-center gap-3 text-sm text-green-300">
           <p> 2024 造園ナビ All rights reserved.</p>
           <div className="flex flex-wrap gap-4">

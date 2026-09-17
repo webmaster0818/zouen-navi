@@ -3,6 +3,7 @@ import Link from "next/link";
 import Breadcrumb from "@/app/components/Breadcrumb";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/cost/pruning-price/" },
   title: "庭木の剪定費用の相場【2024年版】安い業者の選び方",
   description:
     "庭木の剪定費用の相場を樹種・高さ別に徹底解説。安い業者の選び方、見積もりのポイント、自分でやる場合との比較も紹介します。",

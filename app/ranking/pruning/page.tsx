@@ -4,6 +4,7 @@ import companiesData from "@/data/companies.json";
 import Breadcrumb from "@/app/components/Breadcrumb";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/ranking/pruning/" },
   title: "剪定業者ランキング2024年【おすすめ5選】費用・口コミ比較",
   description:
     "庭木の剪定に強い業者を徹底比較。料金が安い・対応が早い・口コミが良い剪定専門業者TOP5をランキング形式で紹介します。",

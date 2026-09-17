@@ -17,6 +17,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const company = companiesData.find((c) => c.slug === slug);
   if (!company) return {};
   return {
+    alternates: { canonical: `/company/${slug}/` },
     title: `${company.name}の評判・口コミ・費用【徹底レビュー】`,
     description: `${company.name}の特徴・料金・口コミを詳しく解説。${company.tagline}。造園ナビ編集部が実際に調査した情報をお届けします。`,
   };

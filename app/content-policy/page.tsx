@@ -1,6 +1,7 @@
 import Breadcrumb from "@/app/components/Breadcrumb";
 
 export const metadata = {
+  alternates: { canonical: "/content-policy/" },
   title: "記事の制作ポリシー | 造園ナビ",
   description: "造園ナビの編集方針・記事制作ポリシーです。正確で信頼できる情報提供を目指しています。",
 };

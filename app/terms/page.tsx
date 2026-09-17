@@ -1,6 +1,7 @@
 import Breadcrumb from "@/app/components/Breadcrumb";
 
 export const metadata = {
+  alternates: { canonical: "/terms/" },
   title: "利用規約 | 造園ナビ",
   description: "造園ナビの利用規約です。サービス利用前に必ずお読みください。",
 };

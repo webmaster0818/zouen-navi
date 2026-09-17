@@ -3,6 +3,7 @@ import Link from "next/link";
 import Breadcrumb from "@/app/components/Breadcrumb";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/cost/diy/" },
   title: "DIY庭づくりガイド【費用・道具・失敗しないコツ】",
   description:
     "DIYで庭をつくる方法を初心者向けにわかりやすく解説。必要な道具・費用の目安・失敗しないコツ。プロに頼むべき作業との見極め方も紹介します。",

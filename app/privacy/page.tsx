@@ -1,6 +1,7 @@
 import Breadcrumb from "@/app/components/Breadcrumb";
 
 export const metadata = {
+  alternates: { canonical: "/privacy/" },
   title: "プライバシーポリシー | 造園ナビ",
   description: "造園ナビのプライバシーポリシーです。個人情報の取り扱いについて説明しています。",
 };

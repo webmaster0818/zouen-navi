@@ -4,6 +4,7 @@ import companiesData from "@/data/companies.json";
 import Breadcrumb from "@/app/components/Breadcrumb";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/ranking/" },
   title: "造園・庭師業者ランキング2024年【徹底比較10選】",
   description:
     "造園ナビ編集部が厳選した庭師・造園業者ランキング。料金・実績・口コミを総合的に比較した10社をご紹介。無料で一括見積もりができる業者も掲載。",

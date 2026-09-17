@@ -18,6 +18,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const plant = plantsData.find((p) => p.slug === slug);
   if (!plant) return {};
   return {
+    alternates: { canonical: `/plant/${slug}/` },
     title: plant.title,
     description: plant.description,
   };
