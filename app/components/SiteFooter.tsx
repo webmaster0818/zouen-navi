@@ -50,12 +50,20 @@ export default function SiteFooter() {
             <li><Link href="/area/nagoya/" className="hover:text-white transition-colors">名古屋</Link></li>
             <li><Link href="/area/yokohama/" className="hover:text-white transition-colors">横浜</Link></li>
             <li><Link href="/area/sapporo/" className="hover:text-white transition-colors">札幌</Link></li>
+            <li><Link href="/area/fukuoka/" className="hover:text-white transition-colors">福岡</Link></li>
+            <li><Link href="/area/sendai/" className="hover:text-white transition-colors">仙台</Link></li>
+            <li><Link href="/area/kobe/" className="hover:text-white transition-colors">神戸</Link></li>
+            <li><Link href="/area/kyoto/" className="hover:text-white transition-colors">京都</Link></li>
+            <li><Link href="/area/hiroshima/" className="hover:text-white transition-colors">広島</Link></li>
           </ul>
           <h4 className="font-bold mb-3 text-[#F59E0B] text-sm">庭づくりガイド（お手入れ）</h4>
           <ul className="flex flex-wrap gap-x-5 gap-y-2 text-sm text-green-200">
             <li><Link href="/guide/lawn-care/" className="hover:text-white transition-colors">芝生の手入れ</Link></li>
             <li><Link href="/guide/weed-control/" className="hover:text-white transition-colors">庭の雑草対策</Link></li>
             <li><Link href="/guide/neighbor-branch/" className="hover:text-white transition-colors">越境した枝と根</Link></li>
+            <li><Link href="/guide/pest-disease/" className="hover:text-white transition-colors">庭木の害虫と病気</Link></li>
+            <li><Link href="/guide/drainage/" className="hover:text-white transition-colors">庭の水はけ</Link></li>
+            <li><Link href="/guide/green-waste/" className="hover:text-white transition-colors">剪定枝・草の処分</Link></li>
             <li><Link href="/review/" className="hover:text-white transition-colors">口コミ・評判まとめ</Link></li>
           </ul>
         </div>

@@ -31,12 +31,42 @@ export const AREAS = [
     label: "札幌",
     angle: "雪を前提にした年間計画",
   },
+  {
+    slug: "fukuoka",
+    city: "福岡",
+    label: "福岡",
+    angle: "依頼内容の伝え方と仕上がりの共有",
+  },
+  {
+    slug: "sendai",
+    city: "仙台",
+    label: "仙台",
+    angle: "立ち会えない庭の頼み方",
+  },
+  {
+    slug: "kobe",
+    city: "神戸",
+    label: "神戸",
+    angle: "見積書の読み方と書面の確認",
+  },
+  {
+    slug: "kyoto",
+    city: "京都",
+    label: "京都",
+    angle: "仕上がりの方針と継続管理",
+  },
+  {
+    slug: "hiroshima",
+    city: "広島",
+    label: "広島",
+    angle: "困りごとの切り分けと優先順位",
+  },
 ] as const;
 
 export type AreaSlug = (typeof AREAS)[number]["slug"];
 
 /**
- * 5エリアを相互にリンクするブロック。
+ * 全エリアを相互にリンクするブロック。
  * current に自分のスラッグを渡すと、そのエリアだけ非リンクの現在地表示になる。
  */
 export default function AreaLinks({ current }: { current?: AreaSlug }) {
