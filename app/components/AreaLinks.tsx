@@ -61,6 +61,30 @@ export const AREAS = [
     label: "広島",
     angle: "困りごとの切り分けと優先順位",
   },
+  {
+    slug: "saitama",
+    city: "さいたま",
+    label: "さいたま",
+    angle: "作業日の近隣への配慮と段取り",
+  },
+  {
+    slug: "chiba",
+    city: "千葉",
+    label: "千葉",
+    angle: "資格と許可の確かめ方",
+  },
+  {
+    slug: "kawasaki",
+    city: "川崎",
+    label: "川崎",
+    angle: "完了時の確認と手直しの頼み方",
+  },
+  {
+    slug: "kitakyushu",
+    city: "北九州",
+    label: "北九州",
+    angle: "日程の決め方と天候による順延",
+  },
 ] as const;
 
 export type AreaSlug = (typeof AREAS)[number]["slug"];

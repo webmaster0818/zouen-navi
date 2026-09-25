@@ -55,6 +55,10 @@ export default function SiteFooter() {
             <li><Link href="/area/kobe/" className="hover:text-white transition-colors">神戸</Link></li>
             <li><Link href="/area/kyoto/" className="hover:text-white transition-colors">京都</Link></li>
             <li><Link href="/area/hiroshima/" className="hover:text-white transition-colors">広島</Link></li>
+            <li><Link href="/area/saitama/" className="hover:text-white transition-colors">さいたま</Link></li>
+            <li><Link href="/area/chiba/" className="hover:text-white transition-colors">千葉</Link></li>
+            <li><Link href="/area/kawasaki/" className="hover:text-white transition-colors">川崎</Link></li>
+            <li><Link href="/area/kitakyushu/" className="hover:text-white transition-colors">北九州</Link></li>
           </ul>
           <h4 className="font-bold mb-3 text-[#F59E0B] text-sm">庭づくりガイド（お手入れ）</h4>
           <ul className="flex flex-wrap gap-x-5 gap-y-2 text-sm text-green-200">
@@ -64,6 +68,8 @@ export default function SiteFooter() {
             <li><Link href="/guide/pest-disease/" className="hover:text-white transition-colors">庭木の害虫と病気</Link></li>
             <li><Link href="/guide/drainage/" className="hover:text-white transition-colors">庭の水はけ</Link></li>
             <li><Link href="/guide/green-waste/" className="hover:text-white transition-colors">剪定枝・草の処分</Link></li>
+            <li><Link href="/guide/storm-care/" className="hover:text-white transition-colors">台風・強風への備え</Link></li>
+            <li><Link href="/guide/tree-roots/" className="hover:text-white transition-colors">庭木の根と構造物</Link></li>
             <li><Link href="/review/" className="hover:text-white transition-colors">口コミ・評判まとめ</Link></li>
           </ul>
         </div>
