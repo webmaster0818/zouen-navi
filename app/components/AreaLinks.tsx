@@ -85,6 +85,54 @@ export const AREAS = [
     label: "北九州",
     angle: "日程の決め方と天候による順延",
   },
+  {
+    slug: "niigata",
+    city: "新潟",
+    label: "新潟",
+    angle: "誰が決めて誰が払うかの分担",
+  },
+  {
+    slug: "shizuoka",
+    city: "静岡",
+    label: "静岡",
+    angle: "問い合わせ手段と最初のやり取り",
+  },
+  {
+    slug: "hamamatsu",
+    city: "浜松",
+    label: "浜松",
+    angle: "作業日までの受け入れの支度",
+  },
+  {
+    slug: "sagamihara",
+    city: "相模原",
+    label: "相模原",
+    angle: "当日の立ち会い方と声のかけどころ",
+  },
+  {
+    slug: "sakai",
+    city: "堺",
+    label: "堺",
+    angle: "食い違いに備える記録の残し方",
+  },
+  {
+    slug: "okayama",
+    city: "岡山",
+    label: "岡山",
+    angle: "相見積もりの揃え方と断り方",
+  },
+  {
+    slug: "kumamoto",
+    city: "熊本",
+    label: "熊本",
+    angle: "支払いの方法と契約が決まる時点",
+  },
+  {
+    slug: "kagoshima",
+    city: "鹿児島",
+    label: "鹿児島",
+    angle: "予算から範囲を組み立てる",
+  },
 ] as const;
 
 export type AreaSlug = (typeof AREAS)[number]["slug"];

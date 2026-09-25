@@ -1,4 +1,22 @@
 import Link from "next/link";
+import { AREAS } from "./AreaLinks";
+
+/** フッターに並べるお手入れガイド（/guide/*）。ページを追加したらここにも足す。 */
+const GUIDE_LINKS = [
+  { href: "/guide/lawn-care/", label: "芝生の手入れ" },
+  { href: "/guide/weed-control/", label: "庭の雑草対策" },
+  { href: "/guide/neighbor-branch/", label: "越境した枝と根" },
+  { href: "/guide/pest-disease/", label: "庭木の害虫と病気" },
+  { href: "/guide/drainage/", label: "庭の水はけ" },
+  { href: "/guide/green-waste/", label: "剪定枝・草の処分" },
+  { href: "/guide/storm-care/", label: "台風・強風への備え" },
+  { href: "/guide/tree-roots/", label: "庭木の根と構造物" },
+  { href: "/guide/hedge-care/", label: "生垣の手入れ" },
+  { href: "/guide/bamboo-vine/", label: "竹・笹・つる植物" },
+  { href: "/guide/summer-heat/", label: "夏の高温と水やり" },
+  { href: "/guide/fallen-leaves/", label: "落ち葉の手入れ" },
+  { href: "/review/", label: "口コミ・評判まとめ" },
+];
 
 export default function SiteFooter() {
   return (
@@ -45,32 +63,23 @@ export default function SiteFooter() {
         <div className="border-t border-green-700 pt-6 mb-6">
           <h4 className="font-bold mb-3 text-[#F59E0B] text-sm">エリア別ガイド</h4>
           <ul className="flex flex-wrap gap-x-5 gap-y-2 text-sm text-green-200 mb-5">
-            <li><Link href="/area/tokyo/" className="hover:text-white transition-colors">東京</Link></li>
-            <li><Link href="/area/osaka/" className="hover:text-white transition-colors">大阪</Link></li>
-            <li><Link href="/area/nagoya/" className="hover:text-white transition-colors">名古屋</Link></li>
-            <li><Link href="/area/yokohama/" className="hover:text-white transition-colors">横浜</Link></li>
-            <li><Link href="/area/sapporo/" className="hover:text-white transition-colors">札幌</Link></li>
-            <li><Link href="/area/fukuoka/" className="hover:text-white transition-colors">福岡</Link></li>
-            <li><Link href="/area/sendai/" className="hover:text-white transition-colors">仙台</Link></li>
-            <li><Link href="/area/kobe/" className="hover:text-white transition-colors">神戸</Link></li>
-            <li><Link href="/area/kyoto/" className="hover:text-white transition-colors">京都</Link></li>
-            <li><Link href="/area/hiroshima/" className="hover:text-white transition-colors">広島</Link></li>
-            <li><Link href="/area/saitama/" className="hover:text-white transition-colors">さいたま</Link></li>
-            <li><Link href="/area/chiba/" className="hover:text-white transition-colors">千葉</Link></li>
-            <li><Link href="/area/kawasaki/" className="hover:text-white transition-colors">川崎</Link></li>
-            <li><Link href="/area/kitakyushu/" className="hover:text-white transition-colors">北九州</Link></li>
+            {AREAS.map((a) => (
+              <li key={a.slug}>
+                <Link href={`/area/${a.slug}/`} className="hover:text-white transition-colors">
+                  {a.city}
+                </Link>
+              </li>
+            ))}
           </ul>
           <h4 className="font-bold mb-3 text-[#F59E0B] text-sm">庭づくりガイド（お手入れ）</h4>
           <ul className="flex flex-wrap gap-x-5 gap-y-2 text-sm text-green-200">
-            <li><Link href="/guide/lawn-care/" className="hover:text-white transition-colors">芝生の手入れ</Link></li>
-            <li><Link href="/guide/weed-control/" className="hover:text-white transition-colors">庭の雑草対策</Link></li>
-            <li><Link href="/guide/neighbor-branch/" className="hover:text-white transition-colors">越境した枝と根</Link></li>
-            <li><Link href="/guide/pest-disease/" className="hover:text-white transition-colors">庭木の害虫と病気</Link></li>
-            <li><Link href="/guide/drainage/" className="hover:text-white transition-colors">庭の水はけ</Link></li>
-            <li><Link href="/guide/green-waste/" className="hover:text-white transition-colors">剪定枝・草の処分</Link></li>
-            <li><Link href="/guide/storm-care/" className="hover:text-white transition-colors">台風・強風への備え</Link></li>
-            <li><Link href="/guide/tree-roots/" className="hover:text-white transition-colors">庭木の根と構造物</Link></li>
-            <li><Link href="/review/" className="hover:text-white transition-colors">口コミ・評判まとめ</Link></li>
+            {GUIDE_LINKS.map((g) => (
+              <li key={g.href}>
+                <Link href={g.href} className="hover:text-white transition-colors">
+                  {g.label}
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
 
