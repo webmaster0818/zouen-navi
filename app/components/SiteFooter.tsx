@@ -15,6 +15,10 @@ const GUIDE_LINKS = [
   { href: "/guide/bamboo-vine/", label: "竹・笹・つる植物" },
   { href: "/guide/summer-heat/", label: "夏の高温と水やり" },
   { href: "/guide/fallen-leaves/", label: "落ち葉の手入れ" },
+  { href: "/guide/soil-fertilizer/", label: "庭の土と肥料" },
+  { href: "/guide/transplant/", label: "庭木の移植・植え替え" },
+  { href: "/guide/garden-animals/", label: "庭に来る動物" },
+  { href: "/guide/garden-downsizing/", label: "庭じまい" },
   { href: "/review/", label: "口コミ・評判まとめ" },
 ];
 

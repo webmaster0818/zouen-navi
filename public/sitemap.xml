@@ -221,6 +221,54 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://zouen-navi.com/area/funabashi/</loc>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://zouen-navi.com/area/utsunomiya/</loc>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://zouen-navi.com/area/kanazawa/</loc>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://zouen-navi.com/area/matsuyama/</loc>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://zouen-navi.com/area/himeji/</loc>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://zouen-navi.com/area/nara/</loc>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://zouen-navi.com/area/gifu/</loc>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://zouen-navi.com/area/nagasaki/</loc>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://zouen-navi.com/guide/hedge-care/</loc>
     <lastmod>2026-09-25</lastmod>
     <changefreq>monthly</changefreq>
@@ -241,6 +289,30 @@
   <url>
     <loc>https://zouen-navi.com/guide/fallen-leaves/</loc>
     <lastmod>2026-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://zouen-navi.com/guide/soil-fertilizer/</loc>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://zouen-navi.com/guide/transplant/</loc>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://zouen-navi.com/guide/garden-animals/</loc>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://zouen-navi.com/guide/garden-downsizing/</loc>
+    <lastmod>2026-09-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

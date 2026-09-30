@@ -133,6 +133,54 @@ export const AREAS = [
     label: "鹿児島",
     angle: "予算から範囲を組み立てる",
   },
+  {
+    slug: "funabashi",
+    city: "船橋",
+    label: "船橋",
+    angle: "現地を見てもらう前に写真で伝える",
+  },
+  {
+    slug: "utsunomiya",
+    city: "宇都宮",
+    label: "宇都宮",
+    angle: "年間契約と、そのつど頼む形の選び分け",
+  },
+  {
+    slug: "kanazawa",
+    city: "金沢",
+    label: "金沢",
+    angle: "頼む先を替えるときの引き継ぎ",
+  },
+  {
+    slug: "matsuyama",
+    city: "松山",
+    label: "松山",
+    angle: "頼んだあとに取りやめる・日をずらす",
+  },
+  {
+    slug: "himeji",
+    city: "姫路",
+    label: "姫路",
+    angle: "1社にまとめるか、分けて頼むか",
+  },
+  {
+    slug: "nara",
+    city: "奈良",
+    label: "奈良",
+    angle: "家族に代わって手配するときの段取り",
+  },
+  {
+    slug: "gifu",
+    city: "岐阜",
+    label: "岐阜",
+    angle: "返事が来ないときの進め方",
+  },
+  {
+    slug: "nagasaki",
+    city: "長崎",
+    label: "長崎",
+    angle: "口コミと実績を何の根拠として読むか",
+  },
 ] as const;
 
 export type AreaSlug = (typeof AREAS)[number]["slug"];
