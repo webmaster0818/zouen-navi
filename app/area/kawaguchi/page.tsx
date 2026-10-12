@@ -1,0 +1,569 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import Breadcrumb from "@/app/components/Breadcrumb";
+import AreaCompanyTable, { findReview, infoValue } from "@/app/components/AreaCompanyTable";
+import AreaLinks from "@/app/components/AreaLinks";
+
+const PAGE_URL = "https://zouen-navi.com/area/kawaguchi/";
+const UPDATED_LABEL = "2026年10月12日";
+const UPDATED_ISO = "2026-10-12";
+const TITLE = "川口で生け垣をつくる・植えるときの業者選び｜市の緑化補助を使って頼む手順";
+
+export const metadata: Metadata = {
+  title: TITLE,
+  description:
+    "川口市の「生け垣設置等奨励補助制度」は、工事の前にみどり課へ相談することと、市内業者（市内に本社または本店を置く事業者）を利用することが条件です。対象になる場所と生け垣の条件、申請と完了報告の流れ、全国対応の窓口を使うときに確かめること、見積もりで業者に伝えることを、市の公開資料をもとに整理しました。",
+  alternates: { canonical: PAGE_URL },
+  openGraph: {
+    type: "article",
+    url: PAGE_URL,
+    title: TITLE,
+    description:
+      "川口市の生け垣・植込地・フェンス緑化の補助を使って庭の工事を頼むときの順番と、業者選びで確かめることを整理しました。",
+  },
+};
+
+const toc = [
+  { id: "kawaguchi-scheme", label: "川口市の緑化補助は、植える前の相談から始まる" },
+  { id: "kawaguchi-target", label: "対象になる場所と、生け垣・植込地の条件" },
+  { id: "kawaguchi-flow", label: "申請から振り込みまでに出す書類" },
+  { id: "kawaguchi-local", label: "「市内業者」の条件と、全国対応の窓口" },
+  { id: "kawaguchi-estimate", label: "補助を前提に見積もりを頼むときの伝え方" },
+  { id: "kawaguchi-after", label: "植えたあと5年間の管理を誰が担うか" },
+  { id: "kawaguchi-pick", label: "この条件で見ておきたい3サービス" },
+  { id: "kawaguchi-companies", label: "掲載サービスの運営会社と対応エリア" },
+  { id: "kawaguchi-checklist", label: "問い合わせ前のチェックリスト" },
+  { id: "kawaguchi-faq", label: "よくある質問" },
+  { id: "other-areas", label: "他のエリアの業者選び" },
+];
+
+const picks = ["oniwa-madoguchi", "oniwa-master", "smile-garden"] as const;
+
+const pickReasons: Record<string, string> = {
+  "oniwa-madoguchi":
+    "造園・剪定・草刈りなどの情報を発信しながら、全国の造園・園芸・外構業者を検索できる情報・比較サイトです。自社で施工する事業者ではないため、見つけた業者ごとに所在地や本社・本店の場所をこちらで確かめ、補助の条件に合うかどうかを自分で判断する使い方になります。運営は株式会社ガーデンメーカーです。",
+  "oniwa-master":
+    "剪定・伐採・草刈り・芝刈りなどに対応する加盟業者を無料で紹介する形で、受付は24時間365日とされています。窓口と実際に施工する業者が分かれる型なので、補助を使う前提であれば、紹介される業者の名称と本社・本店の所在地を工事の契約前に聞いておく必要があります。運営は株式会社アシスト（東京都中央区）です。",
+  "smile-garden":
+    "剪定・伐採・草刈り・芝刈り・植栽などを自店舗で施工する、お庭手入れ専門の全国チェーンです。施工する相手がはっきりしている一方、公開情報上の運営会社の本社は愛知県稲沢市です。補助を使う場合は、依頼先が市の定める「市内業者」に当たるかを事前にみどり課へ確かめ、補助を使わない手入れや、植えたあとの管理の相談先として候補に入れる形が考えられます。",
+};
+
+const targetItems = [
+  {
+    h: "道路に面した場所であること",
+    b: "補助の対象は、敷地の中で道路に接する部分に行う緑化です。市のパンフレットでは、この道路を「公道又は公共の用に供されている私道であって、幅員4メートル以上又は道路中心線から住居敷地までの離隔が2メートル以上ある道路」としています。庭の奥や隣地との境に植える生け垣は、この制度の対象としては書かれていません。",
+  },
+  {
+    h: "生け垣は長さと本数に条件がある",
+    b: "パンフレットに示された生け垣の主な条件は、道路に面した長さが合計2メートル以上（各長さは1メートル以上）であること、高さ1メートル以上のおおむね均一な樹木を列状に植え、1メートル当たり3本以上とすること、竹や木などを補助材として用いること、生長したときに道路や隣地の支障にならない樹種であることです。",
+  },
+  {
+    h: "前に塀やフェンスを置くなら高さに上限がある",
+    b: "生け垣の前に構造物を置く場合、宅地地盤面から1.8メートル以下の透過性の高いフェンス等とし、透過性のない構造物（ブロック等）は0.6メートル以下とされています。上下に組み合わせるときは合計1.8メートル以下です。透過性の高いフェンスとは、正面から見て格子の隙間がおおむね50%以上で、隙間から樹木が見えるものとされています。",
+  },
+  {
+    h: "植込地・フェンス緑化・既存塀の撤去も対象",
+    b: "生け垣のほかに、道路に面した植込地（幅0.5メートル以上など）の設置、フェンスにつる性植物を1メートル当たり2本以上植えるフェンス緑化、生け垣や植込地を設ける目的で同じ位置にある高さ0.6メートル以上の既存の塀（石垣・コンクリート塀・ブロック塀等）を撤去する場合が、パンフレットに挙げられています。",
+  },
+];
+
+const subsidyRows = [
+  { k: "生け垣", rate: "1メートルあたり11,000円まで", scope: "延長20メートルまで" },
+  { k: "植込地", rate: "1平方メートルあたり11,000円まで", scope: "面積10平方メートルまで" },
+  { k: "フェンス緑化", rate: "1メートルあたり1,100円まで", scope: "延長20メートルまで" },
+  {
+    k: "既存塀撤去",
+    rate: "1メートルあたり8,800円まで",
+    scope: "新たに生け垣または植込地を設置する場所と同じ位置にある既存の塀",
+  },
+];
+
+const flowSteps = [
+  {
+    h: "事前相談・現地確認",
+    who: "依頼する人／みどり課",
+    b: "補助の対象になるかどうかを、みどり課が現地を確認して判断します。工事の日取りを決める前に、ここを済ませます。",
+  },
+  {
+    h: "申請書の提出",
+    who: "依頼する人",
+    b: "申請書・案内図・緑化計画図・見積書の写し・工事前の写真を提出します。見積書と緑化計画図は、業者の協力がないと揃いません。",
+  },
+  {
+    h: "交付の決定",
+    who: "みどり課",
+    b: "書類を審査し、問題がなければ交付決定通知書が送られます。",
+  },
+  {
+    h: "生け垣等の設置工事",
+    who: "依頼する人（業者が施工）",
+    b: "申請した計画に基づいて工事をします。計画と違う植え方をすると、後の確定で問題になりえます。",
+  },
+  {
+    h: "完了報告書の提出",
+    who: "依頼する人",
+    b: "完了報告書・案内図・緑化竣工図・領収書の写し・完成写真を提出します。",
+  },
+  {
+    h: "補助金の確定",
+    who: "みどり課",
+    b: "報告書と現地を確認し、問題がなければ交付確定通知書が届きます。",
+  },
+  {
+    h: "補助金の請求と支払い",
+    who: "依頼する人／みどり課",
+    b: "確定通知が届いたら請求書・振込依頼書を出し、指定の口座に振り込まれます。業者への支払いとは別の流れです。",
+  },
+];
+
+const localPoints = [
+  {
+    h: "市の定義は「本市内に本社又は本店を置く事業者」",
+    b: "令和4年4月1日施行の改正で、補助の対象は市内業者を利用する場合に限られました。パンフレットでは市内業者を「本市内に本社又は本店を置く事業者」と書いています。川口市内に作業員が来てくれるかどうかや、市内に営業所があるかどうかとは、別の基準です。",
+  },
+  {
+    h: "紹介・一括見積もり型では、施工する会社を確かめる",
+    b: "全国対応の紹介サービスや一括見積もりサービスを入口にすると、実際に工事をするのは加盟店や登録事業者です。補助の条件にかかわるのは窓口の会社ではなく、施工し、見積書と領収書を出す側の会社だと考えられますが、どちらで判断されるかは市が決めることなので、迷ったらみどり課に確認します。",
+  },
+  {
+    h: "掲載サービスは、市内業者であることを保証していない",
+    b: "造園ナビに掲載しているサービスはいずれも、公開情報の上で川口市の補助の対象業者を紹介すると約束しているわけではありません。窓口の対応エリアに川口市が含まれていても、紹介された業者の本社・本店が市外であれば対象外になりえます。申し込む前に、業者の名称と本社・本店の所在地を聞いておくのが確実です。",
+  },
+  {
+    h: "全国チェーンの店舗も、本社の場所で見られうる",
+    b: "自社で施工する全国チェーンでも、運営会社の本社が市外にあることがあります。地元の店舗が施工する場合にどう扱われるかは、このページでは判断できません。補助を使うことが前提なら、候補の会社名を伝えてみどり課に事前に確かめてください。",
+  },
+];
+
+const estimateItems = [
+  {
+    h: "補助を申請するつもりであることを最初に言う",
+    b: "見積書の写しを申請に使うこと、交付決定までは着工できないことを伝えます。日程の組み方が変わるので、後から言うと段取りがやり直しになります。",
+  },
+  {
+    h: "本社・本店の所在地を聞く",
+    b: "市内業者に当たるかどうかを確かめるために、見積もりの段階で会社の正式名称と本社・本店の所在地を聞きます。紹介型の窓口を通している場合は、実際に施工する会社について聞きます。",
+  },
+  {
+    h: "見積書を補助の区分に沿って分けてもらう",
+    b: "生け垣・植込地・フェンス緑化・既存塀撤去のどれに当たる工事か、延長（メートル）や面積、植える本数と高さが読み取れる形にしてもらうと、申請書類との突き合わせが楽になります。補助の対象外になる部分（構造物の設置など）が混ざる場合は、行を分けてもらいます。",
+  },
+  {
+    h: "図面と写真を誰が用意するか決める",
+    b: "申請には緑化計画図と工事前の写真、完了報告には緑化竣工図と完成写真が要ります。業者に作成や撮影を頼めるのか、頼む場合に見積もりに含まれるのかを確認しておきます。",
+  },
+];
+
+const afterPoints = [
+  {
+    h: "完了後5年以上の継続管理が求められている",
+    b: "パンフレットには「緑化完了後は5年以上継続して管理すること」とあります。植えて終わりではなく、刈り込みや枯れた株の扱いを含めて、少なくとも5年は生け垣として保つことが前提です。",
+  },
+  {
+    h: "道路に面しているぶん、伸びたときの影響が大きい",
+    b: "対象が道路沿いなので、伸びた枝が通行の妨げにならないよう定期的な刈り込みが要ります。樹種の条件にも「道路又は隣地の支障とならないよう配慮」とあり、植える前に、どの高さと幅で保つつもりかを業者と話しておくと管理の負担を見積もりやすくなります。",
+  },
+];
+
+const checklist = [
+  {
+    h: "工事の前に、みどり課へ相談したか",
+    b: "工事を始めたあとの申請は受け付けられません。日程を決める前に相談と現地確認を済ませます。",
+  },
+  {
+    h: "植える場所が道路に面しているか",
+    b: "対象は道路に接する部分の緑化です。道路の幅員などの条件もあわせて確かめます。",
+  },
+  {
+    h: "施工する会社の本社・本店が川口市内にあるか",
+    b: "窓口ではなく、実際に施工する会社について確かめます。迷う場合はみどり課に会社名を伝えて確認します。",
+  },
+  {
+    h: "見積書が補助の区分と数量で読める形になっているか",
+    b: "生け垣・植込地・フェンス緑化・既存塀撤去ごとに、延長や面積、本数が分かるようにしてもらいます。",
+  },
+  {
+    h: "図面と写真を誰が用意するか決めたか",
+    b: "緑化計画図・竣工図、工事前と完成時の写真の担当を、見積もりの段階で決めておきます。",
+  },
+  {
+    h: "5年以上管理する前提で樹種と大きさを決めたか",
+    b: "完了後も継続した管理が求められます。手入れを誰がするかまで考えて選びます。",
+  },
+];
+
+const faqs = [
+  {
+    q: "工事が終わってから補助を申請することはできますか。",
+    a: "できません。川口市のページとパンフレットには、補助金の交付を希望する場合は必ず設置等（工事）をする前にみどり課に相談すること、設置等の後の申請は受け付けられないことが明記されています。業者と日程を決める前に、まずみどり課（推進係）に相談してください。",
+  },
+  {
+    q: "全国対応の紹介サービスで見つけた業者でも、補助の対象になりますか。",
+    a: "実際に施工する業者が、市の定める市内業者（本市内に本社または本店を置く事業者）に当たるかどうかで変わりえます。紹介サービスや一括見積もりサービスは、紹介先が川口市の補助の対象業者であることを保証しているわけではありません。申し込む前に施工する会社の名称と本社・本店の所在地を確かめ、判断に迷う場合はみどり課に確認してください。",
+  },
+  {
+    q: "いまある生け垣の剪定や植え替えにも使えますか。",
+    a: "市のパンフレットでは、生け垣設置・植込地設置・フェンス緑化を新たに行う人に補助金を交付すると説明されており、既存の生け垣の剪定などの手入れは対象として書かれていません。植え替えや作り直しが対象になるかどうかは、計画の内容を伝えてみどり課に確認してください。",
+  },
+  {
+    q: "借りている土地や、これから家を建てる土地でも申請できますか。",
+    a: "パンフレットでは、対象者を接道部の緑化を行う敷地の所有者、または新たに建築して接道部の緑化を行う場合の建築主としています。借地の場合は所有者の承認が必要とされています。また、川口市や埼玉県の条例に基づく緑化計画の基準の範囲内として行う緑化部分は、補助の対象になりません。新築時の扱いは事前にみどり課に確認してください。",
+  },
+  {
+    q: "川口市内で対応してもらえるかどうかは、どこで分かりますか。",
+    a: "このページの一覧に載せている対応エリアは、各社が公開している範囲をそのまま転記したものです。いずれも公開情報の上では全国を対象としていますが、川口市内での個別の対応可否・作業日程・出張範囲までは公開されていません。実際に受けられるかどうかは、依頼時に各社へ直接ご確認ください。補助を使う場合は、あわせて施工する会社の本社・本店の所在地も確かめてください。",
+  },
+];
+
+export default function AreaKawaguchiPage() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        headline: TITLE,
+        description:
+          "川口市の生け垣設置等奨励補助制度を使って庭の緑化工事を頼むときの条件、書類の流れ、市内業者の確かめ方を整理しました。",
+        dateModified: UPDATED_ISO,
+        author: { "@type": "Organization", name: "造園ナビ" },
+        publisher: { "@type": "Organization", name: "造園ナビ", url: "https://zouen-navi.com/" },
+        mainEntityOfPage: PAGE_URL,
+      },
+      {
+        "@type": "FAQPage",
+        mainEntity: faqs.map((f) => ({
+          "@type": "Question",
+          name: f.q,
+          acceptedAnswer: { "@type": "Answer", text: f.a },
+        })),
+      },
+    ],
+  };
+
+  return (
+    <article className="max-w-3xl mx-auto px-4 py-8">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+
+      <Breadcrumb items={[{ label: "エリア別ガイド" }, { label: "川口" }]} />
+
+      <header className="mt-2">
+        <span className="label inline-block mb-3 text-primary">エリア別ガイド</span>
+        <h1 className="text-2xl sm:text-3xl font-bold leading-snug text-text-primary mb-4">{TITLE}</h1>
+        <div className="flex items-center gap-3 text-sm text-text-muted mb-6">
+          <time dateTime={UPDATED_ISO}>最終更新：{UPDATED_LABEL}</time>
+          <span className="w-px h-3 bg-border" />
+          <span>造園ナビ編集部</span>
+        </div>
+        <p className="text-[15px] leading-8 text-text-secondary">
+          道路沿いのブロック塀を生け垣に替えたい、駐車場の脇に植え込みをつくりたい。川口市内の家でこうした工事を考えているなら、市の緑化補助が使えるかどうかを、業者に見積もりを頼む前に確かめておく価値があります。
+        </p>
+        <p className="text-[15px] leading-8 text-text-secondary">
+          ただし、この補助には順番と相手についての条件があります。工事の前に市へ相談すること、そして市内に本社または本店を置く業者を使うことです。このページでは、川口市が公開している案内とパンフレットをもとに、補助を前提に業者を選ぶときに確かめることを整理します。金額や要件は改正されることがあるので、最新の内容は必ず市の窓口で確認してください。
+        </p>
+      </header>
+
+      <nav className="my-10 rounded-2xl border border-border bg-surface-alt p-5">
+        <p className="font-bold text-text-primary mb-3 text-sm">目次</p>
+        <ol className="space-y-2 text-sm list-decimal list-inside marker:text-text-muted">
+          {toc.map((t) => (
+            <li key={t.id}>
+              <a href={`#${t.id}`} className="text-primary hover:underline">
+                {t.label}
+              </a>
+            </li>
+          ))}
+        </ol>
+      </nav>
+
+      <section id="kawaguchi-scheme" className="scroll-mt-20 mb-12">
+        <h2 className="text-xl font-bold text-text-primary border-l-4 border-primary pl-3 mb-5">
+          川口市の緑化補助は、植える前の相談から始まる
+        </h2>
+        <p className="text-[15px] leading-8 text-text-secondary mb-5">
+          川口市のページ「生け垣や屋上緑化等に対する補助制度」によると、民有地の緑に対する補助には二つの種類があります。一つは生け垣・植込地・フェンス緑化への補助（生け垣設置等奨励補助制度）、もう一つは屋上緑化・壁面緑化への補助（屋上緑化等奨励補助制度）です。いずれも「川口市環境みどり基金」を財源としています。戸建ての庭の工事でかかわりが深いのは前者なので、このページでは生け垣設置等奨励補助制度を中心に扱います。
+        </p>
+        <p className="text-[15px] leading-8 text-text-secondary mb-5">
+          令和4年4月1日施行の改正で、補助の対象は市内業者を利用する場合に限られ、補助単価は10%増額されました。同じページには、補助金の交付を希望する場合は必ず工事の前にみどり課に相談すること、工事後の申請は受け付けられないことが、注意として書かれています。
+        </p>
+        <div className="rounded-2xl border border-border bg-surface-alt p-5">
+          <p className="text-[15px] leading-8 text-text-secondary">
+            問い合わせ先は、川口市 都市計画部 みどり課 推進係です。電話番号や受付時間は市のページに掲載されています。屋上緑化・壁面緑化の補助は、条件と単価が生け垣の補助とは別に定められているので、検討している場合は市のチラシで確認してください。
+          </p>
+        </div>
+      </section>
+
+      <section id="kawaguchi-target" className="scroll-mt-20 mb-12">
+        <h2 className="text-xl font-bold text-text-primary border-l-4 border-primary pl-3 mb-5">
+          対象になる場所と、生け垣・植込地の条件
+        </h2>
+        <p className="text-[15px] leading-8 text-text-secondary mb-5">
+          市のパンフレット（生け垣・植込地設置、フェンス緑化 補助金のご案内）では、対象者を「川口市内に建築物を所有し、その敷地内で道路に接する場所に、生け垣設置、植込地設置若しくはフェンス緑化を行う敷地の所有者、又は新たに建築し接道部緑化を行う場合の建築主」としています。借地の場合は所有者の承認が必要です。主な条件は次のとおりです。
+        </p>
+        <div className="space-y-4">
+          {targetItems.map((x) => (
+            <div key={x.h} className="rounded-2xl border border-border bg-surface p-5">
+              <h3 className="font-bold text-text-primary mb-2">{x.h}</h3>
+              <p className="text-[15px] leading-8 text-text-secondary">{x.b}</p>
+            </div>
+          ))}
+        </div>
+        <h3 className="font-bold text-text-primary mt-8 mb-3">パンフレットに示された補助の内容</h3>
+        <div className="overflow-x-auto rounded-2xl border border-border">
+          <table className="w-full text-sm min-w-[520px]">
+            <thead>
+              <tr className="bg-surface-alt">
+                <th className="text-left font-semibold text-text-primary px-4 py-3 whitespace-nowrap">区分</th>
+                <th className="text-left font-semibold text-text-primary px-4 py-3">1mまたは1m²あたりの補助額</th>
+                <th className="text-left font-semibold text-text-primary px-4 py-3">補助対象</th>
+              </tr>
+            </thead>
+            <tbody>
+              {subsidyRows.map((row, idx) => (
+                <tr key={row.k} className={idx % 2 ? "bg-surface-alt" : "bg-surface"}>
+                  <th scope="row" className="text-left align-top font-semibold text-text-primary px-4 py-3 whitespace-nowrap">
+                    {row.k}
+                  </th>
+                  <td className="px-4 py-3 align-top text-text-secondary leading-7">{row.rate}</td>
+                  <td className="px-4 py-3 align-top text-text-secondary leading-7">{row.scope}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p className="text-sm leading-7 text-text-muted mt-3">
+          出典：川口市「生け垣設置等補助金パンフレット中面」（市ページ「生け垣や屋上緑化等に対する補助制度」掲載、{UPDATED_LABEL}確認）。同じ敷地で生け垣・植込地・フェンス緑化を行う場合は、いずれか一つの申請になります。生け垣を10メートル以上設置する場合は補助額を10%増、生け垣または植込地と道路の間に0.6メートルを超える構造物や駐車場等の空地がある場合は、その部分の補助単価を2分の1とする、と記載されています。工事費用が補助限度額未満の場合は実費相当の補助で、100円未満は切り捨てです。最新の単価と要件はみどり課に確認してください。
+        </p>
+        <p className="text-[15px] leading-8 text-text-secondary mt-5">
+          補助の額は上限の単価で決まり、工事費そのものの目安を示すものではありません。工事費の見方は
+          <Link href="/cost/price/" className="text-primary underline underline-offset-2 mx-1">
+            庭工事の料金相場
+          </Link>
+          、生け垣に向く樹種は
+          <Link href="/plant/hedge/" className="text-primary underline underline-offset-2 mx-1">
+            生垣におすすめの品種
+          </Link>
+          で扱っています。
+        </p>
+      </section>
+
+      <section id="kawaguchi-flow" className="scroll-mt-20 mb-12">
+        <h2 className="text-xl font-bold text-text-primary border-l-4 border-primary pl-3 mb-5">
+          申請から振り込みまでに出す書類
+        </h2>
+        <p className="text-[15px] leading-8 text-text-secondary mb-5">
+          市のパンフレットにある「補助金の手続きの流れ」を、誰が何をするかに分けて並べると次のようになります。業者に依頼する工事は4番目で、その前に相談・申請・交付決定が入ります。
+        </p>
+        <ol className="space-y-4">
+          {flowSteps.map((x, i) => (
+            <li key={x.h} className="flex items-start gap-3">
+              <span className="mono text-primary flex-shrink-0 mt-1">{String(i + 1).padStart(2, "0")}</span>
+              <div>
+                <h3 className="font-bold text-text-primary mb-1">
+                  {x.h}
+                  <span className="ml-2 text-sm font-normal text-text-muted">{x.who}</span>
+                </h3>
+                <p className="text-[15px] leading-8 text-text-secondary">{x.b}</p>
+              </div>
+            </li>
+          ))}
+        </ol>
+        <p className="text-[15px] leading-8 text-text-secondary mt-5">
+          申請時の見積書の写しと、完了時の領収書の写しは、どちらも業者が出す書類です。見積書の読み方そのものは
+          <Link href="/area/kobe/" className="text-primary underline underline-offset-2 mx-1">
+            見積書の読み方と書面の確認
+          </Link>
+          、業者への支払いの方法とタイミングは
+          <Link href="/area/kumamoto/" className="text-primary underline underline-offset-2 mx-1">
+            支払いの方法と契約が決まる時点
+          </Link>
+          で整理しています。補助金は工事代金の支払いとは別に、確定後に請求して振り込まれる流れなので、業者への支払いはいったん全額を自分で用意する前提で考えておきます。
+        </p>
+      </section>
+
+      <section id="kawaguchi-local" className="scroll-mt-20 mb-12">
+        <h2 className="text-xl font-bold text-text-primary border-l-4 border-primary pl-3 mb-5">
+          「市内業者」の条件と、全国対応の窓口
+        </h2>
+        <p className="text-[15px] leading-8 text-text-secondary mb-5">
+          業者選びに直接かかわるのが、市内業者の条件です。この条件を見落とすと、条件を満たした庭に条件どおりの生け垣を植えても、補助の対象から外れることがあります。
+        </p>
+        <div className="space-y-4">
+          {localPoints.map((x) => (
+            <div key={x.h} className="rounded-2xl border border-border bg-surface-alt p-5">
+              <h3 className="font-bold text-text-primary mb-2">{x.h}</h3>
+              <p className="text-[15px] leading-8 text-text-secondary">{x.b}</p>
+            </div>
+          ))}
+        </div>
+        <p className="text-[15px] leading-8 text-text-secondary mt-5">
+          窓口と施工者が分かれる型の見分け方は
+          <Link href="/area/nagoya/" className="text-primary underline underline-offset-2 mx-1">
+            自社施工型と紹介型の見分け方
+          </Link>
+          で扱っています。業者の資格や建設業の許可の確かめ方は
+          <Link href="/area/chiba/" className="text-primary underline underline-offset-2 mx-1">
+            資格と許可の確かめ方
+          </Link>
+          を参照してください。市内業者かどうかは、それらとは別に確かめる項目です。
+        </p>
+      </section>
+
+      <section id="kawaguchi-estimate" className="scroll-mt-20 mb-12">
+        <h2 className="text-xl font-bold text-text-primary border-l-4 border-primary pl-3 mb-5">
+          補助を前提に見積もりを頼むときの伝え方
+        </h2>
+        <p className="text-[15px] leading-8 text-text-secondary mb-5">
+          補助を使うかどうかで、見積書に求めるものと日程の組み方が変わります。問い合わせの最初の段階で、次のことを伝えておくと手戻りが減ります。
+        </p>
+        <div className="space-y-4">
+          {estimateItems.map((x) => (
+            <div key={x.h} className="rounded-2xl border border-border bg-surface p-5">
+              <h3 className="font-bold text-text-primary mb-2">{x.h}</h3>
+              <p className="text-[15px] leading-8 text-text-secondary">{x.b}</p>
+            </div>
+          ))}
+        </div>
+        <p className="text-[15px] leading-8 text-text-secondary mt-5">
+          複数社から見積もりを取る場合の揃え方は
+          <Link href="/area/okayama/" className="text-primary underline underline-offset-2 mx-1">
+            相見積もりの揃え方と断り方
+          </Link>
+          で扱っています。補助の申請では見積書の写しを出すので、比べる段階から区分と数量が読める形に揃えておくと、そのまま申請に使えます。
+        </p>
+      </section>
+
+      <section id="kawaguchi-after" className="scroll-mt-20 mb-12">
+        <h2 className="text-xl font-bold text-text-primary border-l-4 border-primary pl-3 mb-5">
+          植えたあと5年間の管理を誰が担うか
+        </h2>
+        <div className="space-y-4">
+          {afterPoints.map((x) => (
+            <div key={x.h} className="rounded-2xl border border-border bg-surface-alt p-5">
+              <h3 className="font-bold text-text-primary mb-2">{x.h}</h3>
+              <p className="text-[15px] leading-8 text-text-secondary">{x.b}</p>
+            </div>
+          ))}
+        </div>
+        <p className="text-[15px] leading-8 text-text-secondary mt-5">
+          刈り込みの時期や形の保ち方は
+          <Link href="/guide/hedge-care/" className="text-primary underline underline-offset-2 mx-1">
+            生垣の手入れ
+          </Link>
+          、継続して頼む形の選び方は
+          <Link href="/area/utsunomiya/" className="text-primary underline underline-offset-2 mx-1">
+            年間契約と、そのつど頼む形の選び分け
+          </Link>
+          を参照してください。
+        </p>
+      </section>
+
+      <section id="kawaguchi-pick" className="scroll-mt-20 mb-12">
+        <h2 className="text-xl font-bold text-text-primary border-l-4 border-primary pl-3 mb-5">
+          この条件で見ておきたい3サービス
+        </h2>
+        <p className="text-[15px] leading-8 text-text-secondary mb-5">
+          掲載しているサービスはいずれも公開情報の上では全国を対象としており、川口市の補助の対象業者を紹介すると公表しているものはありません。そのうえで、業者を自分で探して確かめたい、紹介を受けて施工会社を確認したい、補助を使わない手入れも含めて相談したいという使い方で見ると、次の3つは特徴がはっきりしています。
+        </p>
+        <div className="space-y-4">
+          {picks.map((slug) => {
+            const r = findReview(slug);
+            if (!r) return null;
+            return (
+              <div key={slug} className="rounded-2xl border border-border bg-surface p-5">
+                <h3 className="font-bold text-text-primary mb-2">{r.companyName}</h3>
+                <p className="text-sm text-text-muted mb-3 leading-7">運営：{infoValue(r, "運営")}</p>
+                <p className="text-[15px] leading-8 text-text-secondary mb-4">{pickReasons[slug]}</p>
+                <div className="flex flex-wrap gap-4 text-sm">
+                  <Link href={`/review/${r.slug}/`} className="text-primary underline underline-offset-2">
+                    口コミ・評判を見る
+                  </Link>
+                  <Link href={`/company/${r.slug}/`} className="text-primary underline underline-offset-2">
+                    特徴を比較する
+                  </Link>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </section>
+
+      <section id="kawaguchi-companies" className="scroll-mt-20 mb-12">
+        <h2 className="text-xl font-bold text-text-primary border-l-4 border-primary pl-3 mb-5">
+          掲載サービスの運営会社と対応エリア
+        </h2>
+        <p className="text-[15px] leading-8 text-text-secondary mb-5">
+          造園ナビが個別に運営会社を確認した10サービスの一覧です。対応エリアの欄は、各社が公開している範囲をそのまま記載しています。ここに載っているのは窓口や運営会社の情報で、紹介先や施工店の本社・本店の所在地ではありません。補助を使う場合は、施工する会社について別に確かめてください。
+        </p>
+        <AreaCompanyTable cityName="川口" />
+      </section>
+
+      <section id="kawaguchi-checklist" className="scroll-mt-20 mb-12">
+        <h2 className="text-xl font-bold text-text-primary border-l-4 border-primary pl-3 mb-5">
+          問い合わせ前のチェックリスト
+        </h2>
+        <div className="space-y-4">
+          {checklist.map((c) => (
+            <div key={c.h} className="rounded-2xl border border-border bg-surface-alt p-5">
+              <h3 className="font-bold text-text-primary mb-2">{c.h}</h3>
+              <p className="text-[15px] leading-8 text-text-secondary">{c.b}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section id="kawaguchi-faq" className="scroll-mt-20 mb-12">
+        <h2 className="text-xl font-bold text-text-primary border-l-4 border-primary pl-3 mb-5">
+          よくある質問
+        </h2>
+        <div className="space-y-4">
+          {faqs.map((f) => (
+            <div key={f.q} className="rounded-2xl border border-border bg-surface p-5">
+              <h3 className="font-bold text-text-primary mb-2">Q. {f.q}</h3>
+              <p className="text-[15px] leading-8 text-text-secondary">A. {f.a}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <AreaLinks current="kawaguchi" />
+
+      <section className="mb-10">
+        <h2 className="text-xl font-bold text-text-primary border-l-4 border-primary pl-3 mb-5">
+          あわせて読みたい
+        </h2>
+        <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          {[
+            { href: "/plant/hedge/", label: "生垣におすすめの品種" },
+            { href: "/guide/hedge-care/", label: "生垣の手入れ" },
+            { href: "/area/nagoya/", label: "自社施工型と紹介型の見分け方" },
+            { href: "/area/kobe/", label: "見積書の読み方と書面の確認" },
+          ].map((l) => (
+            <li key={l.href}>
+              <Link
+                href={l.href}
+                className="block rounded-2xl border border-border bg-surface p-4 text-text-primary font-medium hover:border-primary transition-colors"
+              >
+                {l.label}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <div className="rounded-2xl border border-border bg-surface-alt p-6 text-center">
+        <p className="text-sm text-text-secondary mb-4">
+          補助を使うなら、業者に連絡する前にみどり課へ。施工する会社の本社・本店の所在地は、申し込む前に確かめてください。
+        </p>
+        <Link
+          href="/ranking/"
+          className="inline-flex items-center justify-center px-6 py-3 rounded-xl bg-primary text-white font-bold hover:opacity-90 transition-opacity"
+        >
+          掲載サービスを比較する
+        </Link>
+        <p className="mt-3 text-xs text-text-muted">
+          本ページにはPR（広告）を含む場合があります。掲載情報は{UPDATED_LABEL}時点のものです。
+        </p>
+      </div>
+    </article>
+  );
+}

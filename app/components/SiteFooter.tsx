@@ -19,6 +19,10 @@ const GUIDE_LINKS = [
   { href: "/guide/transplant/", label: "庭木の移植・植え替え" },
   { href: "/guide/garden-animals/", label: "庭に来る動物" },
   { href: "/guide/garden-downsizing/", label: "庭じまい" },
+  { href: "/guide/fruit-trees/", label: "庭の果樹の手入れ" },
+  { href: "/guide/moss-garden/", label: "苔のある庭" },
+  { href: "/guide/garden-safety/", label: "庭作業の事故を防ぐ" },
+  { href: "/guide/spraying/", label: "住宅地での薬剤散布" },
   { href: "/review/", label: "口コミ・評判まとめ" },
 ];
 

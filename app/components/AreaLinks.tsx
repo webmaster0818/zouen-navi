@@ -181,6 +181,54 @@ export const AREAS = [
     label: "長崎",
     angle: "口コミと実績を何の根拠として読むか",
   },
+  {
+    slug: "kawaguchi",
+    city: "川口",
+    label: "川口",
+    angle: "生け垣・緑化の補助制度を使って頼む",
+  },
+  {
+    slug: "mito",
+    city: "水戸",
+    label: "水戸",
+    angle: "風致地区で木を切る・庭を変える前の確認",
+  },
+  {
+    slug: "nishinomiya",
+    city: "西宮",
+    label: "西宮",
+    angle: "期日から逆算して頼む",
+  },
+  {
+    slug: "oita",
+    city: "大分",
+    label: "大分",
+    angle: "植えたあとの保証とアフターの確かめ方",
+  },
+  {
+    slug: "toyama",
+    city: "富山",
+    label: "富山",
+    angle: "説明や見積もりに出てくる作業の言葉",
+  },
+  {
+    slug: "nagano",
+    city: "長野",
+    label: "長野",
+    angle: "事業用・賃貸物件の庭を頼むときの書類",
+  },
+  {
+    slug: "takamatsu",
+    city: "高松",
+    label: "高松",
+    angle: "はじめて頼むときの全体の流れ",
+  },
+  {
+    slug: "kurashiki",
+    city: "倉敷",
+    label: "倉敷",
+    angle: "前の住人の庭を引き継いだとき",
+  },
 ] as const;
 
 export type AreaSlug = (typeof AREAS)[number]["slug"];
