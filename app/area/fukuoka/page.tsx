@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { OG_IMAGES } from "@/app/lib/og";
 import Link from "next/link";
 import Breadcrumb from "@/app/components/Breadcrumb";
 import AreaCompanyTable, { findReview, infoValue } from "@/app/components/AreaCompanyTable";
@@ -15,6 +16,7 @@ export const metadata: Metadata = {
     "同じ庭を見せても業者ごとに提案が違うのは、依頼側が伝えている条件が揃っていないからです。福岡で庭木の剪定や庭の手入れを頼む前に、作業範囲と仕上がりのイメージをどう言葉と写真で渡すかを整理し、掲載サービスの運営会社・対応エリアをまとめました。",
   alternates: { canonical: PAGE_URL },
   openGraph: {
+    images: OG_IMAGES,
     type: "article",
     url: PAGE_URL,
     title: TITLE,

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { OG_IMAGES } from "@/app/lib/og";
 import Link from "next/link";
 import Breadcrumb from "@/app/components/Breadcrumb";
 import AreaCompanyTable, { findReview, infoValue } from "@/app/components/AreaCompanyTable";
@@ -15,6 +16,7 @@ export const metadata: Metadata = {
     "離れて暮らす実家の庭や、普段使っていない家の植栽は、持ち主が現地に立ち会えないまま作業を頼むことになります。仙台で立ち会いなしの依頼を進めるときの敷地への立ち入り・報告・支払いの決め方を整理し、掲載サービスの運営会社・対応エリアをまとめました。",
   alternates: { canonical: PAGE_URL },
   openGraph: {
+    images: OG_IMAGES,
     type: "article",
     url: PAGE_URL,
     title: TITLE,

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { OG_IMAGES } from "@/app/lib/og";
 import Link from "next/link";
 import Breadcrumb from "@/app/components/Breadcrumb";
 
@@ -13,6 +14,7 @@ export const metadata: Metadata = {
     "雨のあと何日も水が引かない、歩くと靴が沈む、植えた木が育たない。庭の水はけの悪さは、土の状態・地面の形・敷地の外側の条件のどれかに原因があります。原因の切り分け方と、対処の選択肢、業者に相談するときの伝え方を整理します。",
   alternates: { canonical: PAGE_URL },
   openGraph: {
+    images: OG_IMAGES,
     type: "article",
     url: PAGE_URL,
     title: TITLE,

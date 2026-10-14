@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { OG_IMAGES } from "@/app/lib/og";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import reviewsData from "@/data/reviews.json";
@@ -19,7 +20,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: r.title,
     description: r.metaDescription,
     alternates: { canonical: url },
-    openGraph: { title: r.title, description: r.metaDescription, url, type: "article" },
+    openGraph: { images: OG_IMAGES, title: r.title, description: r.metaDescription, url, type: "article" },
   };
 }
 

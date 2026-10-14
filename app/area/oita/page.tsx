@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { OG_IMAGES } from "@/app/lib/og";
 import Link from "next/link";
 import Breadcrumb from "@/app/components/Breadcrumb";
 import AreaCompanyTable, { findReview, infoValue } from "@/app/components/AreaCompanyTable";
@@ -15,6 +16,7 @@ export const metadata: Metadata = {
     "植えてもらった木や生け垣、芝が枯れたとき、どう扱われるかは会社ごとに違います。保証の有無・対象・期間・対応の中身・免責を、契約前に書面で確かめる項目として整理しました。植えたあとの水やりなど自分の側の管理と記録の残し方、枯れてきたときの連絡のしかたもまとめ、掲載サービスの運営会社・対応エリアを一覧にしています。",
   alternates: { canonical: PAGE_URL },
   openGraph: {
+    images: OG_IMAGES,
     type: "article",
     url: PAGE_URL,
     title: TITLE,

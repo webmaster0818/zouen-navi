@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { OG_IMAGES } from "@/app/lib/og";
 import Link from "next/link";
 import Breadcrumb from "@/app/components/Breadcrumb";
 
@@ -13,6 +14,7 @@ export const metadata: Metadata = {
     "庭仕事でいちばん残るのは、切ったあとの枝と草です。自治体の回収に出す、処理施設へ自分で持ち込む、作業を頼んだ業者に引き取ってもらう。それぞれの向き不向きと、出す前に確認すべきルール、やってはいけない処分の仕方を整理します。",
   alternates: { canonical: PAGE_URL },
   openGraph: {
+    images: OG_IMAGES,
     type: "article",
     url: PAGE_URL,
     title: TITLE,

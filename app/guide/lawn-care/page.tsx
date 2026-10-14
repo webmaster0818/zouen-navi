@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { OG_IMAGES } from "@/app/lib/og";
 import Link from "next/link";
 import Breadcrumb from "@/app/components/Breadcrumb";
 
@@ -13,6 +14,7 @@ export const metadata: Metadata = {
     "張った後の芝生を保つには、芝刈り・目土入れ・エアレーション・サッチングという決まった作業があります。暖地型と寒地型の違い、季節ごとの手順、自分でやる範囲とプロに任せる範囲の線引きを解説します。",
   alternates: { canonical: PAGE_URL },
   openGraph: {
+    images: OG_IMAGES,
     type: "article",
     url: PAGE_URL,
     title: TITLE,

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { OG_IMAGES } from "@/app/lib/og";
 import Link from "next/link";
 import Breadcrumb from "@/app/components/Breadcrumb";
 import AreaCompanyTable, { findReview, infoValue } from "@/app/components/AreaCompanyTable";
@@ -15,6 +16,7 @@ export const metadata: Metadata = {
     "親の家、相続前後の実家、離れて暮らす家族の庭。手配する人と庭の持ち主が別のとき、誰の名前で申し込むか、書面の宛名を誰にするか、連絡経路をどう組むかが先に決まっていないと途中で止まります。奈良で家族が代わりに手配するときの段取りと、掲載サービスの運営会社・対応エリアをまとめました。",
   alternates: { canonical: PAGE_URL },
   openGraph: {
+    images: OG_IMAGES,
     type: "article",
     url: PAGE_URL,
     title: TITLE,

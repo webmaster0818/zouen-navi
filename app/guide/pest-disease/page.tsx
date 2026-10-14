@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { OG_IMAGES } from "@/app/lib/og";
 import Link from "next/link";
 import Breadcrumb from "@/app/components/Breadcrumb";
 
@@ -13,6 +14,7 @@ export const metadata: Metadata = {
     "葉が食われた、白い粉が吹いた、幹におがくずが落ちている。庭木に出る異変は、症状の出方で原因のあたりが付きます。触れると危険な虫の見分け方、自分で手を出してよい範囲、薬剤を使うときの前提、業者に見てもらうべき状態までを整理します。",
   alternates: { canonical: PAGE_URL },
   openGraph: {
+    images: OG_IMAGES,
     type: "article",
     url: PAGE_URL,
     title: TITLE,

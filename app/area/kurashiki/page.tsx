@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { OG_IMAGES } from "@/app/lib/og";
 import Link from "next/link";
 import Breadcrumb from "@/app/components/Breadcrumb";
 import AreaCompanyTable, { findReview, infoValue } from "@/app/components/AreaCompanyTable";
@@ -15,6 +16,7 @@ export const metadata: Metadata = {
     "中古住宅の購入、相続、転居で、知らない庭木や設備が残った庭を引き継いだとき。最初の一年でやること（何が植わっているかの把握、境界付近の木と危ない木の確認、前の持ち主や仲介への確認）、残す・減らすの判断を急がない理由、業者への最初の頼み方を整理し、倉敷で頼む場合の掲載サービスの運営会社・対応エリアをまとめました。",
   alternates: { canonical: PAGE_URL },
   openGraph: {
+    images: OG_IMAGES,
     type: "article",
     url: PAGE_URL,
     title: TITLE,

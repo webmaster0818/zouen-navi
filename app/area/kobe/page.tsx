@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { OG_IMAGES } from "@/app/lib/og";
 import Link from "next/link";
 import Breadcrumb from "@/app/components/Breadcrumb";
 import AreaCompanyTable, { findReview, infoValue } from "@/app/components/AreaCompanyTable";
@@ -15,6 +16,7 @@ export const metadata: Metadata = {
     "複数社から見積もりを取っても、書き方が揃っていなければ比較になりません。神戸で庭木の剪定や庭の手入れを頼むときに、見積書のどの欄を読み、追加費用の条件をどう確かめるかを整理し、掲載サービスの運営会社・対応エリアをまとめました。",
   alternates: { canonical: PAGE_URL },
   openGraph: {
+    images: OG_IMAGES,
     type: "article",
     url: PAGE_URL,
     title: TITLE,

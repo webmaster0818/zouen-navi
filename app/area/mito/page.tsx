@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { OG_IMAGES } from "@/app/lib/og";
 import Link from "next/link";
 import Breadcrumb from "@/app/components/Breadcrumb";
 import AreaCompanyTable, { findReview, infoValue } from "@/app/components/AreaCompanyTable";
@@ -15,6 +16,7 @@ export const metadata: Metadata = {
     "水戸市には三の丸・愛宕・千波・長者山・笠原・常磐・八幡の7つの風致地区があり、地区内で木竹の伐採や宅地の造成、塀などの工作物の設置をするときは、あらかじめ市長の許可が必要です。剪定と伐採の境目、許可がいらない行為、確認のタイミング、業者に伝えることと申請を誰が出すかを、水戸市の公開情報と条例をもとに整理しました。",
   alternates: { canonical: PAGE_URL },
   openGraph: {
+    images: OG_IMAGES,
     type: "article",
     url: PAGE_URL,
     title: TITLE,

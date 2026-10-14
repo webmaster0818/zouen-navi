@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { OG_IMAGES } from "@/app/lib/og";
 import Link from "next/link";
 import Breadcrumb from "@/app/components/Breadcrumb";
 
@@ -13,6 +14,7 @@ export const metadata: Metadata = {
     "木の元気がないとき、原因が土であるとは限りません。先に切り分けること、土のほうに原因があるときのサイン、踏み固めと根の呼吸、植える前にしかできない改良とあとからできる改良、肥料が要る場合と要らない場合、やってはいけない与え方を整理します。",
   alternates: { canonical: PAGE_URL },
   openGraph: {
+    images: OG_IMAGES,
     type: "article",
     url: PAGE_URL,
     title: TITLE,

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { OG_IMAGES } from "@/app/lib/og";
 import Link from "next/link";
 import Breadcrumb from "@/app/components/Breadcrumb";
 
@@ -13,6 +14,7 @@ export const metadata: Metadata = {
     "庭木を動かしたくなるのは、たいてい木ではなく周りが変わったときです。動かす以外の選択肢、木の大きさで変わる難易度、時期の考え方、根回しという準備、掘り上げと根鉢、植えたあとの支柱と水やり、そして活着しないことがあるという前提までを整理します。",
   alternates: { canonical: PAGE_URL },
   openGraph: {
+    images: OG_IMAGES,
     type: "article",
     url: PAGE_URL,
     title: TITLE,

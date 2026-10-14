@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { OG_IMAGES } from "@/app/lib/og";
 import Link from "next/link";
 import Breadcrumb from "@/app/components/Breadcrumb";
 import AreaCompanyTable, { findReview, infoValue } from "@/app/components/AreaCompanyTable";
@@ -14,6 +15,7 @@ export const metadata: Metadata = {
     "造園のサービスには、自社の職人が現場に入る自社施工型と、加盟店や登録業者を手配する紹介型があります。名古屋で庭木の手入れを頼む前に知っておきたい両者の違いと、掲載サービスの運営会社・対応エリアを整理しました。",
   alternates: { canonical: PAGE_URL },
   openGraph: {
+    images: OG_IMAGES,
     type: "article",
     url: PAGE_URL,
     title: "名古屋の造園・庭の手入れ業者の選び方｜自社施工型と紹介型の見分け方",

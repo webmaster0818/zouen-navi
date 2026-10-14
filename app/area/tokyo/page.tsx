@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { OG_IMAGES } from "@/app/lib/og";
 import Link from "next/link";
 import Breadcrumb from "@/app/components/Breadcrumb";
 import AreaCompanyTable, { findReview, infoValue } from "@/app/components/AreaCompanyTable";
@@ -14,6 +15,7 @@ export const metadata: Metadata = {
     "東京で庭木の剪定や草刈りを依頼するときに、まず決まってしまうのが「作業車をどこに停め、切った枝をどう運び出すか」です。狭小地・住宅密集地ならではの段取りの確認点と、掲載サービスの運営会社・対応エリアを整理しました。",
   alternates: { canonical: PAGE_URL },
   openGraph: {
+    images: OG_IMAGES,
     type: "article",
     url: PAGE_URL,
     title: "東京の造園・庭の手入れ業者の選び方｜狭小地・搬出経路から考える",

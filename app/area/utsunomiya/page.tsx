@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { OG_IMAGES } from "@/app/lib/og";
 import Link from "next/link";
 import Breadcrumb from "@/app/components/Breadcrumb";
 import AreaCompanyTable, { findReview, infoValue } from "@/app/components/AreaCompanyTable";
@@ -15,6 +16,7 @@ export const metadata: Metadata = {
     "庭の手入れには、年間で決めて任せる形と、必要になったつど頼む形があります。どちらが向くかを分ける材料、年間契約で必ず確かめる項目、そのつど頼む形の弱点、まず一回頼んでから決めるという選び方。宇都宮で庭の手入れを頼むときの契約の形を整理し、掲載サービスの運営会社・対応エリアをまとめました。",
   alternates: { canonical: PAGE_URL },
   openGraph: {
+    images: OG_IMAGES,
     type: "article",
     url: PAGE_URL,
     title: TITLE,

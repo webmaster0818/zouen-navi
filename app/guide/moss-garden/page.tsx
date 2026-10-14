@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { OG_IMAGES } from "@/app/lib/og";
 import Link from "next/link";
 import Breadcrumb from "@/app/components/Breadcrumb";
 
@@ -13,6 +14,7 @@ export const metadata: Metadata = {
     "苔は手のかからない地面だと思われがちですが、条件が変わると数年で消えていきます。苔が育つ場所と消える場所の違い（日の当たり方・湿り気・水はけ・踏まれ方）、水やり、落ち葉や雑草の取り方、茶色くなったときに見るところ、通路やコンクリートの望まない苔、人に頼むときの伝え方を整理します。",
   alternates: { canonical: PAGE_URL },
   openGraph: {
+    images: OG_IMAGES,
     type: "article",
     url: PAGE_URL,
     title: TITLE,

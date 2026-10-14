@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { OG_IMAGES } from "@/app/lib/og";
 import Link from "next/link";
 import Breadcrumb from "@/app/components/Breadcrumb";
 import AreaCompanyTable, { findReview, infoValue } from "@/app/components/AreaCompanyTable";
@@ -15,6 +16,7 @@ export const metadata: Metadata = {
     "川口市の「生け垣設置等奨励補助制度」は、工事の前にみどり課へ相談することと、市内業者（市内に本社または本店を置く事業者）を利用することが条件です。対象になる場所と生け垣の条件、申請と完了報告の流れ、全国対応の窓口を使うときに確かめること、見積もりで業者に伝えることを、市の公開資料をもとに整理しました。",
   alternates: { canonical: PAGE_URL },
   openGraph: {
+    images: OG_IMAGES,
     type: "article",
     url: PAGE_URL,
     title: TITLE,

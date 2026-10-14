@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { OG_IMAGES } from "@/app/lib/og";
 import Link from "next/link";
 import Breadcrumb from "@/app/components/Breadcrumb";
 import AreaCompanyTable, { findReview, infoValue } from "@/app/components/AreaCompanyTable";
@@ -14,6 +15,7 @@ export const metadata: Metadata = {
     "大阪で庭木の剪定や植栽の管理を頼むとき、依頼主が個人か、マンション管理組合か、店舗・事業所かで適した窓口は変わります。発注主体ごとの分かれ道と、掲載サービスの運営会社・対応エリアを整理しました。",
   alternates: { canonical: PAGE_URL },
   openGraph: {
+    images: OG_IMAGES,
     type: "article",
     url: PAGE_URL,
     title: "大阪の造園・庭の手入れ業者の選び方｜個人宅と管理組合・店舗の分岐",

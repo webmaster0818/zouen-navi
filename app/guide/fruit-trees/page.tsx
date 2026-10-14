@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { OG_IMAGES } from "@/app/lib/og";
 import Link from "next/link";
 import Breadcrumb from "@/app/components/Breadcrumb";
 
@@ -13,6 +14,7 @@ export const metadata: Metadata = {
     "柿・柑橘・梅・ブルーベリーなど、家庭の庭にある果樹の手入れを整理します。実がならない理由の切り分け、成り年と休み年をくり返すときの考え方、花芽の付く場所と剪定時期の関係、摘果、落ちた実の片付け、大きくなりすぎた木の扱い、自分でやる範囲と頼む範囲。",
   alternates: { canonical: PAGE_URL },
   openGraph: {
+    images: OG_IMAGES,
     type: "article",
     url: PAGE_URL,
     title: TITLE,

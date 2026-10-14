@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { OG_IMAGES } from "@/app/lib/og";
 import Link from "next/link";
 import Breadcrumb from "@/app/components/Breadcrumb";
 import AreaCompanyTable, { findReview, infoValue } from "@/app/components/AreaCompanyTable";
@@ -12,9 +13,10 @@ const TITLE = "長野の造園・庭の手入れ業者の選び方｜事業用�
 export const metadata: Metadata = {
   title: TITLE,
   description:
-    "アパート・貸家・店舗・事務所の植栽を事業として頼むと、作業のあとに書類が残ります。請求書の宛名と但し書き、物件が複数あるときの請求の分け方、インボイス制度で確かめること（国税庁の公表サイトでの登録番号の確認）、作業報告と写真の受け取り方。長野で事業用の庭を頼むときの書類まわりを整理し、掲載サービスの運営会社・対応エリアをまとめました。",
+    "アパート・貸家・店舗・事務所の植栽を事業として頼むと、作業後に書類が残ります。請求書の宛名と但し書き、複数物件の請求の分け方、インボイス制度で確かめること（国税庁公表サイトでの登録番号確認）、作業報告と写真の受け取り方。長野で事業用の庭を頼むときの書類まわりと、掲載サービスの運営会社・対応エリアをまとめました。",
   alternates: { canonical: PAGE_URL },
   openGraph: {
+    images: OG_IMAGES,
     type: "article",
     url: PAGE_URL,
     title: TITLE,

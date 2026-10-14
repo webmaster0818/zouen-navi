@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { OG_IMAGES } from "@/app/lib/og";
 import Link from "next/link";
 import Breadcrumb from "@/app/components/Breadcrumb";
 
@@ -13,6 +14,7 @@ export const metadata: Metadata = {
     "駐車場のコンクリートが持ち上がる、ブロック塀にひびが入る、排水の流れが悪い。原因が庭木の根にあることがあります。根はどこまで広がるのか、症状から何を疑うのか、根を切ってよいのか。自分の敷地の中で起きる根の問題を整理します。",
   alternates: { canonical: PAGE_URL },
   openGraph: {
+    images: OG_IMAGES,
     type: "article",
     url: PAGE_URL,
     title: TITLE,

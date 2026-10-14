@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { OG_IMAGES } from "@/app/lib/og";
 import Link from "next/link";
 import Breadcrumb from "@/app/components/Breadcrumb";
 
@@ -13,6 +14,7 @@ export const metadata: Metadata = {
     "庭木の剪定中の脚立からの転落、刈払機での切創や飛散物、剪定ばさみでのけが。消費者庁・国民生活センター・NITEが公表している事故の形と注意点をもとに、自分でやらない作業の線引き、作業前の準備、一人で作業しないための決めごとを整理します。",
   alternates: { canonical: PAGE_URL },
   openGraph: {
+    images: OG_IMAGES,
     type: "article",
     url: PAGE_URL,
     title: TITLE,

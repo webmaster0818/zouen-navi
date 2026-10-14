@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { OG_IMAGES } from "@/app/lib/og";
 import Link from "next/link";
 import Breadcrumb from "@/app/components/Breadcrumb";
 
@@ -13,6 +14,7 @@ export const metadata: Metadata = {
     "抜いても抜いても生えてくる庭の雑草は、対策の種類を場所ごとに選び分けることで手間が変わります。防草シート・砂利・グランドカバー・除草剤・草刈りの向き不向きと、失敗しやすい施工の落とし穴を解説します。",
   alternates: { canonical: PAGE_URL },
   openGraph: {
+    images: OG_IMAGES,
     type: "article",
     url: PAGE_URL,
     title: TITLE,

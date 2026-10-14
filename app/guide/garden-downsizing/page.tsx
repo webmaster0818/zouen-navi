@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { OG_IMAGES } from "@/app/lib/og";
 import Link from "next/link";
 import Breadcrumb from "@/app/components/Breadcrumb";
 
@@ -13,6 +14,7 @@ export const metadata: Metadata = {
     "庭が手に負えなくなったとき、全部なくす前にできることがあります。木を減らす、地面を覆う、管理する面積を区切る。減らす方向の選択肢と向き不向き、減らしたあとに出てくる別の手間、残しておいたほうがよいもの、空き家や遠方の庭で先に決めることを整理します。",
   alternates: { canonical: PAGE_URL },
   openGraph: {
+    images: OG_IMAGES,
     type: "article",
     url: PAGE_URL,
     title: TITLE,

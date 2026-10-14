@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { OG_IMAGES } from "@/app/lib/og";
 import Link from "next/link";
 import Breadcrumb from "@/app/components/Breadcrumb";
 
@@ -13,6 +14,7 @@ export const metadata: Metadata = {
     "隣の家から伸びてきた枝は勝手に切ってよいのか、根はどうか。民法の定めは枝と根で扱いが異なり、2021年の改正で手順も変わりました。自分の木がはみ出している側の対応と、業者に頼むときの注意点まで整理します。",
   alternates: { canonical: PAGE_URL },
   openGraph: {
+    images: OG_IMAGES,
     type: "article",
     url: PAGE_URL,
     title: TITLE,

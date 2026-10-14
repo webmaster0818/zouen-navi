@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { OG_IMAGES } from "@/app/lib/og";
 import Link from "next/link";
 import Breadcrumb from "@/app/components/Breadcrumb";
 
@@ -13,6 +14,7 @@ export const metadata: Metadata = {
     "家庭の庭で使う殺虫剤・殺菌剤・除草剤も「農薬」として扱われます。農林水産省・環境省の通知「住宅地等における農薬使用について」と農薬取締法をもとに、散布以外の方法を先に考えること、ラベルどおりに使うこと、周りの家への事前の知らせ方、風と時間帯、業者に頼むときに確かめることを整理します。",
   alternates: { canonical: PAGE_URL },
   openGraph: {
+    images: OG_IMAGES,
     type: "article",
     url: PAGE_URL,
     title: TITLE,

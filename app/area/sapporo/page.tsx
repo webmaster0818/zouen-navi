@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { OG_IMAGES } from "@/app/lib/og";
 import Link from "next/link";
 import Breadcrumb from "@/app/components/Breadcrumb";
 import AreaCompanyTable, { findReview, infoValue } from "@/app/components/AreaCompanyTable";
@@ -14,6 +15,7 @@ export const metadata: Metadata = {
     "雪の積もる地域では、庭の手入れを頼める時期そのものが限られます。札幌で依頼のタイミングをどう組み立てるか、雪囲いや雪解け後の点検をいつ相談するかを整理し、掲載サービスの運営会社・対応エリアをまとめました。",
   alternates: { canonical: PAGE_URL },
   openGraph: {
+    images: OG_IMAGES,
     type: "article",
     url: PAGE_URL,
     title: "札幌の造園・庭の手入れ業者の選び方｜雪を前提にした年間計画",

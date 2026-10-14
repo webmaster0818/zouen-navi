@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { OG_IMAGES } from "@/app/lib/og";
 import Link from "next/link";
 import Breadcrumb from "@/app/components/Breadcrumb";
 import AreaCompanyTable, { findReview, infoValue } from "@/app/components/AreaCompanyTable";
@@ -14,6 +15,7 @@ export const metadata: Metadata = {
     "横浜は坂と丘陵の多い市街地で、擁壁や法面を伴う庭も珍しくありません。高低差のある現場でどこに危険が生じ、保険や補償をどう確認すればよいかを整理し、掲載サービスの運営会社・対応エリアをまとめました。",
   alternates: { canonical: PAGE_URL },
   openGraph: {
+    images: OG_IMAGES,
     type: "article",
     url: PAGE_URL,
     title: "横浜の造園・庭の手入れ業者の選び方｜高低差のある庭と保険・保証",

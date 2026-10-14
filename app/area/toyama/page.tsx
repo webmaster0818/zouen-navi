@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { OG_IMAGES } from "@/app/lib/og";
 import Link from "next/link";
 import Breadcrumb from "@/app/components/Breadcrumb";
 import AreaCompanyTable, { findReview, infoValue } from "@/app/components/AreaCompanyTable";
@@ -15,6 +16,7 @@ export const metadata: Metadata = {
     "透かし剪定、切り戻し、刈り込み、強剪定、芯止め、徒長枝、ひこばえ、伐採と伐根・抜根、処分・運搬、養生。業者の説明や見積もりに出てくる作業の言葉の意味と、その言葉が出てきたときに何を聞き返せばよいかを整理しました。富山で庭の手入れを頼む前の言葉の手引きとして、掲載サービスの運営会社・対応エリアもまとめています。",
   alternates: { canonical: PAGE_URL },
   openGraph: {
+    images: OG_IMAGES,
     type: "article",
     url: PAGE_URL,
     title: TITLE,

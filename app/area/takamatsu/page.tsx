@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { OG_IMAGES } from "@/app/lib/og";
 import Link from "next/link";
 import Breadcrumb from "@/app/components/Breadcrumb";
 import AreaCompanyTable, { findReview, infoValue } from "@/app/components/AreaCompanyTable";
@@ -15,6 +16,7 @@ export const metadata: Metadata = {
     "庭の手入れをはじめて頼むときの流れを、頼む前・探して問い合わせる・見積もりと契約・作業日まで・終わってからの段階に分け、それぞれで何を決めるか、決めないまま進むと何が起きるかを短くまとめました。各段階の詳しい解説ページへの道案内と、掲載サービスの運営会社・対応エリアも載せています。",
   alternates: { canonical: PAGE_URL },
   openGraph: {
+    images: OG_IMAGES,
     type: "article",
     url: PAGE_URL,
     title: TITLE,

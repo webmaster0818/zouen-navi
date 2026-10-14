@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { OG_IMAGES } from "@/app/lib/og";
 import Link from "next/link";
 import Breadcrumb from "@/app/components/Breadcrumb";
 import AreaCompanyTable, { findReview, infoValue } from "@/app/components/AreaCompanyTable";
@@ -15,6 +16,7 @@ export const metadata: Metadata = {
     "現地を見てもらう前に、庭の状態をこちらから渡しておくと最初の返答が具体的になります。撮る順番、大きさの目安になるものの入れ方、撮り忘れやすい場所、動画のほうが伝わる場面、写真では決まらないこと。船橋で庭の手入れを頼むときの渡し方を整理し、掲載サービスの運営会社・対応エリアをまとめました。",
   alternates: { canonical: PAGE_URL },
   openGraph: {
+    images: OG_IMAGES,
     type: "article",
     url: PAGE_URL,
     title: TITLE,

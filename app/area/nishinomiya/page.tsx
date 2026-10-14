@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { OG_IMAGES } from "@/app/lib/og";
 import Link from "next/link";
 import Breadcrumb from "@/app/components/Breadcrumb";
 import AreaCompanyTable, { findReview, infoValue } from "@/app/components/AreaCompanyTable";
@@ -15,6 +16,7 @@ export const metadata: Metadata = {
     "引っ越し、家の売却や引き渡し、来客や法事、自治会の清掃日。締め切りのある庭の依頼は、期日から逆算して段取りを組むと慌てずに済みます。いつ問い合わせ、いつ現地を見てもらい、予備日をどこに置くか。期日を最初に伝える言い方と、間に合わないときの範囲の絞り方を整理し、掲載サービスの運営会社・対応エリアをまとめました。",
   alternates: { canonical: PAGE_URL },
   openGraph: {
+    images: OG_IMAGES,
     type: "article",
     url: PAGE_URL,
     title: TITLE,

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { OG_IMAGES } from "@/app/lib/og";
 import Link from "next/link";
 import Breadcrumb from "@/app/components/Breadcrumb";
 
@@ -13,6 +14,7 @@ export const metadata: Metadata = {
     "掘り返された芝生、同じ場所に残る糞、夜の物音。まず何が来ているかを痕跡から見分け、次に法律上できることとできないことを押さえます。野生鳥獣の捕獲は原則禁止で、自治体の窓口が最初の相談先です。庭側でできる「来にくくする」手立てと、庭師に頼める範囲を整理しました。",
   alternates: { canonical: PAGE_URL },
   openGraph: {
+    images: OG_IMAGES,
     type: "article",
     url: PAGE_URL,
     title: TITLE,

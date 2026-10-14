@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { OG_IMAGES } from "@/app/lib/og";
 import Link from "next/link";
 import Breadcrumb from "@/app/components/Breadcrumb";
 
@@ -13,6 +14,7 @@ export const metadata: Metadata = {
     "落ち葉が問題になるのは、庭の中ではなく外に出たときです。雨樋と側溝、隣家の敷地、道路と車。溜まる場所の見方、集め方と道具、捨てずに使う場合の条件、毎年の量を減らす考え方を整理します。",
   alternates: { canonical: PAGE_URL },
   openGraph: {
+    images: OG_IMAGES,
     type: "article",
     url: PAGE_URL,
     title: TITLE,

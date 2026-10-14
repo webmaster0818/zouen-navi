@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { OG_IMAGES } from "@/app/lib/og";
 import Link from "next/link";
 import Breadcrumb from "@/app/components/Breadcrumb";
 import AreaCompanyTable, { findReview, infoValue } from "@/app/components/AreaCompanyTable";
@@ -15,6 +16,7 @@ export const metadata: Metadata = {
     "問い合わせたのに返事が来ない、見積りを出すと言われたまま来ない、作業後の書類が届かない。待つ期限を自分の側で決め、催促の一往復目に何を書き、どこで別の候補に切り替えるか。岐阜で庭の手入れを頼むときの連絡が途切れたあとの進め方を整理し、掲載サービスの運営会社・対応エリアをまとめました。",
   alternates: { canonical: PAGE_URL },
   openGraph: {
+    images: OG_IMAGES,
     type: "article",
     url: PAGE_URL,
     title: TITLE,

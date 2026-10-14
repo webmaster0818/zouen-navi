@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { OG_IMAGES } from "@/app/lib/og";
 import Link from "next/link";
 import Breadcrumb from "@/app/components/Breadcrumb";
 
@@ -13,6 +14,7 @@ export const metadata: Metadata = {
     "強い風が来ると分かってから、庭でできることは限られます。倒れやすい木の見分け方、直前にやってよいことと避けたいこと、風が通り過ぎたあとに何をどの順で見るのか。庭木と庭まわりの備えと復旧を整理します。",
   alternates: { canonical: PAGE_URL },
   openGraph: {
+    images: OG_IMAGES,
     type: "article",
     url: PAGE_URL,
     title: TITLE,

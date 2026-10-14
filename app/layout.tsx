@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { OG_IMAGES } from "@/app/lib/og";
 import SiteHeader from "./components/SiteHeader";
 import SiteFooter from "./components/SiteFooter";
 
@@ -7,6 +8,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://zouen-navi.com"),
   twitter: {
     card: "summary_large_image",
+    images: OG_IMAGES,
   },
   title: {
     default: "造園ナビ｜庭づくりのプロが見つかる総合ガイド",
@@ -19,6 +21,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "ja_JP",
     siteName: "造園ナビ",
+    images: OG_IMAGES,
   },
 };
 
