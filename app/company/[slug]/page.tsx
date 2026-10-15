@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import Link from "next/link";
 import companiesData from "@/data/companies.json";
+import { getVerifiedRating } from "@/app/lib/verifiedRating";
 import Breadcrumb from "@/app/components/Breadcrumb";
 
 type Props = {
@@ -29,6 +30,7 @@ export default async function CompanyPage({ params }: Props) {
   if (!company) notFound();
 
   const rank = companiesData.findIndex((c) => c.slug === slug) + 1;
+  const vr = getVerifiedRating(company.slug);
 
   return (
     <div>
@@ -49,13 +51,15 @@ export default async function CompanyPage({ params }: Props) {
               <h1 className="text-2xl md:text-3xl font-bold text-gray-800 mt-2">{company.name}</h1>
               <p className="text-gray-600 mt-1">{company.tagline}</p>
             </div>
-            <div className="text-right">
-              <div className="flex items-center gap-1 justify-end">
-                <span className="text-yellow-400">{"".repeat(Math.round(company.rating))}</span>
-                <span className="text-lg font-bold text-gray-800">{company.rating}</span>
+            {vr && (
+              <div className="text-right">
+                <span className="text-lg font-bold text-gray-800">★{vr.rating}</span>
+                <p className="text-sm text-gray-500">
+                  <a href={vr.mapsUri} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2">{vr.sourceLabel}</a>
+                  ・口コミ{vr.reviewCount}件（{vr.fetchedAt}時点）
+                </p>
               </div>
-              <p className="text-sm text-gray-500">{company.reviewCount}件のレビュー</p>
-            </div>
+            )}
           </div>
           <p className="text-gray-700 leading-relaxed">{company.description}</p>
           <div className="mt-4 flex flex-wrap gap-2">
@@ -94,30 +98,6 @@ export default async function CompanyPage({ params }: Props) {
                 </li>
               ))}
             </ul>
-          </div>
-        </div>
-
-        {/* Rating Details */}
-        <div className="bg-white rounded-xl shadow-sm p-6 mb-6 border border-gray-100">
-          <h2 className="font-bold text-gray-800 text-lg mb-4">編集部評価</h2>
-          <div className="space-y-3">
-            {[
-              { label: "料金の安さ", score: 4 },
-              { label: "対応エリア", score: company.coverage === "全国" ? 5 : 3 },
-              { label: "使いやすさ", score: 4 },
-              { label: "サポート充実度", score: Math.round(company.rating) },
-              { label: "総合評価", score: Math.round(company.rating) },
-            ].map((r) => (
-              <div key={r.label} className="flex items-center gap-3">
-                <span className="w-28 text-sm text-gray-600 flex-shrink-0">{r.label}</span>
-                <div className="flex gap-1">
-                  {[1, 2, 3, 4, 5].map((star) => (
-                    <span key={star} className={`text-lg ${star <= r.score ? "text-yellow-400" : "text-gray-200"}`}></span>
-                  ))}
-                </div>
-                <span className="text-sm font-bold text-gray-700">{r.score}.0</span>
-              </div>
-            ))}
           </div>
         </div>
 

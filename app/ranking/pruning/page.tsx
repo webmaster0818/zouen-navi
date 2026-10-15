@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import companiesData from "@/data/companies.json";
+import { getVerifiedRating } from "@/app/lib/verifiedRating";
 import Breadcrumb from "@/app/components/Breadcrumb";
 
 export const metadata: Metadata = {
@@ -87,10 +88,15 @@ export default function PruningRankingPage() {
                         <h3 className="text-lg font-bold text-gray-800">{company.name}</h3>
                         <p className="text-sm text-gray-500">{company.tagline}</p>
                       </div>
-                      <div className="flex items-center gap-1">
-                        <span className="text-yellow-400 text-sm">{"".repeat(Math.round(company.rating))}</span>
-                        <span className="font-bold text-gray-800">{company.rating}</span>
-                      </div>
+                      {(() => {
+                        const vr = getVerifiedRating(company.slug);
+                        return vr ? (
+                          <div className="text-right">
+                            <span className="font-bold text-gray-800">★{vr.rating}</span>
+                            <p className="text-xs text-gray-400">{vr.sourceLabel}・口コミ{vr.reviewCount}件（{vr.fetchedAt}時点）</p>
+                          </div>
+                        ) : null;
+                      })()}
                     </div>
                     <ul className="text-xs text-gray-600 space-y-1 mb-3">
                       {company.pros.slice(0, 2).map((p) => (

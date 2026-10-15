@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
 import companiesData from "@/data/companies.json";
+import { getVerifiedRating } from "@/app/lib/verifiedRating";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/" },
@@ -180,12 +181,16 @@ export default function HomePage() {
                 </div>
                 <h3 className="text-xl font-bold text-gray-800 mb-1">{company.name}</h3>
                 <p className="text-sm text-gray-500 mb-3 leading-relaxed">{company.tagline}</p>
-                {/* Rating */}
-                <div className="flex items-center gap-2 mb-4 bg-[#F0FDF4] rounded-lg px-3 py-2">
-                  <span className="text-yellow-400 text-base">{"".repeat(Math.round(company.rating))}</span>
-                  <span className="text-sm font-bold text-gray-800">{company.rating}</span>
-                  <span className="text-xs text-gray-400">（{company.reviewCount}件の口コミ）</span>
-                </div>
+                {/* Rating（出典つきの一次確認値がある社だけ表示） */}
+                {(() => {
+                  const vr = getVerifiedRating(company.slug);
+                  return vr ? (
+                    <div className="flex flex-wrap items-center gap-2 mb-4 bg-[#F0FDF4] rounded-lg px-3 py-2">
+                      <span className="text-sm font-bold text-gray-800">★{vr.rating}</span>
+                      <span className="text-xs text-gray-400">（{vr.sourceLabel}・口コミ{vr.reviewCount}件／{vr.fetchedAt}時点）</span>
+                    </div>
+                  ) : null;
+                })()}
                 {/* Features */}
                 <ul className="text-sm text-gray-600 space-y-2 mb-5 flex-1">
                   {company.features.slice(0, 3).map((f) => (

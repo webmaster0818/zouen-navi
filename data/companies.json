@@ -8,9 +8,7 @@
     "pros": ["全国どこでも対応業者を探せる", "施工事例が豊富で参考にしやすい", "費用相場が明確", "無料で相談できる"],
     "cons": ["エリアによっては業者数が少ない", "直接予約できないケースもある"],
     "coverage": "全国",
-    "officialUrl": "https://www.oniwa.co.jp/",
-    "rating": 4.3,
-    "reviewCount": 1280,
+    "officialUrl": "https://oniwa-madoguchi.com/",
     "rank": 1
   },
   {
@@ -22,9 +20,7 @@
     "pros": ["提携業者数が業界最多クラス", "年間実績が豊富で信頼性が高い", "施工後の保証あり", "スムーズなマッチング"],
     "cons": ["一部エリアで対応業者が限られる", "急ぎの依頼には不向きな場合もある"],
     "coverage": "全国",
-    "officialUrl": "https://www.oniwamaster.com/",
-    "rating": 4.5,
-    "reviewCount": 2450,
+    "officialUrl": "https://oniwa-master.info/",
     "rank": 2
   },
   {
@@ -36,9 +32,7 @@
     "pros": ["緊急時も最短当日で対応可能", "24時間受付で便利", "料金が明確でわかりやすい", "全国対応"],
     "cons": ["繁忙期は当日対応が難しい場合がある", "高品質な造園工事より緊急対応向け"],
     "coverage": "全国",
-    "officialUrl": "https://www.kusakari110.com/",
-    "rating": 4.2,
-    "reviewCount": 3100,
+    "officialUrl": "https://www.kusakari-a.com/",
     "rank": 3
   },
   {
@@ -50,9 +44,7 @@
     "pros": ["フランチャイズによる品質の均一化", "定期サービスプランが充実", "専任担当者が対応", "長期的な関係構築が可能"],
     "cons": ["個人業者より費用がやや高め", "エリアによってFC店の有無が異なる"],
     "coverage": "全国（FC加盟店エリア）",
-    "officialUrl": "https://smile-garden.jp/",
-    "rating": 4.4,
-    "reviewCount": 890,
+    "officialUrl": "https://www.smile-garden1128.com/",
     "rank": 4
   },
   {
@@ -65,8 +57,6 @@
     "cons": ["営業電話が来る場合がある", "プラン作成に時間がかかることもある"],
     "coverage": "全国",
     "officialUrl": "https://townlife-exterior.com/",
-    "rating": 4.1,
-    "reviewCount": 1560,
     "rank": 5
   },
   {
@@ -79,8 +69,6 @@
     "cons": ["業者によって品質のばらつきがある", "人気業者はなかなか予約が取れない"],
     "coverage": "全国",
     "officialUrl": "https://curama.jp/",
-    "rating": 4.0,
-    "reviewCount": 5200,
     "rank": 6
   },
   {
@@ -93,8 +81,6 @@
     "cons": ["業者から連絡が多く来る場合がある", "複数社対応のため管理が煩雑になる"],
     "coverage": "全国",
     "officialUrl": "https://meetsmore.com/",
-    "rating": 3.9,
-    "reviewCount": 4800,
     "rank": 7
   },
   {
@@ -106,9 +92,7 @@
     "pros": ["緊急時の即日対応が可能", "24時間いつでも受付", "全国対応ネットワーク", "料金が明確"],
     "cons": ["通常工事より料金が高め", "品質より速さ優先の業者も"],
     "coverage": "全国",
-    "officialUrl": "https://www.epark.jp/rescue/",
-    "rating": 3.8,
-    "reviewCount": 2100,
+    "officialUrl": "https://rescue.epark.jp/",
     "rank": 8
   },
   {
@@ -120,9 +104,7 @@
     "pros": ["最大20社の見積もり比較で最安値を見つけやすい", "法人・大型案件に強い", "専門コンシェルジュのサポートあり"],
     "cons": ["個人の小規模工事には少し大げさ", "対応に時間がかかる場合がある"],
     "coverage": "全国",
-    "officialUrl": "https://www.hikakubiz.com/",
-    "rating": 3.7,
-    "reviewCount": 980,
+    "officialUrl": "https://www.biz.ne.jp/",
     "rank": 9
   },
   {
@@ -135,8 +117,6 @@
     "cons": ["費用が高めのデザイナーが多い", "日本語対応が一部のみ", "小規模作業より大型設計向け"],
     "coverage": "全国（主要都市中心）",
     "officialUrl": "https://www.houzz.jp/",
-    "rating": 4.2,
-    "reviewCount": 760,
     "rank": 10
   }
 ]
