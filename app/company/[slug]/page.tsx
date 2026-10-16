@@ -19,8 +19,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!company) return {};
   return {
     alternates: { canonical: `/company/${slug}/` },
-    title: `${company.name}の評判・口コミ・費用【徹底レビュー】`,
-    description: `${company.name}の特徴・料金・口コミを詳しく解説。${company.tagline}。造園ナビ編集部が実際に調査した情報をお届けします。`,
+    title: `${company.name}の評判・口コミ・費用｜特徴と料金`,
+    description: `${company.name}の特徴・料金・口コミを解説します。${company.tagline}。造園ナビ編集部が調査した情報を掲載しています。`,
   };
 }
 
@@ -106,7 +106,7 @@ export default async function CompanyPage({ params }: Props) {
         {/* CTA */}
         <div className="bg-gradient-to-r from-[#15803D] to-[#166534] rounded-2xl p-6 text-white text-center">
           <h2 className="text-xl font-bold mb-2">{company.name}に無料で相談する</h2>
-          <p className="text-green-100 text-sm mb-4">見積もりは無料。まずは気軽に相談してみましょう。</p>
+          <p className="text-green-100 text-sm mb-4">見積もりは無料です。依頼条件の詳細は公式サイトにてご確認ください。</p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             {company.officialUrl && (
             <a

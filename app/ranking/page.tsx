@@ -6,9 +6,9 @@ import Breadcrumb from "@/app/components/Breadcrumb";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/ranking/" },
-  title: "造園・庭師業者ランキング2024年【徹底比較10選】",
+  title: "造園・庭師業者ランキング2024年【10社比較】",
   description:
-    "造園ナビ編集部が厳選した庭師・造園業者ランキング。料金・実績・口コミを総合的に比較した10社をご紹介。無料で一括見積もりができる業者も掲載。",
+    "造園ナビ編集部が選定した庭師・造園業者のランキングです。料金・実績・口コミを総合的に比較した10社を紹介しています。無料で一括見積もりができるサービスも掲載しています。",
 };
 
 const medals = ["", "", ""];
@@ -96,8 +96,8 @@ export default function RankingPage() {
 
         {/* Bottom CTA */}
         <div className="mt-10 bg-gradient-to-r from-[#15803D] to-[#166534] rounded-2xl p-6 text-white text-center">
-          <h2 className="text-xl font-bold mb-2">迷ったらまず無料見積もり</h2>
-          <p className="text-green-100 text-sm mb-4">複数業者に一括見積もりを依頼して比較検討しましょう。</p>
+          <h2 className="text-xl font-bold mb-2">無料見積もりで比較検討できます</h2>
+          <p className="text-green-100 text-sm mb-4">複数の業者に一括で見積もりを依頼し、比較検討することをおすすめします。</p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Link href="/company/oniwa-master/" className="bg-[#F59E0B] hover:bg-amber-500 text-white font-bold px-6 py-3 rounded-full transition-all text-sm">
                お庭マスターに相談する

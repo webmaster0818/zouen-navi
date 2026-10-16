@@ -3,7 +3,7 @@ import Breadcrumb from "@/app/components/Breadcrumb";
 export const metadata = {
   alternates: { canonical: "/content-policy/" },
   title: "記事の制作ポリシー | 造園ナビ",
-  description: "造園ナビの編集方針・記事制作ポリシーです。正確で信頼できる情報提供を目指しています。",
+  description: "造園ナビの編集方針・記事制作ポリシーです。正確で信頼できる情報の提供に努めます。",
 };
 
 export default function ContentPolicyPage() {
@@ -16,7 +16,7 @@ export default function ContentPolicyPage() {
       <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 md:p-8 space-y-8 text-gray-700 leading-relaxed">
 
         <p>
-          造園ナビは、庭づくり・造園・剪定を検討するユーザーに対して、
+          造園ナビは、庭づくり・造園・剪定を検討する利用者に対して、
           正確で有益な情報をお届けすることを使命としています。
           以下の編集方針に基づいてコンテンツを制作しています。
         </p>
@@ -24,12 +24,12 @@ export default function ContentPolicyPage() {
         <section>
           <h2 className="text-xl font-bold text-gray-900 mb-3 pb-2 border-b border-green-100">編集方針</h2>
           <p className="mb-3">
-            当サービスの記事は、造園・剪定・外構工事に関する専門知識を持つ編集スタッフが制作・監修しています。
-            ユーザーが庭づくりを検討する際に本当に必要な情報を、
-            わかりやすく・正直に・公平に伝えることを最優先としています。
+            当サイトの記事は、造園・剪定・外構工事に関する専門知識を持つ編集スタッフが制作・監修しています。
+            利用者が庭づくりを検討する際に必要な情報を、
+            わかりやすく、正確かつ公平に伝えることを最優先としています。
           </p>
           <ul className="list-disc list-inside space-y-2 pl-2">
-            <li>ユーザーの利益を最優先に情報を選定する</li>
+            <li>利用者の利益を最優先に情報を選定する</li>
             <li>専門家の知見・実績データに基づいてコンテンツを作成する</li>
             <li>広告主の意向に左右されない独立した編集判断を行う</li>
             <li>わかりやすく実用的な情報提供を心がける</li>
@@ -55,30 +55,30 @@ export default function ContentPolicyPage() {
         <section>
           <h2 className="text-xl font-bold text-gray-900 mb-3 pb-2 border-b border-green-100">広告・アフィリエイトとの関係</h2>
           <p className="mb-3">
-            当サービスは一部アフィリエイトリンクおよび広告を掲載しており、
+            当サイトは一部アフィリエイトリンクおよび広告を掲載しており、
             これらを通じた申し込み・購入により当社に報酬が発生する場合があります。
           </p>
           <p className="mb-3">
-            しかし、編集コンテンツと広告は明確に分離されています。
+            ただし、編集コンテンツと広告は明確に分離しています。
           </p>
           <ul className="list-disc list-inside space-y-2 pl-2">
             <li>ランキングや評価は、広告費用・掲載料に影響されません</li>
             <li>PR・広告表示がある箇所は明示しています</li>
             <li>編集部は広告主から独立した基準で評価を行います</li>
-            <li>ユーザーにとって不利益な情報も正直に記載します</li>
+            <li>利用者にとって不利益となる情報も記載します</li>
           </ul>
         </section>
 
         <section>
           <h2 className="text-xl font-bold text-gray-900 mb-3 pb-2 border-b border-green-100">更新頻度・情報鮮度</h2>
           <p className="mb-3">
-            造園業界の情報・価格相場は変動します。当サービスでは以下の基準で情報を更新しています。
+            造園業界の情報・価格相場は変動します。当サイトでは以下の基準で情報を更新しています。
           </p>
           <ul className="list-disc list-inside space-y-2 pl-2">
             <li>業者ランキング・評価: 半年ごとに見直し</li>
             <li>費用相場情報: 年1回以上の更新</li>
             <li>法令・制度関連情報: 改正時に随時更新</li>
-            <li>読者からの指摘・誤情報の報告: 迅速に対応</li>
+            <li>利用者からの指摘・誤情報の報告: 迅速に対応</li>
           </ul>
         </section>
 

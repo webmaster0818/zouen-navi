@@ -68,9 +68,9 @@ export default function AreaCompanyTable({ cityName }: { cityName: string }) {
         </tbody>
       </table>
       <p className="bg-surface-alt px-4 py-3 text-xs text-text-muted leading-6">
-        出典：各社公式サイトの公開情報（造園ナビ編集部調べ）。いずれのサービスも公開情報の上では全国を対象としており、
+        出典：各社公式サイトの公開情報（造園ナビ編集部調べ）。いずれのサービスも公開情報では全国を対象としていますが、
         {cityName}市内での個別の対応可否・作業日程・出張範囲までは公開されていません。実際に{cityName}
-        で作業を受けられるかどうかは、依頼時に各社へ直接ご確認ください。
+        での対応可否は、依頼時に各社へ直接ご確認ください。
       </p>
     </div>
   );

@@ -5,13 +5,13 @@ export const AREAS = [
     slug: "tokyo",
     city: "東京",
     label: "東京",
-    angle: "狭小地・搬出経路から考える",
+    angle: "狭小地・搬出経路の確認",
   },
   {
     slug: "osaka",
     city: "大阪",
     label: "大阪",
-    angle: "個人宅と管理組合・店舗の分岐",
+    angle: "個人宅・管理組合・店舗それぞれの依頼方法",
   },
   {
     slug: "nagoya",
@@ -29,7 +29,7 @@ export const AREAS = [
     slug: "sapporo",
     city: "札幌",
     label: "札幌",
-    angle: "雪を前提にした年間計画",
+    angle: "積雪を考慮した年間計画",
   },
   {
     slug: "fukuoka",
@@ -41,7 +41,7 @@ export const AREAS = [
     slug: "sendai",
     city: "仙台",
     label: "仙台",
-    angle: "立ち会えない庭の頼み方",
+    angle: "立ち会いができない場合の依頼方法",
   },
   {
     slug: "kobe",
@@ -59,7 +59,7 @@ export const AREAS = [
     slug: "hiroshima",
     city: "広島",
     label: "広島",
-    angle: "困りごとの切り分けと優先順位",
+    angle: "依頼内容の整理と優先順位",
   },
   {
     slug: "saitama",
@@ -71,13 +71,13 @@ export const AREAS = [
     slug: "chiba",
     city: "千葉",
     label: "千葉",
-    angle: "資格と許可の確かめ方",
+    angle: "資格と許可の確認方法",
   },
   {
     slug: "kawasaki",
     city: "川崎",
     label: "川崎",
-    angle: "完了時の確認と手直しの頼み方",
+    angle: "完了時の確認と手直しの依頼方法",
   },
   {
     slug: "kitakyushu",
@@ -89,7 +89,7 @@ export const AREAS = [
     slug: "niigata",
     city: "新潟",
     label: "新潟",
-    angle: "誰が決めて誰が払うかの分担",
+    angle: "意思決定者と費用負担者の確認",
   },
   {
     slug: "shizuoka",
@@ -101,25 +101,25 @@ export const AREAS = [
     slug: "hamamatsu",
     city: "浜松",
     label: "浜松",
-    angle: "作業日までの受け入れの支度",
+    angle: "作業日までの受け入れ準備",
   },
   {
     slug: "sagamihara",
     city: "相模原",
     label: "相模原",
-    angle: "当日の立ち会い方と声のかけどころ",
+    angle: "作業当日の立ち会い方",
   },
   {
     slug: "sakai",
     city: "堺",
     label: "堺",
-    angle: "食い違いに備える記録の残し方",
+    angle: "認識の相違に備える記録の残し方",
   },
   {
     slug: "okayama",
     city: "岡山",
     label: "岡山",
-    angle: "相見積もりの揃え方と断り方",
+    angle: "相見積もりの条件の揃え方と断り方",
   },
   {
     slug: "kumamoto",
@@ -137,97 +137,97 @@ export const AREAS = [
     slug: "funabashi",
     city: "船橋",
     label: "船橋",
-    angle: "現地を見てもらう前に写真で伝える",
+    angle: "現地調査の前に写真で状況を伝える方法",
   },
   {
     slug: "utsunomiya",
     city: "宇都宮",
     label: "宇都宮",
-    angle: "年間契約と、そのつど頼む形の選び分け",
+    angle: "年間契約とスポット依頼の選び方",
   },
   {
     slug: "kanazawa",
     city: "金沢",
     label: "金沢",
-    angle: "頼む先を替えるときの引き継ぎ",
+    angle: "依頼先を変更する際の引き継ぎ",
   },
   {
     slug: "matsuyama",
     city: "松山",
     label: "松山",
-    angle: "頼んだあとに取りやめる・日をずらす",
+    angle: "依頼後の取り消し・日程変更",
   },
   {
     slug: "himeji",
     city: "姫路",
     label: "姫路",
-    angle: "1社にまとめるか、分けて頼むか",
+    angle: "1社にまとめて依頼するか分けて依頼するか",
   },
   {
     slug: "nara",
     city: "奈良",
     label: "奈良",
-    angle: "家族に代わって手配するときの段取り",
+    angle: "家族に代わって手配する場合の手順",
   },
   {
     slug: "gifu",
     city: "岐阜",
     label: "岐阜",
-    angle: "返事が来ないときの進め方",
+    angle: "返信がない場合の対応",
   },
   {
     slug: "nagasaki",
     city: "長崎",
     label: "長崎",
-    angle: "口コミと実績を何の根拠として読むか",
+    angle: "口コミと実績の読み方",
   },
   {
     slug: "kawaguchi",
     city: "川口",
     label: "川口",
-    angle: "生け垣・緑化の補助制度を使って頼む",
+    angle: "生垣・緑化の補助制度を利用した依頼",
   },
   {
     slug: "mito",
     city: "水戸",
     label: "水戸",
-    angle: "風致地区で木を切る・庭を変える前の確認",
+    angle: "風致地区で伐採・庭の改修を行う前の確認",
   },
   {
     slug: "nishinomiya",
     city: "西宮",
     label: "西宮",
-    angle: "期日から逆算して頼む",
+    angle: "期日から逆算した依頼の進め方",
   },
   {
     slug: "oita",
     city: "大分",
     label: "大分",
-    angle: "植えたあとの保証とアフターの確かめ方",
+    angle: "植栽後の保証とアフターサービスの確認方法",
   },
   {
     slug: "toyama",
     city: "富山",
     label: "富山",
-    angle: "説明や見積もりに出てくる作業の言葉",
+    angle: "説明・見積もりで使われる作業用語",
   },
   {
     slug: "nagano",
     city: "長野",
     label: "長野",
-    angle: "事業用・賃貸物件の庭を頼むときの書類",
+    angle: "事業用・賃貸物件の庭を依頼する際の書類",
   },
   {
     slug: "takamatsu",
     city: "高松",
     label: "高松",
-    angle: "はじめて頼むときの全体の流れ",
+    angle: "初めて依頼する際の全体の流れ",
   },
   {
     slug: "kurashiki",
     city: "倉敷",
     label: "倉敷",
-    angle: "前の住人の庭を引き継いだとき",
+    angle: "前の住人から庭を引き継いだ場合",
   },
 ] as const;
 
@@ -244,8 +244,8 @@ export default function AreaLinks({ current }: { current?: AreaSlug }) {
         他のエリアの業者選び
       </h2>
       <p className="text-[15px] leading-8 text-text-secondary mb-5">
-        造園ナビでは、エリアごとに異なる「庭の条件」と「依頼のしかた」を切り口に業者選びを整理しています。
-        いずれのページも掲載サービスは共通ですが、確認すべき順番が変わります。
+        造園ナビでは、エリアごとに「庭の条件」と「依頼の方法」の観点から業者選びを整理しています。
+        掲載サービスは全ページ共通ですが、確認すべき事項の順序はページごとに異なります。
       </p>
       <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
         {AREAS.map((a) => {

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { AREAS } from "./AreaLinks";
 
-/** フッターに並べるお手入れガイド（/guide/*）。ページを追加したらここにも足す。 */
+/** フッターに掲載するお手入れガイド（/guide/*）。ページを追加したらここにも足す。 */
 const GUIDE_LINKS = [
   { href: "/guide/lawn-care/", label: "芝生の手入れ" },
   { href: "/guide/weed-control/", label: "庭の雑草対策" },
@@ -34,7 +34,7 @@ export default function SiteFooter() {
           <div>
             <h3 className="text-xl font-bold mb-3"> 造園ナビ</h3>
             <p className="text-green-200 text-sm leading-relaxed">
-              庭づくりのプロを見つける総合ガイド。剪定・造園・外構のおすすめ業者を徹底比較。
+              庭づくりの業者選びを支援する総合ガイドです。剪定・造園・外構の業者を比較しています。
             </p>
           </div>
           <div>
@@ -53,7 +53,7 @@ export default function SiteFooter() {
               <li><Link href="/cost/price/" className="hover:text-white transition-colors">庭工事の料金相場</Link></li>
               <li><Link href="/cost/pruning-price/" className="hover:text-white transition-colors">剪定費用ガイド</Link></li>
               <li><Link href="/cost/diy/" className="hover:text-white transition-colors">DIY庭づくりガイド</Link></li>
-              <li><Link href="/service/pruning/" className="hover:text-white transition-colors">剪定完全ガイド</Link></li>
+              <li><Link href="/service/pruning/" className="hover:text-white transition-colors">剪定ガイド</Link></li>
               <li><Link href="/service/felling/" className="hover:text-white transition-colors">伐採費用相場</Link></li>
             </ul>
           </div>

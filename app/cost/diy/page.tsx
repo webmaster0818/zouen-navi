@@ -4,9 +4,9 @@ import Breadcrumb from "@/app/components/Breadcrumb";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/cost/diy/" },
-  title: "DIY庭づくりガイド【費用・道具・失敗しないコツ】",
+  title: "DIY庭づくりガイド【費用・道具・作業の注意点】",
   description:
-    "DIYで庭をつくる方法を初心者向けにわかりやすく解説。必要な道具・費用の目安・失敗しないコツ。プロに頼むべき作業との見極め方も紹介します。",
+    "DIYで庭をつくる方法を初心者向けに解説します。必要な道具・費用の目安・作業の注意点に加え、業者に依頼すべき作業の見極め方も紹介します。",
 };
 
 const diyProjects = [
@@ -21,9 +21,9 @@ const diyProjects = [
       "床土（目土）を均一に敷く",
       "芝生をブロック状にカットして敷き詰める",
       "目土を入れてローラーで転圧",
-      "たっぷり水やりをして根付かせる",
+      "十分に水やりをして根付かせる",
     ],
-    points: "高麗芝なら比較的失敗が少ない。傾斜地はプロに依頼推奨。",
+    points: "高麗芝は比較的失敗が少ない芝です。傾斜地は業者への依頼をおすすめします。",
   },
   {
     title: "砂利敷きDIY",
@@ -37,7 +37,7 @@ const diyProjects = [
       "砂利を均一に3〜5cm厚さに敷く",
       "砂利の量は1㎡あたり60〜80kgが目安",
     ],
-    points: "防草シートを必ず敷くことで雑草対策になる。砂利の種類（玉砂利・砕石等）で雰囲気が変わる。",
+    points: "防草シートを敷くことで雑草対策になります。砂利の種類（玉砂利・砕石等）により仕上がりの印象が異なります。",
   },
   {
     title: "花壇の縁取りDIY",
@@ -51,7 +51,7 @@ const diyProjects = [
       "レンガ・石を並べて縁を作る",
       "内側に腐葉土・培養土を入れる",
     ],
-    points: "水糸を使うと直線・曲線が美しく仕上がる。",
+    points: "水糸を使うと、直線・曲線をきれいに仕上げられます。",
   },
   {
     title: "ウッドデッキDIY",
@@ -66,45 +66,45 @@ const diyProjects = [
       "デッキ材を並べてビスで固定",
       "防腐塗料を全面に塗装して完成",
     ],
-    points: "ハードウッド（イペ・ウリン）は耐久性が高いが加工が難しい。初心者はSPF材（防腐処理済み）がおすすめ。",
+    points: "ハードウッド（イペ・ウリン）は耐久性が高い一方、加工が難しい木材です。初心者には防腐処理済みのSPF材をおすすめします。",
   },
 ];
 
 const diyVsPro = [
   {
     category: "草刈り・除草",
-    diy: "◎ 自分でOK",
+    diy: "◎ 自分で対応可",
     pro: "広い庭・法面は業者が効率的",
-    note: "電動草刈り機があれば十分",
+    note: "電動草刈り機で対応可能",
   },
   {
     category: "低木の軽い剪定",
-    diy: "◎ 自分でOK",
-    pro: "仕上がりのこだわりがあれば業者",
+    diy: "◎ 自分で対応可",
+    pro: "仕上がりにこだわる場合は業者",
     note: "電動バリカン・剪定バサミで対応可",
   },
   {
     category: "高木の剪定（3m以上）",
     diy: "× 危険",
-    pro: "◎ 必ず業者へ",
+    pro: "◎ 業者へ依頼",
     note: "転落リスクが高い",
   },
   {
     category: "木の伐採",
     diy: "△ 小木のみ",
-    pro: "◎ 基本的に業者へ",
-    note: "3m以上は絶対にプロへ",
+    pro: "◎ 原則として業者へ",
+    note: "3m以上は業者へ依頼",
   },
   {
     category: "芝張り",
-    diy: "◎ 自分でOK",
+    diy: "◎ 自分で対応可",
     pro: "大面積・傾斜地は業者推奨",
     note: "基礎知識があれば可能",
   },
   {
     category: "庭のデザイン設計",
     diy: "△ 小規模なら",
-    pro: "◎ トータルリフォームは業者",
+    pro: "◎ 全体の改修は業者",
     note: "設計の専門知識が必要",
   },
 ];
@@ -123,13 +123,13 @@ export default function DIYPage() {
         <div className="text-center mb-8">
           <span className="bg-[#F59E0B] text-white text-xs font-bold px-3 py-1 rounded-full">DIYガイド</span>
           <h1 className="text-2xl md:text-3xl font-bold text-gray-800 mt-3">DIY庭づくりガイド</h1>
-          <p className="text-gray-500 mt-2">初心者でもできるDIYと、プロに任せるべき作業の見極め方</p>
+          <p className="text-gray-500 mt-2">初心者が取り組めるDIYと、業者に依頼すべき作業の見極め方</p>
         </div>
 
         {/* DIY vs Pro Table */}
         <div className="bg-white rounded-2xl shadow-md overflow-hidden mb-8">
           <div className="bg-[#15803D] text-white px-6 py-4">
-            <h2 className="font-bold text-lg">DIY vs プロ依頼 判断チャート</h2>
+            <h2 className="font-bold text-lg">DIYと業者依頼の判断表</h2>
           </div>
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
@@ -137,7 +137,7 @@ export default function DIYPage() {
                 <tr>
                   <th className="p-3 text-left text-gray-600 font-bold">作業</th>
                   <th className="p-3 text-center text-gray-600 font-bold">DIY</th>
-                  <th className="p-3 text-center text-gray-600 font-bold">プロ依頼</th>
+                  <th className="p-3 text-center text-gray-600 font-bold">業者依頼</th>
                   <th className="p-3 text-left text-gray-600 font-bold">ポイント</th>
                 </tr>
               </thead>
@@ -160,7 +160,7 @@ export default function DIYPage() {
         </div>
 
         {/* DIY Projects */}
-        <h2 className="text-xl font-bold text-gray-800 mb-4">人気のDIY庭づくりプロジェクト</h2>
+        <h2 className="text-xl font-bold text-gray-800 mb-4">主なDIY庭づくりの作業</h2>
         <div className="space-y-6 mb-8">
           {diyProjects.map((project) => (
             <div key={project.title} className="bg-white rounded-2xl shadow-md p-6 border border-gray-100">
@@ -214,10 +214,10 @@ export default function DIYPage() {
 
         {/* CTA */}
         <div className="bg-gradient-to-r from-[#15803D] to-[#166534] rounded-2xl p-6 text-white text-center">
-          <h2 className="text-xl font-bold mb-2">DIYが難しい作業はプロに任せよう</h2>
-          <p className="text-green-100 text-sm mb-4">高木の剪定や大規模リフォームはプロへの依頼が安心・確実です</p>
+          <h2 className="text-xl font-bold mb-2">DIYが難しい作業は業者への依頼をおすすめします</h2>
+          <p className="text-green-100 text-sm mb-4">高木の剪定や大規模な改修は、安全面からも業者への依頼が適しています</p>
           <Link href="/ranking/" className="bg-[#F59E0B] hover:bg-amber-500 text-white font-bold px-8 py-3 rounded-full transition-all inline-block">
-            おすすめ業者ランキングを見る
+            業者ランキングを見る
           </Link>
           <p className="text-xs text-green-300 mt-3">※当サイトはアフィリエイト広告を含みます</p>
         </div>

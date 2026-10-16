@@ -6,18 +6,18 @@ export const metadata: Metadata = {
   alternates: { canonical: "/cost/pruning-price/" },
   title: "庭木の剪定費用の相場【2024年版】安い業者の選び方",
   description:
-    "庭木の剪定費用の相場を樹種・高さ別に徹底解説。安い業者の選び方、見積もりのポイント、自分でやる場合との比較も紹介します。",
+    "庭木の剪定費用の相場を樹種・高さ別に解説します。費用を抑えられる業者の選び方、見積もりの確認点、自分で剪定する場合との比較も紹介します。",
 };
 
 const treePricing = [
   { tree: "松（中木3m）", min: 15000, max: 50000, note: "手間のかかる樹種" },
-  { tree: "松（高木5m）", min: 50000, max: 150000, note: "職人技が必要" },
+  { tree: "松（高木5m）", min: 50000, max: 150000, note: "熟練した技術が必要" },
   { tree: "ツツジ・サツキ", min: 800, max: 3000, note: "1株あたり" },
   { tree: "クロガネモチ", min: 5000, max: 20000, note: "中木クラス" },
   { tree: "カイヅカイブキ", min: 8000, max: 30000, note: "高さによる" },
   { tree: "モミジ・カエデ", min: 5000, max: 25000, note: "繊細な剪定が必要" },
   { tree: "オリーブ", min: 5000, max: 20000, note: "自然樹形を活かす" },
-  { tree: "フジ", min: 10000, max: 40000, note: "棚の有無で変わる" },
+  { tree: "フジ", min: 10000, max: 40000, note: "棚の有無により異なる" },
   { tree: "ヤマボウシ", min: 5000, max: 25000, note: "中木クラス" },
   { tree: "ハナミズキ", min: 8000, max: 30000, note: "中〜高木クラス" },
 ];
@@ -61,9 +61,9 @@ export default function PruningPricePage() {
 
       <div className="max-w-4xl mx-auto px-4 py-8">
         <div className="text-center mb-8">
-          <span className="bg-[#15803D] text-white text-xs font-bold px-3 py-1 rounded-full">完全ガイド</span>
+          <span className="bg-[#15803D] text-white text-xs font-bold px-3 py-1 rounded-full">剪定費用ガイド</span>
           <h1 className="text-2xl md:text-3xl font-bold text-gray-800 mt-3">庭木の剪定費用の相場</h1>
-          <p className="text-gray-500 mt-2">樹種・高さ別の費用と安い業者の選び方</p>
+          <p className="text-gray-500 mt-2">樹種・高さ別の費用と業者の選び方</p>
         </div>
 
         {/* Summary Box */}
@@ -82,7 +82,7 @@ export default function PruningPricePage() {
               </div>
             ))}
           </div>
-          <p className="text-xs text-gray-400 mt-3">※1本あたりの目安。ゴミ処分費別途</p>
+          <p className="text-xs text-gray-400 mt-3">※1本あたりの目安です。ゴミ処分費は別途となります</p>
         </div>
 
         {/* Tree-specific pricing */}
@@ -124,11 +124,11 @@ export default function PruningPricePage() {
           <h2 className="font-bold text-[#15803D] text-lg mb-4">見積もりの際に確認すべき5項目</h2>
           <div className="space-y-3">
             {[
-              { num: "1", item: "作業内容の明細", desc: "どの木を、どのように剪定するかが明記されているか" },
-              { num: "2", item: "廃棄物処分費", desc: "剪定ゴミの処分費が含まれているか、別途かを確認" },
-              { num: "3", item: "出張・交通費", desc: "出張費が含まれているかを明確にする" },
-              { num: "4", item: "追加料金の条件", desc: "想定以上の作業量になった場合の追加料金ルールを確認" },
-              { num: "5", item: "アフターフォロー", desc: "作業後の不備対応・保証の有無を確認" },
+              { num: "1", item: "作業内容の明細", desc: "対象の木と剪定方法が明記されているかを確認します" },
+              { num: "2", item: "廃棄物処分費", desc: "剪定ゴミの処分費が含まれているか、別途かを確認します" },
+              { num: "3", item: "出張・交通費", desc: "出張費が含まれているかを確認します" },
+              { num: "4", item: "追加料金の条件", desc: "想定以上の作業量になった場合の追加料金の規定を確認します" },
+              { num: "5", item: "アフターフォロー", desc: "作業後の不備対応・保証の有無を確認します" },
             ].map((tip) => (
               <div key={tip.num} className="flex items-start gap-3">
                 <span className="bg-[#15803D] text-white rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold flex-shrink-0">
@@ -148,7 +148,7 @@ export default function PruningPricePage() {
           <Link href="/service/pruning/" className="bg-white rounded-xl p-4 border border-green-100 hover:border-[#15803D] transition-colors shadow-sm flex items-center gap-3">
             <span className="text-3xl"></span>
             <div>
-              <p className="font-bold text-gray-700">剪定の完全ガイド</p>
+              <p className="font-bold text-gray-700">剪定ガイド</p>
               <p className="text-xs text-gray-500">時期・方法・業者の選び方</p>
             </div>
           </Link>
@@ -156,7 +156,7 @@ export default function PruningPricePage() {
             <span className="text-3xl"></span>
             <div>
               <p className="font-bold text-gray-700">剪定業者ランキング</p>
-              <p className="text-xs text-gray-500">おすすめ5社の比較</p>
+              <p className="text-xs text-gray-500">上位5社の比較</p>
             </div>
           </Link>
         </div>
@@ -164,7 +164,7 @@ export default function PruningPricePage() {
         {/* CTA */}
         <div className="bg-gradient-to-r from-[#15803D] to-[#166534] rounded-2xl p-6 text-white text-center">
           <h2 className="text-xl font-bold mb-2">無料で剪定費用を確認する</h2>
-          <p className="text-green-100 text-sm mb-4">お庭110番なら最短当日の見積もり・作業が可能です</p>
+          <p className="text-green-100 text-sm mb-4">お庭110番では、最短当日の見積もり・作業に対応しています</p>
           <Link href="/company/oniwa-110/" className="bg-[#F59E0B] hover:bg-amber-500 text-white font-bold px-8 py-3 rounded-full transition-all inline-block">
             無料で見積もりを依頼する
           </Link>

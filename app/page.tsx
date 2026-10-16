@@ -6,9 +6,9 @@ import { getVerifiedRating } from "@/app/lib/verifiedRating";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/" },
-  title: "造園ナビ｜庭づくりのプロが見つかる総合ガイド",
+  title: "造園ナビ｜庭づくりの専門業者を比較する総合ガイド",
   description:
-    "庭の剪定・造園・外構工事のおすすめ業者を徹底比較。費用相場・口コミ・特徴を詳しく解説。あなたにぴったりの造園業者がすぐに見つかります。",
+    "庭の剪定・造園・外構工事の業者を比較しています。費用相場・口コミ・各社の特徴を解説し、目的に沿った造園業者選びを支援します。",
 };
 
 const top3 = companiesData.slice(0, 3);
@@ -18,13 +18,13 @@ const plantNav = [
   { icon: "/images/icon-hedge.png", label: "生垣", href: "/plant/hedge/" },
   { icon: "/images/icon-flower.png", label: "花壇", href: "/plant/flower-bed/" },
   { icon: "/images/icon-tree.png", label: "日陰向き", href: "/plant/shade/" },
-  { icon: "/images/icon-pruning.png", label: "手入れ楽", href: "/plant/low-maintenance/" },
+  { icon: "/images/icon-pruning.png", label: "手入れが容易", href: "/plant/low-maintenance/" },
 ];
 
 const services = [
-  { icon: "/images/icon-pruning.png", label: "剪定", href: "/service/pruning/", desc: "費用と時期の完全ガイド" },
+  { icon: "/images/icon-pruning.png", label: "剪定", href: "/service/pruning/", desc: "費用と時期のガイド" },
   { icon: "/images/icon-tree.png", label: "伐採", href: "/service/felling/", desc: "費用相場と業者の選び方" },
-  { icon: "/images/icon-flower.png", label: "庭デザイン", href: "/service/garden-design/", desc: "プロへの依頼方法と費用" },
+  { icon: "/images/icon-flower.png", label: "庭デザイン", href: "/service/garden-design/", desc: "専門家への依頼方法と費用" },
   { icon: "/images/icon-japanese.png", label: "和庭園", href: "/service/japanese-garden/", desc: "坪庭から本格庭園まで" },
   { icon: "/images/icon-hedge.png", label: "年間管理", href: "/service/maintenance/", desc: "月別メンテナンスカレンダー" },
 ];
@@ -45,7 +45,7 @@ const faqs = [
   },
   {
     q: "造園業者選びで失敗しないポイントは？",
-    a: "見積もりの詳細が明確か、資格・保険の有無、施工事例の確認の3点が最重要です。必ず複数社から見積もりを取りましょう。",
+    a: "見積もりの詳細が明確か、資格・保険の有無、施工事例の確認の3点が最重要です。見積もりは必ず複数社から取得することをおすすめします。",
   },
   {
     q: "剪定や草刈りの費用の相場はいくらですか？",
@@ -53,7 +53,7 @@ const faqs = [
   },
   {
     q: "庭師に頼む前に準備しておくことはありますか？",
-    a: "庭の広さ・木の本数・高さをメモしておくと見積もりがスムーズです。仕上がりのイメージ写真（Webや雑誌から）を用意しておくと打ち合わせが楽になります。",
+    a: "庭の広さ・木の本数・高さを記録しておくと、見積もりを円滑に進められます。仕上がりのイメージ写真（Webや雑誌など）を用意しておくと、打ち合わせで要望を伝えやすくなります。",
   },
 ];
 
@@ -88,11 +88,11 @@ export default function HomePage() {
             庭づくりの総合ガイド
           </p>
           <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-5 drop-shadow-lg">
-            庭づくりのプロが見つかる。
+            庭づくりの専門業者探しを支援します
           </h1>
           <p className="text-green-100 text-base md:text-xl mb-10 max-w-2xl mx-auto leading-relaxed drop-shadow">
-            剪定・造園・外構工事のおすすめ業者を徹底比較。<br className="hidden sm:inline" />
-            費用相場から業者の選び方まで、プロが丁寧に解説します。
+            剪定・造園・外構工事の業者を比較しています。<br className="hidden sm:inline" />
+            費用相場から業者の選び方までを解説します。
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
@@ -181,7 +181,7 @@ export default function HomePage() {
                 </div>
                 <h3 className="text-xl font-bold text-gray-800 mb-1">{company.name}</h3>
                 <p className="text-sm text-gray-500 mb-3 leading-relaxed">{company.tagline}</p>
-                {/* Rating（出典つきの一次確認値がある社だけ表示） */}
+                {/* Rating（出典付きの一次確認値がある社だけ表示） */}
                 {(() => {
                   const vr = getVerifiedRating(company.slug);
                   return vr ? (
@@ -229,7 +229,7 @@ export default function HomePage() {
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-10">
             <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-2">庭工事サービスガイド</h2>
-            <p className="text-gray-500 text-sm">目的別に詳しく解説</p>
+            <p className="text-gray-500 text-sm">目的別の解説</p>
           </div>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
             {services.map((svc) => (
@@ -282,7 +282,7 @@ export default function HomePage() {
         <div className="max-w-3xl mx-auto px-4">
           <div className="text-center mb-10">
             <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-2">よくある質問</h2>
-            <p className="text-gray-500 text-sm">お客様からよく寄せられる疑問にお答えします</p>
+            <p className="text-gray-500 text-sm">利用者からよく寄せられる質問にお答えします</p>
           </div>
           <div className="space-y-4">
             {faqs.map((faq, i) => (
@@ -319,9 +319,9 @@ export default function HomePage() {
           aria-hidden="true"
         />
         <div className="relative z-10 max-w-3xl mx-auto px-4 py-16 text-center text-white">
-          <h2 className="text-2xl md:text-3xl font-bold mb-3 drop-shadow">庭のことで困ったら、まず比較</h2>
+          <h2 className="text-2xl md:text-3xl font-bold mb-3 drop-shadow">庭の作業は複数の業者を比較して依頼します</h2>
           <p className="text-green-100 mb-8 text-base leading-relaxed">
-            無料で複数の業者から見積もりを取って、最適な業者を選びましょう。
+            複数の業者から無料で見積もりを取得し、条件に合う業者を選ぶことをおすすめします。
           </p>
           <Link
             href="/ranking/"

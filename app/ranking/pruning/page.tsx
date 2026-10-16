@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/ranking/pruning/" },
   title: "剪定業者ランキング2024年【おすすめ5選】費用・口コミ比較",
   description:
-    "庭木の剪定に強い業者を徹底比較。料金が安い・対応が早い・口コミが良い剪定専門業者TOP5をランキング形式で紹介します。",
+    "庭木の剪定を得意とする業者を比較しています。料金・対応の早さ・口コミの観点から、剪定専門業者の上位5社をランキング形式で紹介します。",
 };
 
 const pruningSpecialists = companiesData.filter((c) =>
@@ -37,7 +37,7 @@ export default function PruningRankingPage() {
         <div className="text-center mb-8">
           <span className="bg-[#15803D] text-white text-xs font-bold px-3 py-1 rounded-full">剪定特化</span>
           <h1 className="text-2xl md:text-3xl font-bold text-gray-800 mt-3">剪定業者ランキング2024年</h1>
-          <p className="text-gray-500 mt-2">庭木の剪定に強い業者を厳選TOP5</p>
+          <p className="text-gray-500 mt-2">庭木の剪定を得意とする業者の上位5社</p>
         </div>
 
         {/* Price Table */}
@@ -123,9 +123,9 @@ export default function PruningRankingPage() {
           <h2 className="font-bold text-[#15803D] text-lg mb-3">剪定業者選びの3つのポイント</h2>
           <div className="space-y-3">
             {[
-              { num: "1", title: "見積もりの明確さ", desc: "作業内容・ゴミ処分費・出張費が明記されているか確認しましょう" },
-              { num: "2", title: "資格・保険の有無", desc: "造園技能士・樹木医の資格と賠償責任保険の加入を確認" },
-              { num: "3", title: "複数社で比較する", desc: "最低3社以上から見積もりを取ることで相場感がわかります" },
+              { num: "1", title: "見積もりの明確さ", desc: "作業内容・ゴミ処分費・出張費が明記されているかを確認します" },
+              { num: "2", title: "資格・保険の有無", desc: "造園技能士・樹木医の資格と賠償責任保険の加入状況を確認します" },
+              { num: "3", title: "複数社で比較する", desc: "3社以上から見積もりを取得すると、相場を把握しやすくなります" },
             ].map((tip) => (
               <div key={tip.num} className="flex items-start gap-3">
                 <span className="bg-[#15803D] text-white rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">
@@ -141,8 +141,8 @@ export default function PruningRankingPage() {
         </div>
 
         <div className="bg-gradient-to-r from-[#15803D] to-[#166534] rounded-2xl p-6 text-white text-center">
-          <h2 className="text-xl font-bold mb-2">まずは無料見積もり</h2>
-          <p className="text-green-100 text-sm mb-4">お庭マスターなら全国47都道府県の加盟拠点から剪定業者を紹介</p>
+          <h2 className="text-xl font-bold mb-2">無料見積もりのご案内</h2>
+          <p className="text-green-100 text-sm mb-4">お庭マスターでは、全国47都道府県の加盟拠点から剪定業者を紹介しています</p>
           <Link href="/company/oniwa-master/" className="bg-[#F59E0B] hover:bg-amber-500 text-white font-bold px-8 py-3 rounded-full transition-all inline-block">
             お庭マスターで無料見積もり
           </Link>

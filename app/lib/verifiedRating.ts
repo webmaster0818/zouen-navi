@@ -1,6 +1,6 @@
 import reviewsData from "@/data/reviews.json";
 
-// 出典つきの一次確認値（reviews.json の ratingBlock：Googleマップ・取得日つき）だけを返す。
+// 出典付きの一次確認値（reviews.json の ratingBlock：Googleマップ・取得日付き）だけを返す。
 // ratingBlock が無い・欠けている社は null（評価を表示しない）。既定値で埋めないこと。
 export type VerifiedRating = {
   rating: number;

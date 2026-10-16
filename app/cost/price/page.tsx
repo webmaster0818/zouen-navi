@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/cost/price/" },
   title: "庭工事の料金相場【2024年最新】剪定・造園・外構の費用比較",
   description:
-    "庭工事（剪定・伐採・草刈り・造園・外構）の料金相場を2024年最新版でまとめました。項目別の費用目安・業者に依頼する際の注意点も解説。",
+    "庭工事（剪定・伐採・草刈り・造園・外構）の料金相場を2024年最新版でまとめています。項目別の費用目安と、業者に依頼する際の注意点も解説します。",
 };
 
 const CategoryIcon = ({ title }: { title: string }) => {
@@ -85,7 +85,7 @@ export default function PricePage() {
         <div className="text-center mb-8">
           <span className="bg-[#92400E] text-white text-xs font-bold px-3 py-1 rounded-full">2024年最新版</span>
           <h1 className="text-2xl md:text-3xl font-bold text-gray-800 mt-3">庭工事の料金相場</h1>
-          <p className="text-gray-500 mt-2">剪定・伐採・草刈り・造園の費用を詳しく解説</p>
+          <p className="text-gray-500 mt-2">剪定・伐採・草刈り・造園の費用を解説します</p>
         </div>
 
         {/* Notice */}
@@ -121,11 +121,11 @@ export default function PricePage() {
           <h2 className="font-bold text-[#15803D] text-lg mb-4">費用を抑える5つのポイント</h2>
           <div className="space-y-2">
             {[
-              "複数本まとめて依頼すると1本あたりの費用が下がる",
-              "年間メンテナンス契約を結ぶとスポット依頼より割安",
-              "剪定ゴミは自分でゴミ袋に入れて出すと処分費が節約できる",
-              "繁忙期（春・秋）を避けてオフシーズンに依頼する",
-              "見積もりは最低3社以上から取って比較する",
+              "複数本をまとめて依頼すると、1本あたりの費用が下がる場合があります",
+              "年間メンテナンス契約は、スポット依頼より割安になる場合があります",
+              "剪定ゴミを自治体の収集に出すと、処分費を抑えられます",
+              "繁忙期（春・秋）を避けて依頼すると、日程を調整しやすくなります",
+              "見積もりは3社以上から取得して比較します",
             ].map((tip, i) => (
               <div key={i} className="flex items-start gap-2 text-sm text-gray-700">
                 <span className="text-[#F59E0B] font-bold flex-shrink-0"></span>
@@ -154,7 +154,7 @@ export default function PricePage() {
         {/* CTA */}
         <div className="mt-8 bg-gradient-to-r from-[#15803D] to-[#166534] rounded-2xl p-6 text-white text-center">
           <h2 className="text-xl font-bold mb-2">実際の費用を確認するには</h2>
-          <p className="text-green-100 text-sm mb-4">複数の業者から無料見積もりを取って、最安値を探しましょう。</p>
+          <p className="text-green-100 text-sm mb-4">複数の業者から無料で見積もりを取得し、費用を比較することをおすすめします。</p>
           <Link href="/ranking/" className="bg-[#F59E0B] hover:bg-amber-500 text-white font-bold px-8 py-3 rounded-full transition-all inline-block">
             無料で見積もり比較する
           </Link>

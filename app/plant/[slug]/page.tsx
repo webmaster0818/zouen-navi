@@ -82,7 +82,7 @@ export default async function PlantPage({ params }: Props) {
 
         {/* Tips */}
         <div className="bg-[#F0FDF4] rounded-xl p-6 mb-6 border border-green-200">
-          <h2 className="font-bold text-[#15803D] text-lg mb-4">プロのアドバイス</h2>
+          <h2 className="font-bold text-[#15803D] text-lg mb-4">専門家のアドバイス</h2>
           <ul className="space-y-2">
             {plant.tips.map((tip, i) => (
               <li key={i} className="flex items-start gap-2 text-sm text-gray-700">
@@ -114,7 +114,7 @@ export default async function PlantPage({ params }: Props) {
 
         {/* Recommended Companies */}
         <div className="bg-white rounded-2xl shadow-sm border border-green-100 p-6">
-          <h2 className="font-bold text-gray-800 text-lg mb-4">この作業に強いおすすめ業者</h2>
+          <h2 className="font-bold text-gray-800 text-lg mb-4">この作業に対応する主な業者</h2>
           <div className="space-y-3">
             {recCompanies.map((company) => (
               <div key={company.slug} className="flex items-center justify-between p-3 bg-[#F0FDF4] rounded-xl">

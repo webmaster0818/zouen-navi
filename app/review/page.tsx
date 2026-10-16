@@ -4,7 +4,7 @@ import reviewsData from "@/data/reviews.json";
 import Breadcrumb from "@/app/components/Breadcrumb";
 
 export const metadata: Metadata = {
-  title: "造園・お庭業者の口コミ・評判まとめ｜実際のGoogleレビューで検証",
+  title: "造園・お庭業者の口コミ・評判まとめ｜実際のGoogle口コミで検証",
   description: "造園・お庭の手入れ・外構サービスや比較サイトを、実際のGoogle口コミと運営会社の公開情報で中立的に検証します。",
   alternates: { canonical: "https://zouen-navi.com/review/" },
 };
@@ -15,7 +15,7 @@ export default function ReviewIndex() {
       <Breadcrumb items={[{ label: "口コミ・評判" }]} />
       <h1 className="text-2xl sm:text-3xl font-bold text-text-primary mt-2 mb-4">造園・お庭業者の口コミ・評判まとめ</h1>
       <p className="text-[15px] leading-8 text-text-secondary mb-8">
-        実際にGoogleマップへ投稿された口コミと、各社の公開情報をもとに、造園・お庭サービスや比較サイトを中立的に検証します。掲載しているのはすべて実在のレビューまたは公式の利用者の声です。
+        実際にGoogleマップへ投稿された口コミと、各社の公開情報をもとに、造園・お庭サービスや比較サイトを中立的に検証します。掲載している口コミは、すべて実際に投稿された口コミまたは公式サイトに掲載された利用者の声です。
       </p>
       <div className="space-y-4">
         {reviewsData.map((r) => (

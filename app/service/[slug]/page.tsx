@@ -108,7 +108,7 @@ export default async function ServicePage({ params }: Props) {
 
         {/* Recommended Companies */}
         <div className="bg-white rounded-2xl shadow-sm border border-green-100 p-6 mb-6">
-          <h2 className="font-bold text-gray-800 text-lg mb-4">このサービスに強いおすすめ業者</h2>
+          <h2 className="font-bold text-gray-800 text-lg mb-4">このサービスに対応する主な業者</h2>
           <div className="space-y-3">
             {recCompanies.map((company, i) => {
               const medals = ["", "", ""];
@@ -136,7 +136,7 @@ export default async function ServicePage({ params }: Props) {
         {/* CTA */}
         <div className="bg-gradient-to-r from-[#15803D] to-[#166534] rounded-2xl p-6 text-white text-center">
           <h2 className="text-xl font-bold mb-2">無料で業者を比較する</h2>
-          <p className="text-green-100 text-sm mb-4">複数の業者から見積もりを取って、最適な業者を選びましょう。</p>
+          <p className="text-green-100 text-sm mb-4">複数の業者から見積もりを取得し、条件に合う業者を選ぶことをおすすめします。</p>
           <Link
             href="/ranking/"
             className="bg-[#F59E0B] hover:bg-amber-500 text-white font-bold px-8 py-3 rounded-full transition-all inline-block"
