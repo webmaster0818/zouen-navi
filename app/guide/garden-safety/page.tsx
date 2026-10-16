@@ -206,7 +206,7 @@ const sources = [
   },
   {
     org: "独立行政法人製品評価技術基盤機構（NITE）",
-    title: "製品安全情報マガジン Vol.128「草刈機による事故」",
+    title: "製品安全情報マガジン Vol.128『草刈機による事故』",
     url: "https://www.nite.go.jp/jiko/chuikanki/mailmagazin/2010fy/psm_vol128_0824.html",
   },
   {
@@ -486,7 +486,8 @@ export default function GardenSafetyPage() {
                 rel="noopener noreferrer"
                 className="text-[15px] text-primary underline underline-offset-2"
               >
-                {s.title}
+                「{s.title.replace(/（[^（）]*）$/, "")}」
+                {s.title.match(/（[^（）]*）$/)?.[0] ?? ""}
               </a>
             </li>
           ))}
