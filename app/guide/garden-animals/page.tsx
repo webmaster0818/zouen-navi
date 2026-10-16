@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 };
 
 const toc = [
-  { id: "ga-law", label: "前提：無許可で捕獲・殺傷しない" },
+  { id: "ga-law", label: "野生の鳥獣は許可なく捕獲・殺傷できません" },
   { id: "ga-trace", label: "何が来ているかは痕跡の形状で判別します" },
   { id: "ga-damage", label: "被害の状況によって対処の優先順位が変わります" },
   { id: "ga-avoid", label: "庭側で行えるのは「寄せ付けない」対策です" },
@@ -135,11 +135,11 @@ const beePoints = [
 
 const proScope = [
   {
-    h: "依頼できること：隠れ場所と通り道を減らす手入れ",
+    h: "隠れ場所と通り道を減らす手入れは依頼できます",
     b: "屋根や塀に届いている枝を離す、厚くなりすぎた生垣を透かす、地際の藪を刈る、落果を片づける、積んである枝や刈った草を処分するといった作業は、造園・庭の手入れの範囲であり、予防策として効果があり、効果も持続します。動物が来ていることを伝えておくと、どこを優先すべきかを判断してもらえます。",
   },
   {
-    h: "依頼できないこと：捕獲と駆除そのもの",
+    h: "捕獲と駆除そのものは依頼の対象外です",
     b: "野生の動物を捕獲する、殺処分するという行為は、庭の手入れの範囲ではありません。許可が必要な領域であり、対応するのは自治体か、その分野の専門業者です。庭の業者に「あわせて対処してほしい」と依頼する対象ではないとお考えください。",
   },
   {
@@ -237,7 +237,7 @@ export default function GardenAnimalsPage() {
 
       <section id="ga-law" className="scroll-mt-20 mb-12">
         <h2 className="text-xl font-bold text-text-primary border-l-4 border-primary pl-3 mb-5">
-          前提：無許可で捕獲・殺傷しない
+          野生の鳥獣は許可なく捕獲・殺傷できません
         </h2>
         <div className="rounded-2xl border border-border bg-surface-alt p-5 mb-5">
           <p className="text-[15px] leading-8 text-text-secondary">
