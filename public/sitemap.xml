@@ -3,19 +3,19 @@
   <url><loc>https://zouen-navi.com/</loc><lastmod>2026-10-16</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
   <url><loc>https://zouen-navi.com/ranking/</loc><lastmod>2026-10-16</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
   <url><loc>https://zouen-navi.com/ranking/pruning/</loc><lastmod>2026-10-16</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://zouen-navi.com/cost/price/</loc><lastmod>2026-04-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://zouen-navi.com/cost/pruning-price/</loc><lastmod>2026-04-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://zouen-navi.com/cost/diy/</loc><lastmod>2026-04-27</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://zouen-navi.com/cost/price/</loc><lastmod>2026-10-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://zouen-navi.com/cost/pruning-price/</loc><lastmod>2026-10-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://zouen-navi.com/cost/diy/</loc><lastmod>2026-10-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://zouen-navi.com/company/oniwa-madoguchi/</loc><lastmod>2026-10-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://zouen-navi.com/company/oniwa-master/</loc><lastmod>2026-10-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://zouen-navi.com/company/oniwa-110/</loc><lastmod>2026-10-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://zouen-navi.com/company/smile-garden/</loc><lastmod>2026-10-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://zouen-navi.com/company/townlife/</loc><lastmod>2026-10-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://zouen-navi.com/company/kurashi-market/</loc><lastmod>2026-04-27</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://zouen-navi.com/company/mitsumoa/</loc><lastmod>2026-04-27</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://zouen-navi.com/company/epark/</loc><lastmod>2026-04-27</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://zouen-navi.com/company/hikaku-biz/</loc><lastmod>2026-04-27</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://zouen-navi.com/company/houzz/</loc><lastmod>2026-04-27</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://zouen-navi.com/company/kurashi-market/</loc><lastmod>2026-10-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://zouen-navi.com/company/mitsumoa/</loc><lastmod>2026-10-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://zouen-navi.com/company/epark/</loc><lastmod>2026-10-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://zouen-navi.com/company/hikaku-biz/</loc><lastmod>2026-10-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://zouen-navi.com/company/houzz/</loc><lastmod>2026-10-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://zouen-navi.com/plant/symbol-tree/</loc><lastmod>2026-10-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://zouen-navi.com/plant/hedge/</loc><lastmod>2026-10-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://zouen-navi.com/plant/flower-bed/</loc><lastmod>2026-10-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
@@ -23,374 +23,374 @@
   <url><loc>https://zouen-navi.com/plant/low-maintenance/</loc><lastmod>2026-10-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://zouen-navi.com/service/pruning/</loc><lastmod>2026-10-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://zouen-navi.com/service/felling/</loc><lastmod>2026-10-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://zouen-navi.com/service/garden-design/</loc><lastmod>2026-04-27</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://zouen-navi.com/service/japanese-garden/</loc><lastmod>2026-04-27</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://zouen-navi.com/service/garden-design/</loc><lastmod>2026-10-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://zouen-navi.com/service/japanese-garden/</loc><lastmod>2026-10-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://zouen-navi.com/service/maintenance/</loc><lastmod>2026-10-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://zouen-navi.com/terms/</loc><lastmod>2026-04-27</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
-  <url><loc>https://zouen-navi.com/privacy/</loc><lastmod>2026-04-27</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
-  <url><loc>https://zouen-navi.com/content-policy/</loc><lastmod>2026-04-27</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
-  <url><loc>https://zouen-navi.com/review/</loc><lastmod>2026-06-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://zouen-navi.com/review/oniwa-madoguchi/</loc><lastmod>2026-06-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://zouen-navi.com/terms/</loc><lastmod>2026-04-30</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://zouen-navi.com/privacy/</loc><lastmod>2026-04-30</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://zouen-navi.com/content-policy/</loc><lastmod>2026-10-16</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://zouen-navi.com/review/</loc><lastmod>2026-10-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://zouen-navi.com/review/oniwa-madoguchi/</loc><lastmod>2026-10-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://zouen-navi.com/review/oniwa-master/</loc><lastmod>2026-10-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://zouen-navi.com/review/oniwa-110/</loc><lastmod>2026-06-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://zouen-navi.com/review/smile-garden/</loc><lastmod>2026-06-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://zouen-navi.com/review/oniwa-110/</loc><lastmod>2026-10-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://zouen-navi.com/review/smile-garden/</loc><lastmod>2026-10-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://zouen-navi.com/review/townlife/</loc><lastmod>2026-10-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://zouen-navi.com/review/kurashi-market/</loc><lastmod>2026-06-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://zouen-navi.com/review/mitsumoa/</loc><lastmod>2026-06-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://zouen-navi.com/review/epark/</loc><lastmod>2026-06-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://zouen-navi.com/review/hikaku-biz/</loc><lastmod>2026-06-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://zouen-navi.com/review/houzz/</loc><lastmod>2026-06-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://zouen-navi.com/review/kurashi-market/</loc><lastmod>2026-10-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://zouen-navi.com/review/mitsumoa/</loc><lastmod>2026-10-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://zouen-navi.com/review/epark/</loc><lastmod>2026-10-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://zouen-navi.com/review/hikaku-biz/</loc><lastmod>2026-10-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://zouen-navi.com/review/houzz/</loc><lastmod>2026-10-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url>
     <loc>https://zouen-navi.com/area/tokyo/</loc>
-    <lastmod>2026-09-17</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://zouen-navi.com/area/osaka/</loc>
-    <lastmod>2026-09-17</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://zouen-navi.com/area/nagoya/</loc>
-    <lastmod>2026-09-17</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://zouen-navi.com/area/yokohama/</loc>
-    <lastmod>2026-09-17</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://zouen-navi.com/area/sapporo/</loc>
-    <lastmod>2026-09-17</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://zouen-navi.com/guide/lawn-care/</loc>
-    <lastmod>2026-09-17</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://zouen-navi.com/guide/weed-control/</loc>
-    <lastmod>2026-09-17</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://zouen-navi.com/guide/neighbor-branch/</loc>
-    <lastmod>2026-09-17</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://zouen-navi.com/area/fukuoka/</loc>
-    <lastmod>2026-09-20</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://zouen-navi.com/area/sendai/</loc>
-    <lastmod>2026-09-20</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://zouen-navi.com/area/kobe/</loc>
-    <lastmod>2026-09-20</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://zouen-navi.com/area/kyoto/</loc>
-    <lastmod>2026-09-20</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://zouen-navi.com/area/hiroshima/</loc>
-    <lastmod>2026-09-20</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://zouen-navi.com/guide/pest-disease/</loc>
-    <lastmod>2026-09-20</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://zouen-navi.com/guide/drainage/</loc>
-    <lastmod>2026-09-20</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://zouen-navi.com/guide/green-waste/</loc>
-    <lastmod>2026-09-20</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://zouen-navi.com/area/saitama/</loc>
-    <lastmod>2026-09-25</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://zouen-navi.com/area/chiba/</loc>
-    <lastmod>2026-09-25</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://zouen-navi.com/area/kawasaki/</loc>
-    <lastmod>2026-09-25</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://zouen-navi.com/area/kitakyushu/</loc>
-    <lastmod>2026-09-25</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://zouen-navi.com/guide/storm-care/</loc>
-    <lastmod>2026-09-25</lastmod>
+    <lastmod>2026-10-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://zouen-navi.com/guide/tree-roots/</loc>
-    <lastmod>2026-09-25</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://zouen-navi.com/area/niigata/</loc>
-    <lastmod>2026-09-25</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://zouen-navi.com/area/shizuoka/</loc>
-    <lastmod>2026-09-25</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://zouen-navi.com/area/hamamatsu/</loc>
-    <lastmod>2026-09-25</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://zouen-navi.com/area/sagamihara/</loc>
-    <lastmod>2026-09-25</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://zouen-navi.com/area/sakai/</loc>
-    <lastmod>2026-09-25</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://zouen-navi.com/area/okayama/</loc>
-    <lastmod>2026-09-25</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://zouen-navi.com/area/kumamoto/</loc>
-    <lastmod>2026-09-25</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://zouen-navi.com/area/kagoshima/</loc>
-    <lastmod>2026-09-25</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://zouen-navi.com/area/funabashi/</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://zouen-navi.com/area/utsunomiya/</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://zouen-navi.com/area/kanazawa/</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://zouen-navi.com/area/matsuyama/</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://zouen-navi.com/area/himeji/</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://zouen-navi.com/area/nara/</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://zouen-navi.com/area/gifu/</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://zouen-navi.com/area/nagasaki/</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://zouen-navi.com/guide/hedge-care/</loc>
-    <lastmod>2026-09-25</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://zouen-navi.com/guide/bamboo-vine/</loc>
-    <lastmod>2026-09-25</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://zouen-navi.com/guide/summer-heat/</loc>
-    <lastmod>2026-09-25</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://zouen-navi.com/guide/fallen-leaves/</loc>
-    <lastmod>2026-09-25</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://zouen-navi.com/guide/soil-fertilizer/</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://zouen-navi.com/guide/transplant/</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://zouen-navi.com/guide/garden-animals/</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://zouen-navi.com/guide/garden-downsizing/</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://zouen-navi.com/area/kawaguchi/</loc>
-    <lastmod>2026-10-12</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://zouen-navi.com/area/mito/</loc>
-    <lastmod>2026-10-12</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://zouen-navi.com/area/nishinomiya/</loc>
-    <lastmod>2026-10-12</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://zouen-navi.com/area/oita/</loc>
-    <lastmod>2026-10-12</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://zouen-navi.com/area/toyama/</loc>
-    <lastmod>2026-10-12</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://zouen-navi.com/area/nagano/</loc>
-    <lastmod>2026-10-12</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://zouen-navi.com/area/takamatsu/</loc>
-    <lastmod>2026-10-12</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://zouen-navi.com/area/kurashiki/</loc>
-    <lastmod>2026-10-12</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://zouen-navi.com/guide/fruit-trees/</loc>
-    <lastmod>2026-10-12</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://zouen-navi.com/guide/moss-garden/</loc>
-    <lastmod>2026-10-12</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://zouen-navi.com/guide/garden-safety/</loc>
-    <lastmod>2026-10-12</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://zouen-navi.com/guide/spraying/</loc>
-    <lastmod>2026-10-12</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://zouen-navi.com/about/</loc>
-    <lastmod>2026-04-27</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
