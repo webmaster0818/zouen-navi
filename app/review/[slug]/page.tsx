@@ -231,11 +231,15 @@ export default async function ReviewPage({ params }: Props) {
 
       {/* CTA */}
       <div className="rounded-2xl border border-border bg-surface-alt p-6 text-center">
+        {r.officialUrl && (
+          <>
         <p className="text-sm text-text-secondary mb-4">公式サイトで対応エリアや見積もりの流れを確認できます。</p>
         <a href={r.officialUrl} target="_blank" rel="noopener noreferrer"
           className="inline-flex items-center justify-center px-6 py-3 rounded-xl bg-primary text-white font-bold hover:opacity-90 transition-opacity">
           {r.companyName} 公式サイト
         </a>
+          </>
+        )}
         <p className="mt-3 text-xs text-text-muted">本ページにはPR（広告）を含む場合があります。掲載情報は{r.updatedAt}時点のものです。</p>
       </div>
 

@@ -106,6 +106,7 @@ export default async function CompanyPage({ params }: Props) {
           <h2 className="text-xl font-bold mb-2">{company.name}に無料で相談する</h2>
           <p className="text-green-100 text-sm mb-4">見積もりは無料。まずは気軽に相談してみましょう。</p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
+            {company.officialUrl && (
             <a
               href={company.officialUrl}
               target="_blank"
@@ -114,6 +115,7 @@ export default async function CompanyPage({ params }: Props) {
             >
               公式サイトを見る（PR）
             </a>
+            )}
             <Link
               href="/ranking/"
               className="bg-white/20 hover:bg-white/30 text-white font-bold px-8 py-3 rounded-full border border-white/30 transition-all"
