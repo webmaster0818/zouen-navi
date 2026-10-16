@@ -86,19 +86,21 @@ export default async function CompanyPage({ params }: Props) {
               ))}
             </ul>
           </div>
-          <div className="bg-orange-50 rounded-xl p-5 border border-orange-200">
-            <h2 className="font-bold text-[#92400E] text-lg mb-3 flex items-center gap-2">
-              <span></span> デメリット
-            </h2>
-            <ul className="space-y-2">
-              {company.cons.map((c) => (
-                <li key={c} className="flex items-start gap-2 text-sm text-gray-700">
-                  <span className="text-orange-500 font-bold mt-0.5">◉</span>
-                  {c}
-                </li>
-              ))}
-            </ul>
-          </div>
+          {company.cons.length > 0 && (
+            <div className="bg-orange-50 rounded-xl p-5 border border-orange-200">
+              <h2 className="font-bold text-[#92400E] text-lg mb-3 flex items-center gap-2">
+                <span></span> デメリット
+              </h2>
+              <ul className="space-y-2">
+                {company.cons.map((c) => (
+                  <li key={c} className="flex items-start gap-2 text-sm text-gray-700">
+                    <span className="text-orange-500 font-bold mt-0.5">◉</span>
+                    {c}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
         </div>
 
         {/* CTA */}

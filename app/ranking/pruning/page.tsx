@@ -142,7 +142,7 @@ export default function PruningRankingPage() {
 
         <div className="bg-gradient-to-r from-[#15803D] to-[#166534] rounded-2xl p-6 text-white text-center">
           <h2 className="text-xl font-bold mb-2">まずは無料見積もり</h2>
-          <p className="text-green-100 text-sm mb-4">お庭マスターなら1,500社以上の中から最適な剪定業者をマッチング</p>
+          <p className="text-green-100 text-sm mb-4">お庭マスターなら全国47都道府県の加盟拠点から剪定業者を紹介</p>
           <Link href="/company/oniwa-master/" className="bg-[#F59E0B] hover:bg-amber-500 text-white font-bold px-8 py-3 rounded-full transition-all inline-block">
             お庭マスターで無料見積もり
           </Link>

@@ -75,10 +75,12 @@ export default function RankingPage() {
                       <span className="text-green-600 font-bold">◉ </span>
                       {company.pros[0]}
                     </div>
-                    <div>
-                      <span className="text-orange-500 font-bold">◉ </span>
-                      {company.cons[0]}
-                    </div>
+                    {company.cons[0] && (
+                      <div>
+                        <span className="text-orange-500 font-bold">◉ </span>
+                        {company.cons[0]}
+                      </div>
+                    )}
                   </div>
                   <Link
                     href={`/company/${company.slug}/`}
