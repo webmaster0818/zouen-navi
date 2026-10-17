@@ -465,6 +465,7 @@ export default function FruitTreesPage() {
             { href: "/guide/garden-animals/", label: "庭に来る動物" },
             { href: "/guide/soil-fertilizer/", label: "庭の土と肥料" },
             { href: "/service/pruning/", label: "庭木の剪定" },
+            { href: "/guide/tree-size-reduction/", label: "大きくなりすぎた庭木を小さくする" },
           ].map((l) => (
             <li key={l.href}>
               <Link

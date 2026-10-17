@@ -448,6 +448,8 @@ export default function GardenDownsizingPage() {
             { href: "/service/felling/", label: "庭木の伐採費用相場と業者の選び方" },
             { href: "/plant/low-maintenance/", label: "手入れが容易な庭木のおすすめ" },
             { href: "/guide/tree-roots/", label: "庭木の根が塀・舗装・排水に影響しているとき" },
+            { href: "/guide/stump-removal/", label: "伐採した木の切り株｜残す・抜根する・削る" },
+            { href: "/guide/silver-center/", label: "庭の手入れをシルバー人材センターに依頼する場合" },
           ].map((l) => (
             <li key={l.href}>
               <Link

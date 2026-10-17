@@ -354,6 +354,7 @@ export default function GreenWastePage() {
             { href: "/guide/pest-disease/", label: "庭木の害虫と病気の見分け方" },
             { href: "/service/pruning/", label: "庭木の剪定費用と適した時期" },
             { href: "/area/fukuoka/", label: "依頼内容の伝え方と仕上がりの共有" },
+            { href: "/guide/grass-cutting/", label: "庭・空き地の草刈り｜刈る時期と回数の考え方" },
           ].map((l) => (
             <li key={l.href}>
               <Link

@@ -23,6 +23,16 @@ const GUIDE_LINKS = [
   { href: "/guide/moss-garden/", label: "苔のある庭" },
   { href: "/guide/garden-safety/", label: "庭作業の事故を防ぐ" },
   { href: "/guide/spraying/", label: "住宅地での薬剤散布" },
+  { href: "/guide/grass-cutting/", label: "庭・空き地の草刈り" },
+  { href: "/guide/hedge-planting/", label: "生垣を新しく植える" },
+  { href: "/guide/tree-planting/", label: "庭木を新しく植える" },
+  { href: "/guide/winter-care/", label: "冬の庭木の寒さ対策" },
+  { href: "/guide/pine-care/", label: "庭の松の手入れ" },
+  { href: "/guide/tree-size-reduction/", label: "大きくなりすぎた庭木" },
+  { href: "/guide/dead-tree/", label: "枯れた庭木の見分け方" },
+  { href: "/guide/stump-removal/", label: "伐採後の切り株" },
+  { href: "/guide/silver-center/", label: "シルバー人材センターへの依頼" },
+  { href: "/guide/tree-doctor/", label: "樹木医への相談" },
   { href: "/review/", label: "口コミ・評判まとめ" },
 ];
 

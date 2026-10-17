@@ -495,6 +495,7 @@ export default function SprayingPage() {
             { href: "/guide/garden-safety/", label: "庭作業の事故を防ぐ" },
             { href: "/guide/neighbor-branch/", label: "越境した枝と根" },
             { href: "/service/maintenance/", label: "庭木の年間メンテナンスカレンダー" },
+            { href: "/guide/pine-care/", label: "庭の松の手入れ" },
           ].map((l) => (
             <li key={l.href}>
               <Link

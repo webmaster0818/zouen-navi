@@ -504,6 +504,8 @@ export default function GardenSafetyPage() {
             { href: "/cost/diy/", label: "DIY庭づくりガイド" },
             { href: "/guide/spraying/", label: "住宅地で庭木の消毒を行う・依頼する場合" },
             { href: "/guide/summer-heat/", label: "夏の高温と水やり" },
+            { href: "/guide/grass-cutting/", label: "庭・空き地の草刈り｜刈る時期と回数の考え方" },
+            { href: "/guide/silver-center/", label: "庭の手入れをシルバー人材センターに依頼する場合" },
           ].map((l) => (
             <li key={l.href}>
               <Link

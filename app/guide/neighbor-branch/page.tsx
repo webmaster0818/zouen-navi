@@ -383,6 +383,8 @@ export default function NeighborBranchPage() {
             { href: "/service/felling/", label: "庭木の伐採費用相場と業者の選び方" },
             { href: "/area/tokyo/", label: "東京の造園・庭の手入れ業者の選び方" },
             { href: "/ranking/pruning/", label: "剪定業者ランキング" },
+            { href: "/guide/hedge-planting/", label: "生垣を新しく植える" },
+            { href: "/guide/tree-size-reduction/", label: "大きくなりすぎた庭木を小さくする" },
           ].map((l) => (
             <li key={l.href}>
               <Link

@@ -322,6 +322,7 @@ export default function AreaSapporoPage() {
             { href: "/guide/lawn-care/", label: "芝生の手入れの年間の流れ" },
             { href: "/plant/low-maintenance/", label: "手入れが容易な庭木のおすすめ" },
             { href: "/ranking/", label: "造園・庭師業者ランキング" },
+            { href: "/guide/winter-care/", label: "冬の庭木の寒さ対策" },
           ].map((l) => (
             <li key={l.href}>
               <Link

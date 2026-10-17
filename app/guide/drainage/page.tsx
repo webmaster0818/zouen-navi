@@ -381,6 +381,7 @@ export default function DrainagePage() {
             { href: "/guide/pest-disease/", label: "庭木の害虫と病気の見分け方" },
             { href: "/cost/diy/", label: "DIY庭づくりガイド" },
             { href: "/service/garden-design/", label: "庭のデザインを専門家に依頼する方法" },
+            { href: "/guide/tree-planting/", label: "庭木を新しく植える" },
           ].map((l) => (
             <li key={l.href}>
               <Link

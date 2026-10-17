@@ -393,6 +393,7 @@ export default function AreaNaraPage() {
             { href: "/area/niigata/", label: "意思決定者と費用負担者の確認" },
             { href: "/area/kobe/", label: "見積書の読み方と書面の確認" },
             { href: "/service/maintenance/", label: "庭木の年間メンテナンス" },
+            { href: "/guide/silver-center/", label: "庭の手入れをシルバー人材センターに依頼する場合" },
           ].map((l) => (
             <li key={l.href}>
               <Link

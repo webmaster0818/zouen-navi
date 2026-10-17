@@ -426,6 +426,8 @@ export default function StormCarePage() {
             { href: "/guide/drainage/", label: "庭の水はけが悪いときの原因と対処" },
             { href: "/guide/pest-disease/", label: "庭木の害虫と病気の見分け方" },
             { href: "/service/maintenance/", label: "庭木の年間メンテナンスカレンダー" },
+            { href: "/guide/winter-care/", label: "冬の庭木の寒さ対策" },
+            { href: "/guide/tree-size-reduction/", label: "大きくなりすぎた庭木を小さくする" },
           ].map((l) => (
             <li key={l.href}>
               <Link

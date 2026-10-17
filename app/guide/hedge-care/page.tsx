@@ -387,6 +387,7 @@ export default function HedgeCarePage() {
             { href: "/guide/pest-disease/", label: "庭木の害虫と病気の見分け方" },
             { href: "/guide/green-waste/", label: "剪定枝・刈った草の処分方法" },
             { href: "/service/maintenance/", label: "庭木の年間メンテナンスカレンダー" },
+            { href: "/guide/hedge-planting/", label: "生垣を新しく植える" },
           ].map((l) => (
             <li key={l.href}>
               <Link

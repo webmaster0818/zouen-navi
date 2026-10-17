@@ -425,6 +425,7 @@ export default function SoilFertilizerPage() {
             { href: "/guide/pest-disease/", label: "庭木の害虫と病気の見分け方" },
             { href: "/guide/tree-roots/", label: "庭木の根が塀・舗装・排水に影響しているとき" },
             { href: "/guide/summer-heat/", label: "夏の高温で庭木が傷むとき" },
+            { href: "/guide/tree-planting/", label: "庭木を新しく植える" },
           ].map((l) => (
             <li key={l.href}>
               <Link

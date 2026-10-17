@@ -410,6 +410,7 @@ export default function FallenLeavesPage() {
             { href: "/guide/neighbor-branch/", label: "隣家にはみ出した庭木の枝と根" },
             { href: "/guide/drainage/", label: "庭の水はけが悪いときの原因と対処" },
             { href: "/guide/storm-care/", label: "台風・強風に備える庭木の点検" },
+            { href: "/guide/winter-care/", label: "冬の庭木の寒さ対策" },
           ].map((l) => (
             <li key={l.href}>
               <Link

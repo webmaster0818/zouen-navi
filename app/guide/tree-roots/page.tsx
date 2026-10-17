@@ -434,6 +434,9 @@ export default function TreeRootsPage() {
             { href: "/guide/storm-care/", label: "台風・強風に備える庭木の点検" },
             { href: "/guide/drainage/", label: "庭の水はけが悪いときの原因と対処" },
             { href: "/service/felling/", label: "庭木の伐採費用相場と業者の選び方" },
+            { href: "/guide/dead-tree/", label: "庭木が枯れたかどうかの見分け方" },
+            { href: "/guide/stump-removal/", label: "伐採した木の切り株｜残す・抜根する・削る" },
+            { href: "/guide/tree-doctor/", label: "樹木医に相談する場面" },
           ].map((l) => (
             <li key={l.href}>
               <Link

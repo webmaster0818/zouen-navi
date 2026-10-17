@@ -372,6 +372,7 @@ export default function WeedControlPage() {
             { href: "/cost/diy/", label: "DIY庭づくりガイド" },
             { href: "/plant/low-maintenance/", label: "手入れが容易な庭木のおすすめ" },
             { href: "/ranking/", label: "造園・庭師業者ランキング" },
+            { href: "/guide/grass-cutting/", label: "庭・空き地の草刈り｜刈る時期と回数の考え方" },
           ].map((l) => (
             <li key={l.href}>
               <Link

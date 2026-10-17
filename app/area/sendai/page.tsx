@@ -333,6 +333,7 @@ export default function AreaSendaiPage() {
             { href: "/guide/neighbor-branch/", label: "隣家にはみ出した庭木の枝と根" },
             { href: "/service/maintenance/", label: "庭木の年間メンテナンスカレンダー" },
             { href: "/review/", label: "掲載サービスの口コミ・評判まとめ" },
+            { href: "/guide/grass-cutting/", label: "庭・空き地の草刈り｜刈る時期と回数の考え方" },
           ].map((l) => (
             <li key={l.href}>
               <Link

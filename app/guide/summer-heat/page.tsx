@@ -399,6 +399,8 @@ export default function SummerHeatPage() {
             { href: "/guide/lawn-care/", label: "芝生の手入れガイド" },
             { href: "/guide/pest-disease/", label: "庭木の害虫と病気の見分け方" },
             { href: "/service/maintenance/", label: "庭木の年間メンテナンスカレンダー" },
+            { href: "/guide/winter-care/", label: "冬の庭木の寒さ対策" },
+            { href: "/guide/dead-tree/", label: "庭木が枯れたかどうかの見分け方" },
           ].map((l) => (
             <li key={l.href}>
               <Link

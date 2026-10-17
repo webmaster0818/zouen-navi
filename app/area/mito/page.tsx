@@ -476,6 +476,7 @@ export default function AreaMitoPage() {
             { href: "/guide/garden-downsizing/", label: "庭じまい" },
             { href: "/area/chiba/", label: "資格と許可の確認方法" },
             { href: "/area/himeji/", label: "1社にまとめて依頼するか分けて依頼するか" },
+            { href: "/guide/tree-doctor/", label: "樹木医に相談する場面" },
           ].map((l) => (
             <li key={l.href}>
               <Link

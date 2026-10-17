@@ -388,6 +388,7 @@ export default function BambooVinePage() {
             { href: "/guide/tree-roots/", label: "庭木の根が塀・舗装・排水に影響しているとき" },
             { href: "/guide/neighbor-branch/", label: "隣家にはみ出した庭木の枝と根" },
             { href: "/guide/green-waste/", label: "剪定枝・刈った草の処分方法" },
+            { href: "/guide/stump-removal/", label: "伐採した木の切り株｜残す・抜根する・削る" },
           ].map((l) => (
             <li key={l.href}>
               <Link

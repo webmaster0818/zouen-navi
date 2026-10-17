@@ -367,6 +367,7 @@ export default function AreaKyotoPage() {
             { href: "/service/maintenance/", label: "庭木の年間メンテナンスカレンダー" },
             { href: "/guide/pest-disease/", label: "庭木の害虫と病気の見分け方" },
             { href: "/plant/low-maintenance/", label: "手入れが容易な庭木のおすすめ" },
+            { href: "/guide/pine-care/", label: "庭の松の手入れ" },
           ].map((l) => (
             <li key={l.href}>
               <Link

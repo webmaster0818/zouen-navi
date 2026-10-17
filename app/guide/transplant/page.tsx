@@ -489,6 +489,7 @@ export default function TransplantPage() {
             { href: "/guide/tree-roots/", label: "庭木の根と構造物" },
             { href: "/service/garden-design/", label: "庭のリフォーム・ガーデンデザイン" },
             { href: "/plant/symbol-tree/", label: "シンボルツリーの選び方" },
+            { href: "/guide/tree-planting/", label: "庭木を新しく植える" },
           ].map((l) => (
             <li key={l.href}>
               <Link

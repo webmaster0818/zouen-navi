@@ -539,6 +539,7 @@ export default function AreaKawaguchiPage() {
             { href: "/guide/hedge-care/", label: "生垣の手入れ" },
             { href: "/area/nagoya/", label: "自社施工型と紹介型の見分け方" },
             { href: "/area/kobe/", label: "見積書の読み方と書面の確認" },
+            { href: "/guide/hedge-planting/", label: "生垣を新しく植える" },
           ].map((l) => (
             <li key={l.href}>
               <Link
