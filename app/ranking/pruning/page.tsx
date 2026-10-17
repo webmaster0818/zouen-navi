@@ -6,7 +6,7 @@ import Breadcrumb from "@/app/components/Breadcrumb";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/ranking/pruning/" },
-  title: "剪定業者ランキング2024年【おすすめ5選】費用・口コミ比較",
+  title: "剪定業者ランキング【おすすめ5選】費用・口コミ比較",
   description:
     "庭木の剪定を得意とする業者を比較しています。料金・対応の早さ・口コミの観点から、剪定専門業者の上位5社をランキング形式で紹介します。",
 };
@@ -36,7 +36,7 @@ export default function PruningRankingPage() {
       <div className="max-w-4xl mx-auto px-4 py-8">
         <div className="text-center mb-8">
           <span className="bg-[#15803D] text-white text-xs font-bold px-3 py-1 rounded-full">剪定特化</span>
-          <h1 className="text-2xl md:text-3xl font-bold text-gray-800 mt-3">剪定業者ランキング2024年</h1>
+          <h1 className="text-2xl md:text-3xl font-bold text-gray-800 mt-3">剪定業者ランキング</h1>
           <p className="text-gray-500 mt-2">庭木の剪定を得意とする業者の上位5社</p>
         </div>
 

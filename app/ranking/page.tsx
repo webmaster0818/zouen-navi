@@ -6,7 +6,7 @@ import Breadcrumb from "@/app/components/Breadcrumb";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/ranking/" },
-  title: "造園・庭師業者ランキング2024年【10社比較】",
+  title: "造園・庭師業者ランキング2026年【10社比較】",
   description:
     "造園ナビ編集部が選定した庭師・造園業者のランキングです。料金・実績・口コミを総合的に比較した10社を紹介しています。無料で一括見積もりができるサービスも掲載しています。",
 };
@@ -20,7 +20,7 @@ export default function RankingPage() {
 
       <div className="max-w-4xl mx-auto px-4 py-8">
         <div className="text-center mb-8">
-          <span className="bg-[#F59E0B] text-white text-xs font-bold px-3 py-1 rounded-full">2024年版 編集部厳選</span>
+          <span className="bg-[#F59E0B] text-white text-xs font-bold px-3 py-1 rounded-full">2026年版 編集部厳選</span>
           <h1 className="text-2xl md:text-3xl font-bold text-gray-800 mt-3">造園・庭師業者ランキング</h1>
           <p className="text-gray-500 mt-2">料金・実績・口コミ・対応エリアを総合評価した全10社</p>
         </div>

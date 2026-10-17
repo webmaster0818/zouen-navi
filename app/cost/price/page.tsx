@@ -4,9 +4,9 @@ import Breadcrumb from "@/app/components/Breadcrumb";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/cost/price/" },
-  title: "庭工事の料金相場【2024年最新】剪定・造園・外構の費用比較",
+  title: "庭工事の料金相場｜剪定・造園・外構の費用比較",
   description:
-    "庭工事（剪定・伐採・草刈り・造園・外構）の料金相場を2024年最新版でまとめています。項目別の費用目安と、業者に依頼する際の注意点も解説します。",
+    "庭工事（剪定・伐採・草刈り・造園・外構）の料金相場をまとめています。項目別の費用目安と、業者に依頼する際の注意点も解説します。",
 };
 
 const CategoryIcon = ({ title }: { title: string }) => {
@@ -83,7 +83,6 @@ export default function PricePage() {
 
       <div className="max-w-4xl mx-auto px-4 py-8">
         <div className="text-center mb-8">
-          <span className="bg-[#92400E] text-white text-xs font-bold px-3 py-1 rounded-full">2024年最新版</span>
           <h1 className="text-2xl md:text-3xl font-bold text-gray-800 mt-3">庭工事の料金相場</h1>
           <p className="text-gray-500 mt-2">剪定・伐採・草刈り・造園の費用を解説します</p>
         </div>
