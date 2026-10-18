@@ -262,7 +262,7 @@ export default function TreePlantingPage() {
       <Related
         links={[
           { href: "/guide/transplant/", label: "庭木の移植・植え替え" },
-          { href: "/plant/symbol-tree/", label: "シンボルツリーのおすすめ15選" },
+          { href: "/plant/symbol-tree/", label: "シンボルツリーのおすすめ5種" },
           { href: "/guide/hedge-planting/", label: "生垣を新しく植える" },
           { href: "/guide/dead-tree/", label: "庭木が枯れたかどうかの見分け方" },
         ]}
