@@ -200,7 +200,7 @@ export default function HedgePlantingPage() {
         <Steps items={speciesItems} />
         <After>
           生垣に使われる主な品種の特徴は
-          <L href="/plant/hedge/">生垣のおすすめ10選</L>
+          <L href="/plant/hedge/">生垣におすすめの樹種5種の比較</L>
           、日陰に植える場合は
           <L href="/plant/shade/">日陰に強い庭木</L>
           にまとめています。
@@ -269,7 +269,7 @@ export default function HedgePlantingPage() {
 
       <Related
         links={[
-          { href: "/plant/hedge/", label: "生垣のおすすめ10選" },
+          { href: "/plant/hedge/", label: "生垣におすすめの樹種5種の比較" },
           { href: "/guide/hedge-care/", label: "生垣の手入れ｜刈り込みの考え方" },
           { href: "/area/kawaguchi/", label: "川口で生垣を設置する際の業者選び" },
           { href: "/guide/tree-planting/", label: "庭木を新しく植える" },
