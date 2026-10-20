@@ -32,6 +32,12 @@ export default async function ServicePage({ params }: Props) {
   const recCompanies = companiesData.filter((c) =>
     service.recommendedCompanies.includes(c.slug)
   );
+  const extra = service as {
+    lead?: string;
+    sources?: { label: string; url: string }[];
+    sourcesCheckedAt?: string;
+    sourcesNote?: string;
+  };
 
   return (
     <div>
@@ -48,6 +54,12 @@ export default async function ServicePage({ params }: Props) {
           <span className="bg-[#92400E] text-white text-xs font-bold px-3 py-1 rounded-full">サービスガイド</span>
           <h1 className="text-2xl md:text-3xl font-bold text-gray-800 mt-3 mb-3">{service.title}</h1>
           <p className="text-gray-600 leading-relaxed">{service.description}</p>
+          {extra.lead && (
+            <div className="mt-4 bg-white rounded-xl p-4 border-l-4 border-[#15803D] border border-green-100">
+              <p className="text-xs font-bold text-[#15803D] mb-1">要点</p>
+              <p className="text-gray-800 leading-relaxed text-sm">{extra.lead}</p>
+            </div>
+          )}
 
           {/* Cost Range */}
           <div className="mt-4 bg-[#F0FDF4] rounded-xl p-4 border border-green-200">
@@ -105,6 +117,22 @@ export default async function ServicePage({ params }: Props) {
             ))}
           </div>
         </div>
+
+        {extra.sources && extra.sources.length > 0 && (
+          <div className="bg-white rounded-xl border border-gray-100 p-5 mb-6 text-xs text-gray-600">
+            <h2 className="font-bold text-gray-800 text-sm mb-2">出典（{extra.sourcesCheckedAt}確認）</h2>
+            <ul className="space-y-1 list-disc pl-4">
+              {extra.sources.map((src) => (
+                <li key={src.url}>
+                  <a href={src.url} target="_blank" rel="noopener noreferrer" className="underline hover:text-[#15803D]">
+                    {src.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+            {extra.sourcesNote && <p className="mt-2 text-gray-500">※{extra.sourcesNote}</p>}
+          </div>
+        )}
 
         {/* Recommended Companies */}
         <div className="bg-white rounded-2xl shadow-sm border border-green-100 p-6 mb-6">
