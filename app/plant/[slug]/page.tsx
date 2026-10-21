@@ -47,19 +47,35 @@ export default async function PlantPage({ params }: Props) {
           <span className="bg-[#15803D] text-white text-xs font-bold px-3 py-1 rounded-full">植物ガイド</span>
           <h1 className="text-2xl md:text-3xl font-bold text-gray-800 mt-3 mb-3">{plant.title}</h1>
           <p className="text-gray-600 leading-relaxed">{plant.description}</p>
+          {"intro" in plant && plant.intro && (
+            <div className="mt-4 space-y-3">
+              {plant.intro.map((t) => (
+                <p key={t} className="text-gray-700 leading-relaxed text-sm md:text-base">{t}</p>
+              ))}
+            </div>
+          )}
         </div>
 
         {/* Plants List */}
-        <h2 className="text-xl font-bold text-gray-800 mb-4">おすすめ品種一覧</h2>
+        <h2 className="text-xl font-bold text-gray-800 mb-4">{("listHeading" in plant && plant.listHeading) || "おすすめ品種一覧"}</h2>
         <div className="space-y-4 mb-8">
           {plant.plants.map((p, i) => (
             <div key={p.name} className="bg-white rounded-xl shadow-sm border border-green-100 p-5">
               <div className="flex items-start gap-3">
-                <span className="bg-[#15803D] text-white rounded-full w-7 h-7 flex items-center justify-center text-sm font-bold flex-shrink-0">
-                  {i + 1}
-                </span>
+                {"unranked" in p && p.unranked ? (
+                  <span className="bg-gray-400 text-white rounded-full px-2 h-7 flex items-center justify-center text-xs font-bold flex-shrink-0">
+                    参考
+                  </span>
+                ) : (
+                  <span className="bg-[#15803D] text-white rounded-full w-7 h-7 flex items-center justify-center text-sm font-bold flex-shrink-0">
+                    {i + 1}
+                  </span>
+                )}
                 <div className="flex-1">
                   <h3 className="font-bold text-gray-800 text-lg">{p.name}</h3>
+                  {"trim" in p && p.trim && (
+                    <p className="text-xs text-[#15803D] font-bold mt-1">刈り込み回数の目安：{p.trim}</p>
+                  )}
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-2 mt-2 text-sm">
                     <div className="bg-[#F0FDF4] rounded-lg p-2">
                       <span className="text-[#15803D] font-bold text-xs">特徴</span>
