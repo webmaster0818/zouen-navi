@@ -350,6 +350,7 @@ export default function GreenWastePage() {
         </h2>
         <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
           {[
+            { href: "/guide/garden-cleaning/", label: "庭の掃除を業者に頼むとき" },
             { href: "/guide/weed-control/", label: "庭の雑草対策の選び方" },
             { href: "/guide/pest-disease/", label: "庭木の害虫と病気の見分け方" },
             { href: "/service/pruning/", label: "庭木の剪定費用と適した時期" },

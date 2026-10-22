@@ -406,6 +406,7 @@ export default function FallenLeavesPage() {
         </h2>
         <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
           {[
+            { href: "/guide/garden-cleaning/", label: "庭の掃除を業者に頼むとき" },
             { href: "/guide/green-waste/", label: "剪定枝・刈った草の処分方法" },
             { href: "/guide/neighbor-branch/", label: "隣家にはみ出した庭木の枝と根" },
             { href: "/guide/drainage/", label: "庭の水はけが悪いときの原因と対処" },

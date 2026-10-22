@@ -234,6 +234,7 @@ export default function SilverCenterPage() {
         links={[
           { href: "/ranking/", label: "造園・庭師業者ランキング" },
           { href: "/area/utsunomiya/", label: "年間契約とスポット依頼の選び方" },
+          { href: "/guide/garden-cleaning/", label: "庭の掃除を業者に頼むとき" },
           { href: "/guide/garden-safety/", label: "庭作業の事故を防ぐ" },
           { href: "/guide/garden-downsizing/", label: "庭じまいという選択" },
         ]}

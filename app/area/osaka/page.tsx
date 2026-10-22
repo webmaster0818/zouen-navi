@@ -284,6 +284,7 @@ export default function AreaOsakaPage() {
           {[
             { href: "/service/garden-design/", label: "庭のデザインを専門家に依頼する方法" },
             { href: "/service/maintenance/", label: "庭木の年間メンテナンスカレンダー" },
+            { href: "/guide/garden-cleaning/", label: "庭の掃除を業者に頼むとき" },
             { href: "/guide/weed-control/", label: "庭の雑草対策の選び方" },
             { href: "/ranking/", label: "造園・庭師業者ランキング" },
           ].map((l) => (

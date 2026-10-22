@@ -259,6 +259,7 @@ export default function GrassCuttingPage() {
       <Related
         links={[
           { href: "/guide/weed-control/", label: "庭の雑草対策｜防草シート・グランドカバー・除草の選び方" },
+          { href: "/guide/garden-cleaning/", label: "庭の掃除を業者に頼むとき" },
           { href: "/guide/green-waste/", label: "剪定枝・刈った草の処分方法" },
           { href: "/guide/garden-safety/", label: "庭作業の事故を防ぐ" },
           { href: "/guide/spraying/", label: "住宅地で庭木の消毒を行う・依頼する場合" },

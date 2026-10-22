@@ -32,6 +32,7 @@ const GUIDE_LINKS = [
   { href: "/guide/dead-tree/", label: "枯れた庭木の見分け方" },
   { href: "/guide/stump-removal/", label: "伐採後の切り株" },
   { href: "/guide/silver-center/", label: "シルバー人材センターへの依頼" },
+  { href: "/guide/garden-cleaning/", label: "庭の掃除を業者に頼むとき" },
   { href: "/guide/tree-doctor/", label: "樹木医への相談" },
   { href: "/review/", label: "口コミ・評判まとめ" },
 ];
