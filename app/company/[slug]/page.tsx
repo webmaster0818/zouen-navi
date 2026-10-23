@@ -5,6 +5,18 @@ import companiesData from "@/data/companies.json";
 import { getVerifiedRating } from "@/app/lib/verifiedRating";
 import Breadcrumb from "@/app/components/Breadcrumb";
 
+type CompanyExtra = {
+  seoTitle?: string;
+  seoDescription?: string;
+  answer?: {
+    heading: string;
+    paragraphs: string[];
+    reviewLink?: { href: string; label: string };
+    source: string;
+  };
+  faqs?: { q: string; a: string }[];
+};
+
 type Props = {
   params: Promise<{ slug: string }>;
 };
@@ -17,10 +29,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const company = companiesData.find((c) => c.slug === slug);
   if (!company) return {};
+  const c = company as CompanyExtra;
   return {
     alternates: { canonical: `/company/${slug}/` },
-    title: `${company.name}の評判・口コミ・費用｜特徴と料金`,
-    description: `${company.name}の特徴・料金・口コミを解説します。${company.tagline}。造園ナビ編集部が調査した情報を掲載しています。`,
+    title: c.seoTitle ?? `${company.name}の評判・口コミ・費用｜特徴と料金`,
+    description: c.seoDescription ?? `${company.name}の特徴・料金・口コミを解説します。${company.tagline}。造園ナビ編集部が調査した情報を掲載しています。`,
   };
 }
 
@@ -31,6 +44,18 @@ export default async function CompanyPage({ params }: Props) {
 
   const rank = companiesData.findIndex((c) => c.slug === slug) + 1;
   const vr = getVerifiedRating(company.slug);
+  const extra = company as CompanyExtra;
+  const faqLd = extra.faqs?.length
+    ? {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: extra.faqs.map((f) => ({
+          "@type": "Question",
+          name: f.q,
+          acceptedAnswer: { "@type": "Answer", text: f.a },
+        })),
+      }
+    : null;
 
   return (
     <div>
@@ -70,6 +95,23 @@ export default async function CompanyPage({ params }: Props) {
             ))}
           </div>
         </div>
+
+        {extra.answer && (
+          <section className="bg-white rounded-2xl shadow-sm p-6 md:p-8 mb-6 border border-green-100">
+            <h2 className="text-xl font-bold text-gray-800 mb-3">{extra.answer.heading}</h2>
+            {extra.answer.paragraphs.map((p) => (
+              <p key={p} className="text-gray-700 leading-relaxed mb-3">{p}</p>
+            ))}
+            {extra.answer.reviewLink && (
+              <p className="text-sm mb-3">
+                <Link href={extra.answer.reviewLink.href} className="text-[#15803D] underline underline-offset-2">
+                  {extra.answer.reviewLink.label}
+                </Link>
+              </p>
+            )}
+            <p className="text-xs text-gray-500">{extra.answer.source}</p>
+          </section>
+        )}
 
         {/* Pros & Cons */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
@@ -127,6 +169,23 @@ export default async function CompanyPage({ params }: Props) {
           </div>
           <p className="text-xs text-green-300 mt-3">※当サイトはアフィリエイト広告を含みます</p>
         </div>
+
+        {extra.faqs && extra.faqs.length > 0 && (
+          <section className="mt-8">
+            <h2 className="font-bold text-gray-800 text-lg mb-4">よくある質問</h2>
+            <dl className="space-y-4">
+              {extra.faqs.map((f) => (
+                <div key={f.q} className="bg-white rounded-xl p-5 border border-green-100">
+                  <dt className="font-semibold text-gray-800 mb-2">Q. {f.q}</dt>
+                  <dd className="text-sm text-gray-700 leading-relaxed">A. {f.a}</dd>
+                </div>
+              ))}
+            </dl>
+          </section>
+        )}
+        {faqLd && (
+          <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
+        )}
 
         {/* Related */}
         <div className="mt-8">
