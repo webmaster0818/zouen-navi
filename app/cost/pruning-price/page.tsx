@@ -163,10 +163,10 @@ export default function PruningPricePage() {
 
         {/* CTA */}
         <div className="bg-gradient-to-r from-[#15803D] to-[#166534] rounded-2xl p-6 text-white text-center">
-          <h2 className="text-xl font-bold mb-2">無料で剪定費用を確認する</h2>
-          <p className="text-green-100 text-sm mb-4">お庭110番では、最短当日の見積もり・作業に対応しています</p>
+          <h2 className="text-xl font-bold mb-2">剪定費用を見積もりで確認する</h2>
+          <p className="text-green-100 text-sm mb-4">お庭110番は24時間365日受付です。対応エリア・加盟店・現場状況により、当日中の施工が難しい場合や、事前確認のうえ調査・見積もりに費用がかかる場合があります</p>
           <Link href="/company/oniwa-110/" className="bg-[#F59E0B] hover:bg-amber-500 text-white font-bold px-8 py-3 rounded-full transition-all inline-block">
-            無料で見積もりを依頼する
+            お庭110番の詳細を見る
           </Link>
           <p className="text-xs text-green-300 mt-3">※当サイトはアフィリエイト広告を含みます</p>
         </div>

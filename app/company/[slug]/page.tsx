@@ -15,6 +15,7 @@ type CompanyExtra = {
     source: string;
   };
   faqs?: { q: string; a: string }[];
+  ctaNote?: string;
 };
 
 type Props = {
@@ -148,7 +149,7 @@ export default async function CompanyPage({ params }: Props) {
         {/* CTA */}
         <div className="bg-gradient-to-r from-[#15803D] to-[#166534] rounded-2xl p-6 text-white text-center">
           <h2 className="text-xl font-bold mb-2">{company.name}に無料で相談する</h2>
-          <p className="text-green-100 text-sm mb-4">見積もりは無料です。依頼条件の詳細は公式サイトにてご確認ください。</p>
+          <p className="text-green-100 text-sm mb-4">{extra.ctaNote ?? "見積もりは無料です。依頼条件の詳細は公式サイトにてご確認ください。"}</p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             {company.officialUrl && (
             <a
