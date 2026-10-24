@@ -4,14 +4,14 @@ import Link from "next/link";
 import Breadcrumb from "@/app/components/Breadcrumb";
 
 const PAGE_URL = "https://zouen-navi.com/guide/pest-disease/";
-const UPDATED_LABEL = "2026年9月20日";
-const UPDATED_ISO = "2026-09-20";
-const TITLE = "庭木の害虫と病気｜症状の見分け方と、被害を広げないための対処";
+const UPDATED_LABEL = "2026年10月24日";
+const UPDATED_ISO = "2026-10-24";
+const TITLE = "庭木の害虫と病気の種類｜チャドクガ・アブラムシ・カイガラムシ・うどんこ病を症状で見分ける";
 
 export const metadata: Metadata = {
   title: TITLE,
   description:
-    "葉が食べられた、白い粉が付着した、幹におがくずが落ちているといった庭木の異変は、症状の現れ方によって原因の目安がつきます。触れると危険な虫の見分け方、自分で対処してよい範囲、薬剤を使用する際の前提、業者に確認を依頼すべき状態までを整理します。",
+    "庭木に多い害虫は、チャドクガ・イラガなどの毛虫、アブラムシ類、カイガラムシ類、幹を食べるカミキリムシ類（テッポウムシ）、病気はうどんこ病・すす病などです。症状から見分ける方法と、自分で対処できる範囲、業者に任せる範囲を自治体・国の資料をもとに整理します。",
   alternates: { canonical: PAGE_URL },
   openGraph: {
     images: OG_IMAGES,
@@ -24,6 +24,7 @@ export const metadata: Metadata = {
 };
 
 const toc = [
+  { id: "pest-names", label: "庭木に多い害虫と病気の種類（早見表）" },
   { id: "pest-signs", label: "症状の現れ方から原因の目安をつける" },
   { id: "pest-danger", label: "最初に確認すべき「触れてはいけない」もの" },
   { id: "pest-bugs", label: "庭木に付く虫は食害の仕方で4つに分かれます" },
@@ -32,6 +33,58 @@ const toc = [
   { id: "pest-prevent", label: "発生しにくい庭にするための考え方" },
   { id: "pest-pro", label: "自分で行う範囲と、業者に任せたほうがよい範囲" },
   { id: "pest-faq", label: "よくある質問" },
+];
+
+const names = [
+  {
+    name: "チャドクガ（毛虫）",
+    kind: "害虫・葉を食べる",
+    tree: "ツバキ、サザンカなど",
+    sign: "年2回（初夏と秋）発生し、初期は葉の裏に集団で付いて葉を食べる。毒針毛や鱗粉が皮膚に付くと皮膚炎を起こす",
+    src: "杉並区",
+  },
+  {
+    name: "イラガ（毛虫）",
+    kind: "害虫・葉を食べる",
+    tree: "サクラ、ウメ、カキなど",
+    sign: "年2回（夏から秋）発生し、冬にはまゆが見られる。幼虫はトゲを持ち、触れると激しい痛みがある",
+    src: "杉並区",
+  },
+  {
+    name: "アブラムシ類",
+    kind: "害虫・汁を吸う",
+    tree: "サクラ類、ケヤキ、ツツジ類、マツ類など",
+    sign: "成虫・幼虫が汁を吸い、生育を妨げる。種類によっては葉を巻いたり、虫こぶを作ったりする",
+    src: "北海道開発局",
+  },
+  {
+    name: "カイガラムシ類",
+    kind: "害虫・枝や幹に張り付く",
+    tree: "サクラ類、カエデ類、イチイなど",
+    sign: "多くは殻をまとい、汁を吸う。ふ化した幼虫が移動して殻を作り、定着する",
+    src: "北海道開発局",
+  },
+  {
+    name: "カミキリムシ類（幼虫はテッポウムシ）",
+    kind: "害虫・幹の内部を食べる",
+    tree: "サクラ類、カエデ類、ケヤキなど",
+    sign: "幼虫が樹皮の下や材の部分を食べる。被害を受けた木は枯れるか、生長が著しく妨げられる。弱った木に入りやすい",
+    src: "北海道開発局",
+  },
+  {
+    name: "うどんこ病",
+    kind: "病気",
+    tree: "カエデ類、ケヤキ、サクラ類など",
+    sign: "新しい葉に白い粉をまぶしたような状態になる。葉がねじれたり、奇形になったりする",
+    src: "北海道開発局",
+  },
+  {
+    name: "すす病",
+    kind: "病気",
+    tree: "ツツジ類、ヤナギ類など",
+    sign: "葉や茎の表面がすすを付けたように黒くなる。木が枯れることはないが、樹勢が衰える。カイガラムシ・アブラムシ類の駆除が対処になる",
+    src: "北海道開発局",
+  },
 ];
 
 const signs = [
@@ -64,7 +117,7 @@ const signs = [
 const dangerItems = [
   {
     h: "毛に触れるとかぶれる種類の毛虫",
-    b: "ツバキやサザンカの仲間に付く毛虫のように、毛に触れただけで強いかゆみと発疹を起こすものがあります。注意すべきなのは、虫そのものに触れなくても、風で飛んだ毛や、脱皮した抜け殻、葉に残った毛で症状が出る点です。発生している木の下で作業するだけでも被害を受けます。該当する木で毛虫を発見した場合は、素手で払わず、枝を揺らさず、一旦その場を離れてください。",
+    b: "ツバキやサザンカの仲間に付くチャドクガの幼虫のように、毛に触れただけで強いかゆみと発疹を起こすものがあります。注意すべきなのは、虫そのものに触れなくても、風で飛んだ毛や、脱皮した抜け殻、葉に残った毛で症状が出る点です。発生している木の下で作業するだけでも被害を受けます。該当する木で毛虫を発見した場合は、素手で払わず、枝を揺らさず、一旦その場を離れてください。",
   },
   {
     h: "刺す虫の巣",
@@ -137,7 +190,7 @@ const steps = [
   },
   {
     h: "薬剤を使用する場合は前提を確認する",
-    b: "園芸用の薬剤には、使用できる植物と使用方法が定められています。手元にあるという理由で流用せず、対象と方法を確認してから使用してください。周囲への飛散、隣地への影響、ペットや子どもの動線もあわせて考慮します。判断がつかない場合は、散布そのものを業者に相談したほうが確実です。",
+    b: "園芸用の薬剤には、使用できる植物と使用方法が定められています。手元にあるという理由で流用せず、対象と方法を確認してから使用してください。周囲への飛散、隣地への影響、ペットや子どもの動線もあわせて考慮します。判断がつかない場合は、散布そのものを業者に相談したほうが確実です。農林水産省・環境省の通知「住宅地等における農薬使用について」は、人が居住し、滞在する場所の植栽について、病害虫の発生の有無にかかわらず定期的に農薬を散布することをやめ、早期に発見して、被害を受けた部分のせん定や捕殺で対応するよう努めることを求めています。",
   },
   {
     h: "木そのものの状態を確認してもらう",
@@ -187,6 +240,10 @@ const proWork = [
 
 const faqs = [
   {
+    q: "庭木に付く害虫には、どのような種類がありますか。",
+    a: "葉を食べるチャドクガ・イラガなどの毛虫、汁を吸うアブラムシ類、枝や幹に張り付くカイガラムシ類、幹の内部を食べるカミキリムシ類（幼虫はテッポウムシ）が代表的です。杉並区は、チャドクガはツバキ・サザンカなどに年2回（初夏と秋）発生し、毒針毛や鱗粉が皮膚に付くと皮膚炎を起こすと案内しています。病気では、うどんこ病やすす病がよく見られ、すす病はカイガラムシやアブラムシ類の駆除が対処になります。",
+  },
+  {
     q: "虫の種類が分からないときは、どうすればよいですか。",
     a: "まず触れずに撮影してください。近接の写真と、その虫がどの木のどこに付いていたかが分かる写真の両方があると、相談の際に絞り込みやすくなります。特に毛のある虫は、触れただけで症状が出る種類があるため、種類が分からないうちは払わないでください。",
   },
@@ -196,7 +253,7 @@ const faqs = [
   },
   {
     q: "毛虫が大量に発生しています。自分で駆除できますか。",
-    a: "触れるとかぶれる種類が含まれている可能性がある場合は、自分で払うことは避けてください。毛が飛散するため、木の下に立つだけで被害を受けることがあります。発生している木の種類と、どの程度の範囲に広がっているかを伝えて、対処を依頼することが安全です。",
+    a: "触れるとかぶれる種類が含まれている可能性がある場合は、自分で払うことは避けてください。毛が飛散するため、木の下に立つだけで被害を受けることがあります。杉並区は、殺虫剤だけで駆除する方法は毒針毛を飛散させるため適していないとし、発生している葉を枝ごと切り落とす方法などを案内しています。発生している木の種類と、どの程度の範囲に広がっているかを伝えて、対処を依頼することが安全です。",
   },
   {
     q: "木が枯れてきました。手遅れでしょうか。",
@@ -248,9 +305,10 @@ export default function PestDiseasePage() {
           <span>造園ナビ編集部</span>
         </div>
         <p className="text-[15px] leading-8 text-text-secondary">
-          庭木の異変は、多くの場合葉から始まります。穴が開いている、縮れている、白い粉が付着している、触るとべたつくといった症状です。
-          虫の種類を特定することは容易ではありませんが、症状の現れ方を手がかりにすれば、何が起きているかの目安はつきます。
-          本ページでは、症状から原因を絞り込む手順と、自分で対処してよい範囲、触れてはいけないものを整理します。
+          庭木に多い害虫は、ツバキやサザンカに付くチャドクガ、サクラやウメに付くイラガなどの毛虫、新芽の汁を吸うアブラムシ類、枝に張り付くカイガラムシ類、幹の内部を食べるカミキリムシ類（幼虫はテッポウムシ）です。
+          病気では、葉が白い粉をまぶしたようになるうどんこ病、葉が黒くすすけるすす病がよく見られます。
+          チャドクガは毒針毛に触れると皮膚炎を起こすため、名前が分からない毛虫は素手で払わないでください。
+          本ページでは、症状から原因を絞り込む手順と、自分で対処してよい範囲、触れてはいけないもの、業者に任せる範囲を整理します。
         </p>
       </header>
 
@@ -266,6 +324,46 @@ export default function PestDiseasePage() {
           ))}
         </ol>
       </nav>
+
+      <section id="pest-names" className="scroll-mt-20 mb-12">
+        <h2 className="text-xl font-bold text-text-primary border-l-4 border-primary pl-3 mb-5">
+          庭木に多い害虫と病気の種類（早見表）
+        </h2>
+        <p className="text-[15px] leading-8 text-text-secondary mb-5">
+          自治体と国の資料に掲載されている、庭木や街路樹に多い害虫と病気です。付きやすい木は資料に挙げられている例で、これ以外の木に発生しないという意味ではありません。
+        </p>
+        <div className="overflow-x-auto">
+          <table className="w-full text-sm border border-border">
+            <thead className="bg-surface-alt">
+              <tr>
+                <th className="p-3 text-left border-b border-border">名前</th>
+                <th className="p-3 text-left border-b border-border">分類</th>
+                <th className="p-3 text-left border-b border-border">付きやすい木の例</th>
+                <th className="p-3 text-left border-b border-border">症状・特徴</th>
+                <th className="p-3 text-left border-b border-border">出典</th>
+              </tr>
+            </thead>
+            <tbody>
+              {names.map((n) => (
+                <tr key={n.name} className="align-top">
+                  <td className="p-3 border-b border-border font-bold text-text-primary">{n.name}</td>
+                  <td className="p-3 border-b border-border text-text-secondary">{n.kind}</td>
+                  <td className="p-3 border-b border-border text-text-secondary">{n.tree}</td>
+                  <td className="p-3 border-b border-border text-text-secondary leading-7">{n.sign}</td>
+                  <td className="p-3 border-b border-border text-text-muted">{n.src}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p className="text-xs leading-6 text-text-muted mt-3">
+          出典：杉並区「
+          <a href="https://www.city.suginami.tokyo.jp/s102/846.html" target="_blank" rel="noopener noreferrer" className="underline">樹木に発生する毛虫</a>
+          」（2024年3月8日更新）、国土交通省北海道開発局 旭川開発建設部「
+          <a href="https://www.hkd.mlit.go.jp/as/douro_keikaku/vkvvn800000013xn-att/ryokuka3_8.pdf" target="_blank" rel="noopener noreferrer" className="underline">道路緑化技術資料（病害虫）</a>
+          」（平成15年度版）。いずれも2026年10月24日確認。
+        </p>
+      </section>
 
       <section id="pest-signs" className="scroll-mt-20 mb-12">
         <h2 className="text-xl font-bold text-text-primary border-l-4 border-primary pl-3 mb-5">
@@ -363,6 +461,9 @@ export default function PestDiseasePage() {
           ))}
         </ol>
         <p className="text-[15px] leading-8 text-text-secondary mt-5">
+          農薬の使用については、農林水産省「
+          <a href="https://www.maff.go.jp/j/nouyaku/n_tekisei/jutakuti/20130426tuchi.html" target="_blank" rel="noopener noreferrer" className="text-primary underline underline-offset-2">住宅地等における農薬使用について</a>
+          」（平成25年4月26日・2026年10月24日確認）もあわせてご確認ください。
           切り取った枝や集めた葉の処分方法は
           <Link href="/guide/green-waste/" className="text-primary underline underline-offset-2 mx-1">
             剪定枝・刈った草の処分方法
