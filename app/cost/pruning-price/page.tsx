@@ -4,23 +4,10 @@ import Breadcrumb from "@/app/components/Breadcrumb";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/cost/pruning-price/" },
-  title: "庭木の剪定費用の相場｜安い業者の選び方",
+  title: "庭木の剪定費用｜掲載業者の公式料金と見積もりの確認点",
   description:
-    "庭木の剪定費用の相場を樹種・高さ別に解説します。費用を抑えられる業者の選び方、見積もりの確認点、自分で剪定する場合との比較も紹介します。",
+    "庭木の剪定費用を、掲載業者（お庭マスター・お庭110番）の公式料金（税込・下限）で示します。見積もりで確認する項目と、季節ごとの剪定の適期も紹介します。",
 };
-
-const treePricing = [
-  { tree: "松（中木3m）", min: 15000, max: 50000, note: "手間のかかる樹種" },
-  { tree: "松（高木5m）", min: 50000, max: 150000, note: "熟練した技術が必要" },
-  { tree: "ツツジ・サツキ", min: 800, max: 3000, note: "1株あたり" },
-  { tree: "クロガネモチ", min: 5000, max: 20000, note: "中木クラス" },
-  { tree: "カイヅカイブキ", min: 8000, max: 30000, note: "高さによる" },
-  { tree: "モミジ・カエデ", min: 5000, max: 25000, note: "繊細な剪定が必要" },
-  { tree: "オリーブ", min: 5000, max: 20000, note: "自然樹形を活かす" },
-  { tree: "フジ", min: 10000, max: 40000, note: "棚の有無により異なる" },
-  { tree: "ヤマボウシ", min: 5000, max: 25000, note: "中木クラス" },
-  { tree: "ハナミズキ", min: 8000, max: 30000, note: "中〜高木クラス" },
-];
 
 const seasonalGuide = [
   {
@@ -62,49 +49,27 @@ export default function PruningPricePage() {
       <div className="max-w-4xl mx-auto px-4 py-8">
         <div className="text-center mb-8">
           <span className="bg-[#15803D] text-white text-xs font-bold px-3 py-1 rounded-full">剪定費用ガイド</span>
-          <h1 className="text-2xl md:text-3xl font-bold text-gray-800 mt-3">庭木の剪定費用の相場</h1>
-          <p className="text-gray-500 mt-2">樹種・高さ別の費用と業者の選び方</p>
+          <h1 className="text-2xl md:text-3xl font-bold text-gray-800 mt-3">庭木の剪定費用（掲載業者の公式料金）</h1>
+          <p className="text-gray-500 mt-2">公式料金の下限と、見積もりで確認する項目</p>
         </div>
 
         {/* Summary Box */}
         <div className="bg-white rounded-2xl shadow-md p-6 mb-6 border-l-4 border-[#15803D]">
-          <h2 className="font-bold text-gray-800 mb-3">剪定費用の早見表</h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+          <h2 className="font-bold text-gray-800 mb-3">剪定の公式料金（税込・下限、2026-10-25確認）</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
             {[
-              { label: "低木（1m以下）", price: "500〜2,000円" },
-              { label: "中木（1〜3m）", price: "2,000〜10,000円" },
-              { label: "高木（3〜5m）", price: "10,000〜30,000円" },
-              { label: "高木（5m以上）", price: "30,000〜80,000円" },
+              { label: "お庭マスター 植込み・庭木・生垣", price: "550円〜/本", src: "https://oniwa-master.info/servicelist/index.html" },
+              { label: "お庭110番 庭木の剪定", price: "3,300円〜/本", src: "https://www.kusakari-a.com/price/" },
+              { label: "お庭110番 生垣の剪定", price: "1,700円〜/m", src: "https://www.kusakari-a.com/price/" },
             ].map((item) => (
               <div key={item.label} className="bg-[#F0FDF4] rounded-xl p-3 text-center border border-green-100">
                 <p className="text-xs text-gray-500">{item.label}</p>
                 <p className="font-bold text-[#15803D] text-sm mt-1">{item.price}</p>
+                <p className="text-xs mt-1"><a href={item.src} target="_blank" rel="noopener noreferrer" className="underline text-gray-400 hover:text-[#15803D]">公式料金ページ</a></p>
               </div>
             ))}
           </div>
-          <p className="text-xs text-gray-400 mt-3">※1本あたりの目安です。ゴミ処分費は別途となります</p>
-        </div>
-
-        {/* Tree-specific pricing */}
-        <div className="bg-white rounded-2xl shadow-md overflow-hidden mb-6">
-          <div className="bg-[#15803D] text-white px-6 py-4">
-            <h2 className="font-bold text-lg">樹種別・剪定費用の相場</h2>
-          </div>
-          <div className="divide-y divide-gray-100">
-            {treePricing.map((row) => (
-              <div key={row.tree} className="flex items-center justify-between px-6 py-3">
-                <div>
-                  <span className="font-medium text-gray-800 text-sm">{row.tree}</span>
-                  <span className="text-xs text-gray-400 ml-2">（{row.note}）</span>
-                </div>
-                <div className="text-right">
-                  <span className="font-bold text-[#15803D] text-sm">
-                    {row.min.toLocaleString()}〜{row.max.toLocaleString()}円
-                  </span>
-                </div>
-              </div>
-            ))}
-          </div>
+          <p className="text-xs text-gray-400 mt-3">※各社公式の下限です。お庭110番の同じ料金ページには「剪定 4,000円〜/本」の表示もあり、「対応エリア・加盟店により記載価格や条件では対応できない場合がございます」と注記しています。木の高さ・樹種ごとの金額は、業者の見積もりで確認してください。</p>
         </div>
 
         {/* Seasonal Guide */}

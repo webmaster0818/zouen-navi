@@ -4,16 +4,15 @@ import Breadcrumb from "@/app/components/Breadcrumb";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/cost/diy/" },
-  title: "DIY庭づくりガイド【費用・道具・作業の注意点】",
+  title: "DIY庭づくりガイド【道具・手順・作業の注意点】",
   description:
-    "DIYで庭をつくる方法を初心者向けに解説します。必要な道具・費用の目安・作業の注意点に加え、業者に依頼すべき作業の見極め方も紹介します。",
+    "DIYで庭をつくる方法を初心者向けに解説します。必要な道具・手順・作業の注意点に加え、業者に依頼すべき作業の見極め方も紹介します。",
 };
 
 const diyProjects = [
   {
     title: "芝張りDIY",
     difficulty: "初級",
-    cost: "1万〜5万円（30㎡）",
     time: "1〜2日",
     tools: ["スコップ", "レーキ", "目土", "ローラー"],
     steps: [
@@ -28,7 +27,6 @@ const diyProjects = [
   {
     title: "砂利敷きDIY",
     difficulty: "初級",
-    cost: "5,000〜3万円（10㎡）",
     time: "半日〜1日",
     tools: ["スコップ", "熊手", "防草シート", "砂利"],
     steps: [
@@ -42,7 +40,6 @@ const diyProjects = [
   {
     title: "花壇の縁取りDIY",
     difficulty: "初級",
-    cost: "3,000〜2万円",
     time: "半日",
     tools: ["スコップ", "煉瓦またはレンガ調ブロック", "砂"],
     steps: [
@@ -56,7 +53,6 @@ const diyProjects = [
   {
     title: "ウッドデッキDIY",
     difficulty: "中級",
-    cost: "10〜30万円",
     time: "2〜5日",
     tools: ["電動ドライバー", "丸ノコ", "水平器", "防腐材"],
     steps: [
@@ -170,11 +166,7 @@ export default function DIYPage() {
                   {project.difficulty}
                 </span>
               </div>
-              <div className="grid grid-cols-3 gap-3 mb-4 text-center text-sm">
-                <div className="bg-[#F0FDF4] rounded-lg p-2">
-                  <p className="text-xs text-gray-500">費用目安</p>
-                  <p className="font-bold text-[#15803D]">{project.cost}</p>
-                </div>
+              <div className="grid grid-cols-2 gap-3 mb-4 text-center text-sm">
                 <div className="bg-blue-50 rounded-lg p-2">
                   <p className="text-xs text-gray-500">所要時間</p>
                   <p className="font-bold text-blue-700">{project.time}</p>

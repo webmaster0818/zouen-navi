@@ -15,12 +15,11 @@ const pruningSpecialists = companiesData.filter((c) =>
   ["oniwa-master", "oniwa-110", "smile-garden", "oniwa-madoguchi", "kurashi-market"].includes(c.slug)
 );
 
+// 掲載業者の公式料金（税込・下限）。2026-10-25 に各社の公式料金ページで確認した値だけを載せる
 const pricingTable = [
-  { type: "低木（1m以下）", min: 500, max: 2000, note: "生垣・低木類" },
-  { type: "中木（1〜3m）", min: 2000, max: 10000, note: "シンボルツリー等" },
-  { type: "高木（3〜5m）", min: 10000, max: 30000, note: "カイヅカ・欅等" },
-  { type: "高木（5m以上）", min: 30000, max: 80000, note: "大型樹木" },
-  { type: "生垣（1m）", min: 1500, max: 4000, note: "1mあたり" },
+  { company: "お庭マスター", type: "植込み・庭木・生垣の剪定", price: "550円〜/本", src: "https://oniwa-master.info/servicelist/index.html" },
+  { company: "お庭110番", type: "庭木の剪定", price: "3,300円〜/本", src: "https://www.kusakari-a.com/price/" },
+  { company: "お庭110番", type: "生垣の剪定", price: "1,700円〜/m", src: "https://www.kusakari-a.com/price/" },
 ];
 
 export default function PruningRankingPage() {
@@ -42,30 +41,30 @@ export default function PruningRankingPage() {
 
         {/* Price Table */}
         <div className="bg-white rounded-2xl shadow-md p-6 mb-8">
-          <h2 className="font-bold text-gray-800 text-lg mb-4">剪定費用の相場表</h2>
+          <h2 className="font-bold text-gray-800 text-lg mb-4">剪定の公式料金（掲載業者）</h2>
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
                 <tr className="bg-[#15803D] text-white">
-                  <th className="p-3 text-left rounded-tl-lg">種類</th>
-                  <th className="p-3 text-center">最安値</th>
-                  <th className="p-3 text-center">最高値</th>
-                  <th className="p-3 text-left rounded-tr-lg">備考</th>
+                  <th className="p-3 text-left rounded-tl-lg">業者</th>
+                  <th className="p-3 text-left">作業</th>
+                  <th className="p-3 text-center">公式料金（税込・下限）</th>
+                  <th className="p-3 text-left rounded-tr-lg">出典</th>
                 </tr>
               </thead>
               <tbody>
                 {pricingTable.map((row, i) => (
-                  <tr key={row.type} className={i % 2 === 0 ? "bg-gray-50" : "bg-white"}>
-                    <td className="p-3 font-medium text-gray-700">{row.type}</td>
-                    <td className="p-3 text-center text-[#15803D] font-bold">{row.min.toLocaleString()}円〜</td>
-                    <td className="p-3 text-center text-gray-600">{row.max.toLocaleString()}円</td>
-                    <td className="p-3 text-gray-500 text-xs">{row.note}</td>
+                  <tr key={row.company + row.type} className={i % 2 === 0 ? "bg-gray-50" : "bg-white"}>
+                    <td className="p-3 font-medium text-gray-700">{row.company}</td>
+                    <td className="p-3 text-gray-700">{row.type}</td>
+                    <td className="p-3 text-center text-[#15803D] font-bold">{row.price}</td>
+                    <td className="p-3 text-xs"><a href={row.src} target="_blank" rel="noopener noreferrer" className="underline text-gray-500 hover:text-[#15803D]">公式料金ページ</a></td>
                   </tr>
                 ))}
               </tbody>
             </table>
           </div>
-          <p className="text-xs text-gray-400 mt-2">※ゴミ処分費・出張費は別途の場合があります</p>
+          <p className="text-xs text-gray-400 mt-2">※2026-10-25確認。お庭110番の同じ料金ページには「剪定 4,000円〜/本」の表示もあり、「対応エリア・加盟店により記載価格や条件では対応できない場合がございます」と注記しています。木の高さごとの金額は、業者の見積もりで確認してください。</p>
         </div>
 
         {/* Rankings */}

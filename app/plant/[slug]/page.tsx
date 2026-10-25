@@ -76,7 +76,7 @@ export default async function PlantPage({ params }: Props) {
                   {"trim" in p && p.trim && (
                     <p className="text-xs text-[#15803D] font-bold mt-1">刈り込み回数の目安：{p.trim}</p>
                   )}
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-2 mt-2 text-sm">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-2 mt-2 text-sm">
                     <div className="bg-[#F0FDF4] rounded-lg p-2">
                       <span className="text-[#15803D] font-bold text-xs">特徴</span>
                       <p className="text-gray-700 mt-1">{p.features}</p>
@@ -84,10 +84,6 @@ export default async function PlantPage({ params }: Props) {
                     <div className="bg-blue-50 rounded-lg p-2">
                       <span className="text-blue-700 font-bold text-xs">手入れ</span>
                       <p className="text-gray-700 mt-1">{p.care}</p>
-                    </div>
-                    <div className="bg-yellow-50 rounded-lg p-2">
-                      <span className="text-yellow-700 font-bold text-xs">価格目安</span>
-                      <p className="text-gray-700 mt-1 font-bold">{p.price}</p>
                     </div>
                   </div>
                 </div>

@@ -29,13 +29,10 @@ const services = [
   { icon: "/images/icon-hedge.png", label: "年間管理", href: "/service/maintenance/", desc: "月別メンテナンスカレンダー" },
 ];
 
+// 掲載業者の公式料金（税込・下限）。2026-10-25 に各社の公式料金ページで確認した値だけを載せる
 const costCards = [
-  { label: "剪定（低木）", range: "500〜2,000円", unit: "1本" },
-  { label: "剪定（中木）", range: "2,000〜10,000円", unit: "1本" },
-  { label: "剪定（高木）", range: "10,000〜50,000円", unit: "1本" },
-  { label: "伐採（3m以下）", range: "10,000〜30,000円", unit: "1本" },
-  { label: "草刈り", range: "5,000〜30,000円", unit: "30㎡" },
-  { label: "庭のデザイン設計", range: "10〜50万円", unit: "設計料" },
+  { label: "剪定（お庭マスター）", range: "550円〜", unit: "1本", src: "https://oniwa-master.info/servicelist/index.html" },
+  { label: "剪定（お庭110番）", range: "3,300円〜", unit: "1本", src: "https://www.kusakari-a.com/price/" },
 ];
 
 const faqs = [
@@ -49,7 +46,7 @@ const faqs = [
   },
   {
     q: "剪定や草刈りの費用の相場はいくらですか？",
-    a: "剪定は1本500〜50,000円（木の高さにより異なる）、草刈りは30㎡あたり5,000〜30,000円が目安です。詳しくは費用ガイドをご確認ください。",
+    a: "剪定は、掲載業者の公式料金でお庭マスター 550円〜/本、お庭110番 3,300円〜/本（いずれも税込・下限、2026-10-25確認）です。高さ・樹種や草刈りの面積ごとの金額は、業者の見積もりで確認してください。",
   },
   {
     q: "庭師に頼む前に準備しておくことはありますか？",
@@ -252,10 +249,10 @@ export default function HomePage() {
       {/* Cost Comparison */}
       <section className="max-w-6xl mx-auto px-4 py-16">
         <div className="text-center mb-10">
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-2">庭工事の費用相場</h2>
-          <p className="text-gray-500 text-sm">目安料金一覧（業者・条件により異なります）</p>
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-2">剪定の公式料金（掲載業者）</h2>
+          <p className="text-gray-500 text-sm">各社公式の下限（税込・2026-10-25確認）。お庭110番は「対応エリア・加盟店により記載価格や条件では対応できない場合がございます」と注記しています。金額は業者の見積もりで確認してください。</p>
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-2 gap-4 max-w-xl mx-auto">
           {costCards.map((c) => (
             <div
               key={c.label}
@@ -264,6 +261,7 @@ export default function HomePage() {
               <p className="text-xs text-gray-400 font-medium mb-2 uppercase tracking-wide">{c.label}</p>
               <p className="text-xl md:text-2xl font-bold text-[#15803D] leading-tight">{c.range}</p>
               <p className="text-xs text-gray-400 mt-1.5 bg-green-50 inline-block px-2 py-0.5 rounded-full">/ {c.unit}</p>
+              <p className="text-xs mt-2"><a href={c.src} target="_blank" rel="noopener noreferrer" className="underline text-gray-500 hover:text-[#15803D]">出典：公式料金ページ</a></p>
             </div>
           ))}
         </div>

@@ -34,6 +34,7 @@ export default async function ServicePage({ params }: Props) {
   );
   const extra = service as {
     lead?: string;
+    priceNote?: string;
     sources?: { label: string; url: string }[];
     sourcesCheckedAt?: string;
     sourcesNote?: string;
@@ -61,14 +62,14 @@ export default async function ServicePage({ params }: Props) {
             </div>
           )}
 
-          {/* Cost Range */}
-          <div className="mt-4 bg-[#F0FDF4] rounded-xl p-4 border border-green-200">
-            <p className="text-xs text-gray-500 mb-1">費用目安</p>
-            <p className="text-2xl font-bold text-[#15803D]">
-              {service.costRange.min.toLocaleString()}〜{service.costRange.max.toLocaleString()}円
-            </p>
-            <p className="text-sm text-gray-500">/ {service.costRange.unit}</p>
-          </div>
+          {/* 公式料金（出典のある値だけ。無いサービスは表示しない） */}
+          {extra.priceNote && (
+            <div className="mt-4 bg-[#F0FDF4] rounded-xl p-4 border border-green-200">
+              <p className="text-xs text-gray-500 mb-1">掲載業者の公式料金（下限）</p>
+              <p className="text-base font-bold text-[#15803D]">{extra.priceNote}</p>
+              <p className="text-xs text-gray-500 mt-1">金額は業者の見積もりで確認してください。</p>
+            </div>
+          )}
         </div>
 
         {/* Sections */}

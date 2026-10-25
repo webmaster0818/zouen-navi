@@ -4,9 +4,9 @@ import Breadcrumb from "@/app/components/Breadcrumb";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/cost/price/" },
-  title: "庭工事の料金相場｜剪定・造園・外構の費用比較",
+  title: "庭工事の料金｜剪定・伐採・草刈りの公式料金（掲載業者）",
   description:
-    "庭工事（剪定・伐採・草刈り・造園・外構）の料金相場をまとめています。項目別の費用目安と、業者に依頼する際の注意点も解説します。",
+    "掲載業者（お庭マスター・お庭110番）の公式料金ページで確認した剪定・伐採・草刈り・植栽の料金（税込・下限）をまとめています。金額は業者の見積もりで確認してください。",
 };
 
 const CategoryIcon = ({ title }: { title: string }) => {
@@ -17,56 +17,39 @@ const CategoryIcon = ({ title }: { title: string }) => {
   return <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>;
 };
 
+// 掲載業者の公式料金（税込・下限）。2026-10-25 に各社の公式料金ページで確認した値だけを載せる。
+// 公式で確認できない幅（高さ別・面積別・処分費など）は載せない
+const OM = "https://oniwa-master.info/servicelist/index.html";
+const O110 = "https://www.kusakari-a.com/price/";
+
 const priceCategories = [
   {
     title: "剪定・刈り込み",
     items: [
-      { name: "低木剪定（1m以下）", price: "500〜2,000円", unit: "1本" },
-      { name: "中木剪定（1〜3m）", price: "2,000〜10,000円", unit: "1本" },
-      { name: "高木剪定（3〜5m）", price: "10,000〜30,000円", unit: "1本" },
-      { name: "高木剪定（5m以上）", price: "30,000〜80,000円", unit: "1本" },
-      { name: "生垣の刈り込み", price: "1,500〜4,000円", unit: "1m" },
-      { name: "松の剪定（中木）", price: "15,000〜50,000円", unit: "1本" },
+      { name: "植込み・庭木・生垣の剪定（お庭マスター）", price: "550円〜", unit: "1本", src: OM },
+      { name: "庭木の剪定（お庭110番）", price: "3,300円〜", unit: "1本", src: O110, note: "同じ料金ページに「剪定 4,000円〜/本」の表示もあります" },
+      { name: "生垣の剪定（お庭110番）", price: "1,700円〜", unit: "1m", src: O110 },
     ],
   },
   {
-    title: "伐採・根株除去",
+    title: "伐採・伐根",
     items: [
-      { name: "低木伐採（1m以下）", price: "3,000〜10,000円", unit: "1本" },
-      { name: "中木伐採（1〜3m）", price: "10,000〜30,000円", unit: "1本" },
-      { name: "高木伐採（3〜5m）", price: "30,000〜70,000円", unit: "1本" },
-      { name: "高木伐採（5m以上）", price: "50,000〜200,000円", unit: "1本" },
-      { name: "根株除去（小〜中）", price: "15,000〜50,000円", unit: "1箇所" },
-      { name: "根株除去（大）", price: "50,000〜150,000円", unit: "1箇所" },
+      { name: "伐採（お庭マスター）", price: "3,300円〜", unit: "1本", src: OM },
+      { name: "伐採（お庭110番）", price: "5,500円〜", unit: "1本", src: O110, note: "同じ料金ページに「伐採・伐根 6,400円〜/本」の表示もあります" },
+      { name: "伐根（お庭110番）", price: "11,000円〜", unit: "1本", src: O110 },
     ],
   },
   {
     title: "草刈り・除草",
     items: [
-      { name: "草刈り（30㎡未満）", price: "5,000〜15,000円", unit: "1回" },
-      { name: "草刈り（30〜50㎡）", price: "10,000〜30,000円", unit: "1回" },
-      { name: "草刈り（50㎡以上）", price: "300〜600円", unit: "1㎡" },
-      { name: "防草シート施工", price: "800〜2,000円", unit: "1㎡" },
-      { name: "除草剤散布", price: "300〜1,000円", unit: "1㎡" },
+      { name: "機械刈り（お庭110番）", price: "390円〜", unit: "1㎡", src: O110, note: "同じ料金ページに「草刈り・除草 163円〜/㎡」の表示もあります" },
     ],
   },
   {
-    title: "庭のデザイン・リフォーム",
+    title: "植栽・芝張り",
     items: [
-      { name: "小庭リフォーム（10㎡）", price: "50〜200万円", unit: "全体" },
-      { name: "中庭リフォーム（20〜50㎡）", price: "200〜500万円", unit: "全体" },
-      { name: "シンボルツリー植付", price: "30,000〜100,000円", unit: "1本" },
-      { name: "花壇新設（1㎡）", price: "20,000〜80,000円", unit: "1㎡" },
-      { name: "芝張り", price: "1,500〜4,000円", unit: "1㎡" },
-      { name: "砂利敷き", price: "2,000〜5,000円", unit: "1㎡" },
-    ],
-  },
-  {
-    title: "廃棄・処分費用",
-    items: [
-      { name: "剪定ゴミ処分（軽トラ1台）", price: "5,000〜15,000円", unit: "1回" },
-      { name: "剪定ゴミ処分（2トン車1台）", price: "15,000〜40,000円", unit: "1回" },
-      { name: "伐採木処分（1本）", price: "5,000〜30,000円", unit: "1本" },
+      { name: "庭木の植栽（お庭110番）", price: "11,000円〜", unit: "1本", src: O110 },
+      { name: "芝張り施工（お庭110番）", price: "2,800円〜", unit: "1㎡", src: O110 },
     ],
   },
 ];
@@ -77,19 +60,19 @@ export default function PricePage() {
       <Breadcrumb
         items={[
           { label: "費用・料金ガイド" },
-          { label: "庭工事の料金相場" },
+          { label: "庭工事の料金" },
         ]}
       />
 
       <div className="max-w-4xl mx-auto px-4 py-8">
         <div className="text-center mb-8">
-          <h1 className="text-2xl md:text-3xl font-bold text-gray-800 mt-3">庭工事の料金相場</h1>
-          <p className="text-gray-500 mt-2">剪定・伐採・草刈り・造園の費用を解説します</p>
+          <h1 className="text-2xl md:text-3xl font-bold text-gray-800 mt-3">庭工事の料金（掲載業者の公式料金）</h1>
+          <p className="text-gray-500 mt-2">剪定・伐採・草刈り・植栽の公式料金（税込・下限、2026-10-25確認）</p>
         </div>
 
         {/* Notice */}
         <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 mb-6 text-sm text-blue-800">
-          <strong>料金について：</strong>掲載金額はあくまで目安です。実際の費用は業者・地域・作業量・廃棄物量などにより異なります。必ず複数の業者から見積もりを取ることをおすすめします。
+          <strong>料金について：</strong>各社の公式料金ページに載っている下限（〜円から）だけを掲載しています。木の高さ・面積ごとの金額や処分費は公式で確認できないため載せていません。お庭110番は「対応エリア・加盟店により記載価格や条件では対応できない場合がございます」と注記しています。金額は業者の見積もりで確認してください。
         </div>
 
         {/* Price Categories */}
@@ -103,7 +86,11 @@ export default function PricePage() {
               <div className="divide-y divide-gray-100">
                 {cat.items.map((item) => (
                   <div key={item.name} className="flex items-center justify-between px-6 py-3">
-                    <span className="text-gray-700 text-sm">{item.name}</span>
+                    <div>
+                      <span className="text-gray-700 text-sm">{item.name}</span>
+                      {item.note && <p className="text-xs text-gray-500 mt-0.5">※{item.note}</p>}
+                      <p className="text-xs mt-0.5"><a href={item.src} target="_blank" rel="noopener noreferrer" className="underline text-gray-400 hover:text-[#15803D]">公式料金ページ</a></p>
+                    </div>
                     <div className="text-right">
                       <span className="font-bold text-[#15803D]">{item.price}</span>
                       <span className="text-xs text-gray-400 ml-1">/ {item.unit}</span>
