@@ -4,14 +4,14 @@ import Link from "next/link";
 import Breadcrumb from "@/app/components/Breadcrumb";
 
 const PAGE_URL = "https://zouen-navi.com/guide/fallen-leaves/";
-const UPDATED_LABEL = "2026年9月25日";
-const UPDATED_ISO = "2026-09-25";
-const TITLE = "落ち葉が多い庭の手入れ｜溜めない集め方と、雨樋・側溝・隣家への配慮";
+const UPDATED_LABEL = "2026年10月26日";
+const UPDATED_ISO = "2026-10-26";
+const TITLE = "庭の落ち葉の処理と吹き溜まり対策｜可燃ごみでの出し方・焼却の規制・集め方";
 
 export const metadata: Metadata = {
   title: TITLE,
   description:
-    "落ち葉が問題となるのは、庭の外に出た場合です。雨樋と側溝、隣家の敷地、道路と車両などが該当します。溜まりやすい場所の確認方法、集め方と道具、廃棄せずに活用する場合の条件、毎年の量を減らす考え方を整理します。",
+    "庭の落ち葉は、多くの自治体で可燃ごみとして出せます（量の上限あり）。庭で燃やすことは廃棄物処理法で原則禁止です。吹き溜まりは壁際・門の内側など毎年同じ場所にできるため、そこと雨樋・側溝を優先して片づけます。",
   alternates: { canonical: PAGE_URL },
   openGraph: {
     images: OG_IMAGES,
@@ -19,11 +19,12 @@ export const metadata: Metadata = {
     url: PAGE_URL,
     title: TITLE,
     description:
-      "落ち葉が溜まる場所の確認方法と、集め方・活用方法・近隣への配慮を整理しています。",
+      "庭の落ち葉の処分方法（可燃ごみ・量の上限・焼却の規制）と、吹き溜まりができる場所、集め方を整理しています。",
   },
 };
 
 const toc = [
+  { id: "fl-dispose", label: "落ち葉の処理方法（自治体の案内と法律）" },
   { id: "fl-outside", label: "落ち葉が問題となるのは庭の外に出た場合です" },
   { id: "fl-timing", label: "まとめて一度に行うか、こまめに複数回行うか" },
   { id: "fl-tools", label: "集め方と道具の選び方" },
@@ -31,6 +32,29 @@ const toc = [
   { id: "fl-neighbor", label: "近隣との間で生じやすい問題" },
   { id: "fl-reduce", label: "毎年の量を減らすという考え方" },
   { id: "fl-faq", label: "よくある質問" },
+];
+
+const disposeRows = [
+  {
+    h: "可燃ごみとして集積所に出す",
+    b: "杉並区は、せん定した枝・落ち葉・草を可燃ごみとして収集しています。一度に出せる量は、枝・落ち葉・草を合わせて45リットルの袋で3袋（枝は3束）までです。",
+    src: "杉並区",
+  },
+  {
+    h: "量が多いときは事前に相談する",
+    b: "杉並区は、4袋（4束）以上出す場合は有料（申込制）とし、管轄の清掃事務所への事前相談を求めています。",
+    src: "杉並区",
+  },
+  {
+    h: "他の可燃ごみと分けて出す自治体もある",
+    b: "武蔵村山市は、落ち葉・雑草類を他の可燃ごみと分け、透明または半透明の袋に入れて出す方式です（1回に40リットル程度の袋で3袋まで）。",
+    src: "武蔵村山市",
+  },
+  {
+    h: "庭で燃やすことは原則禁止",
+    b: "廃棄物処理法第16条の2は、例外を除いて廃棄物の焼却を禁止しています。例外は政令第14条に限られ、日常生活で通常行われるたき火等の軽微なものも含まれますが、仙台市は例外にあたる場合でも近隣住民の生活環境への配慮を求めています。",
+    src: "e-Gov法令検索・仙台市",
+  },
 ];
 
 const problemSpots = [
@@ -162,7 +186,7 @@ const faqs = [
   },
   {
     q: "集めた落ち葉はどう処分すればよいですか。",
-    a: "自治体の回収に出す、処理施設へ持ち込む、作業を依頼した業者に引き取ってもらう、庭の中で活用するといった選択肢があります。出せる量やまとめ方の規定は自治体によって異なるため、お住まいの市区町村の案内でご確認ください。庭で焼却する方法は取らないでください。",
+    a: "多くの自治体では可燃ごみとして集積所に出せます。杉並区は、枝・落ち葉・草を合わせて45リットルの袋で3袋までとし、それ以上は清掃事務所への事前相談（有料・申込制）としています。武蔵村山市のように、落ち葉を他の可燃ごみと分けて透明・半透明の袋で出す自治体もあります。このほか、作業を依頼した業者に引き取ってもらう、庭の中で活用するといった方法があります。出せる量やまとめ方は自治体によって異なるため、お住まいの市区町村の案内でご確認ください。庭で燃やすことは廃棄物処理法で原則禁止されており、煙や灰が近隣に及ぶため、この方法は取らないでください。",
   },
   {
     q: "送風で寄せる道具を使ってもよいですか。",
@@ -182,7 +206,7 @@ export default function FallenLeavesPage() {
         "@type": "Article",
         headline: TITLE,
         description:
-          "落ち葉が庭の外へ出た場合に生じる問題と、集め方・活用方法・量を減らす考え方を整理しています。",
+          "庭の落ち葉の処分方法（可燃ごみ・焼却の規制）と、吹き溜まりができる場所、集め方・活用方法・量を減らす考え方を整理しています。",
         dateModified: UPDATED_ISO,
         author: { "@type": "Organization", name: "造園ナビ" },
         publisher: { "@type": "Organization", name: "造園ナビ", url: "https://zouen-navi.com/" },
@@ -214,6 +238,11 @@ export default function FallenLeavesPage() {
           <span>造園ナビ編集部</span>
         </div>
         <p className="text-[15px] leading-8 text-text-secondary">
+          集めた落ち葉は、多くの自治体で可燃ごみとして出せます。ただし一度に出せる量には上限があり、杉並区では枝・草と合わせて45リットルの袋で3袋までです。
+          庭で燃やすことは廃棄物処理法で原則禁止されています。
+          吹き溜まりは、風向きと建物の形で壁際・門の内側・植え込みの陰・階段の下など毎年同じ場所にできるため、その場所と雨樋・側溝を優先して片づけます。
+        </p>
+        <p className="text-[15px] leading-8 text-text-secondary">
           庭に落ちている落ち葉は、急いで片づける必要のないものです。問題となるのは、庭の外に出た場合と、水の通り道を塞いだ場合です。雨樋が詰まる、側溝から水があふれる、隣家の敷地に入る、駐車している車に貼り付くといった問題は、清掃の手間そのものより対応が難しくなります。
         </p>
         <p className="text-[15px] leading-8 text-text-secondary">
@@ -233,6 +262,35 @@ export default function FallenLeavesPage() {
           ))}
         </ol>
       </nav>
+
+      <section id="fl-dispose" className="scroll-mt-20 mb-12">
+        <h2 className="text-xl font-bold text-text-primary border-l-4 border-primary pl-3 mb-5">
+          落ち葉の処理方法（自治体の案内と法律）
+        </h2>
+        <p className="text-[15px] leading-8 text-text-secondary mb-5">
+          集めた落ち葉の出し方は自治体ごとに定められています。以下は自治体の案内の例と、焼却に関する法律の規定です。
+        </p>
+        <div className="space-y-4">
+          {disposeRows.map((x) => (
+            <div key={x.h} className="rounded-2xl border border-border bg-surface p-5">
+              <h3 className="font-bold text-text-primary mb-2">{x.h}</h3>
+              <p className="text-[15px] leading-8 text-text-secondary">{x.b}</p>
+              <p className="text-xs text-text-muted mt-2">出典：{x.src}</p>
+            </div>
+          ))}
+        </div>
+        <p className="text-xs leading-6 text-text-muted mt-3">
+          出典：杉並区「
+          <a href="https://www.city.suginami.tokyo.jp/s104/716.html" target="_blank" rel="noopener noreferrer" className="underline">可燃ごみの出し方</a>
+          」（2026年4月1日更新）、武蔵村山市「
+          <a href="https://www.city.musashimurayama.lg.jp/kurashi/gomi/1016435/1016457/1016454/1016467.html" target="_blank" rel="noopener noreferrer" className="underline">可燃ごみ（燃やせるごみ）</a>
+          」（令和4年9月30日更新）、e-Gov法令検索「
+          <a href="https://laws.e-gov.go.jp/law/345AC0000000137" target="_blank" rel="noopener noreferrer" className="underline">廃棄物の処理及び清掃に関する法律</a>
+          」第16条の2・同法施行令第14条、仙台市「
+          <a href="https://www.city.sendai.jp/shido-jigyo/kurashi/machi/genryo/gomi/haikibutsu/kinshi.html" target="_blank" rel="noopener noreferrer" className="underline">廃棄物の野外焼却は法律で禁止されています</a>
+          」。いずれも2026年10月26日確認。
+        </p>
+      </section>
 
       <section id="fl-outside" className="scroll-mt-20 mb-12">
         <h2 className="text-xl font-bold text-text-primary border-l-4 border-primary pl-3 mb-5">
