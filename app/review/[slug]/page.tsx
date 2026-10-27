@@ -29,6 +29,7 @@ export default async function ReviewPage({ params }: Props) {
   const r = reviewsData.find((x) => x.slug === slug) as any;
   if (!r) notFound();
 
+  const modified: string = r.modifiedISO ?? "2026-06-16";
   const rating = r.ratingBlock; // optional (Google rating)
 
   const toc = [
@@ -49,7 +50,7 @@ export default async function ReviewPage({ params }: Props) {
         headline: r.title,
         description: r.metaDescription,
         image: `https://zouen-navi.com${r.heroImage}`,
-        dateModified: "2026-06-16",
+        dateModified: modified,
         author: { "@type": "Organization", name: "造園ナビ" },
         publisher: { "@type": "Organization", name: "造園ナビ", url: "https://zouen-navi.com/" },
         mainEntityOfPage: `https://zouen-navi.com/review/${r.slug}/`,
@@ -75,7 +76,7 @@ export default async function ReviewPage({ params }: Props) {
         <span className="label inline-block mb-3 text-primary">業者の口コミ・評判</span>
         <h1 className="text-2xl sm:text-3xl font-bold leading-snug text-text-primary mb-4">{r.title}</h1>
         <div className="flex items-center gap-3 text-sm text-text-muted mb-6">
-          <time dateTime="2026-06-16">最終更新：{r.updatedAt}</time>
+          <time dateTime={modified}>最終更新：{r.updatedAt}</time>
           <span className="w-px h-3 bg-border" />
           <span>造園ナビ編集部</span>
         </div>
