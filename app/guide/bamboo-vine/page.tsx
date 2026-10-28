@@ -4,14 +4,14 @@ import Link from "next/link";
 import Breadcrumb from "@/app/components/Breadcrumb";
 
 const PAGE_URL = "https://zouen-navi.com/guide/bamboo-vine/";
-const UPDATED_LABEL = "2026年9月25日";
-const UPDATED_ISO = "2026-09-25";
-const TITLE = "庭に広がった竹・笹・つる植物｜地下茎とつるの対処方法";
+const UPDATED_LABEL = "2026年10月28日";
+const UPDATED_ISO = "2026-10-28";
+const TITLE = "庭の竹・笹は地上を切っても地下茎が残る｜広がり方・止め方とつる植物の外し方";
 
 export const metadata: Metadata = {
   title: TITLE,
   description:
-    "刈っても翌年再び生えてくる竹や笹、切っても再び伸びるつる植物は、生えている場所に本体がないことが対処を難しくしています。地下茎の広がり方、つるを外す順序、状況を悪化させる対処、業者に伝える内容を整理します。",
+    "庭の竹・笹は、地上の竹を切っても地中の地下茎が残るため翌年も生えてきます。香川県は竹の地下茎が1年に5m以上伸びるといわれ、地表から30cm程度までに集中するとしています。佐賀県は駆除方法に再生竹の伐竹・刈払いの継続、薬剤の注入、地下茎の除去を挙げています。",
   alternates: { canonical: PAGE_URL },
   openGraph: {
     images: OG_IMAGES,
@@ -31,6 +31,7 @@ const toc = [
   { id: "bv-worse", label: "状況を悪化させる対処" },
   { id: "bv-ask", label: "業者に相談する際に伝える事項" },
   { id: "bv-faq", label: "よくある質問" },
+  { id: "bv-sources", label: "本ページで参照した公的機関の資料" },
 ];
 
 const bambooSteps = [
@@ -130,6 +131,10 @@ const askItems = [
 
 const faqs = [
   {
+    q: "笹や竹の地下茎は、地上を切断すれば枯れますか。",
+    a: "地上の竹・笹を切っても、地下茎が残っていれば翌年も生えてきます。佐賀県の業務報告書は、竹林の駆除方法として、再生竹の伐竹と刈払いを5年程度継続する方法、除草剤を竹稈に注入して枯らす方法、地下茎を取り除く方法を挙げています。いずれも手間や時間、費用がかかるとされています。",
+  },
+  {
     q: "隣の敷地から竹が入ってきています。自分で切ってよいですか。",
     a: "自分の敷地に生えている部分を切ること自体は、通常は所有者の判断で行えます。ただし、地中を通って侵入している以上、切っても侵入は続きます。根本的に止めるには、地下に仕切りを設置して侵入経路を塞ぐか、発生源の所有者と協議することになります。隣地にまたがる作業や、隣地に立ち入る必要がある場合は、枝の越境とは扱いが異なるため、事前に確認したうえで進めてください。",
   },
@@ -148,6 +153,19 @@ const faqs = [
   {
     q: "一度取り除けば、もう出てこなくなりますか。",
     a: "地下茎や地中の塊を残さず除去できていれば、生えてこなくなります。ただし、断片が残っているとそこから再生することがあり、敷地外から侵入している場合は除去しきること自体ができません。「一度で終わらせる」より「生えたら早い段階で対処し続ける」ほうが、結果として手間が少なくなる場合があります。",
+  },
+];
+
+const sources = [
+  {
+    org: "香川県 森林・林業政策課",
+    title: "２竹林整備の必要性（2026年10月28日確認）",
+    url: "https://www.pref.kagawa.lg.jp/midoriseibi/seibi/tikurin/2_seibi.html",
+  },
+  {
+    org: "佐賀県 業務報告書",
+    title: "効率的な竹林拡大抑制手法の開発（2026年10月28日確認）",
+    url: "https://www.pref.saga.lg.jp/kiji00367239/3_67239_129678_up_5luuobk1.pdf",
   },
 ];
 
@@ -191,7 +209,19 @@ export default function BambooVinePage() {
           <span>造園ナビ編集部</span>
         </div>
         <p className="text-[15px] leading-8 text-text-secondary">
-          刈っても抜いても、翌年再び同じ場所から生えてくる。庭の植物の中で、竹や笹、つる植物は、このような状況になりやすい植物です。手入れが不十分なわけでも、方法が不適切なわけでもありません。地上に出ている部分と、本体のある場所が異なるためです。
+          庭の竹・笹は、地上に出ている竹を切っても、地中を横に伸びる地下茎が残るため、翌年も同じ場所やその周りから生えてきます。香川県は、竹の地下茎は1年間に5m以上も伸びるといわれ、竹林では地表から30cm程度までに地下茎が集中するとしています。
+        </p>
+        <div className="my-5 rounded-2xl border border-border bg-surface-alt p-5">
+          <p className="font-bold text-text-primary mb-2 text-sm">要点</p>
+          <ul className="list-disc pl-5 space-y-1 text-[15px] leading-7 text-text-secondary">
+            <li>地上の竹・笹を切るだけでは地下茎は残り、生え続けます。</li>
+            <li>佐賀県の業務報告書は、竹林の駆除方法として、再生竹の伐竹と刈払いを5年程度継続する方法、除草剤を竹稈に注入して枯らす方法、地下茎を取り除く方法を挙げ、いずれも手間・時間・費用がかかるとしています。</li>
+            <li>隣地から地下茎が入ってくる場合は、自分の庭の中だけで刈り続けても侵入は止まりません。</li>
+            <li>つる植物は、絡んだ部分を引き剥がすより先に根元を切ります。</li>
+          </ul>
+        </div>
+        <p className="text-[15px] leading-8 text-text-secondary">
+          つる植物も、壁や木に絡んだ部分と根元の位置が離れていることが多く、見えている部分だけを外しても再び伸びます。
         </p>
         <p className="text-[15px] leading-8 text-text-secondary">
           本ページでは、竹・笹が広がる仕組みと対処方法、つる植物をどこから切断するのか、状況を悪化させる対処を整理します。
@@ -376,6 +406,28 @@ export default function BambooVinePage() {
             </div>
           ))}
         </div>
+      </section>
+
+      <section id="bv-sources" className="scroll-mt-20 mb-12">
+        <h2 className="text-xl font-bold text-text-primary border-l-4 border-primary pl-3 mb-5">
+          本ページで参照した公的機関の資料
+        </h2>
+        <ul className="space-y-3">
+          {sources.map((x) => (
+            <li key={x.url} className="rounded-2xl border border-border bg-surface-alt p-4">
+              <p className="text-sm text-text-muted mb-1">{x.org}</p>
+              <a
+                href={x.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[15px] text-primary underline underline-offset-2"
+              >
+                「{x.title.replace(/（[^（）]*）$/, "")}」
+                {x.title.match(/（[^（）]*）$/)?.[0] ?? ""}
+              </a>
+            </li>
+          ))}
+        </ul>
       </section>
 
       <section className="mb-10">
