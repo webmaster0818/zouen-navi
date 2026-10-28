@@ -6,6 +6,9 @@ import { getVerifiedRating } from "@/app/lib/verifiedRating";
 import Breadcrumb from "@/app/components/Breadcrumb";
 
 type CompanyExtra = {
+  displayName?: string;
+  nameNote?: string;
+  nameNoteUrl?: string;
   seoTitle?: string;
   seoDescription?: string;
   answer?: {
@@ -33,8 +36,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const c = company as CompanyExtra;
   return {
     alternates: { canonical: `/company/${slug}/` },
-    title: c.seoTitle ?? `${company.name}の評判・口コミ・費用｜特徴と料金`,
-    description: c.seoDescription ?? `${company.name}の特徴・料金・口コミを解説します。${company.tagline}。造園ナビ編集部が調査した情報を掲載しています。`,
+    title: c.seoTitle ?? `${c.displayName ?? company.name}の評判・口コミ・費用｜特徴と料金`,
+    description: c.seoDescription ?? `${c.displayName ?? company.name}の特徴・料金・口コミを解説します。${company.tagline}。造園ナビ編集部が調査した情報を掲載しています。`,
   };
 }
 
@@ -46,6 +49,7 @@ export default async function CompanyPage({ params }: Props) {
   const rank = companiesData.findIndex((c) => c.slug === slug) + 1;
   const vr = getVerifiedRating(company.slug);
   const extra = company as CompanyExtra;
+  const displayName = extra.displayName ?? company.name;
   const faqLd = extra.faqs?.length
     ? {
         "@context": "https://schema.org",
@@ -63,7 +67,7 @@ export default async function CompanyPage({ params }: Props) {
       <Breadcrumb
         items={[
           { label: "業者ランキング", href: "/ranking/" },
-          { label: company.name },
+          { label: displayName },
         ]}
       />
 
@@ -74,8 +78,16 @@ export default async function CompanyPage({ params }: Props) {
             <div>
               <span className="text-sm font-bold text-white bg-[#15803D] px-2 py-0.5 rounded-full mr-2">第{rank}位</span>
               <span className="text-sm text-white bg-gray-500 px-2 py-0.5 rounded-full">{company.coverage}</span>
-              <h1 className="text-2xl md:text-3xl font-bold text-gray-800 mt-2">{company.name}</h1>
+              <h1 className="text-2xl md:text-3xl font-bold text-gray-800 mt-2">{displayName}</h1>
               <p className="text-gray-600 mt-1">{company.tagline}</p>
+              {extra.nameNote && (
+                <p className="text-xs text-gray-500 mt-1">
+                  {extra.nameNote}
+                  {extra.nameNoteUrl && (
+                    <a href={extra.nameNoteUrl} target="_blank" rel="noopener noreferrer" className="ml-1 underline">出典</a>
+                  )}
+                </p>
+              )}
             </div>
             {vr && (
               <div className="text-right">
@@ -148,7 +160,7 @@ export default async function CompanyPage({ params }: Props) {
 
         {/* CTA */}
         <div className="bg-gradient-to-r from-[#15803D] to-[#166534] rounded-2xl p-6 text-white text-center">
-          <h2 className="text-xl font-bold mb-2">{company.name}に無料で相談する</h2>
+          <h2 className="text-xl font-bold mb-2">{displayName}に無料で相談する</h2>
           <p className="text-green-100 text-sm mb-4">{extra.ctaNote ?? "見積もりは無料です。依頼条件の詳細は公式サイトにてご確認ください。"}</p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             {company.officialUrl && (

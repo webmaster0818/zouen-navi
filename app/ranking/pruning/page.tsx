@@ -17,7 +17,7 @@ const pruningSpecialists = companiesData.filter((c) =>
 
 // 掲載業者の公式料金（税込・下限）。2026-10-25 に各社の公式料金ページで確認した値だけを載せる
 const pricingTable = [
-  { company: "お庭マスター", type: "植込み・庭木・生垣の剪定", price: "550円〜/本", src: "https://oniwa-master.info/servicelist/index.html" },
+  { company: "お庭レスキュープロ（旧お庭マスター）", type: "植込み・庭木・生垣の剪定", price: "550円〜/本", src: "https://oniwa-master.info/servicelist/index.html" },
   { company: "お庭110番", type: "庭木の剪定", price: "3,300円〜/本", src: "https://www.kusakari-a.com/price/" },
   { company: "お庭110番", type: "生垣の剪定", price: "1,700円〜/m", src: "https://www.kusakari-a.com/price/" },
 ];
@@ -84,7 +84,7 @@ export default function PruningRankingPage() {
                   <div className="flex-1 p-5">
                     <div className="flex flex-wrap items-start justify-between gap-2 mb-2">
                       <div>
-                        <h3 className="text-lg font-bold text-gray-800">{company.name}</h3>
+                        <h3 className="text-lg font-bold text-gray-800">{(company as { displayName?: string }).displayName ?? company.name}</h3>
                         <p className="text-sm text-gray-500">{company.tagline}</p>
                       </div>
                       {(() => {
@@ -141,9 +141,9 @@ export default function PruningRankingPage() {
 
         <div className="bg-gradient-to-r from-[#15803D] to-[#166534] rounded-2xl p-6 text-white text-center">
           <h2 className="text-xl font-bold mb-2">無料見積もりのご案内</h2>
-          <p className="text-green-100 text-sm mb-4">お庭マスターでは、全国47都道府県の加盟拠点から剪定業者を紹介しています</p>
+          <p className="text-green-100 text-sm mb-4">お庭レスキュープロ（旧お庭マスター）では、全国47都道府県の加盟拠点から剪定業者を紹介しています</p>
           <Link href="/company/oniwa-master/" className="bg-[#F59E0B] hover:bg-amber-500 text-white font-bold px-8 py-3 rounded-full transition-all inline-block">
-            お庭マスターで無料見積もり
+            お庭レスキュープロで無料見積もり
           </Link>
           <p className="text-xs text-green-300 mt-3">※当サイトはアフィリエイト広告を含みます</p>
         </div>

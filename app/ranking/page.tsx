@@ -47,7 +47,7 @@ export default function RankingPage() {
                 <div className="flex-1 p-5">
                   <div className="flex flex-wrap items-start justify-between gap-2 mb-2">
                     <div>
-                      <h2 className="text-xl font-bold text-gray-800">{company.name}</h2>
+                      <h2 className="text-xl font-bold text-gray-800">{(company as { displayName?: string }).displayName ?? company.name}</h2>
                       <p className="text-sm text-gray-500">{company.tagline}</p>
                     </div>
                     {(() => {
@@ -100,7 +100,7 @@ export default function RankingPage() {
           <p className="text-green-100 text-sm mb-4">複数の業者に一括で見積もりを依頼し、比較検討することをおすすめします。</p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Link href="/company/oniwa-master/" className="bg-[#F59E0B] hover:bg-amber-500 text-white font-bold px-6 py-3 rounded-full transition-all text-sm">
-               お庭マスターに相談する
+               お庭レスキュープロ（旧お庭マスター）に相談する
             </Link>
             <Link href="/company/oniwa-madoguchi/" className="bg-white/20 hover:bg-white/30 text-white font-bold px-6 py-3 rounded-full border border-white/30 transition-all text-sm">
               お庭の窓口に相談する
