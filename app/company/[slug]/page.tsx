@@ -9,6 +9,8 @@ type CompanyExtra = {
   displayName?: string;
   nameNote?: string;
   nameNoteUrl?: string;
+  featuresNote?: string;
+  featuresNoteUrl?: string;
   seoTitle?: string;
   seoDescription?: string;
   answer?: {
@@ -107,6 +109,14 @@ export default async function CompanyPage({ params }: Props) {
               </span>
             ))}
           </div>
+          {extra.featuresNote && (
+            <p className="mt-2 text-xs text-gray-500">
+              {extra.featuresNote}
+              {extra.featuresNoteUrl && (
+                <a href={extra.featuresNoteUrl} target="_blank" rel="noopener noreferrer" className="ml-1 underline">出典</a>
+              )}
+            </p>
+          )}
         </div>
 
         {extra.answer && (
