@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/cost/pruning-price/" },
   title: "庭木の剪定費用｜掲載業者の公式料金と見積もりの確認点",
   description:
-    "庭木の剪定費用を、掲載業者（お庭マスター・お庭110番）の公式料金（税込・下限）で示します。見積もりで確認する項目と、季節ごとの剪定の適期も紹介します。",
+    "庭木の剪定費用を、掲載業者（お庭レスキュープロ（旧お庭マスター）・お庭110番）の公式料金（税込・下限）で示します。見積もりで確認する項目と、季節ごとの剪定の適期も紹介します。",
 };
 
 const seasonalGuide = [
@@ -58,7 +58,7 @@ export default function PruningPricePage() {
           <h2 className="font-bold text-gray-800 mb-3">剪定の公式料金（税込・下限、2026-10-25確認）</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
             {[
-              { label: "お庭マスター 植込み・庭木・生垣", price: "550円〜/本", src: "https://oniwa-master.info/servicelist/index.html" },
+              { label: "お庭レスキュープロ（旧お庭マスター） 植込み・庭木・生垣", price: "550円〜/本", src: "https://oniwa-master.info/servicelist/index.html" },
               { label: "お庭110番 庭木の剪定", price: "3,300円〜/本", src: "https://www.kusakari-a.com/price/" },
               { label: "お庭110番 生垣の剪定", price: "1,700円〜/m", src: "https://www.kusakari-a.com/price/" },
             ].map((item) => (

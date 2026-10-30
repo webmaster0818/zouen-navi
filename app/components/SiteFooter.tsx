@@ -54,7 +54,7 @@ export default function SiteFooter() {
               <li><Link href="/ranking/" className="hover:text-white transition-colors">造園業者ランキング</Link></li>
               <li><Link href="/ranking/pruning/" className="hover:text-white transition-colors">剪定専門ランキング</Link></li>
               <li><Link href="/company/oniwa-madoguchi/" className="hover:text-white transition-colors">お庭の窓口</Link></li>
-              <li><Link href="/company/oniwa-master/" className="hover:text-white transition-colors">お庭マスター</Link></li>
+              <li><Link href="/company/oniwa-master/" className="hover:text-white transition-colors">お庭レスキュープロ（旧お庭マスター）</Link></li>
               <li><Link href="/company/oniwa-110/" className="hover:text-white transition-colors">お庭110番</Link></li>
             </ul>
           </div>

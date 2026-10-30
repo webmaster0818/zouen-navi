@@ -146,7 +146,7 @@ export default async function ServicePage({ params }: Props) {
                   <div className="flex items-center gap-3">
                     <span className="text-xl">{medals[i] || ""}</span>
                     <div>
-                      <p className="font-bold text-gray-800">{company.name}</p>
+                      <p className="font-bold text-gray-800">{(company as { displayName?: string }).displayName ?? company.name}</p>
                       <p className="text-xs text-gray-500">{company.tagline}</p>
                     </div>
                   </div>

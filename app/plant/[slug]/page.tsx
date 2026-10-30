@@ -131,7 +131,7 @@ export default async function PlantPage({ params }: Props) {
             {recCompanies.map((company) => (
               <div key={company.slug} className="flex items-center justify-between p-3 bg-[#F0FDF4] rounded-xl">
                 <div>
-                  <p className="font-bold text-gray-800">{company.name}</p>
+                  <p className="font-bold text-gray-800">{(company as { displayName?: string }).displayName ?? company.name}</p>
                   <p className="text-xs text-gray-500">{company.tagline}</p>
                 </div>
                 <Link

@@ -31,14 +31,14 @@ const services = [
 
 // 掲載業者の公式料金（税込・下限）。2026-10-25 に各社の公式料金ページで確認した値だけを載せる
 const costCards = [
-  { label: "剪定（お庭マスター）", range: "550円〜", unit: "1本", src: "https://oniwa-master.info/servicelist/index.html" },
+  { label: "剪定（お庭レスキュープロ（旧お庭マスター））", range: "550円〜", unit: "1本", src: "https://oniwa-master.info/servicelist/index.html" },
   { label: "剪定（お庭110番）", range: "3,300円〜", unit: "1本", src: "https://www.kusakari-a.com/price/" },
 ];
 
 const faqs = [
   {
     q: "庭木の剪定はどの業者に頼むのが一番いいですか？",
-    a: "実績・口コミ・費用の透明性を確認することが重要です。お庭マスターやsmileガーデンなど複数社で見積もり比較を行うことをおすすめします。",
+    a: "実績・口コミ・費用の透明性を確認することが重要です。お庭レスキュープロ（旧お庭マスター）やsmileガーデンなど複数社で見積もり比較を行うことをおすすめします。",
   },
   {
     q: "造園業者選びで失敗しないポイントは？",
@@ -46,7 +46,7 @@ const faqs = [
   },
   {
     q: "剪定や草刈りの費用の相場はいくらですか？",
-    a: "剪定は、掲載業者の公式料金でお庭マスター 550円〜/本、お庭110番 3,300円〜/本（いずれも税込・下限、2026-10-25確認）です。高さ・樹種や草刈りの面積ごとの金額は、業者の見積もりで確認してください。",
+    a: "剪定は、掲載業者の公式料金でお庭レスキュープロ（旧お庭マスター） 550円〜/本、お庭110番 3,300円〜/本（いずれも税込・下限、2026-10-25確認）です。高さ・樹種や草刈りの面積ごとの金額は、業者の見積もりで確認してください。",
   },
   {
     q: "庭師に頼む前に準備しておくことはありますか？",
@@ -176,7 +176,7 @@ export default function HomePage() {
                     {company.coverage}
                   </span>
                 </div>
-                <h3 className="text-xl font-bold text-gray-800 mb-1">{company.name}</h3>
+                <h3 className="text-xl font-bold text-gray-800 mb-1">{(company as { displayName?: string }).displayName ?? company.name}</h3>
                 <p className="text-sm text-gray-500 mb-3 leading-relaxed">{company.tagline}</p>
                 {/* Rating（出典付きの一次確認値がある社だけ表示） */}
                 {(() => {
