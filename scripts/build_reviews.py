@@ -6,7 +6,11 @@
 # 表記・10/27 の口コミページ即答化など）をこのスクリプトに取り込んだ。DATA は現行の reviews.json と同じ内容。
 # /tmp/niwa_google.json（Places API の取得結果）がある場合だけ、Google の★・件数（ratingBlock）をその値で作り直す。
 # 無い場合は DATA の ratingBlock をそのまま使う（＝出力は現行の reviews.json と一致）。
+# 2026-10-31: 社名の表示名は data/companies.json の displayName から入れる（DATA 内の {{displayName:<slug>}} を置換し、
+# displayName のある会社は companyName も displayName にする）。社名を変えるときは companies.json だけ直せばよく、
+# このスクリプトを流しても旧い社名に戻らない。displayName の無い会社は DATA の表記のまま。
 import json
+import re
 from pathlib import Path
 
 SITE = Path(__file__).resolve().parent.parent
@@ -117,17 +121,17 @@ DATA = r'''
   },
   {
     "slug": "oniwa-master",
-    "companyName": "お庭レスキュープロ（旧お庭マスター）",
-    "title": "お庭レスキュープロ（旧お庭マスター）の口コミ・評判｜公式の利用者の声と運営会社",
-    "metaDescription": "お庭レスキュープロ（旧お庭マスター）の口コミは、公式サイトの口コミページに2016年11月〜2018年6月の利用者の声が掲載され、評価はすべて★5です。運営は株式会社アシストで、全国の加盟業者を無料で紹介する仕組みです（2026年10月27日 公式で確認）。",
+    "companyName": "{{displayName:oniwa-master}}",
+    "title": "{{displayName:oniwa-master}}の口コミ・評判｜公式の利用者の声と運営会社",
+    "metaDescription": "{{displayName:oniwa-master}}の口コミは、公式サイトの口コミページに2016年11月〜2018年6月の利用者の声が掲載され、評価はすべて★5です。運営は株式会社アシストで、全国の加盟業者を無料で紹介する仕組みです（2026年10月27日 公式で確認）。",
     "updatedAt": "2026年10月27日",
-    "lead": "お庭レスキュープロ（旧お庭マスター）の口コミは、公式サイトの口コミページ（剪定・お庭の手入れ・雑草除去の3ページ）に掲載された利用者の声が中心で、投稿時期は2016年11月〜2018年6月、評価はすべて★5です。「最も安く最安水準でした」「以前にお願いしていた植木屋さんと変わらない仕上がりで大変満足しています」といった声がある一方、直近の口コミは公式サイトでは確認できません。公式サイト（oniwa-master.info）の名称は現在「お庭レスキュープロ」で、運営は株式会社アシストです。同社は第三者機関として全国の加盟業者を無料で紹介し、作業は加盟店のスタッフが行います（2026年10月27日 公式サイトで確認）。",
+    "lead": "{{displayName:oniwa-master}}の口コミは、公式サイトの口コミページ（剪定・お庭の手入れ・雑草除去の3ページ）に掲載された利用者の声が中心で、投稿時期は2016年11月〜2018年6月、評価はすべて★5です。「最も安く最安水準でした」「以前にお願いしていた植木屋さんと変わらない仕上がりで大変満足しています」といった声がある一方、直近の口コミは公式サイトでは確認できません。公式サイト（oniwa-master.info）の名称は現在「お庭レスキュープロ」で、運営は株式会社アシストです。同社は第三者機関として全国の加盟業者を無料で紹介し、作業は加盟店のスタッフが行います（2026年10月27日 公式サイトで確認）。",
     "heroImage": "/images/hero-b.png",
     "heroAlt": "庭木の剪定作業のイメージ",
     "subImage": "/images/hero-c.png",
     "subAlt": "草刈り・お庭の手入れのイメージ",
     "ratingBlock": null,
-    "basicLead": "お庭レスキュープロ（旧お庭マスター）は、株式会社アシストが運営する、全国の加盟業者を無料で紹介するお庭の手入れサービスです。",
+    "basicLead": "{{displayName:oniwa-master}}は、株式会社アシストが運営する、全国の加盟業者を無料で紹介するお庭の手入れサービスです。",
     "basicInfo": [
       {
         "label": "サービス名",
@@ -156,7 +160,7 @@ DATA = r'''
     ],
     "infoSource": "出典：お庭レスキュープロ公式 会社概要・サービス一覧・よくあるご質問（oniwa-master.info）2026年10月27日確認",
     "reviewsHeading": "公式サイト掲載の利用者の声",
-    "reviewsIntro": "以下は、お庭レスキュープロ（旧お庭マスター）公式サイトの口コミページに掲載された利用者の声です。出典として公式ページへのリンクを掲載しています。",
+    "reviewsIntro": "以下は、{{displayName:oniwa-master}}公式サイトの口コミページに掲載された利用者の声です。出典として公式ページへのリンクを掲載しています。",
     "reviews": [
       {
         "author": "神奈川県横浜市（サザンカの剪定）",
@@ -193,7 +197,7 @@ DATA = r'''
     "cautions": [
       {
         "h": "施工は紹介業者が担当",
-        "b": "お庭レスキュープロ（旧お庭マスター）は紹介サービスであり、実際の作業は紹介された加盟業者が行います。見積もりの内容をご確認ください。"
+        "b": "{{displayName:oniwa-master}}は紹介サービスであり、実際の作業は紹介された加盟業者が行います。見積もりの内容をご確認ください。"
       },
       {
         "h": "口コミは過去分が中心",
@@ -214,7 +218,7 @@ DATA = r'''
         "a": "公式サイト（oniwa-master.info）の名称が現在「お庭レスキュープロ」となっており、運営会社は株式会社アシスト（住まいの安心サポート24）です（2026年10月27日確認）。"
       },
       {
-        "q": "お庭レスキュープロ（旧お庭マスター）はどんな作業に対応していますか？",
+        "q": "{{displayName:oniwa-master}}はどんな作業に対応していますか？",
         "a": "剪定・伐採・草刈り・芝刈りなど、お庭の手入れ全般に対応する業者を紹介しています。"
       },
       {
@@ -226,7 +230,7 @@ DATA = r'''
         "a": "株式会社アシスト（東京都中央区銀座）が運営しています。"
       }
     ],
-    "summary": "お庭レスキュープロ（旧お庭マスター）は、株式会社アシストが運営する全国対応のお庭の手入れ業者紹介サービスです。剪定・草刈り・伐採などに対応し、自社では施工せず、優良業者を無料で紹介しています。公式サイトには「最も安く最安水準でした」「庭も綺麗になり助かりました」という利用者の声が掲載されています（2016年11月〜2018年6月の投稿）。お庭の手入れを早めに相談・依頼したい方に適していますが、施工は紹介業者が担当するため、見積もりの内容を確認したうえで依頼することをおすすめします。",
+    "summary": "{{displayName:oniwa-master}}は、株式会社アシストが運営する全国対応のお庭の手入れ業者紹介サービスです。剪定・草刈り・伐採などに対応し、自社では施工せず、優良業者を無料で紹介しています。公式サイトには「最も安く最安水準でした」「庭も綺麗になり助かりました」という利用者の声が掲載されています（2016年11月〜2018年6月の投稿）。お庭の手入れを早めに相談・依頼したい方に適していますが、施工は紹介業者が担当するため、見積もりの内容を確認したうえで依頼することをおすすめします。",
     "officialUrl": "https://oniwa-master.info/",
     "modifiedISO": "2026-10-27"
   },
@@ -1099,7 +1103,21 @@ DATA = r'''
 ]
 '''
 
-E = json.loads(DATA)
+COMPANIES = json.load(open(SITE/"data/companies.json", encoding="utf-8"))
+DISPLAY = {c["slug"]: c["displayName"] for c in COMPANIES if c.get("displayName")}
+
+
+def fill_display(m):
+    slug = m.group(1)
+    if slug not in DISPLAY:
+        raise SystemExit(f"companies.json に {slug} の displayName がありません")
+    return json.dumps(DISPLAY[slug], ensure_ascii=False)[1:-1]
+
+
+E = json.loads(re.sub(r"\{\{displayName:([a-z0-9-]+)\}\}", fill_display, DATA))
+for e in E:
+    if e["slug"] in DISPLAY:
+        e["companyName"] = DISPLAY[e["slug"]]
 if NG_PATH.exists():
     NG = json.load(open(NG_PATH))
     for e in E:
