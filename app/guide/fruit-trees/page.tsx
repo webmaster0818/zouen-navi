@@ -466,6 +466,8 @@ export default function FruitTreesPage() {
             { href: "/guide/soil-fertilizer/", label: "庭の土と肥料" },
             { href: "/service/pruning/", label: "庭木の剪定" },
             { href: "/guide/tree-size-reduction/", label: "大きくなりすぎた庭木を小さくする" },
+            { href: "/guide/ume-pruning/", label: "梅の剪定時期と方法" },
+            { href: "/guide/citrus-care/", label: "庭のミカン（柑橘）の剪定時期と方法" },
           ].map((l) => (
             <li key={l.href}>
               <Link

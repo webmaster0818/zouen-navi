@@ -539,6 +539,8 @@ export default function PestDiseasePage() {
             { href: "/service/maintenance/", label: "庭木の年間メンテナンスカレンダー" },
             { href: "/plant/low-maintenance/", label: "手入れが容易な庭木のおすすめ" },
             { href: "/guide/pine-care/", label: "庭の松の手入れ" },
+            { href: "/guide/camellia-sasanqua/", label: "ツバキ・サザンカの剪定とチャドクガ" },
+            { href: "/guide/oak-wilt/", label: "庭のカシ・ナラ類とナラ枯れ" },
             { href: "/guide/dead-tree/", label: "庭木が枯れたかどうかの見分け方" },
             { href: "/guide/tree-doctor/", label: "樹木医に相談する場面" },
           ].map((l) => (
