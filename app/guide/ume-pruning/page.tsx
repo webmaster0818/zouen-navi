@@ -147,7 +147,7 @@ const sources: Source[] = [
   },
   {
     org: "東京都環境局",
-    title: "クビアカツヤカミキリの被害が発生・拡大しています",
+    title: "クビアカツヤカミキリの被害が発生・拡大しています！",
     url: "https://www.kankyo.metro.tokyo.lg.jp/nature/animals_plants/400100a20191204115758336/",
   },
 ];

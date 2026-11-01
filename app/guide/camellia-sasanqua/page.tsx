@@ -132,7 +132,7 @@ const sources: Source[] = [
   },
   {
     org: "横浜市 医療局衛生研究所",
-    title: "5月、6月の庭木の手入れにはご注意（チャドクガ）",
+    title: "5月、6月の庭木の手入れにはご注意！（チャドクガ）",
     url: "https://www.city.yokohama.lg.jp/kenko-iryo-fukushi/kenko-iryo/eiken/kankyoeisei/gaichu/niwaki.html",
   },
   {
