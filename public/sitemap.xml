@@ -90,7 +90,7 @@
   </url>
   <url>
     <loc>https://zouen-navi.com/area/fukuoka/</loc>
-    <lastmod>2026-10-30</lastmod>
+    <lastmod>2026-11-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -114,7 +114,7 @@
   </url>
   <url>
     <loc>https://zouen-navi.com/area/hiroshima/</loc>
-    <lastmod>2026-10-30</lastmod>
+    <lastmod>2026-11-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -156,7 +156,7 @@
   </url>
   <url>
     <loc>https://zouen-navi.com/area/kitakyushu/</loc>
-    <lastmod>2026-10-30</lastmod>
+    <lastmod>2026-11-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -210,7 +210,7 @@
   </url>
   <url>
     <loc>https://zouen-navi.com/area/kumamoto/</loc>
-    <lastmod>2026-10-30</lastmod>
+    <lastmod>2026-11-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -240,7 +240,7 @@
   </url>
   <url>
     <loc>https://zouen-navi.com/area/matsuyama/</loc>
-    <lastmod>2026-10-30</lastmod>
+    <lastmod>2026-11-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -258,7 +258,7 @@
   </url>
   <url>
     <loc>https://zouen-navi.com/area/gifu/</loc>
-    <lastmod>2026-10-30</lastmod>
+    <lastmod>2026-11-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -324,13 +324,13 @@
   </url>
   <url>
     <loc>https://zouen-navi.com/area/mito/</loc>
-    <lastmod>2026-10-30</lastmod>
+    <lastmod>2026-11-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://zouen-navi.com/area/nishinomiya/</loc>
-    <lastmod>2026-10-30</lastmod>
+    <lastmod>2026-11-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -354,7 +354,7 @@
   </url>
   <url>
     <loc>https://zouen-navi.com/area/takamatsu/</loc>
-    <lastmod>2026-10-30</lastmod>
+    <lastmod>2026-11-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -546,6 +546,60 @@
   </url>
   <url>
     <loc>https://zouen-navi.com/area/shizuoka/hozonju-hojo/</loc>
+    <lastmod>2026-11-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://zouen-navi.com/area/hiroshima/hozonju-hojo/</loc>
+    <lastmod>2026-11-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://zouen-navi.com/area/kitakyushu/hozonju-josei/</loc>
+    <lastmod>2026-11-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://zouen-navi.com/area/fukuoka/ryokka-josei/</loc>
+    <lastmod>2026-11-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://zouen-navi.com/area/kumamoto/tsunagari-mori/</loc>
+    <lastmod>2026-11-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://zouen-navi.com/area/gifu/ikegaki-hojo/</loc>
+    <lastmod>2026-11-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://zouen-navi.com/area/mito/ikegaki-hojo/</loc>
+    <lastmod>2026-11-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://zouen-navi.com/area/nishinomiya/ryokka-josei/</loc>
+    <lastmod>2026-11-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://zouen-navi.com/area/matsuyama/ikegaki-shoreikin/</loc>
+    <lastmod>2026-11-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://zouen-navi.com/area/takamatsu/ikegaki-josei/</loc>
     <lastmod>2026-11-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

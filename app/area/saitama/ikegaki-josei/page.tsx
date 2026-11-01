@@ -131,7 +131,7 @@ const c: SubsidyConfig = {
     { org: "公益財団法人さいたま市公園緑地協会", title: "みどりの街並みづくり助成制度のご案内（PDF）", url: "https://www.sgp.or.jp/library/5c6f9dd8c49fc15e55041b8a/69d8664649758552badaf441.pdf" },
   ],
   related: [
-    { href: "/guide/hedge-subsidy/", label: "政令市の生垣・緑化助成の一覧" },
+    { href: "/guide/hedge-subsidy/", label: "政令市・中核市の生垣・緑化助成の一覧" },
     { href: "/area/saitama/", label: "さいたまの造園・庭の手入れ業者" },
     { href: "/guide/hedge-planting/", label: "生垣を新しく植える" },
     { href: "/plant/hedge/", label: "生垣におすすめの品種" },

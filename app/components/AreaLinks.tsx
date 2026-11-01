@@ -245,6 +245,15 @@ export const AREA_SUBSIDY_PAGES: Partial<Record<AreaSlug, { href: string; label:
   hamamatsu: { href: "/area/hamamatsu/ikegaki-naegi/", label: "浜松市の生垣用苗木交付" },
   osaka: { href: "/area/osaka/hozonju-josei/", label: "大阪市の保存樹・保存樹林の助成" },
   shizuoka: { href: "/area/shizuoka/hozonju-hojo/", label: "静岡市の保存樹木等の補助" },
+  hiroshima: { href: "/area/hiroshima/hozonju-hojo/", label: "広島市の美しい樹木・樹林保存事業補助金" },
+  kitakyushu: { href: "/area/kitakyushu/hozonju-josei/", label: "北九州市の保存樹の助成金" },
+  fukuoka: { href: "/area/fukuoka/ryokka-josei/", label: "福岡市の緑化助成事業（戸建住宅）" },
+  kumamoto: { href: "/area/kumamoto/tsunagari-mori/", label: "熊本市のつながりの森づくり補助金" },
+  gifu: { href: "/area/gifu/ikegaki-hojo/", label: "岐阜市の生け垣づくり奨励補助金" },
+  mito: { href: "/area/mito/ikegaki-hojo/", label: "水戸市の生垣設置奨励補助金" },
+  nishinomiya: { href: "/area/nishinomiya/ryokka-josei/", label: "西宮市の住まいの緑化助成制度" },
+  matsuyama: { href: "/area/matsuyama/ikegaki-shoreikin/", label: "松山市の緑のまちづくり奨励金" },
+  takamatsu: { href: "/area/takamatsu/ikegaki-josei/", label: "高松市の生垣設置事業の助成" },
 };
 
 /**
@@ -274,7 +283,7 @@ export default function AreaLinks({ current }: { current?: AreaSlug }) {
               href="/guide/hedge-subsidy/"
               className="block rounded-2xl border border-border bg-surface p-4 text-text-primary font-medium hover:border-primary transition-colors"
             >
-              政令市の生垣・緑化助成の一覧
+              政令市・中核市の生垣・緑化助成の一覧
             </Link>
           </li>
         </ul>

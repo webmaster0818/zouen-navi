@@ -118,7 +118,7 @@ const c: SubsidyConfig = {
     { org: "新潟市", title: "新潟市緑化地区等への生垣等設置費補助金交付要綱（PDF）", url: "https://www.city.niigata.lg.jp/kurashi/park/midori-jyosei/koen2020.files/ikegaki_yoko_R60401.pdf" },
   ],
   related: [
-    { href: "/guide/hedge-subsidy/", label: "政令市の生垣・緑化助成の一覧" },
+    { href: "/guide/hedge-subsidy/", label: "政令市・中核市の生垣・緑化助成の一覧" },
     { href: "/area/niigata/", label: "新潟の造園・庭の手入れ業者" },
     { href: "/guide/hedge-planting/", label: "生垣を新しく植える" },
     { href: "/guide/tree-planting/", label: "庭木を新しく植える" },

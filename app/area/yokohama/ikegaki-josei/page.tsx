@@ -130,7 +130,7 @@ const c: SubsidyConfig = {
     { org: "公益財団法人横浜市緑の協会", title: "生垣設置助成についてのご案内（PDF）", url: "https://www.hama-midorinokyokai.or.jp/midori/author4e1f4/2024/02/88e3802b5df45f949d25f2969af0338115038e26.pdf" },
   ],
   related: [
-    { href: "/guide/hedge-subsidy/", label: "政令市の生垣・緑化助成の一覧" },
+    { href: "/guide/hedge-subsidy/", label: "政令市・中核市の生垣・緑化助成の一覧" },
     { href: "/area/yokohama/", label: "横浜の造園・庭の手入れ業者" },
     { href: "/guide/hedge-planting/", label: "生垣を新しく植える" },
     { href: "/plant/hedge/", label: "生垣におすすめの品種" },

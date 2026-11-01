@@ -122,7 +122,7 @@ const c: SubsidyConfig = {
     { org: "公益財団法人相模原市まち・みどり公社", title: "生垣設置奨励金交付申請の手引き（PDF）", url: "https://drive.google.com/file/d/1qjhMkZv-rJfFRWUaidmv1aXGuIdhNSSe/view" },
   ],
   related: [
-    { href: "/guide/hedge-subsidy/", label: "政令市の生垣・緑化助成の一覧" },
+    { href: "/guide/hedge-subsidy/", label: "政令市・中核市の生垣・緑化助成の一覧" },
     { href: "/area/sagamihara/", label: "相模原の造園・庭の手入れ業者" },
     { href: "/plant/hedge/", label: "生垣におすすめの品種" },
     { href: "/guide/hedge-planting/", label: "生垣を新しく植える" },

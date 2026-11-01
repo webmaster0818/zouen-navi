@@ -134,7 +134,7 @@ const c: SubsidyConfig = {
     { org: "浜松市", title: "浜松市風致地区内住宅生垣用苗木交付制度の概要", url: "https://www.city.hamamatsu.shizuoka.jp/ryokuka/greening/hanamidori/ikegakikoufu.html" },
   ],
   related: [
-    { href: "/guide/hedge-subsidy/", label: "政令市の生垣・緑化助成の一覧" },
+    { href: "/guide/hedge-subsidy/", label: "政令市・中核市の生垣・緑化助成の一覧" },
     { href: "/area/hamamatsu/", label: "浜松の造園・庭の手入れ業者" },
     { href: "/guide/hedge-planting/", label: "生垣を新しく植える" },
     { href: "/area/mito/", label: "水戸の風致地区と庭木の伐採" },

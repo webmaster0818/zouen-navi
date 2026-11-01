@@ -122,7 +122,7 @@ const c: SubsidyConfig = {
     { org: "公益財団法人川崎市公園緑地協会", title: "（第1号様式）生垣づくり助成事業助成金交付申請書（PDF）", url: "https://www.kawasaki-green.or.jp/wp-content/uploads/R1ikegakijoseisinsei.pdf" },
   ],
   related: [
-    { href: "/guide/hedge-subsidy/", label: "政令市の生垣・緑化助成の一覧" },
+    { href: "/guide/hedge-subsidy/", label: "政令市・中核市の生垣・緑化助成の一覧" },
     { href: "/area/kawasaki/", label: "川崎の造園・庭の手入れ業者" },
     { href: "/guide/hedge-planting/", label: "生垣を新しく植える" },
     { href: "/plant/hedge/", label: "生垣におすすめの品種" },

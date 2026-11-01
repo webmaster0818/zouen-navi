@@ -127,7 +127,7 @@ const c: SubsidyConfig = {
     { org: "静岡市", title: "静岡市保存樹木等保全事業助成等要綱（PDF）", url: "https://www.city.shizuoka.lg.jp/documents/1641/000713856.pdf" },
   ],
   related: [
-    { href: "/guide/hedge-subsidy/", label: "政令市の生垣・緑化助成の一覧" },
+    { href: "/guide/hedge-subsidy/", label: "政令市・中核市の生垣・緑化助成の一覧" },
     { href: "/area/shizuoka/", label: "静岡の造園・庭の手入れ業者" },
     { href: "/guide/tree-doctor/", label: "樹木医への相談" },
     { href: "/guide/storm-care/", label: "台風・強風への備え" },

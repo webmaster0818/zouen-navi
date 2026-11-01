@@ -121,7 +121,7 @@ const c: SubsidyConfig = {
     { org: "大阪市", title: "保存樹・保存樹林等、貴重な緑の保全・育成への助成について", url: "https://www.city.osaka.lg.jp/kensetsu/page/0000158867.html" },
   ],
   related: [
-    { href: "/guide/hedge-subsidy/", label: "政令市の生垣・緑化助成の一覧" },
+    { href: "/guide/hedge-subsidy/", label: "政令市・中核市の生垣・緑化助成の一覧" },
     { href: "/area/osaka/", label: "大阪の造園・庭の手入れ業者" },
     { href: "/guide/tree-doctor/", label: "樹木医への相談" },
     { href: "/guide/tree-size-reduction/", label: "大きくなりすぎた庭木" },

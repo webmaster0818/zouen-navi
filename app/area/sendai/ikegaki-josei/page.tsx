@@ -145,7 +145,7 @@ const c: SubsidyConfig = {
     { org: "仙台市", title: "生垣づくり助成事業", url: "https://www.city.sendai.jp/ryokukasuishin/kurashi/shizen/midori/shinse/jose/ikegaki.html" },
   ],
   related: [
-    { href: "/guide/hedge-subsidy/", label: "政令市の生垣・緑化助成の一覧" },
+    { href: "/guide/hedge-subsidy/", label: "政令市・中核市の生垣・緑化助成の一覧" },
     { href: "/area/sendai/", label: "仙台の造園・庭の手入れ業者" },
     { href: "/guide/hedge-planting/", label: "生垣を新しく植える" },
     { href: "/guide/hedge-care/", label: "生垣の手入れ" },
