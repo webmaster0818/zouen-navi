@@ -233,12 +233,53 @@ export const AREAS = [
 
 export type AreaSlug = (typeof AREAS)[number]["slug"];
 
+/** 市の生垣・緑化・保存樹の助成を扱う子ページ（2026-11-01 追加）。親の市ページから案内する。 */
+export const AREA_SUBSIDY_PAGES: Partial<Record<AreaSlug, { href: string; label: string }>> = {
+  sendai: { href: "/area/sendai/ikegaki-josei/", label: "仙台市の生垣づくり助成" },
+  saitama: { href: "/area/saitama/ikegaki-josei/", label: "さいたま市の生け垣助成" },
+  yokohama: { href: "/area/yokohama/ikegaki-josei/", label: "横浜市の生垣設置助成" },
+  kawasaki: { href: "/area/kawasaki/ikegaki-josei/", label: "川崎市の生垣づくり助成" },
+  sagamihara: { href: "/area/sagamihara/ikegaki-josei/", label: "相模原市の生垣設置奨励金" },
+  niigata: { href: "/area/niigata/ryokuchi-kyotei/", label: "新潟市の生垣等設置費補助金" },
+  nagoya: { href: "/area/nagoya/ryokka-josei/", label: "名古屋市のみどりの補助金（生垣）" },
+  hamamatsu: { href: "/area/hamamatsu/ikegaki-naegi/", label: "浜松市の生垣用苗木交付" },
+  osaka: { href: "/area/osaka/hozonju-josei/", label: "大阪市の保存樹・保存樹林の助成" },
+  shizuoka: { href: "/area/shizuoka/hozonju-hojo/", label: "静岡市の保存樹木等の補助" },
+};
+
 /**
  * 全エリアを相互にリンクするブロック。
  * current に自分のスラッグを渡すと、そのエリアだけ非リンクの現在地表示になる。
  */
 export default function AreaLinks({ current }: { current?: AreaSlug }) {
+  const subsidy = current ? AREA_SUBSIDY_PAGES[current] : undefined;
   return (
+    <>
+    {subsidy ? (
+      <section id="area-subsidy" className="scroll-mt-20 mb-12">
+        <h2 className="text-xl font-bold text-text-primary border-l-4 border-primary pl-3 mb-5">
+          市の助成制度
+        </h2>
+        <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <li>
+            <Link
+              href={subsidy.href}
+              className="block rounded-2xl border border-border bg-surface p-4 text-text-primary font-medium hover:border-primary transition-colors"
+            >
+              {subsidy.label}
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/guide/hedge-subsidy/"
+              className="block rounded-2xl border border-border bg-surface p-4 text-text-primary font-medium hover:border-primary transition-colors"
+            >
+              政令市の生垣・緑化助成の一覧
+            </Link>
+          </li>
+        </ul>
+      </section>
+    ) : null}
     <section id="other-areas" className="scroll-mt-20 mb-12">
       <h2 className="text-xl font-bold text-text-primary border-l-4 border-primary pl-3 mb-5">
         他のエリアの業者選び
@@ -278,5 +319,6 @@ export default function AreaLinks({ current }: { current?: AreaSlug }) {
         })}
       </ul>
     </section>
+    </>
   );
 }

@@ -25,6 +25,7 @@ const GUIDE_LINKS = [
   { href: "/guide/spraying/", label: "住宅地での薬剤散布" },
   { href: "/guide/grass-cutting/", label: "庭・空き地の草刈り" },
   { href: "/guide/hedge-planting/", label: "生垣を新しく植える" },
+  { href: "/guide/hedge-subsidy/", label: "政令市の生垣・緑化助成" },
   { href: "/guide/tree-planting/", label: "庭木を新しく植える" },
   { href: "/guide/winter-care/", label: "冬の庭木の寒さ対策" },
   { href: "/guide/pine-care/", label: "庭の松の手入れ" },

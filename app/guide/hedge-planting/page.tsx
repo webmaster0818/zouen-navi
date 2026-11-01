@@ -223,6 +223,8 @@ export default function HedgePlantingPage() {
         <After>
           川口市の補助の条件と手続きは
           <L href="/area/kawaguchi/">川口で生垣を設置する際の業者選び</L>
+          、政令市の生垣の助成は
+          <L href="/guide/hedge-subsidy/">政令市の生垣・緑化助成の一覧</L>
           、水はけの改善は
           <L href="/guide/drainage/">庭の水はけが悪いときの原因と対処</L>
           で解説しています。
