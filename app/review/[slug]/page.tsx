@@ -35,6 +35,7 @@ export default async function ReviewPage({ params }: Props) {
   const toc = [
     { id: "basic", label: `${r.companyName}とは（運営会社・基本情報）` },
     { id: "reviews", label: r.reviewsHeading },
+    ...(r.trend ? [{ id: "trend", label: r.trend.heading }] : []),
     { id: "strengths", label: "口コミから見る強み・特徴" },
     { id: "cautions", label: "利用前の注意点" },
     { id: "recommended", label: "おすすめする利用者" },
@@ -169,6 +170,44 @@ export default async function ReviewPage({ params }: Props) {
         </figure>
       </section>
 
+      {/* Review trend (optional) */}
+      {r.trend && (
+        <section id="trend" className="scroll-mt-20 mb-12">
+          <h2 className="text-xl font-bold text-text-primary border-l-4 border-primary pl-3 mb-5">{r.trend.heading}</h2>
+          <p className="text-[15px] leading-8 text-text-secondary mb-5">{r.trend.intro}</p>
+          <div className="overflow-hidden rounded-2xl border border-border">
+            <table className="w-full text-sm">
+              <thead className="bg-surface-alt">
+                <tr>
+                  <th className="text-left font-semibold text-text-primary px-4 py-3">声の内容</th>
+                  <th className="text-left font-semibold text-text-primary px-4 py-3 whitespace-nowrap">件数</th>
+                  <th className="text-left font-semibold text-text-primary px-4 py-3">例・補足</th>
+                </tr>
+              </thead>
+              <tbody>
+                {r.trend.rows.map((t: any, idx: number) => (
+                  <tr key={t.label} className={idx % 2 ? "bg-surface-alt" : "bg-surface"}>
+                    <th className="text-left align-top font-semibold text-text-primary px-4 py-3">{t.label}</th>
+                    <td className="align-top px-4 py-3 text-text-secondary whitespace-nowrap">{t.count}</td>
+                    <td className="px-4 py-3 text-text-secondary leading-7">{t.note}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p className="mt-3 text-xs text-text-muted">
+            出典：公式サイトの口コミページ（
+            {r.trend.sources.map((s: any, i: number) => (
+              <span key={s.url}>
+                {i > 0 && "・"}
+                <a href={s.url} target="_blank" rel="noopener noreferrer" className="underline">{s.label}</a>
+              </span>
+            ))}
+            ）。{r.trend.note}
+          </p>
+        </section>
+      )}
+
       {/* Strengths */}
       <section id="strengths" className="scroll-mt-20 mb-12">
         <h2 className="text-xl font-bold text-text-primary border-l-4 border-primary pl-3 mb-5">口コミから見る強み・特徴</h2>
@@ -245,6 +284,9 @@ export default async function ReviewPage({ params }: Props) {
       </div>
 
       <div className="mt-8 flex flex-wrap gap-4 text-sm">
+        {r.companyHref && (
+          <Link href={r.companyHref} className="text-primary hover:underline">{r.companyLinkLabel}</Link>
+        )}
         <Link href="/review/" className="text-primary hover:underline">他の業者の口コミ・評判を見る</Link>
         <Link href="/ranking/" className="text-primary hover:underline">造園・お庭業者ランキングを見る</Link>
       </div>

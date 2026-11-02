@@ -22,7 +22,7 @@ export default function ReviewIndex() {
           <Link key={r.slug} href={`/review/${r.slug}/`}
             className="block rounded-2xl border border-border bg-surface p-5 hover:border-primary transition-colors">
             <div className="flex items-center justify-between gap-3 mb-2">
-              <h2 className="font-bold text-text-primary">{r.companyName}</h2>
+              <h2 className="font-bold text-text-primary">{r.companyName}の口コミ・評判</h2>
               {(r as any).ratingBlock ? (
                 <span className="text-sm text-text-muted whitespace-nowrap">
                   <span className="text-warning">★</span> {(r as any).ratingBlock.rating}（{(r as any).ratingBlock.reviewCount}件）
@@ -32,6 +32,7 @@ export default function ReviewIndex() {
               )}
             </div>
             <p className="text-sm text-text-secondary line-clamp-2 leading-7">{r.summary}</p>
+            <p className="mt-2 text-xs text-text-muted">最終更新：{r.updatedAt}</p>
           </Link>
         ))}
       </div>

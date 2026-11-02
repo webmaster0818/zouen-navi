@@ -4,9 +4,9 @@ import Breadcrumb from "@/app/components/Breadcrumb";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/cost/price/" },
-  title: "庭工事の料金｜剪定・伐採・草刈りの公式料金（掲載業者）",
+  title: "造園・庭の手入れの費用はいくら？剪定・伐採・草刈りの公式料金",
   description:
-    "掲載業者（お庭レスキュープロ（旧お庭マスター）・お庭110番）の公式料金ページで確認した剪定・伐採・草刈り・植栽の料金（税込・下限）をまとめています。金額は業者の見積もりで確認してください。",
+    "造園・庭の手入れの費用を、掲載業者の公式料金（税込・下限）で比べました。剪定は1本550円〜、伐採は1本3,300円〜、機械刈りは1㎡390円〜、芝張りは1㎡2,800円〜。庭づくり一式の総額は現地見積もりで確認します。",
 };
 
 const CategoryIcon = ({ title }: { title: string }) => {
@@ -17,7 +17,7 @@ const CategoryIcon = ({ title }: { title: string }) => {
   return <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>;
 };
 
-// 掲載業者の公式料金（税込・下限）。2026-10-25 に各社の公式料金ページで確認した値だけを載せる。
+// 掲載業者の公式料金（税込・下限）。2026-10-25・2026-11-02 に各社の公式料金ページで確認した値だけを載せる。
 // 公式で確認できない幅（高さ別・面積別・処分費など）は載せない
 const OM = "https://oniwa-master.info/servicelist/index.html";
 const O110 = "https://www.kusakari-a.com/price/";
@@ -60,15 +60,33 @@ export default function PricePage() {
       <Breadcrumb
         items={[
           { label: "費用・料金ガイド" },
-          { label: "庭工事の料金" },
+          { label: "造園・庭の手入れの費用" },
         ]}
       />
 
       <div className="max-w-4xl mx-auto px-4 py-8">
         <div className="text-center mb-8">
-          <h1 className="text-2xl md:text-3xl font-bold text-gray-800 mt-3">庭工事の料金（掲載業者の公式料金）</h1>
-          <p className="text-gray-500 mt-2">剪定・伐採・草刈り・植栽の公式料金（税込・下限、2026-10-25確認）</p>
+          <h1 className="text-2xl md:text-3xl font-bold text-gray-800 mt-3">造園・庭の手入れの費用（掲載業者の公式料金）</h1>
+          <p className="text-gray-500 mt-2">剪定・伐採・草刈り・植栽の公式料金（税込・下限、2026-11-02確認）</p>
         </div>
+
+        {/* Answer */}
+        <section className="bg-white rounded-2xl shadow-md p-6 mb-6 border-l-4 border-[#15803D]">
+          <h2 className="text-lg font-bold text-gray-800 mb-3">造園・庭の手入れの費用は、作業ごとの単価で決まります</h2>
+          <p className="text-sm text-gray-700 leading-7 mb-3">
+            掲載業者の公式料金（税込・下限）では、剪定は1本550円〜（お庭レスキュープロ（旧お庭マスター））・3,300円〜（お庭110番）、生垣の剪定は1m 1,700円〜、伐採は1本3,300円〜・5,500円〜、伐根は1本11,000円〜、機械刈りは1㎡390円〜、庭木の植栽は1本11,000円〜、芝張りは1㎡2,800円〜です。
+          </p>
+          <p className="text-sm text-gray-700 leading-7">
+            実際の費用は、この単価に本数・長さ・面積を掛けた額が目安になります。木の高さや処分費、庭づくり一式（作庭・外構）の総額は公式の料金ページに金額がないため、現地見積もりで確認してください。
+          </p>
+          <p className="text-xs text-gray-500 mt-3">
+            出典：
+            <a href={OM} target="_blank" rel="noopener noreferrer" className="underline">【お庭レスキュープロ】サービス一覧</a>
+            ・
+            <a href={O110} target="_blank" rel="noopener noreferrer" className="underline">お庭110番 料金表</a>
+            （2026年11月2日確認）
+          </p>
+        </section>
 
         {/* Notice */}
         <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 mb-6 text-sm text-blue-800">
