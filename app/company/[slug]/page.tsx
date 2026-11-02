@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import Link from "next/link";
 import companiesData from "@/data/companies.json";
+import reviewsData from "@/data/reviews.json";
 import { getVerifiedRating } from "@/app/lib/verifiedRating";
 import Breadcrumb from "@/app/components/Breadcrumb";
 
@@ -36,10 +37,22 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const company = companiesData.find((c) => c.slug === slug);
   if (!company) return {};
   const c = company as CompanyExtra;
+  const name = c.displayName ?? company.name;
+  // 本文に出典つきの評価（Googleマップの★・件数・取得日）を表示する社だけ「評判・口コミ」を title に入れる。
+  // 表示しない社は本文の中身（特徴・メリット・デメリット・対応エリア）に合わせる（trust-audit C5 2026-11-03）。
+  const hasRating = getVerifiedRating(slug) !== null;
   return {
     alternates: { canonical: `/company/${slug}/` },
-    title: c.seoTitle ?? `${c.displayName ?? company.name}の評判・口コミ・費用｜特徴と料金`,
-    description: c.seoDescription ?? `${c.displayName ?? company.name}の特徴・料金・口コミを解説します。${company.tagline}。造園ナビ編集部が調査した情報を掲載しています。`,
+    title:
+      c.seoTitle ??
+      (hasRating
+        ? `${name}の評判・口コミ・費用｜特徴と料金`
+        : `${name}とは｜特徴・メリット・デメリットと対応エリア`),
+    description:
+      c.seoDescription ??
+      (hasRating
+        ? `${name}の特徴・料金・口コミを解説します。${company.tagline}。造園ナビ編集部が調査した情報を掲載しています。`
+        : `${name}の特徴・メリット・デメリットと対応エリアを解説します。${company.tagline}。造園ナビ編集部が調査した情報を掲載しています。`),
   };
 }
 
@@ -52,6 +65,7 @@ export default async function CompanyPage({ params }: Props) {
   const vr = getVerifiedRating(company.slug);
   const extra = company as CompanyExtra;
   const displayName = extra.displayName ?? company.name;
+  const hasReviewPage = (reviewsData as { slug: string }[]).some((r) => r.slug === company.slug);
   const faqLd = extra.faqs?.length
     ? {
         "@context": "https://schema.org",
@@ -134,6 +148,14 @@ export default async function CompanyPage({ params }: Props) {
             )}
             <p className="text-xs text-gray-500">{extra.answer.source}</p>
           </section>
+        )}
+
+        {!vr && !extra.answer?.reviewLink && hasReviewPage && (
+          <p className="text-sm text-gray-700 mb-6">
+            {displayName}の口コミ・評判は、出典つきで
+            <Link href={`/review/${company.slug}/`} className="text-[#15803D] underline underline-offset-2">{displayName}の評判（別ページ）</Link>
+            にまとめています。
+          </p>
         )}
 
         {/* Pros & Cons */}
