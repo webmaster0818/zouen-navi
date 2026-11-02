@@ -2,10 +2,11 @@ import type { Metadata } from "next";
 import { OG_IMAGES } from "@/app/lib/og";
 import Link from "next/link";
 import Breadcrumb from "@/app/components/Breadcrumb";
+import { AREA_WASTE_PAGES } from "@/app/components/AreaLinks";
 
 const PAGE_URL = "https://zouen-navi.com/guide/green-waste/";
-const UPDATED_LABEL = "2026年9月20日";
-const UPDATED_ISO = "2026-09-20";
+const UPDATED_LABEL = "2026年11月2日";
+const UPDATED_ISO = "2026-11-02";
 const TITLE = "剪定枝・刈った草の処分方法｜自治体回収・持ち込み・業者引き取りの使い分け";
 
 export const metadata: Metadata = {
@@ -27,6 +28,7 @@ const toc = [
   { id: "waste-point", label: "処分方法は作業を依頼する前に決まります" },
   { id: "waste-options", label: "処分方法は大きく4つあります" },
   { id: "waste-rule", label: "自治体の規定で確認すべき項目" },
+  { id: "waste-city", label: "市ごとの剪定枝の出し方" },
   { id: "waste-reduce", label: "量を減らす・搬出しやすくする工夫" },
   { id: "waste-order", label: "業者に引き取りを依頼する際の決め方" },
   { id: "waste-ng", label: "行ってはいけない処分方法" },
@@ -274,6 +276,29 @@ export default function GreenWastePage() {
             </li>
           ))}
         </ol>
+      </section>
+
+      <section id="waste-city" className="scroll-mt-20 mb-12">
+        <h2 className="text-xl font-bold text-text-primary border-l-4 border-primary pl-3 mb-5">
+          市ごとの剪定枝の出し方
+        </h2>
+        <p className="text-[15px] leading-8 text-text-secondary mb-5">
+          次の市については、市の公式ページで確認した剪定枝の出し方（大きさ・量・多量に出たときの扱い）をページごとにまとめています。
+        </p>
+        <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          {Object.values(AREA_WASTE_PAGES).map((w) =>
+            w ? (
+              <li key={w.href}>
+                <Link
+                  href={w.href}
+                  className="block rounded-2xl border border-border bg-surface p-4 text-text-primary font-medium hover:border-primary transition-colors"
+                >
+                  {w.label}
+                </Link>
+              </li>
+            ) : null,
+          )}
+        </ul>
       </section>
 
       <section id="waste-reduce" className="scroll-mt-20 mb-12">

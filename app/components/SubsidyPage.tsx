@@ -7,6 +7,7 @@ import {
 
 /**
  * 市の生垣・緑化・保存樹の助成を扱うエリア子ページ（/area/<市>/<制度>/）の部品。2026-11-01 追加。
+ * 2026-11-02 から、市の剪定枝の出し方を扱う子ページ（/area/<市>/sentei-eda/）にも使う。
  * 金額・条件は各ページの config に、確認した公式ページの記載どおりに書く。
  */
 
@@ -41,6 +42,8 @@ export type SubsidyConfig = {
   sources: Source[];
   related: RelatedLink[];
   cta: string;
+  /** 出典の確認日（省略時は 2026年11月1日）。2026-11-02 追加 */
+  checked?: string;
 };
 
 export default function SubsidyPage({ c }: { c: SubsidyConfig }) {
@@ -120,7 +123,7 @@ export default function SubsidyPage({ c }: { c: SubsidyConfig }) {
       </Section>
 
       <Section id="sb-sources" title="本ページで参照した公式ページ">
-        <SourceList sources={c.sources} checked="2026年11月1日" />
+        <SourceList sources={c.sources} checked={c.checked ?? "2026年11月1日"} />
       </Section>
 
       <Related links={c.related} />

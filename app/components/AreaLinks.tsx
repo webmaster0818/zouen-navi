@@ -256,14 +256,52 @@ export const AREA_SUBSIDY_PAGES: Partial<Record<AreaSlug, { href: string; label:
   takamatsu: { href: "/area/takamatsu/ikegaki-josei/", label: "高松市の生垣設置事業の助成" },
 };
 
+/** 市の剪定枝の出し方を扱う子ページ（2026-11-02 追加）。親の市ページから案内する。 */
+export const AREA_WASTE_PAGES: Partial<Record<AreaSlug, { href: string; label: string }>> = {
+  osaka: { href: "/area/osaka/sentei-eda/", label: "大阪市の剪定枝の出し方" },
+  kobe: { href: "/area/kobe/sentei-eda/", label: "神戸市の剪定枝の出し方" },
+  sakai: { href: "/area/sakai/sentei-eda/", label: "堺市の剪定枝の出し方" },
+  okayama: { href: "/area/okayama/sentei-eda/", label: "岡山市の剪定枝の出し方" },
+  hiroshima: { href: "/area/hiroshima/sentei-eda/", label: "広島市の剪定枝の出し方" },
+  kitakyushu: { href: "/area/kitakyushu/sentei-eda/", label: "北九州市の剪定枝の出し方" },
+  kumamoto: { href: "/area/kumamoto/sentei-eda/", label: "熊本市の剪定枝の出し方" },
+  chiba: { href: "/area/chiba/sentei-eda/", label: "千葉市の剪定枝の出し方" },
+};
+
 /**
  * 全エリアを相互にリンクするブロック。
  * current に自分のスラッグを渡すと、そのエリアだけ非リンクの現在地表示になる。
  */
 export default function AreaLinks({ current }: { current?: AreaSlug }) {
   const subsidy = current ? AREA_SUBSIDY_PAGES[current] : undefined;
+  const waste = current ? AREA_WASTE_PAGES[current] : undefined;
   return (
     <>
+    {waste ? (
+      <section id="area-waste" className="scroll-mt-20 mb-12">
+        <h2 className="text-xl font-bold text-text-primary border-l-4 border-primary pl-3 mb-5">
+          剪定枝の出し方（市の案内）
+        </h2>
+        <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <li>
+            <Link
+              href={waste.href}
+              className="block rounded-2xl border border-border bg-surface p-4 text-text-primary font-medium hover:border-primary transition-colors"
+            >
+              {waste.label}
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/guide/green-waste/"
+              className="block rounded-2xl border border-border bg-surface p-4 text-text-primary font-medium hover:border-primary transition-colors"
+            >
+              剪定枝・刈った草の処分方法
+            </Link>
+          </li>
+        </ul>
+      </section>
+    ) : null}
     {subsidy ? (
       <section id="area-subsidy" className="scroll-mt-20 mb-12">
         <h2 className="text-xl font-bold text-text-primary border-l-4 border-primary pl-3 mb-5">
