@@ -6,7 +6,7 @@ import { AREA_WASTE_PAGES } from "@/app/components/AreaLinks";
 
 const PAGE_URL = "https://zouen-navi.com/guide/green-waste/";
 const UPDATED_LABEL = "2026年11月2日";
-const UPDATED_ISO = "2026-11-02";
+const UPDATED_ISO = "2026-11-03";
 const TITLE = "剪定枝・刈った草の処分方法｜自治体回収・持ち込み・業者引き取りの使い分け";
 
 export const metadata: Metadata = {

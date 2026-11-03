@@ -275,7 +275,6 @@ export const AREA_WASTE_PAGES: Partial<Record<AreaSlug, { href: string; label: s
   hiroshima: { href: "/area/hiroshima/sentei-eda/", label: "広島市の剪定枝の出し方" },
   kitakyushu: { href: "/area/kitakyushu/sentei-eda/", label: "北九州市の剪定枝の出し方" },
   kumamoto: { href: "/area/kumamoto/sentei-eda/", label: "熊本市の剪定枝の出し方" },
-  chiba: { href: "/area/chiba/sentei-eda/", label: "千葉市の剪定枝の出し方" },
 };
 
 /**

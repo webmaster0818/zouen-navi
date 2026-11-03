@@ -22,6 +22,15 @@ type CompanyExtra = {
   };
   faqs?: { q: string; a: string }[];
   ctaNote?: string;
+  // 公式サイトに掲載されている口コミの転載（原文のまま・表示順・出典URLと確認日つき）
+  officialReviews?: {
+    heading: string;
+    intro: string;
+    sourceTitle: string;
+    sourceUrl: string;
+    checkedAt: string;
+    items: { category: string; stars: string; area: string; body: string; date: string }[];
+  };
 };
 
 type Props = {
@@ -147,6 +156,30 @@ export default async function CompanyPage({ params }: Props) {
               </p>
             )}
             <p className="text-xs text-gray-500">{extra.answer.source}</p>
+          </section>
+        )}
+
+        {extra.officialReviews && (
+          <section id="official-reviews" className="bg-white rounded-2xl shadow-sm p-6 md:p-8 mb-6 border border-green-100">
+            <h2 className="text-xl font-bold text-gray-800 mb-3">{extra.officialReviews.heading}</h2>
+            <p className="text-gray-700 leading-relaxed mb-4">{extra.officialReviews.intro}</p>
+            <ol className="space-y-4 mb-4">
+              {extra.officialReviews.items.map((r, i) => (
+                <li key={i} className="rounded-xl border border-green-100 bg-[#F0FDF4] p-4">
+                  <p className="text-xs text-gray-500 mb-2">
+                    {r.category}・{r.stars}・[{r.area}]・{r.date}
+                  </p>
+                  <blockquote className="text-sm text-gray-700 leading-relaxed whitespace-pre-line">{r.body}</blockquote>
+                </li>
+              ))}
+            </ol>
+            <p className="text-xs text-gray-500">
+              出典：
+              <a href={extra.officialReviews.sourceUrl} target="_blank" rel="noopener noreferrer nofollow" className="underline underline-offset-2">
+                {extra.officialReviews.sourceTitle}
+              </a>
+              （「最新の口コミ」欄、{extra.officialReviews.checkedAt}確認）
+            </p>
           </section>
         )}
 

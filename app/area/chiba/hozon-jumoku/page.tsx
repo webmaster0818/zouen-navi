@@ -94,9 +94,9 @@ const c: SubsidyConfig = {
         <>
           千葉で庭の手入れを業者に頼む方法は
           <L href="/area/chiba/">千葉の造園・庭の手入れ業者</L>
-          、剪定枝の出し方は
-          <L href="/area/chiba/sentei-eda/">千葉市の剪定枝の出し方</L>
-          で解説しています。
+          で解説しています。千葉市の剪定枝の出し方は、お庭のミカタの
+          <a href="https://oniwa-no-mikata.com/area/chiba/senteieda/" className="text-primary underline underline-offset-2 mx-1">千葉市の剪定枝の出し方</a>
+          にまとめています。
         </>
       ),
     },
@@ -115,7 +115,6 @@ const c: SubsidyConfig = {
   related: [
     { href: "/guide/hedge-subsidy/", label: "政令市・中核市の生垣・緑化助成の一覧" },
     { href: "/area/chiba/", label: "千葉の造園・庭の手入れ業者" },
-    { href: "/area/chiba/sentei-eda/", label: "千葉市の剪定枝の出し方" },
     { href: "/guide/tree-size-reduction/", label: "大きくなりすぎた庭木" },
   ],
   cta: "保存樹木の剪定を業者に頼む場合は、管理は所有者が行うことと、大きく切る前に緑政課へ確認することを踏まえて見積もりを依頼してください。",
