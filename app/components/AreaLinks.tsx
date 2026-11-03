@@ -256,6 +256,16 @@ export const AREA_SUBSIDY_PAGES: Partial<Record<AreaSlug, { href: string; label:
   takamatsu: { href: "/area/takamatsu/ikegaki-josei/", label: "高松市の生垣設置事業の助成" },
 };
 
+/** 市の保存樹・指定樹木の制度を扱う子ページ（2026-11-03 追加）。親の市ページの「市の助成制度」で案内する。 */
+export const AREA_TREE_PAGES: Partial<Record<AreaSlug, { href: string; label: string }>> = {
+  yokohama: { href: "/area/yokohama/meiboku-koboku/", label: "横浜市の名木古木の指定と助成" },
+  nagoya: { href: "/area/nagoya/hozonju/", label: "名古屋市の保存樹の維持管理助成" },
+  fukuoka: { href: "/area/fukuoka/hozonju/", label: "福岡市の保存樹の剪定・治療の補助" },
+  kumamoto: { href: "/area/kumamoto/hozonju/", label: "熊本市の保存樹木・保存樹林の助成" },
+  chiba: { href: "/area/chiba/hozon-jumoku/", label: "千葉市の保存樹木・保存樹林の奨励金" },
+  funabashi: { href: "/area/funabashi/shitei-jumoku/", label: "船橋市の指定樹木等の助成と伐採届" },
+};
+
 /** 市の剪定枝の出し方を扱う子ページ（2026-11-02 追加）。親の市ページから案内する。 */
 export const AREA_WASTE_PAGES: Partial<Record<AreaSlug, { href: string; label: string }>> = {
   osaka: { href: "/area/osaka/sentei-eda/", label: "大阪市の剪定枝の出し方" },
@@ -275,6 +285,7 @@ export const AREA_WASTE_PAGES: Partial<Record<AreaSlug, { href: string; label: s
 export default function AreaLinks({ current }: { current?: AreaSlug }) {
   const subsidy = current ? AREA_SUBSIDY_PAGES[current] : undefined;
   const waste = current ? AREA_WASTE_PAGES[current] : undefined;
+  const tree = current ? AREA_TREE_PAGES[current] : undefined;
   return (
     <>
     {waste ? (
@@ -302,12 +313,13 @@ export default function AreaLinks({ current }: { current?: AreaSlug }) {
         </ul>
       </section>
     ) : null}
-    {subsidy ? (
+    {subsidy || tree ? (
       <section id="area-subsidy" className="scroll-mt-20 mb-12">
         <h2 className="text-xl font-bold text-text-primary border-l-4 border-primary pl-3 mb-5">
           市の助成制度
         </h2>
         <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          {subsidy ? (
           <li>
             <Link
               href={subsidy.href}
@@ -316,6 +328,17 @@ export default function AreaLinks({ current }: { current?: AreaSlug }) {
               {subsidy.label}
             </Link>
           </li>
+          ) : null}
+          {tree ? (
+          <li>
+            <Link
+              href={tree.href}
+              className="block rounded-2xl border border-border bg-surface p-4 text-text-primary font-medium hover:border-primary transition-colors"
+            >
+              {tree.label}
+            </Link>
+          </li>
+          ) : null}
           <li>
             <Link
               href="/guide/hedge-subsidy/"
