@@ -1,8 +1,13 @@
 import Link from "next/link";
-import Image from "next/image";
 import type { Metadata } from "next";
 import companiesData from "@/data/companies.json";
 import { getVerifiedRating } from "@/app/lib/verifiedRating";
+import { AREA_SUBSIDY_PAGES, AREA_TREE_PAGES, AREA_WASTE_PAGES } from "./components/AreaLinks";
+import { GUIDE_LINKS } from "./components/SiteFooter";
+import { allAreaSlugs, prefCount } from "@/data/areaRegions";
+import TaskIcon from "./components/top/TaskIcon";
+import AreaFinder from "./components/top/AreaFinder";
+import ScrollReveal from "./components/top/ScrollReveal";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/" },
@@ -11,28 +16,41 @@ export const metadata: Metadata = {
     "庭の剪定・造園・外構工事の業者を比較しています。費用相場・口コミ・各社の特徴を解説し、目的に沿った造園業者選びを支援します。",
 };
 
+// 2026-11-04 TOP デザイン刷新（redesign-20261104）。本文・料金・業者情報・リンク先は変えず、見せ方だけを変えている。
+
 const top3 = companiesData.slice(0, 3);
 
-const plantNav = [
-  { icon: "/images/icon-tree.png", label: "シンボルツリー", href: "/plant/symbol-tree/" },
-  { icon: "/images/icon-hedge.png", label: "生垣", href: "/plant/hedge/" },
-  { icon: "/images/icon-flower.png", label: "花壇", href: "/plant/flower-bed/" },
-  { icon: "/images/icon-tree.png", label: "日陰向き", href: "/plant/shade/" },
-  { icon: "/images/icon-pruning.png", label: "手入れが容易", href: "/plant/low-maintenance/" },
+const ArrowRight = ({ className = "h-4 w-4" }: { className?: string }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <polyline points="9 6 15 12 9 18" />
+  </svg>
+);
+
+const PinIcon = () => (
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z" />
+    <circle cx="12" cy="9.5" r="2.5" />
+  </svg>
+);
+
+// 作業・お悩みから探す（各ページの内容に合わせた短い説明。サービスの説明は従来の TOP の文言のまま）
+const TASKS = [
+  { icon: "sentei", title: "剪定", desc: "費用と時期のガイド", href: "/service/pruning/" },
+  { icon: "bassai", title: "伐採", desc: "費用相場と業者の選び方", href: "/service/felling/" },
+  { icon: "design", title: "庭デザイン", desc: "専門家への依頼方法と費用", href: "/service/garden-design/" },
+  { icon: "wateien", title: "和庭園", desc: "坪庭から本格庭園まで", href: "/service/japanese-garden/" },
+  { icon: "kanri", title: "年間管理", desc: "月別メンテナンスカレンダー", href: "/service/maintenance/" },
+  { icon: "ikegaki", title: "生垣", desc: "刈り込み回数が少ない5種", href: "/plant/hedge/" },
+  { icon: "symbol", title: "シンボルツリー", desc: "樹種の選び方", href: "/plant/symbol-tree/" },
+  { icon: "zasso", title: "雑草対策", desc: "庭の雑草対策", href: "/guide/weed-control/" },
 ];
 
-const services = [
-  { icon: "/images/icon-pruning.png", label: "剪定", href: "/service/pruning/", desc: "費用と時期のガイド" },
-  { icon: "/images/icon-tree.png", label: "伐採", href: "/service/felling/", desc: "費用相場と業者の選び方" },
-  { icon: "/images/icon-flower.png", label: "庭デザイン", href: "/service/garden-design/", desc: "専門家への依頼方法と費用" },
-  { icon: "/images/icon-japanese.png", label: "和庭園", href: "/service/japanese-garden/", desc: "坪庭から本格庭園まで" },
-  { icon: "/images/icon-hedge.png", label: "年間管理", href: "/service/maintenance/", desc: "月別メンテナンスカレンダー" },
-];
-
-// 掲載業者の公式料金（税込・下限）。2026-10-25 に各社の公式料金ページで確認した値だけを載せる
-const costCards = [
-  { label: "剪定（お庭レスキュープロ（旧お庭マスター））", range: "550円〜", unit: "1本", src: "https://oniwa-master.info/servicelist/index.html" },
-  { label: "剪定（お庭110番）", range: "3,300円〜", unit: "1本", src: "https://www.kusakari-a.com/price/" },
+// 従来の「植物・テーマ別ガイド」の残り（花壇・日陰向き・手入れが容易）と、よく使うガイド
+const TASK_MORE: [string, string][] = [
+  ["花壇", "/plant/flower-bed/"],
+  ["日陰向き", "/plant/shade/"],
+  ["手入れが容易", "/plant/low-maintenance/"],
+  ["芝生の手入れ", "/guide/lawn-care/"],
 ];
 
 const faqs = [
@@ -54,282 +72,346 @@ const faqs = [
   },
 ];
 
-export default function HomePage() {
+// 掲載業者の公式料金（税込・下限）。2026-10-25 に各社の公式料金ページで確認した値だけを載せる
+const costCards = [
+  { label: "剪定（お庭レスキュープロ（旧お庭マスター））", range: "550円〜", unit: "1本", src: "https://oniwa-master.info/servicelist/index.html" },
+  { label: "剪定（お庭110番）", range: "3,300円〜", unit: "1本", src: "https://www.kusakari-a.com/price/" },
+];
+
+/* ─── FV ─── */
+function HeroButtons() {
   return (
-    <div>
-      {/* Hero - full-width background image with dark green gradient overlay */}
-      <section
-        className="relative text-white overflow-hidden"
-        style={{
-          minHeight: "560px",
-        }}
-      >
-        {/* Background image */}
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: "url('/images/hero-b.png')" }}
-          aria-hidden="true"
-        />
-        {/* Dark green gradient overlay */}
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "linear-gradient(135deg, rgba(21,128,61,0.88) 0%, rgba(22,101,52,0.80) 50%, rgba(20,83,45,0.70) 100%)",
-          }}
-          aria-hidden="true"
-        />
-        {/* Content */}
-        <div className="relative z-10 max-w-4xl mx-auto px-4 py-20 md:py-32 text-center">
-          <p className="inline-block bg-[#F59E0B] text-white text-xs font-bold px-4 py-1.5 rounded-full mb-5 tracking-wider shadow-md">
-            庭づくりの総合ガイド
-          </p>
-          <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-5 drop-shadow-lg">
-            庭づくりの専門業者探しを支援します
+    <div className="grid gap-2.5 sm:grid-cols-2">
+      <a href="#task" className="zn-btn zn-btn--lg justify-between">
+        <span className="flex items-center gap-3">
+          <TaskIcon name="sentei" size={30} className="text-white" />
+          作業・お悩みから探す
+        </span>
+        <ArrowRight className="h-5 w-5" />
+      </a>
+      <a href="#area" className="zn-btn zn-btn--lg justify-between">
+        <span className="flex items-center gap-3">
+          <PinIcon />
+          エリアから探す
+        </span>
+        <ArrowRight className="h-5 w-5" />
+      </a>
+    </div>
+  );
+}
+
+const HERO_LINKS: [string, string][] = [
+  ["業者ランキングを見る", "/ranking/"],
+  ["料金相場を確認する", "/cost/price/"],
+];
+
+function HeroSub({ className = "" }: { className?: string }) {
+  return (
+    <div className={className}>
+      <p className="max-w-[34em] text-[14px] leading-[1.9] text-[color:var(--zn-muted)] md:text-[15px]">
+        剪定・造園・外構工事の業者を比較しています。
+        <br className="hidden sm:inline" />
+        費用相場から業者の選び方までを解説します。
+      </p>
+      <ul className="mt-4 flex flex-wrap gap-2">
+        {HERO_LINKS.map(([label, href]) => (
+          <li key={href}>
+            <Link href={href} className="inline-flex min-h-[42px] items-center gap-1 rounded-[3px] border border-[color:var(--zn-border-strong)] bg-white px-3.5 text-[13px] font-bold text-[color:var(--zn-ai-dark)] hover:border-[color:var(--zn-ai)]">
+              {label}
+              <ArrowRight className="h-3.5 w-3.5" />
+            </Link>
+          </li>
+        ))}
+      </ul>
+      <p className="mt-4 text-[13px] font-bold text-[color:var(--zn-muted)]">全国対応・無料見積もり・複数業者を比較</p>
+    </div>
+  );
+}
+
+function Hero() {
+  return (
+    <section className="relative overflow-hidden border-b border-[color:var(--zn-border)] bg-[color:var(--zn-paper)]">
+      <div className="md:grid md:min-h-[600px] md:grid-cols-[minmax(0,1fr)_minmax(0,0.92fr)] lg:min-h-[640px]">
+        {/* 左：見出しと主導線 */}
+        <div className="relative z-10 flex flex-col justify-center px-4 pb-6 pt-7 md:py-14 md:pl-[max(24px,calc((100vw-1160px)/2+24px))] md:pr-0">
+          <p className="text-[13px] font-bold tracking-[0.08em] text-[color:var(--zn-moss)] md:text-[14px]">庭づくりの総合ガイド</p>
+          <h1 className="mt-3 text-[32px] font-bold leading-[1.32] tracking-[0.04em] text-[color:var(--zn-ink)] md:mt-4 md:text-[46px] lg:text-[54px]">
+            庭づくりの
+            <br />
+            <span className="text-[color:var(--zn-ai)]">専門業者</span>を比較
           </h1>
-          <p className="text-green-100 text-base md:text-xl mb-10 max-w-2xl mx-auto leading-relaxed drop-shadow">
-            剪定・造園・外構工事の業者を比較しています。<br className="hidden sm:inline" />
-            費用相場から業者の選び方までを解説します。
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/ranking/"
-              className="bg-[#F59E0B] hover:bg-amber-500 text-white font-bold px-10 py-4 rounded-full text-lg transition-all shadow-xl hover:shadow-2xl hover:-translate-y-0.5 active:translate-y-0"
-            >
-              業者ランキングを見る
-            </Link>
-            <Link
-              href="/cost/price/"
-              className="bg-white/20 hover:bg-white/30 text-white font-bold px-10 py-4 rounded-full text-lg transition-all border-2 border-white/50 backdrop-blur-sm hover:-translate-y-0.5 active:translate-y-0"
-            >
-              料金相場を確認する
-            </Link>
+
+          {/* PC：見出しの直後に主導線。右の写真に少し重ねる */}
+          <div className="relative mt-8 hidden md:block md:mr-[-110px] lg:mr-[-190px]">
+            <div className="border border-[color:var(--zn-border-strong)] bg-white p-3">
+              <HeroButtons />
+            </div>
           </div>
-          {/* Trust badges */}
-          <div className="flex flex-wrap justify-center gap-6 mt-10 text-sm text-green-100">
-            <span className="flex items-center gap-1.5">
-              <span className="text-[#F59E0B]"></span> 全国対応
-            </span>
-            <span className="flex items-center gap-1.5">
-              <span className="text-[#F59E0B]"></span> 無料見積もり
-            </span>
-            <span className="flex items-center gap-1.5">
-              <span className="text-[#F59E0B]"></span> 複数業者を比較
-            </span>
+          <HeroSub className="mt-6 hidden md:block" />
+        </div>
+
+        {/* 右（PC）：写真を見出しの下まで広げ、左から背景色のグラデーションを重ねる */}
+        <div className="pointer-events-none absolute inset-y-0 right-0 hidden w-[64%] md:block lg:w-[62%]" aria-hidden>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/images/fv-zouen-pc.jpg" alt="" width={1400} height={1315} className="absolute inset-0 h-full w-full object-cover object-[60%_55%]" fetchPriority="high" />
+          <div className="absolute inset-0 bg-[linear-gradient(90deg,var(--zn-paper)_0%,var(--zn-paper)_6%,color-mix(in_srgb,var(--zn-paper)_82%,transparent)_24%,color-mix(in_srgb,var(--zn-paper)_35%,transparent)_42%,transparent_58%)]" />
+          <p className="absolute bottom-3 right-3 bg-black/45 px-2 py-1 text-[11px] text-white">写真はイメージです</p>
+        </div>
+        <div className="hidden md:block" />
+
+        {/* スマホ：写真の中に主導線 */}
+        <div className="relative md:hidden">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/images/fv-zouen-sp.jpg" alt="日本庭園の苔の上を竹ぼうきで掃く作業者" width={1000} height={1037} className="block h-[400px] w-full object-cover object-[50%_20%]" fetchPriority="high" />
+          <p className="absolute right-2 top-2 bg-black/45 px-2 py-0.5 text-[10px] text-white">写真はイメージです</p>
+          <div className="absolute inset-x-3 bottom-3">
+            <HeroButtons />
           </div>
         </div>
-      </section>
+        <HeroSub className="px-4 pb-6 pt-5 md:hidden" />
+      </div>
+    </section>
+  );
+}
 
-      {/* Plant Type Nav */}
-      <section className="bg-white border-b border-green-100 py-6 shadow-sm">
-        <div className="max-w-6xl mx-auto px-4">
-          <p className="text-center text-xs font-semibold text-gray-400 uppercase tracking-widest mb-4">植物・テーマ別ガイド</p>
-          <div className="flex flex-wrap justify-center gap-3">
-            {plantNav.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="flex items-center gap-2 bg-[#F0FDF4] hover:bg-[#15803D] hover:text-white border border-green-200 hover:border-[#15803D] rounded-full px-5 py-2.5 text-sm font-medium text-[#15803D] transition-all shadow-sm hover:shadow-md"
-              >
-                {item.icon && <Image src={item.icon} alt={item.label} width={24} height={24} className="w-6 h-6 inline-block" />}
-                <span>{item.label}</span>
+/* ─── 数字（サイト内のページを数えた値） ─── */
+function Numbers() {
+  const cityPages = [AREA_SUBSIDY_PAGES, AREA_TREE_PAGES, AREA_WASTE_PAGES].reduce((n, m) => n + Object.keys(m).length, 0);
+  const guideCount = GUIDE_LINKS.filter((g) => g.href.startsWith("/guide/")).length;
+  const items: { k: string; v: string; u: string; desc: string }[] = [
+    { k: "掲載業者", v: String(companiesData.length), u: "社", desc: "各社の紹介ページあり" },
+    { k: "エリア別ガイド", v: String(allAreaSlugs.length), u: "市", desc: `${prefCount}都道府県の市のページ` },
+    { k: "お手入れガイド", v: String(guideCount), u: "本", desc: "剪定・雑草・生垣など" },
+    { k: "市の制度・出し方", v: String(cityPages), u: "ページ", desc: "生垣・保存樹の助成、剪定枝の出し方" },
+  ];
+  return (
+    <section className="border-b border-[color:var(--zn-border)] bg-white">
+      <div className="zn-container">
+        <dl className="grid grid-cols-2 md:grid-cols-4">
+          {items.map((b, i) => (
+            <div
+              key={b.k}
+              className={`px-3 py-5 md:px-6 md:py-7 ${i % 2 === 0 ? "border-r border-[color:var(--zn-border)]" : "md:border-r md:border-[color:var(--zn-border)]"} ${i < 2 ? "border-b border-[color:var(--zn-border)] md:border-b-0" : ""} ${i === 3 ? "md:border-r-0" : ""}`}
+            >
+              <dt className="text-[12px] font-bold tracking-[0.06em] text-[color:var(--zn-muted)] md:text-[13px]">{b.k}</dt>
+              <dd className="mt-1.5">
+                <span className="text-[30px] font-bold leading-none text-[color:var(--zn-ai)] md:text-[38px]">{b.v}</span>
+                <span className="ml-1 text-[13px] font-bold md:text-[15px]">{b.u}</span>
+                <span className="mt-1.5 block text-[12px] leading-snug text-[color:var(--zn-muted)] md:text-[13px]">{b.desc}</span>
+              </dd>
+            </div>
+          ))}
+        </dl>
+      </div>
+      <p className="zn-container pb-3 text-[11px] leading-relaxed text-[color:var(--zn-muted)]">
+        ※ 数は当サイトの掲載ページを数えた値です（2026年11月4日時点）。写真はイメージです（Unsplash・撮影 Yoel Winkler）。
+      </p>
+    </section>
+  );
+}
+
+/* ─── 作業・お悩みから探す ─── */
+function TaskFinder() {
+  return (
+    <section id="task" className="zn-section scroll-mt-20">
+      <div className="zn-container">
+        <h2 className="zn-h2">作業・お悩みから探す</h2>
+        <ul className="grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-4">
+          {TASKS.map((t, i) => (
+            <li key={t.href} data-reveal={String(i % 4)}>
+              <Link href={t.href} className="zn-card zn-card-link group flex h-full flex-col items-center px-3 pb-4 pt-6 text-center md:pb-6 md:pt-8">
+                <TaskIcon name={t.icon} size={96} className="h-[72px] w-[72px] text-[color:var(--zn-ai)] md:h-[100px] md:w-[100px]" />
+                <span className="mt-3 text-[16px] font-bold tracking-[0.04em] md:mt-4 md:text-[18px]">{t.title}</span>
+                <span className="mt-1 text-[12px] leading-snug text-[color:var(--zn-muted)] md:text-[13px]">{t.desc}</span>
+                <span className="mt-3 inline-flex items-center gap-1 text-[12px] font-bold text-[color:var(--zn-moss)] md:text-[13px]">
+                  ガイドを見る
+                  <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
+                </span>
               </Link>
-            ))}
-          </div>
-        </div>
-      </section>
+            </li>
+          ))}
+        </ul>
+        <ul className="mt-3 grid grid-cols-2 gap-3 md:mt-4 md:grid-cols-4 md:gap-4" data-reveal="1">
+          {TASK_MORE.map(([label, href]) => (
+            <li key={href}>
+              <Link href={href} className="zn-card zn-card-link flex min-h-[52px] items-center justify-between px-4 text-[14px] font-bold">
+                {label}
+                <span className="text-[color:var(--zn-ai)]">
+                  <ArrowRight />
+                </span>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  );
+}
 
-      {/* TOP3 Ranking */}
-      <section className="max-w-6xl mx-auto px-4 py-16">
-        <div className="text-center mb-10">
-          <span className="bg-[#F59E0B] text-white text-xs font-bold px-4 py-1.5 rounded-full shadow-md">編集部おすすめ</span>
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mt-4">造園業者ランキング TOP3</h2>
-          <p className="text-gray-500 mt-2 text-sm">口コミ・費用・対応の総合評価で厳選</p>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+/* ─── エリアから探す ─── */
+function AreaSection() {
+  return (
+    <section id="area" className="zn-section zn-band scroll-mt-20">
+      <div className="zn-container">
+        <h2 className="zn-h2">エリアから探す</h2>
+        <AreaFinder />
+      </div>
+    </section>
+  );
+}
+
+/* ─── TOP3 ─── */
+function TopRanking() {
+  return (
+    <section className="zn-section scroll-mt-20">
+      <div className="zn-container">
+        <h2 className="zn-h2">
+          造園業者ランキング TOP3<small>編集部おすすめ</small>
+        </h2>
+        <p className="-mt-3 mb-6 text-[14px] text-[color:var(--zn-muted)] md:-mt-5 md:mb-8">口コミ・費用・対応の総合評価で厳選</p>
+        <ol className="grid gap-4 md:grid-cols-3 md:gap-5">
           {top3.map((company, i) => {
-            const medals = ["", "", ""];
-            const rankBorder = [
-              "border-2 border-yellow-400 shadow-yellow-100 shadow-lg",
-              "border border-gray-200 shadow-md",
-              "border border-gray-200 shadow-md",
-            ];
-            const rankBadge = [
-              "bg-yellow-400 text-white",
-              "bg-gray-400 text-white",
-              "bg-amber-700 text-white",
-            ];
+            const vr = getVerifiedRating(company.slug);
             return (
-              <div
-                key={company.slug}
-                className={`bg-white rounded-2xl ${rankBorder[i]} p-6 flex flex-col transition-transform hover:-translate-y-1`}
-              >
-                {/* Rank header */}
-                <div className="flex items-center justify-between mb-4">
-                  <div className="flex items-center gap-2">
-                    <span className="text-3xl">{medals[i]}</span>
-                    <span className={`text-xs font-bold px-2.5 py-1 rounded-full ${rankBadge[i]}`}>
-                      第{i + 1}位
+              <li key={company.slug} className={`zn-card flex flex-col p-5 md:p-6 ${i === 0 ? "border-2 border-[color:var(--zn-ai)]" : ""}`} data-reveal={String(i)}>
+                <div className="mb-4 flex items-center justify-between gap-2">
+                  <span className="text-[30px] font-bold leading-none text-[color:var(--zn-ai)]">
+                    第{i + 1}
+                    <span className="ml-0.5 text-[15px]">位</span>
+                  </span>
+                  <span className="rounded-[3px] border border-[color:var(--zn-moss)] px-2.5 py-0.5 text-[12px] font-bold text-[color:var(--zn-moss)]">{company.coverage}</span>
+                </div>
+                <h3 className="text-[20px] font-bold tracking-[0.03em]">{(company as { displayName?: string }).displayName ?? company.name}</h3>
+                <p className="mt-1.5 text-[14px] leading-relaxed text-[color:var(--zn-muted)]">{company.tagline}</p>
+                {/* 評価（出典付きの一次確認値がある社だけ表示） */}
+                {vr ? (
+                  <div className="mt-3 flex flex-wrap items-center gap-2 border-l-[3px] border-[color:var(--zn-moss)] bg-[color:var(--zn-paper)] px-3 py-2">
+                    <span className="text-[14px] font-bold">★{vr.rating}</span>
+                    <span className="text-[12px] text-[color:var(--zn-muted)]">
+                      （{vr.sourceLabel}・口コミ{vr.reviewCount}件／{vr.fetchedAt}時点）
                     </span>
                   </div>
-                  <span className="text-xs font-bold text-white bg-[#15803D] px-3 py-1 rounded-full">
-                    {company.coverage}
-                  </span>
-                </div>
-                <h3 className="text-xl font-bold text-gray-800 mb-1">{(company as { displayName?: string }).displayName ?? company.name}</h3>
-                <p className="text-sm text-gray-500 mb-3 leading-relaxed">{company.tagline}</p>
-                {/* Rating（出典付きの一次確認値がある社だけ表示） */}
-                {(() => {
-                  const vr = getVerifiedRating(company.slug);
-                  return vr ? (
-                    <div className="flex flex-wrap items-center gap-2 mb-4 bg-[#F0FDF4] rounded-lg px-3 py-2">
-                      <span className="text-sm font-bold text-gray-800">★{vr.rating}</span>
-                      <span className="text-xs text-gray-400">（{vr.sourceLabel}・口コミ{vr.reviewCount}件／{vr.fetchedAt}時点）</span>
-                    </div>
-                  ) : null;
-                })()}
-                {/* Features */}
-                <ul className="text-sm text-gray-600 space-y-2 mb-5 flex-1">
+                ) : null}
+                <ul className="mb-5 mt-4 flex-1 space-y-2 text-[14px]">
                   {company.features.slice(0, 3).map((f) => (
-                    <li key={f} className="flex items-start gap-2">
-                      <span className="text-[#15803D] font-bold mt-0.5 flex-shrink-0"></span>
-                      <span>{f}</span>
+                    <li key={f} className="zn-dot">
+                      {f}
                     </li>
                   ))}
                 </ul>
-                <Link
-                  href={`/company/${company.slug}/`}
-                  className={`block text-center font-bold py-3 rounded-full text-sm transition-all shadow-md hover:shadow-lg ${
-                    i === 0
-                      ? "bg-[#F59E0B] hover:bg-amber-500 text-white"
-                      : "bg-[#15803D] hover:bg-green-700 text-white"
-                  }`}
-                >
-                  詳細・口コミを見る →
+                <Link href={`/company/${company.slug}/`} className={`zn-btn w-full text-[15px] ${i === 0 ? "" : "zn-btn--ghost"}`}>
+                  詳細・口コミを見る
+                  <ArrowRight />
                 </Link>
-              </div>
+              </li>
             );
           })}
-        </div>
-        <div className="text-center mt-8">
-          <Link
-            href="/ranking/"
-            className="inline-flex items-center gap-2 text-[#15803D] font-bold hover:underline text-sm border border-[#15803D] px-6 py-2.5 rounded-full hover:bg-[#F0FDF4] transition-colors"
-          >
-            全10社のランキングを見る →
+        </ol>
+        <div className="mt-6">
+          <Link href="/ranking/" className="zn-btn zn-btn--ghost w-full sm:w-auto">
+            全10社のランキングを見る
+            <ArrowRight />
           </Link>
         </div>
-      </section>
+      </div>
+    </section>
+  );
+}
 
-      {/* Service Overview */}
-      <section className="bg-white py-16 border-t border-green-50">
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="text-center mb-10">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-2">庭工事サービスガイド</h2>
-            <p className="text-gray-500 text-sm">目的別の解説</p>
-          </div>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
-            {services.map((svc) => (
-              <Link
-                key={svc.href}
-                href={svc.href}
-                className="group bg-[#F0FDF4] hover:bg-[#15803D] rounded-2xl p-5 text-center transition-all border border-green-100 hover:border-[#15803D] shadow-sm hover:shadow-lg hover:-translate-y-1"
-              >
-                <div className="mb-3 flex justify-center">
-                  {svc.icon && <Image src={svc.icon} alt={svc.label} width={40} height={40} className="w-10 h-10" />}
-                </div>
-                <p className="font-bold text-[#15803D] group-hover:text-white text-sm mb-1 transition-colors">{svc.label}</p>
-                <p className="text-xs text-gray-500 group-hover:text-green-100 transition-colors leading-relaxed">{svc.desc}</p>
-              </Link>
-            ))}
-          </div>
+/* ─── 剪定の公式料金 ─── */
+function CostSection() {
+  return (
+    <section className="zn-section zn-band scroll-mt-20">
+      <div className="zn-container max-w-[920px]">
+        <h2 className="zn-h2">剪定の公式料金（掲載業者）</h2>
+        <p className="-mt-3 mb-6 text-[14px] leading-relaxed text-[color:var(--zn-muted)] md:-mt-5 md:mb-8">
+          各社公式の下限（税込・2026-10-25確認）。お庭110番は「対応エリア・加盟店により記載価格や条件では対応できない場合がございます」と注記しています。金額は業者の見積もりで確認してください。
+        </p>
+        <ul className="zn-card divide-y divide-[color:var(--zn-border)]">
+          {costCards.map((c, i) => (
+            <li key={c.label} className="grid gap-2 px-4 py-5 md:grid-cols-[minmax(0,1fr)_200px_160px] md:items-center md:gap-6 md:px-6" data-reveal={String(i)}>
+              <p className="text-[15px] font-bold">{c.label}</p>
+              <p className="text-[24px] font-bold leading-none text-[color:var(--zn-ai)] md:text-right">
+                {c.range}
+                <span className="ml-1 text-[13px] font-bold text-[color:var(--zn-muted)]">/ {c.unit}</span>
+              </p>
+              <p className="text-[13px] md:text-right">
+                <a href={c.src} target="_blank" rel="noopener noreferrer" className="text-[color:var(--zn-muted)] underline underline-offset-4 hover:text-[color:var(--zn-ai)]">
+                  出典：公式料金ページ
+                </a>
+              </p>
+            </li>
+          ))}
+        </ul>
+        <div className="mt-6">
+          <Link href="/cost/price/" className="zn-btn zn-btn--ghost w-full sm:w-auto">
+            詳細な費用相場ガイドを見る
+            <ArrowRight />
+          </Link>
         </div>
-      </section>
+      </div>
+    </section>
+  );
+}
 
-      {/* Cost Comparison */}
-      <section className="max-w-6xl mx-auto px-4 py-16">
-        <div className="text-center mb-10">
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-2">剪定の公式料金（掲載業者）</h2>
-          <p className="text-gray-500 text-sm">各社公式の下限（税込・2026-10-25確認）。お庭110番は「対応エリア・加盟店により記載価格や条件では対応できない場合がございます」と注記しています。金額は業者の見積もりで確認してください。</p>
-        </div>
-        <div className="grid grid-cols-2 gap-4 max-w-xl mx-auto">
-          {costCards.map((c) => (
-            <div
-              key={c.label}
-              className="bg-white rounded-2xl shadow-sm border border-green-100 p-5 text-center hover:shadow-md hover:border-green-300 transition-all"
-            >
-              <p className="text-xs text-gray-400 font-medium mb-2 uppercase tracking-wide">{c.label}</p>
-              <p className="text-xl md:text-2xl font-bold text-[#15803D] leading-tight">{c.range}</p>
-              <p className="text-xs text-gray-400 mt-1.5 bg-green-50 inline-block px-2 py-0.5 rounded-full">/ {c.unit}</p>
-              <p className="text-xs mt-2"><a href={c.src} target="_blank" rel="noopener noreferrer" className="underline text-gray-500 hover:text-[#15803D]">出典：公式料金ページ</a></p>
+/* ─── よくある質問 ─── */
+function FAQ() {
+  return (
+    <section className="zn-section scroll-mt-20">
+      <div className="zn-container max-w-[920px]">
+        <h2 className="zn-h2">よくある質問</h2>
+        <p className="-mt-3 mb-6 text-[14px] text-[color:var(--zn-muted)] md:-mt-5 md:mb-8">利用者からよく寄せられる質問にお答えします</p>
+        <div className="grid gap-3">
+          {faqs.map((faq, i) => (
+            <div key={i} className="zn-card" data-reveal="0">
+              <p className="flex items-start gap-3 px-4 pt-4 text-[15px] font-bold leading-relaxed md:px-5">
+                <span className="flex h-7 w-7 shrink-0 items-center justify-center bg-[color:var(--zn-ai)] text-[13px] text-white">Q</span>
+                <span className="flex-1 pt-0.5">{faq.q}</span>
+              </p>
+              <div className="mx-4 mb-4 mt-3 flex gap-3 border-t border-[color:var(--zn-border)] pt-3 text-[14px] leading-[1.9] text-[color:var(--zn-muted)] md:mx-5">
+                <span className="flex h-7 w-7 shrink-0 items-center justify-center border border-[color:var(--zn-ai)] text-[13px] font-bold text-[color:var(--zn-ai)]">A</span>
+                <p className="flex-1">{faq.a}</p>
+              </div>
             </div>
           ))}
         </div>
-        <div className="text-center mt-8">
-          <Link
-            href="/cost/price/"
-            className="inline-flex items-center gap-2 text-[#15803D] font-bold hover:underline text-sm border border-[#15803D] px-6 py-2.5 rounded-full hover:bg-[#F0FDF4] transition-colors"
-          >
-            詳細な費用相場ガイドを見る →
-          </Link>
-        </div>
-      </section>
+      </div>
+    </section>
+  );
+}
 
-      {/* FAQ */}
-      <section className="bg-white py-16 border-t border-green-50">
-        <div className="max-w-3xl mx-auto px-4">
-          <div className="text-center mb-10">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-2">よくある質問</h2>
-            <p className="text-gray-500 text-sm">利用者からよく寄せられる質問にお答えします</p>
+/* ─── 締めの導線 ─── */
+function CTASection() {
+  return (
+    <section className="border-t border-[color:var(--zn-border)] bg-[color:var(--zn-wash)] py-14 md:py-20">
+      <div className="zn-container max-w-[920px]">
+        <div className="zn-card border-2 border-[color:var(--zn-ai)] px-5 py-8 text-center md:px-10 md:py-12" data-reveal="0">
+          <h2 className="text-[22px] font-bold tracking-[0.04em] md:text-[28px]">庭の作業は複数の業者を比較して依頼します</h2>
+          <p className="mx-auto mt-4 max-w-2xl text-[15px] leading-[1.9] text-[color:var(--zn-muted)]">複数の業者から無料で見積もりを取得し、条件に合う業者を選ぶことをおすすめします。</p>
+          <div className="mt-7 flex justify-center">
+            <Link href="/ranking/" className="zn-btn zn-btn--lg w-full sm:w-auto sm:px-12">
+              無料で業者を比較する
+            </Link>
           </div>
-          <div className="space-y-4">
-            {faqs.map((faq, i) => (
-              <div key={i} className="bg-[#F0FDF4] rounded-2xl border border-green-100 overflow-hidden shadow-sm hover:shadow-md transition-shadow">
-                <div className="p-5">
-                  <p className="font-bold text-gray-800 mb-3 flex items-start gap-3">
-                    <span className="bg-[#15803D] text-white rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5 shadow-sm">Q</span>
-                    <span>{faq.q}</span>
-                  </p>
-                  <div className="ml-9 border-l-2 border-[#F59E0B] pl-4">
-                    <p className="text-gray-700 text-sm leading-relaxed">
-                      {faq.a}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
+          <p className="mt-5 text-[12px] text-[color:var(--zn-muted)]">※当サイトはアフィリエイト広告を含みます</p>
         </div>
-      </section>
+      </div>
+    </section>
+  );
+}
 
-      {/* CTA Banner */}
-      <section className="relative overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: "url('/images/hero-b.png')" }}
-          aria-hidden="true"
-        />
-        <div
-          className="absolute inset-0"
-          style={{
-            background: "linear-gradient(135deg, rgba(21,128,61,0.93) 0%, rgba(22,101,52,0.90) 100%)",
-          }}
-          aria-hidden="true"
-        />
-        <div className="relative z-10 max-w-3xl mx-auto px-4 py-16 text-center text-white">
-          <h2 className="text-2xl md:text-3xl font-bold mb-3 drop-shadow">庭の作業は複数の業者を比較して依頼します</h2>
-          <p className="text-green-100 mb-8 text-base leading-relaxed">
-            複数の業者から無料で見積もりを取得し、条件に合う業者を選ぶことをおすすめします。
-          </p>
-          <Link
-            href="/ranking/"
-            className="bg-[#F59E0B] hover:bg-amber-500 text-white font-bold px-12 py-4 rounded-full text-lg transition-all shadow-xl hover:shadow-2xl inline-block hover:-translate-y-0.5 active:translate-y-0"
-          >
-            無料で業者を比較する
-          </Link>
-          <p className="text-xs text-green-300 mt-5">※当サイトはアフィリエイト広告を含みます</p>
-        </div>
-      </section>
+export default function HomePage() {
+  return (
+    <div className="zn-page">
+      <Hero />
+      <Numbers />
+      <TaskFinder />
+      <AreaSection />
+      <TopRanking />
+      <CostSection />
+      <FAQ />
+      <CTASection />
+      <ScrollReveal />
     </div>
   );
 }

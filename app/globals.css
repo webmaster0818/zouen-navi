@@ -28,3 +28,78 @@ body {
   color: var(--color-foreground);
   font-family: var(--font-sans);
 }
+
+/* ======================================================================
+ * TOP 刷新（2026-11-04・redesign-20261104）
+ * 藍（作業着・庭石の色）を基調に、苔色を差し色に。背景は石のような生成り。
+ * 操作ボタンはすべて同じ藍（--zn-ai）。グラデーションは FV の写真の上だけ。大きな角丸・影は使わない。
+ * ====================================================================== */
+:root {
+  --zn-ink: #1C2330;
+  --zn-ai: #263F66;
+  --zn-ai-dark: #1A2D4A;
+  --zn-moss: #5F7F35;
+  --zn-stone: #7D8288;
+  --zn-paper: #F3F2EE;
+  --zn-wash: #EAEEF3;
+  --zn-border: #CDD3DA;
+  --zn-border-strong: #94A0AE;
+  --zn-muted: #4F5866;
+}
+
+@layer components {
+.zn-page { background: var(--zn-paper); color: var(--zn-ink); font-feature-settings: "palt" 1; }
+.zn-page :focus-visible { outline: 3px solid #6D8FC2; outline-offset: 2px; }
+.zn-container { max-width: 1160px; margin: 0 auto; padding-left: 16px; padding-right: 16px; }
+@media (min-width: 768px) { .zn-container { padding-left: 24px; padding-right: 24px; } }
+
+.zn-btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.6rem;
+  min-height: 52px; padding: 0.8rem 1.5rem; border-radius: 3px;
+  background: var(--zn-ai); color: #fff; border: 1px solid var(--zn-ai);
+  font-weight: 700; letter-spacing: 0.04em; line-height: 1.35; text-align: center;
+  transition: background-color .2s ease;
+}
+.zn-btn:hover { background: var(--zn-ai-dark); }
+.zn-btn--lg { min-height: 64px; font-size: 18px; padding: 0.9rem 1.5rem; }
+@media (min-width: 768px) { .zn-btn--lg { min-height: 72px; font-size: 20px; } }
+.zn-btn--ghost { background: #fff; color: var(--zn-ai); border-color: var(--zn-ai); }
+.zn-btn--ghost:hover { background: var(--zn-wash); }
+
+.zn-card { background: #fff; border: 1px solid var(--zn-border); border-radius: 3px; }
+.zn-card-link { transition: border-color .2s ease, background-color .2s ease; }
+.zn-card-link:hover { border-color: var(--zn-ai); background: #FBFCFD; }
+
+/* 見出し：左寄せ＋左の苔色の縦線＋下罫線 */
+.zn-h2 {
+  display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap;
+  font-size: 24px; font-weight: 700; letter-spacing: 0.04em; line-height: 1.4;
+  padding: 0 0 12px 14px; border-bottom: 1px solid var(--zn-border-strong); margin-bottom: 24px;
+  position: relative;
+}
+.zn-h2::before { content: ""; position: absolute; left: 0; top: 0.2em; bottom: calc(12px + 0.2em); width: 4px; background: var(--zn-moss); }
+@media (min-width: 768px) { .zn-h2 { font-size: 30px; margin-bottom: 32px; } }
+.zn-h2 small { font-size: 13px; font-weight: 500; color: var(--zn-muted); letter-spacing: 0.02em; }
+
+.zn-section { padding: 56px 0; }
+@media (min-width: 768px) { .zn-section { padding: 88px 0; } }
+.zn-band { background: #fff; border-top: 1px solid var(--zn-border); border-bottom: 1px solid var(--zn-border); }
+
+.zn-dot { position: relative; padding-left: 14px; }
+.zn-dot::before { content: ""; position: absolute; left: 0; top: 0.62em; width: 6px; height: 6px; background: var(--zn-moss); }
+
+.zn-acc > summary { list-style: none; cursor: pointer; }
+.zn-acc > summary::-webkit-details-marker { display: none; }
+.zn-acc[open] > summary .zn-chev { transform: rotate(180deg); }
+.zn-chev { transition: transform .25s ease; }
+}
+
+.zn-js .zn-reveal { opacity: 0; transform: translateY(16px); transition: opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1); }
+.zn-js .zn-reveal.zn-in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  .zn-js .zn-reveal { opacity: 1; transform: none; transition: none; }
+}
+@media print { .zn-js .zn-reveal { opacity: 1 !important; transform: none !important; } }
+/* TOP だけ：本文の背景と、フッター直前の余白の色をそろえる */
+body:has(.zn-page) { background: var(--zn-paper); }
+body:has(.zn-page) > footer { margin-top: 0; }

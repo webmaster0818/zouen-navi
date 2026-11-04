@@ -1,8 +1,9 @@
 import Link from "next/link";
 import { AREAS } from "./AreaLinks";
+import ZnLogo from "./top/ZnLogo";
 
 /** フッターに掲載するお手入れガイド（/guide/*）。ページを追加したらここにも足す。 */
-const GUIDE_LINKS = [
+export const GUIDE_LINKS = [
   { href: "/guide/lawn-care/", label: "芝生の手入れ" },
   { href: "/guide/weed-control/", label: "庭の雑草対策" },
   { href: "/guide/neighbor-branch/", label: "越境した枝と根" },
@@ -45,18 +46,18 @@ const GUIDE_LINKS = [
 
 export default function SiteFooter() {
   return (
-    <footer className="bg-[#15803D] text-white mt-16">
+    <footer className="bg-[#1A2D4A] text-white mt-16">
       <div className="max-w-6xl mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           <div>
-            <h3 className="text-xl font-bold mb-3"> 造園ナビ</h3>
-            <p className="text-green-200 text-sm leading-relaxed">
+            <h3 className="mb-4"><ZnLogo tone="light" size={34} /></h3>
+            <p className="text-white/75 text-sm leading-relaxed">
               庭づくりの業者選びを支援する総合ガイドです。剪定・造園・外構の業者を比較しています。
             </p>
           </div>
           <div>
-            <h4 className="font-bold mb-3 text-[#F59E0B]">業者ランキング</h4>
-            <ul className="space-y-2 text-sm text-green-200">
+            <h4 className="font-bold mb-3 text-[#C9D6A6]">業者ランキング</h4>
+            <ul className="space-y-2 text-sm text-white/75">
               <li><Link href="/ranking/" className="hover:text-white transition-colors">造園業者ランキング</Link></li>
               <li><Link href="/ranking/pruning/" className="hover:text-white transition-colors">剪定専門ランキング</Link></li>
               <li><Link href="/company/oniwa-madoguchi/" className="hover:text-white transition-colors">お庭の窓口</Link></li>
@@ -65,8 +66,8 @@ export default function SiteFooter() {
             </ul>
           </div>
           <div>
-            <h4 className="font-bold mb-3 text-[#F59E0B]">費用・料金</h4>
-            <ul className="space-y-2 text-sm text-green-200">
+            <h4 className="font-bold mb-3 text-[#C9D6A6]">費用・料金</h4>
+            <ul className="space-y-2 text-sm text-white/75">
               <li><Link href="/cost/price/" className="hover:text-white transition-colors">庭工事の料金相場</Link></li>
               <li><Link href="/cost/pruning-price/" className="hover:text-white transition-colors">剪定費用ガイド</Link></li>
               <li><Link href="/cost/diy/" className="hover:text-white transition-colors">DIY庭づくりガイド</Link></li>
@@ -75,8 +76,8 @@ export default function SiteFooter() {
             </ul>
           </div>
           <div>
-            <h4 className="font-bold mb-3 text-[#F59E0B]">庭づくりガイド</h4>
-            <ul className="space-y-2 text-sm text-green-200">
+            <h4 className="font-bold mb-3 text-[#C9D6A6]">庭づくりガイド</h4>
+            <ul className="space-y-2 text-sm text-white/75">
               <li><Link href="/plant/symbol-tree/" className="hover:text-white transition-colors">シンボルツリー</Link></li>
               <li><Link href="/plant/hedge/" className="hover:text-white transition-colors">生垣の作り方</Link></li>
               <li><Link href="/plant/flower-bed/" className="hover:text-white transition-colors">花壇の作り方</Link></li>
@@ -85,9 +86,9 @@ export default function SiteFooter() {
             </ul>
           </div>
         </div>
-        <div className="border-t border-green-700 pt-6 mb-6">
-          <h4 className="font-bold mb-3 text-[#F59E0B] text-sm">エリア別ガイド</h4>
-          <ul className="flex flex-wrap gap-x-5 gap-y-2 text-sm text-green-200 mb-5">
+        <div className="border-t border-white/15 pt-6 mb-6">
+          <h4 className="font-bold mb-3 text-[#C9D6A6] text-sm">エリア別ガイド</h4>
+          <ul className="flex flex-wrap gap-x-5 gap-y-2 text-sm text-white/75 mb-5">
             {AREAS.map((a) => (
               <li key={a.slug}>
                 <Link href={`/area/${a.slug}/`} className="hover:text-white transition-colors">
@@ -96,8 +97,8 @@ export default function SiteFooter() {
               </li>
             ))}
           </ul>
-          <h4 className="font-bold mb-3 text-[#F59E0B] text-sm">庭づくりガイド（お手入れ）</h4>
-          <ul className="flex flex-wrap gap-x-5 gap-y-2 text-sm text-green-200">
+          <h4 className="font-bold mb-3 text-[#C9D6A6] text-sm">庭づくりガイド（お手入れ）</h4>
+          <ul className="flex flex-wrap gap-x-5 gap-y-2 text-sm text-white/75">
             {GUIDE_LINKS.map((g) => (
               <li key={g.href}>
                 <Link href={g.href} className="hover:text-white transition-colors">
@@ -108,7 +109,7 @@ export default function SiteFooter() {
           </ul>
         </div>
 
-        <div className="border-t border-green-700 pt-6 flex flex-col md:flex-row justify-between items-center gap-3 text-sm text-green-300">
+        <div className="border-t border-white/15 pt-6 flex flex-col md:flex-row justify-between items-center gap-3 text-sm text-white/60">
           <p>© 2026 造園ナビ All rights reserved.</p>
           <div className="flex flex-wrap gap-4">
             <Link href="/privacy/" className="hover:text-white transition-colors">プライバシーポリシー</Link>
@@ -117,7 +118,7 @@ export default function SiteFooter() {
             <Link href="/about/" className="hover:text-white transition-colors">運営者情報</Link>
           </div>
         </div>
-        <p className="text-xs text-green-400 mt-3 text-center">
+        <p className="text-xs text-white/55 mt-3 text-center">
           ※当サイトは一部広告・アフィリエイトリンクを含みます。掲載情報は編集部が独自に調査・執筆しています。
         </p>
       </div>
