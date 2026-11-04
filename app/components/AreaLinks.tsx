@@ -254,6 +254,7 @@ export const AREA_SUBSIDY_PAGES: Partial<Record<AreaSlug, { href: string; label:
   nishinomiya: { href: "/area/nishinomiya/ryokka-josei/", label: "西宮市の住まいの緑化助成制度" },
   matsuyama: { href: "/area/matsuyama/ikegaki-shoreikin/", label: "松山市の緑のまちづくり奨励金" },
   takamatsu: { href: "/area/takamatsu/ikegaki-josei/", label: "高松市の生垣設置事業の助成" },
+  kurashiki: { href: "/area/kurashiki/ryokka-josei/", label: "倉敷市の民有地緑化補助金" },
 };
 
 /** 市の保存樹・指定樹木の制度を扱う子ページ（2026-11-03 追加）。親の市ページの「市の助成制度」で案内する。 */
@@ -264,6 +265,7 @@ export const AREA_TREE_PAGES: Partial<Record<AreaSlug, { href: string; label: st
   kumamoto: { href: "/area/kumamoto/hozonju/", label: "熊本市の保存樹木・保存樹林の助成" },
   chiba: { href: "/area/chiba/hozon-jumoku/", label: "千葉市の保存樹木・保存樹林の奨励金" },
   funabashi: { href: "/area/funabashi/shitei-jumoku/", label: "船橋市の指定樹木等の助成と伐採届" },
+  toyama: { href: "/area/toyama/hozon-jumoku/", label: "富山市の保存樹木・樹林の指定" },
 };
 
 /** 市の剪定枝の出し方を扱う子ページ（2026-11-02 追加）。親の市ページから案内する。 */
@@ -275,6 +277,10 @@ export const AREA_WASTE_PAGES: Partial<Record<AreaSlug, { href: string; label: s
   hiroshima: { href: "/area/hiroshima/sentei-eda/", label: "広島市の剪定枝の出し方" },
   kitakyushu: { href: "/area/kitakyushu/sentei-eda/", label: "北九州市の剪定枝の出し方" },
   kumamoto: { href: "/area/kumamoto/sentei-eda/", label: "熊本市の剪定枝の出し方" },
+  himeji: { href: "/area/himeji/sentei-eda/", label: "姫路市の剪定枝の出し方" },
+  nara: { href: "/area/nara/sentei-eda/", label: "奈良市の剪定枝の出し方" },
+  nagasaki: { href: "/area/nagasaki/sentei-eda/", label: "長崎市の剪定枝の出し方" },
+  kagoshima: { href: "/area/kagoshima/sentei-eda/", label: "鹿児島市の剪定枝の出し方" },
 };
 
 /**

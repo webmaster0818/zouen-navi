@@ -132,7 +132,7 @@
   </url>
   <url>
     <loc>https://zouen-navi.com/guide/green-waste/</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -216,7 +216,7 @@
   </url>
   <url>
     <loc>https://zouen-navi.com/area/kagoshima/</loc>
-    <lastmod>2026-10-30</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -246,13 +246,13 @@
   </url>
   <url>
     <loc>https://zouen-navi.com/area/himeji/</loc>
-    <lastmod>2026-10-30</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://zouen-navi.com/area/nara/</loc>
-    <lastmod>2026-10-30</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -264,7 +264,7 @@
   </url>
   <url>
     <loc>https://zouen-navi.com/area/nagasaki/</loc>
-    <lastmod>2026-10-30</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -342,7 +342,7 @@
   </url>
   <url>
     <loc>https://zouen-navi.com/area/toyama/</loc>
-    <lastmod>2026-10-30</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -360,7 +360,7 @@
   </url>
   <url>
     <loc>https://zouen-navi.com/area/kurashiki/</loc>
-    <lastmod>2026-10-30</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -606,7 +606,7 @@
   </url>
   <url>
     <loc>https://zouen-navi.com/guide/hedge-subsidy/</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -685,6 +685,42 @@
   <url>
     <loc>https://zouen-navi.com/area/funabashi/shitei-jumoku/</loc>
     <lastmod>2026-11-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://zouen-navi.com/area/himeji/sentei-eda/</loc>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://zouen-navi.com/area/nara/sentei-eda/</loc>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://zouen-navi.com/area/nagasaki/sentei-eda/</loc>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://zouen-navi.com/area/kagoshima/sentei-eda/</loc>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://zouen-navi.com/area/kurashiki/ryokka-josei/</loc>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://zouen-navi.com/area/toyama/hozon-jumoku/</loc>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
