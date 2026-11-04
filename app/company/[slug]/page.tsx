@@ -185,7 +185,7 @@ export default async function CompanyPage({ params }: Props) {
 
         {!vr && !extra.answer?.reviewLink && hasReviewPage && (
           <p className="text-sm text-gray-700 mb-6">
-            {displayName}の口コミ・評判は、出典つきで
+            {displayName}の口コミ・評判は、出典を明記して
             <Link href={`/review/${company.slug}/`} className="text-[#15803D] underline underline-offset-2">{displayName}の評判（別ページ）</Link>
             にまとめています。
           </p>
