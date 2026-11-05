@@ -281,6 +281,12 @@ export const AREA_WASTE_PAGES: Partial<Record<AreaSlug, { href: string; label: s
   nara: { href: "/area/nara/sentei-eda/", label: "奈良市の剪定枝の出し方" },
   nagasaki: { href: "/area/nagasaki/sentei-eda/", label: "長崎市の剪定枝の出し方" },
   kagoshima: { href: "/area/kagoshima/sentei-eda/", label: "鹿児島市の剪定枝の出し方" },
+  oita: { href: "/area/oita/sentei-eda/", label: "大分市の剪定枝の出し方" },
+  nishinomiya: { href: "/area/nishinomiya/sentei-eda/", label: "西宮市の剪定枝の出し方" },
+  matsuyama: { href: "/area/matsuyama/sentei-eda/", label: "松山市の剪定枝の出し方" },
+  takamatsu: { href: "/area/takamatsu/sentei-eda/", label: "高松市の剪定枝の出し方" },
+  kurashiki: { href: "/area/kurashiki/sentei-eda/", label: "倉敷市の剪定枝の出し方" },
+  fukuoka: { href: "/area/fukuoka/sentei-eda/", label: "福岡市の剪定枝の出し方" },
 };
 
 /**
