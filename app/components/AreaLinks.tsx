@@ -266,6 +266,10 @@ export const AREA_TREE_PAGES: Partial<Record<AreaSlug, { href: string; label: st
   chiba: { href: "/area/chiba/hozon-jumoku/", label: "千葉市の保存樹木・保存樹林の奨励金" },
   funabashi: { href: "/area/funabashi/shitei-jumoku/", label: "船橋市の指定樹木等の助成と伐採届" },
   toyama: { href: "/area/toyama/hozon-jumoku/", label: "富山市の保存樹木・樹林の指定" },
+  kyoto: { href: "/area/kyoto/hozonju/", label: "京都市の保存樹の指定と助成" },
+  kobe: { href: "/area/kobe/shimin-no-ki/", label: "神戸市の市民の木・市民の森の助成" },
+  okayama: { href: "/area/okayama/hozonju/", label: "岡山市の保存樹・保存樹林" },
+  nagano: { href: "/area/nagano/hozon-jumoku/", label: "長野市の保存樹木・保存樹林の補助金" },
 };
 
 /** 市の剪定枝の出し方を扱う子ページ（2026-11-02 追加）。親の市ページから案内する。 */
