@@ -270,6 +270,11 @@ export const AREA_TREE_PAGES: Partial<Record<AreaSlug, { href: string; label: st
   kobe: { href: "/area/kobe/shimin-no-ki/", label: "神戸市の市民の木・市民の森の助成" },
   okayama: { href: "/area/okayama/hozonju/", label: "岡山市の保存樹・保存樹林" },
   nagano: { href: "/area/nagano/hozon-jumoku/", label: "長野市の保存樹木・保存樹林の補助金" },
+  sagamihara: { href: "/area/sagamihara/hozon-jumoku/", label: "相模原市の保存樹木・保存樹林の補助" },
+  kawasaki: { href: "/area/kawasaki/hozon-jumoku/", label: "川崎市の保存樹木等の奨励金・まちの樹の助成" },
+  mito: { href: "/area/mito/hozonju/", label: "水戸市の保存樹の奨励金と助成" },
+  kanazawa: { href: "/area/kanazawa/hozonju/", label: "金沢市の保存樹・景観樹の補助" },
+  niigata: { href: "/area/niigata/hozonju/", label: "新潟市の保存樹等の松くい虫防除補助金" },
 };
 
 /** 市の剪定枝の出し方を扱う子ページ（2026-11-02 追加）。親の市ページから案内する。 */
