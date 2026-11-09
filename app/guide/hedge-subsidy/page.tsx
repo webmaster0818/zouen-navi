@@ -8,8 +8,8 @@ import {
 } from "@/app/components/GuideParts";
 
 const PAGE_URL = "https://zouen-navi.com/guide/hedge-subsidy/";
-const UPDATED_LABEL = "2026年11月6日";
-const UPDATED_ISO = "2026-11-06";
+const UPDATED_LABEL = "2026年11月9日";
+const UPDATED_ISO = "2026-11-09";
 const TITLE = "政令市・中核市の生垣・緑化助成の一覧｜金額・条件・申請の順番（2026年11月1日確認）";
 const DESC =
   "政令市10市と中核市6市の生垣・庭木の植栽の助成、15市の保存樹の助成を、各市・外郭団体の公式ページで2026年11月1日・3日・4日・6日に確認した内容で一覧にしました。助成額、延長や高さの条件、申請先、着工前の申請などの共通の注意点を整理します。";
@@ -78,6 +78,11 @@ const treeRows: Row[] = [
   { city: "神戸市", href: "/area/kobe/shimin-no-ki/", name: "市民の木・市民の森の助成", amount: "管理運営助成金 市民の木1本ごとに2万円。剪定・治療等の特別助成金は経費の95％（上限200万円）", cond: "市が指定した市民の木・市民の森。傷み・枯れ等は市長に届出", where: "神戸市建設局公園部魅力創造課" },
   { city: "岡山市", href: "/area/okayama/hozonju/", name: "保存樹・保存樹林への支援", amount: "樹勢の衰えがみられる場合の樹木医の派遣や治療費用の助成（金額の記載なし）", cond: "市が指定した保存樹・保存樹林。剪定等の通常の管理は所有者の負担", where: "岡山市庭園都市推進課 公園緑地係" },
   { city: "長野市", href: "/area/nagano/hozon-jumoku/", name: "保存樹木等管理補助金・樹木医診断・大規模剪定補助金", amount: "管理 1本4,000円・2本以上6,000円（年額）。診断 3分の2以内（4万円まで）、大規模剪定 2分の1以内（25万円まで）", cond: "市が指定した保存樹木・保存樹林。診断・剪定は道路等に倒木・落枝の恐れがあるもの", where: "長野市公園緑地課 企画・緑育担当" },
+  { city: "相模原市", href: "/area/sagamihara/hozon-jumoku/", name: "保存樹木・保存樹林", amount: "保存樹木は樹木治療費・高木剪定費の1/2（上限20万円）。保存樹林は高木剪定費・樹木伐採費の1/2（上限30万円）", cond: "市が指定した保存樹木・保存樹林", where: "相模原市水みどり環境課" },
+  { city: "川崎市", href: "/area/kawasaki/hozon-jumoku/", name: "保存樹木等の奨励金・まちの樹の診断・治療助成", amount: "保存樹木 年2,400円、保存樹林・保存生垣 年12,000円。まちの樹の治療は経費の1/2以内（10万円限度）", cond: "市と管理協定を締結した所有者。まちの樹の診断・治療は「まちの樹50選」の指定樹木", where: "川崎市みどりの協働推進課・川崎市公園緑地協会" },
+  { city: "水戸市", href: "/area/mito/hozonju/", name: "保存樹・保存樹林地・保存生垣の奨励金", amount: "保存樹 1本につき年額3,000円、保存樹林地 10㎡につき年額75円、保存生垣 1㎡につき年額75円。保全・樹勢回復の措置の助成（金額の記載なし）", cond: "市が指定した保存樹等。毎年現況届を提出", where: "水戸市公園緑地課" },
+  { city: "金沢市", href: "/area/kanazawa/hozonju/", name: "保存樹・景観樹の補助", amount: "管理奨励金 1本年間10,000円。緊急的な枝打ち等 補助率70％（限度額50万円・原則年1回）、手術等 補助率70％（限度額100万円）", cond: "市が指定した保存樹・景観樹等。枝打ちは管理上危険を伴うか隣接する民家等に悪影響を及ぼしている場合", where: "金沢市緑と花の課" },
+  { city: "新潟市", href: "/area/niigata/hozonju/", name: "保存樹等の松くい虫防除補助金", amount: "補助対象経費の1/2以内。上限は防除方法により異なり、保存樹林は1件10万円が限度", cond: "保存樹・保存樹林のうち松。防除実施前に申請", where: "新潟市各区役所建設課" },
 ];
 
 const commonItems: Item[] = [
@@ -122,6 +127,12 @@ const faqs: Faq[] = [
 ];
 
 const sources: Source[] = [
+  { org: "相模原市", title: "保存樹林・保存樹木｜相模原市", url: "https://www.city.sagamihara.kanagawa.jp/kurashi/shisetsu/kouen_kankou/kouen_ryokuchi/1003104.html" },
+  { org: "川崎市公園緑地協会", title: "緑地保全事業 - 公益財団法人 川崎市公園緑地協会", url: "https://www.kawasaki-green.or.jp/about/project/green-conservation" },
+  { org: "川崎市公園緑地協会", title: "まちの樹診断助成 - 公益財団法人 川崎市公園緑地協会", url: "https://www.kawasaki-green.or.jp/furtherance/diagnosis" },
+  { org: "水戸市", title: "水戸市の保存樹制度について - 緑化事業について - 水戸市ホームページ", url: "https://www.city.mito.lg.jp/site/ryokuka/80023.html" },
+  { org: "金沢市", title: "金沢市の保存樹／金沢市公式ホームページ いいね金沢", url: "https://www4.city.kanazawa.lg.jp/soshikikarasagasu/midoritohananoka/gyomuannai/3/1/8478.html" },
+  { org: "新潟市", title: "保存樹等の松くい虫防除補助金について　新潟市", url: "https://www.city.niigata.lg.jp/kurashi/park/midori-jyosei/hozonjyumatukuijyose.html" },
   { org: "横浜市", title: "名木古木の助成について", url: "https://www.city.yokohama.lg.jp/kurashi/machizukuri-kankyo/midori-koen/midori_up/3ryokuka/meiboku_koboku/meiboku_jyosei.html" },
   { org: "名古屋市", title: "保存樹等維持管理助成制度について", url: "https://www.city.nagoya.jp/kurashi/douro/1014896/1044968.html" },
   { org: "福岡市", title: "保存樹", url: "https://www.city.fukuoka.lg.jp/jutaku-toshi/midorisuishin/midori/menu1/01-01.html" },
@@ -233,6 +244,7 @@ export default function HedgeSubsidyPage() {
       <Section id="hs-tree" title="保存樹の助成（15市）">
         <P>市が指定した保存樹・保存樹木等の剪定や修繕の経費を助成したり、奨励金を交付したりする制度です。指定を受けていない庭木には使えません。横浜・名古屋・福岡・熊本・千葉・船橋の6市は2026年11月3日、富山市は11月4日、京都・神戸・岡山・長野の4市は11月6日に公式ページで確認しました。</P>
         <RowTable rows={treeRows} />
+        <P>相模原・川崎・水戸・金沢・新潟の5市は、2026年11月9日に公式ページで確認しました。</P>
       </Section>
 
       <Section id="hs-common" title="どの市でも共通する注意点">
@@ -259,7 +271,7 @@ export default function HedgeSubsidyPage() {
       </Section>
 
       <Section id="hs-sources" title="本ページで参照した公式ページ">
-        <SourceList sources={sources} checked="2026年11月1日・3日・4日・6日" />
+        <SourceList sources={sources} checked="2026年11月1日・3日・4日・6日・9日" />
       </Section>
 
       <Related
