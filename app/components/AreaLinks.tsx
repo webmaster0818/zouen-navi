@@ -275,6 +275,9 @@ export const AREA_TREE_PAGES: Partial<Record<AreaSlug, { href: string; label: st
   mito: { href: "/area/mito/hozonju/", label: "水戸市の保存樹の奨励金と助成" },
   kanazawa: { href: "/area/kanazawa/hozonju/", label: "金沢市の保存樹・景観樹の補助" },
   niigata: { href: "/area/niigata/hozonju/", label: "新潟市の保存樹等の松くい虫防除補助金" },
+  saitama: { href: "/area/saitama/hozon-jumoku/", label: "さいたま市の保存樹木の奨励金" },
+  hamamatsu: { href: "/area/hamamatsu/hozonju/", label: "浜松市の保存樹と巨樹・古木の支援" },
+  kagoshima: { href: "/area/kagoshima/hozonju/", label: "鹿児島市の保存樹・保存樹林の制度" },
 };
 
 /** 市の剪定枝の出し方を扱う子ページ（2026-11-02 追加）。親の市ページから案内する。 */

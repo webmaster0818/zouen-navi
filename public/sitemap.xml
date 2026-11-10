@@ -138,7 +138,7 @@
   </url>
   <url>
     <loc>https://zouen-navi.com/area/saitama/</loc>
-    <lastmod>2026-11-01</lastmod>
+    <lastmod>2026-11-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -186,7 +186,7 @@
   </url>
   <url>
     <loc>https://zouen-navi.com/area/hamamatsu/</loc>
-    <lastmod>2026-11-01</lastmod>
+    <lastmod>2026-11-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -216,7 +216,7 @@
   </url>
   <url>
     <loc>https://zouen-navi.com/area/kagoshima/</loc>
-    <lastmod>2026-11-04</lastmod>
+    <lastmod>2026-11-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -606,7 +606,7 @@
   </url>
   <url>
     <loc>https://zouen-navi.com/guide/hedge-subsidy/</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -811,6 +811,24 @@
   <url>
     <loc>https://zouen-navi.com/area/niigata/hozonju/</loc>
     <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://zouen-navi.com/area/saitama/hozon-jumoku/</loc>
+    <lastmod>2026-11-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://zouen-navi.com/area/hamamatsu/hozonju/</loc>
+    <lastmod>2026-11-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://zouen-navi.com/area/kagoshima/hozonju/</loc>
+    <lastmod>2026-11-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

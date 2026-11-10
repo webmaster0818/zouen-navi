@@ -8,11 +8,11 @@ import {
 } from "@/app/components/GuideParts";
 
 const PAGE_URL = "https://zouen-navi.com/guide/hedge-subsidy/";
-const UPDATED_LABEL = "2026年11月9日";
-const UPDATED_ISO = "2026-11-09";
+const UPDATED_LABEL = "2026年11月10日";
+const UPDATED_ISO = "2026-11-10";
 const TITLE = "政令市・中核市の生垣・緑化助成の一覧｜金額・条件・申請の順番（2026年11月1日確認）";
 const DESC =
-  "政令市10市と中核市6市の生垣・庭木の植栽の助成、20市の保存樹の助成を、各市・外郭団体の公式ページで2026年11月1日・3日・4日・6日・9日に確認した内容で一覧にしました。助成額、延長や高さの条件、申請先、着工前の申請などの共通の注意点を整理します。";
+  "政令市10市と中核市6市の生垣・庭木の植栽の助成、23市の保存樹の助成を、各市・外郭団体の公式ページで2026年11月1日・3日・4日・6日・9日に確認した内容で一覧にしました。助成額、延長や高さの条件、申請先、着工前の申請などの共通の注意点を整理します。";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
 const toc = [
   { id: "hs-list", label: "生垣・植栽の助成（政令市10市）" },
   { id: "hs-core", label: "生垣・植栽の助成（中核市6市）" },
-  { id: "hs-tree", label: "保存樹の助成（20市）" },
+  { id: "hs-tree", label: "保存樹の助成（23市）" },
   { id: "hs-common", label: "どの市でも共通する注意点" },
   { id: "hs-request", label: "助成を使うときの業者への伝え方" },
   { id: "hs-hold", label: "今回確認できなかった市" },
@@ -83,6 +83,9 @@ const treeRows: Row[] = [
   { city: "水戸市", href: "/area/mito/hozonju/", name: "保存樹・保存樹林地・保存生垣の奨励金", amount: "保存樹 1本につき年額3,000円、保存樹林地 10㎡につき年額75円、保存生垣 1㎡につき年額75円。保全・樹勢回復の措置の助成（金額の記載なし）", cond: "市が指定した保存樹等。毎年現況届を提出", where: "水戸市公園緑地課" },
   { city: "金沢市", href: "/area/kanazawa/hozonju/", name: "保存樹・景観樹の補助", amount: "管理奨励金 1本年間10,000円。緊急的な枝打ち等 補助率70％（限度額50万円・原則年1回）、手術等 補助率70％（限度額100万円）", cond: "市が指定した保存樹・景観樹等。枝打ちは管理上危険を伴うか隣接する民家等に悪影響を及ぼしている場合", where: "金沢市緑と花の課" },
   { city: "新潟市", href: "/area/niigata/hozonju/", name: "保存樹等の松くい虫防除補助金", amount: "補助対象経費の1/2以内。上限は防除方法により異なり、保存樹林は1件10万円が限度", cond: "保存樹・保存樹林のうち松。防除実施前に申請", where: "新潟市各区役所建設課" },
+  { city: "さいたま市", href: "/area/saitama/hozon-jumoku/", name: "保存樹木の指定制度（奨励金）", amount: "年額 幹回り1.5m以上3m未満 5,000円/本、3m以上 10,000円/本（はん登性・希少価値等は5,000円/本）", cond: "公園緑地協会が所有者の同意を得て指定した樹高10m以上等の樹木。指定は10年（2026年11月10日確認）", where: "さいたま市公園緑地協会 総務部事業課" },
+  { city: "浜松市", href: "/area/hamamatsu/hozonju/", name: "巨樹・古木の健康診断事業・元気回復事業", amount: "樹木医の簡易診断は自己負担0円。治療・精密診断の費用の1/2（上限30万円）", cond: "保存樹・景観重要樹木。令和8年度の受付は7月17日〜8月17日で終了（2026年11月10日確認）", where: "浜松市緑化推進本部事務局（緑政課内）" },
+  { city: "鹿児島市", href: "/area/kagoshima/hozonju/", name: "保存樹・保存樹林への支援", amount: "樹木医の定期診断・樹勢回復措置は全額市の負担。奨励金の交付（金額の記載なし）", cond: "所有者の申請で指定された保存樹・保存樹林。剪定等の日常管理は所有者の負担（2026年11月10日確認）", where: "鹿児島市環境保全課" },
 ];
 
 const commonItems: Item[] = [
@@ -133,6 +136,9 @@ const sources: Source[] = [
   { org: "水戸市", title: "水戸市の保存樹制度について - 緑化事業について - 水戸市ホームページ", url: "https://www.city.mito.lg.jp/site/ryokuka/80023.html" },
   { org: "金沢市", title: "金沢市の保存樹／金沢市公式ホームページ いいね金沢", url: "https://www4.city.kanazawa.lg.jp/soshikikarasagasu/midoritohananoka/gyomuannai/3/1/8478.html" },
   { org: "新潟市", title: "保存樹等の松くい虫防除補助金について　新潟市", url: "https://www.city.niigata.lg.jp/kurashi/park/midori-jyosei/hozonjyumatukuijyose.html" },
+  { org: "公益財団法人さいたま市公園緑地協会", title: "緑化推進・助成制度", url: "https://www.sgp.or.jp/midori-fuyasou" },
+  { org: "浜松市", title: "巨樹・古木の保存への支援", url: "https://www.city.hamamatsu.shizuoka.jp/ryokuka/ryokukasuisinhonbu/kyojukoboku/kyojukoboku.html" },
+  { org: "鹿児島市", title: "鹿児島市の保存樹及び保存樹林の制度", url: "https://www.city.kagoshima.lg.jp/kankyo/kankyo/hozen/machizukuri/kankyohozen/shizen/hozonju/hozonju.html" },
   { org: "横浜市", title: "名木古木の助成について", url: "https://www.city.yokohama.lg.jp/kurashi/machizukuri-kankyo/midori-koen/midori_up/3ryokuka/meiboku_koboku/meiboku_jyosei.html" },
   { org: "名古屋市", title: "保存樹等維持管理助成制度について", url: "https://www.city.nagoya.jp/kurashi/douro/1014896/1044968.html" },
   { org: "福岡市", title: "保存樹", url: "https://www.city.fukuoka.lg.jp/jutaku-toshi/midorisuishin/midori/menu1/01-01.html" },
@@ -241,7 +247,7 @@ export default function HedgeSubsidyPage() {
         </p>
       </Section>
 
-      <Section id="hs-tree" title="保存樹の助成（20市）">
+      <Section id="hs-tree" title="保存樹の助成（23市）">
         <P>市が指定した保存樹・保存樹木等の剪定や修繕の経費を助成したり、奨励金を交付したりする制度です。指定を受けていない庭木には使えません。横浜・名古屋・福岡・熊本・千葉・船橋の6市は2026年11月3日、富山市は11月4日、京都・神戸・岡山・長野の4市は11月6日に公式ページで確認しました。</P>
         <RowTable rows={treeRows} />
         <P>相模原・川崎・水戸・金沢・新潟の5市は、2026年11月9日に公式ページで確認しました。</P>
