@@ -128,6 +128,7 @@ const c: SubsidyConfig = {
     { href: "/area/gifu/", label: "岐阜の造園・庭の手入れ業者" },
     { href: "/guide/hedge-planting/", label: "生垣を新しく植える" },
     { href: "/plant/hedge/", label: "生垣におすすめの品種" },
+    { href: "/area/gifu/hozonju/", label: "岐阜市の保存樹等補助金" },
   ],
   cta: "補助を使う場合は、業者と着工日を決める前に、岐阜市未来のまちづくり財団 緑化推進事務所へ相談してください。",
 };
