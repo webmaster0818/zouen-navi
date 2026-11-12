@@ -101,6 +101,7 @@ const c: SubsidyConfig = {
   related: [
     { href: "/guide/green-waste/", label: "剪定枝・刈った草の処分方法" },
     { href: "/area/sakai/", label: "堺の造園・庭の手入れ業者" },
+    { href: "/area/sakai/kinenju/", label: "堺市の記念樹プレゼントと緑化樹配付" },
     { href: "/guide/fallen-leaves/", label: "落ち葉の掃除と処分" },
     { href: "/service/pruning/", label: "庭木の剪定を業者に頼む" },
   ],
