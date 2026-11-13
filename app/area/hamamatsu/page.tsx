@@ -6,8 +6,9 @@ import AreaCompanyTable, { findReview, infoValue } from "@/app/components/AreaCo
 import AreaLinks from "@/app/components/AreaLinks";
 
 const PAGE_URL = "https://zouen-navi.com/area/hamamatsu/";
-const UPDATED_LABEL = "2026年9月25日";
-const UPDATED_ISO = "2026-09-25";
+const UPDATED_LABEL = "2026年11月13日";
+const UPDATED_ISO = "2026-11-13";
+const INFO_LABEL = "2026年9月25日";
 const TITLE = "浜松の造園・庭の手入れ業者の選び方｜作業日までに行う受け入れ準備";
 
 export const metadata: Metadata = {
@@ -138,6 +139,10 @@ const checklist = [
 
 const faqs = [
   {
+    q: "浜松市で造園工事業の許可を受けた業者は、どこで確認できますか。",
+    a: "国土交通省の「建設業者・宅建業者等企業情報検索システム」の建設業者検索で、都道府県に静岡県、業種に「園」（造園工事業）を指定して検索できます。国土交通省「建設業の許可とは」によると、一つの都道府県の区域内のみに営業所を設ける場合は都道府県知事、二以上の都道府県に営業所を設ける場合は国土交通大臣が許可を行います。また、「軽微な建設工事」のみを請け負って営業する場合は、必ずしも建設業の許可を受けなくてもよいとされています（いずれも2026年11月13日確認）。",
+  },
+  {
     q: "作業の前に、自分で準備しておくことはありますか。",
     a: "作業する木の周囲を空けておくこと、洗濯物を取り込んでおくこと、敷地内の自転車や車を移動しておくことの三点を済ませておくと、当日の作業が円滑に進みます。加えて、室外機や配線、水栓の蓋など移動できない物の位置と、残したい草花の場所を伝えておきます。必要な準備の範囲は作業内容と業者によって異なるため、日程を決める際にご確認ください。",
   },
@@ -194,6 +199,13 @@ export default function AreaHamamatsuPage() {
           <span className="w-px h-3 bg-border" />
           <span>造園ナビ編集部</span>
         </div>
+        <p className="text-[15px] leading-8 text-text-secondary">
+          浜松市で造園・庭の手入れを依頼する先は、造園工事業者のほか、業者を探せる比較・紹介サービスがあります。造園工事業の建設業許可を受けた業者は、国土交通省の
+          <a href="https://etsuran2.mlit.go.jp/TAKKEN/kensetuKensaku.do" target="_blank" rel="noopener noreferrer" className="text-primary underline underline-offset-2 mx-1">
+            建設業者・宅建業者等企業情報検索システム
+          </a>
+          で、都道府県に静岡県、業種に「園」（造園工事業）を指定して検索できます（2026年11月13日確認）。本ページの後半には、造園ナビが運営会社を確認した10サービスの運営会社と、各社が公開している対応エリアをまとめています。
+        </p>
         <p className="text-[15px] leading-8 text-text-secondary">
           日程と金額が決まり、当日を待つだけの段階でも、何も準備をしないと作業の最初の30分が片づけに費やされることがあります。鉢や自転車を移動し、物置の前を空けるといった作業は、本来であれば前日までに依頼者側で済ませられるものです。
         </p>
@@ -406,7 +418,7 @@ export default function AreaHamamatsuPage() {
           掲載サービスを比較する
         </Link>
         <p className="mt-3 text-xs text-text-muted">
-          本ページにはPR（広告）を含む場合があります。掲載情報は{UPDATED_LABEL}時点のものです。
+          本ページにはPR（広告）を含む場合があります。掲載情報は{INFO_LABEL}時点のものです。
         </p>
       </div>
     </article>
