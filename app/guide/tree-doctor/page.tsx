@@ -7,8 +7,8 @@ import {
 } from "@/app/components/GuideParts";
 
 const PAGE_URL = "https://zouen-navi.com/guide/tree-doctor/";
-const UPDATED_LABEL = "2026年10月17日";
-const UPDATED_ISO = "2026-10-17";
+const UPDATED_LABEL = "2026年11月14日";
+const UPDATED_ISO = "2026-11-14";
 const TITLE = "樹木医に相談する場面｜大切な庭木・古木の診断を依頼する前に確認すること";
 const DESC =
   "記念樹や古木など、残したい庭木の状態が気になる場合は、樹木医に診断を依頼する方法があります。日本緑化センターと日本樹木医会の公表情報をもとに、樹木医の資格の仕組み、相談を検討する場面、相談の窓口、依頼の前に準備すること、造園業者との役割の違いを整理します。";
@@ -176,6 +176,10 @@ export default function TreeDoctorPage() {
       <Breadcrumb items={[{ label: "庭づくりガイド" }, { label: "樹木医に相談する場面" }]} />
 
       <GuideHeader title={TITLE} updatedIso={UPDATED_ISO} updatedLabel={UPDATED_LABEL}>
+        樹木医への診断の依頼は、一般社団法人日本樹木医会の
+        <a href="https://jumokui.jp/diagnosis/" target="_blank" rel="noopener noreferrer" className="text-primary underline underline-offset-2 mx-1">「樹木診断・治療受付」</a>
+        のフォームから申し込めます。必須の記入項目は、名前・地域（都道府県）・電話番号・メールアドレス・樹種名・植栽場所・治療申請の理由で、同会は入力内容を、案件を担当できる会員の樹木医を探すための連絡に使うとしています。
+        樹木診断・治療は原則として有料と案内されています（2026年11月14日確認）。地域の支部や、樹木医の資格をもつ担当者がいる造園業者に相談する方法もあります。
         家族の記念樹や長い年月を経た木など、残したい庭木の状態が気になる場合は、樹木医に診断を依頼する方法があります。
         本ページでは、一般財団法人日本緑化センターと一般社団法人日本樹木医会の公表情報をもとに、樹木医の資格の仕組み、相談を検討する場面、相談の窓口、依頼の前に準備すること、造園業者との役割の違いを整理します。
       </GuideHeader>
