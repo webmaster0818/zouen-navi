@@ -282,6 +282,12 @@ export const AREA_TREE_PAGES: Partial<Record<AreaSlug, { href: string; label: st
   gifu: { href: "/area/gifu/hozonju/", label: "岐阜市の保存樹等補助金" },
 };
 
+/** 市の風致地区で木竹を伐採するときの許可を扱う子ページ（2026-11-18 okina 承認 22）。親の市ページから案内する。水戸は親ページ自体が風致地区の構成。 */
+export const AREA_FUCHI_PAGES: Partial<Record<AreaSlug, { href: string; label: string }>> = {
+  kyoto: { href: "/area/kyoto/fuchi-chiku/", label: "京都市の風致地区で庭木を伐採するときの許可" },
+  kobe: { href: "/area/kobe/fuchi-chiku/", label: "神戸市の風致地区で木竹を伐採するときの許可" },
+};
+
 /** 市の剪定枝の出し方を扱う子ページ（2026-11-02 追加）。親の市ページから案内する。 */
 export const AREA_WASTE_PAGES: Partial<Record<AreaSlug, { href: string; label: string }>> = {
   osaka: { href: "/area/osaka/sentei-eda/", label: "大阪市の剪定枝の出し方" },
@@ -311,8 +317,26 @@ export default function AreaLinks({ current }: { current?: AreaSlug }) {
   const subsidy = current ? AREA_SUBSIDY_PAGES[current] : undefined;
   const waste = current ? AREA_WASTE_PAGES[current] : undefined;
   const tree = current ? AREA_TREE_PAGES[current] : undefined;
+  const fuchi = current ? AREA_FUCHI_PAGES[current] : undefined;
   return (
     <>
+    {fuchi ? (
+      <section id="area-fuchi" className="scroll-mt-20 mb-12">
+        <h2 className="text-xl font-bold text-text-primary border-l-4 border-primary pl-3 mb-5">
+          風致地区の伐採許可（市の案内）
+        </h2>
+        <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <li>
+            <Link
+              href={fuchi.href}
+              className="block rounded-2xl border border-border bg-surface p-4 text-text-primary font-medium hover:border-primary transition-colors"
+            >
+              {fuchi.label}
+            </Link>
+          </li>
+        </ul>
+      </section>
+    ) : null}
     {waste ? (
       <section id="area-waste" className="scroll-mt-20 mb-12">
         <h2 className="text-xl font-bold text-text-primary border-l-4 border-primary pl-3 mb-5">
