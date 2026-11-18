@@ -286,6 +286,8 @@ export default function HedgeSubsidyPage() {
           { href: "/plant/hedge/", label: "生垣におすすめの品種" },
           { href: "/guide/hedge-care/", label: "生垣の手入れ" },
           { href: "/area/kobe/", label: "見積書の読み方と書面の確認" },
+          { href: "/area/gifu/hozonju/", label: "岐阜市の保存樹等補助金" },
+          { href: "/area/sakai/kinenju/", label: "堺市の記念樹プレゼントと緑化樹配付" },
         ]}
       />
 
