@@ -2,13 +2,13 @@ import type { Metadata } from "next";
 import { OG_IMAGES } from "@/app/lib/og";
 import Breadcrumb from "@/app/components/Breadcrumb";
 import {
-  After, Bullets, Cards, Cta, FaqList, GuideHeader, L, Note, P, Related, Section, Steps, Toc, articleJsonLd,
-  type Faq, type Item,
+  After, Bullets, Cards, Cta, FaqList, GuideHeader, L, Note, P, Related, Section, SourceList, Steps, Toc, articleJsonLd,
+  type Faq, type Item, type Source,
 } from "@/app/components/GuideParts";
 
 const PAGE_URL = "https://zouen-navi.com/guide/winter-care/";
-const UPDATED_LABEL = "2026年10月17日";
-const UPDATED_ISO = "2026-10-17";
+const UPDATED_LABEL = "2026年11月19日";
+const UPDATED_ISO = "2026-11-19";
 const TITLE = "冬の庭木の寒さ対策｜霜・寒風・乾燥への備えと、冬の間に行う手入れ";
 const DESC =
   "冬に庭木が傷む原因は、寒さそのものだけでなく、霜による根の浮き上がり、冷たい風による乾燥、雪の重みなど複数あります。寒さに弱い木の見分け方、冬の前に済ませておく備え、冬の間の水やりと点検、冬に行う手入れと避けるべき作業を整理します。";
@@ -34,6 +34,7 @@ const toc = [
   { id: "wc-work", label: "冬に行う手入れと、避けるべき作業" },
   { id: "wc-spring", label: "冬が明けてから確認すること" },
   { id: "wc-faq", label: "よくある質問" },
+  { id: "wc-sources", label: "本ページで参照した自治体の資料" },
 ];
 
 const causeItems: Item[] = [
@@ -162,6 +163,14 @@ const faqs: Faq[] = [
   },
 ];
 
+const sources: Source[] = [
+  {
+    org: "富士市（みどりや花の育て方・2025年5月15日更新のページに掲載）",
+    title: "樹木の1年間の管理作業について（PDF）",
+    url: "https://www.city.fuji.shizuoka.jp/documents/3997/hngtkl000000nskl.pdf",
+  },
+];
+
 export default function WinterCarePage() {
   const jsonLd = articleJsonLd({ title: TITLE, description: DESC, updatedIso: UPDATED_ISO, url: PAGE_URL, faqs });
   return (
@@ -170,6 +179,8 @@ export default function WinterCarePage() {
       <Breadcrumb items={[{ label: "庭づくりガイド" }, { label: "冬の庭木の寒さ対策" }]} />
 
       <GuideHeader title={TITLE} updatedIso={UPDATED_ISO} updatedLabel={UPDATED_LABEL}>
+        <strong>冬（12月〜2月）は、葉を落とした落葉樹のすかし剪定（枝の間引き）を行う時期です。常緑樹のすかしと切り戻しは3〜4月上旬・6〜7月上旬・9月です</strong>（富士市「樹木の1年間の管理作業について」）。
+        同資料は、冬の寒い時期の休眠期にある庭木に施す肥料を寒肥と呼び、年間の作業のうち重要なものとしています（2026年11月19日確認）。
         冬の庭木の傷みは、寒さに弱い樹種だけに起きるものではありません。霜で根が浮き上がる、冷たい風で葉が乾く、雪の重みで枝が折れるなど、原因は複数あります。
         本ページでは、冬の備えが必要な木の見分け方、冬の前に済ませておく備え、冬の間の水やりと点検、冬に行う手入れと避けるべき作業、冬が明けてから確認することを整理します。
       </GuideHeader>
@@ -243,6 +254,10 @@ export default function WinterCarePage() {
 
       <Section id="wc-faq" title="よくある質問">
         <FaqList faqs={faqs} />
+      </Section>
+
+      <Section id="wc-sources" title="本ページで参照した自治体の資料">
+        <SourceList sources={sources} checked={UPDATED_LABEL} />
       </Section>
 
       <Related
