@@ -7,8 +7,8 @@ import {
 } from "@/app/components/GuideParts";
 
 const PAGE_URL = "https://zouen-navi.com/guide/pine-care/";
-const UPDATED_LABEL = "2026年10月17日";
-const UPDATED_ISO = "2026-10-17";
+const UPDATED_LABEL = "2026年11月20日";
+const UPDATED_ISO = "2026-11-20";
 const TITLE = "庭の松の手入れ｜みどり摘みと古葉取りの考え方と、松枯れが疑われる場合の相談先";
 const DESC =
   "庭の松は、他の庭木と手入れの方法が大きく異なります。春の新芽を整えるみどり摘み、秋から冬に古い葉を取り除く作業の考え方、自分で行える範囲と業者に依頼する範囲、葉が急に赤くなった場合に考えられる松くい虫被害と相談先を、林野庁と日本緑化センターの公表情報をもとに整理します。";
@@ -141,6 +141,11 @@ const faqs: Faq[] = [
 
 const sources: Source[] = [
   {
+    org: "長野県林業総合センター（ミニ技術情報 No.11）",
+    title: "マツの剪定（PDF）",
+    url: "https://www.pref.nagano.lg.jp/ringyosogo/joho/minigijutsu/documents/mini11.pdf",
+  },
+  {
     org: "林野庁",
     title: "松くい虫被害",
     url: "https://www.rinya.maff.go.jp/j/hogo/higai/matukui.html",
@@ -165,6 +170,8 @@ export default function PineCarePage() {
       <Breadcrumb items={[{ label: "庭づくりガイド" }, { label: "庭の松の手入れ" }]} />
 
       <GuideHeader title={TITLE} updatedIso={UPDATED_ISO} updatedLabel={UPDATED_LABEL}>
+        <strong>松の手入れは、5月頃に新しく出た新梢（みどり）を指先で摘む「みどりつみ」と、秋に昨年の古葉と今年の葉の一部を手でむしり取る「葉むしり（もみあげ）」の年2回です</strong>（長野県林業総合センター「マツの剪定」）。
+        同資料は、松は夏までに来年の新芽を形成するため、お盆過ぎに芽を摘むと翌春に新芽が出なくなること、秋に枝葉を刈り込むと今年の新葉の多くが失われて樹勢が衰えるきっかけになることを示しています（2026年11月20日確認）。
         庭の松は、はさみで外側を刈り込む手入れでは形を保てません。春に伸びる新芽を整え、秋から冬に古い葉を取り除くという、松に特有の手入れが必要です。
         本ページでは、一年の手入れの流れ、自分で行える範囲と業者に依頼する範囲、葉が急に赤くなった場合に考えられる松くい虫被害と相談先を整理します。
       </GuideHeader>
