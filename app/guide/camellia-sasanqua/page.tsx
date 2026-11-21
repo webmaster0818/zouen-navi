@@ -7,8 +7,8 @@ import {
 } from "@/app/components/GuideParts";
 
 const PAGE_URL = "https://zouen-navi.com/guide/camellia-sasanqua/";
-const UPDATED_LABEL = "2026年11月1日";
-const UPDATED_ISO = "2026-11-01";
+const UPDATED_LABEL = "2026年11月21日";
+const UPDATED_ISO = "2026-11-21";
 const TITLE = "ツバキ・サザンカの剪定時期と方法｜花芽が付く時期とチャドクガへの注意";
 const DESC =
   "ツバキ・サザンカの剪定は、ツバキが3月〜4月中旬、サザンカが花後〜4月上旬が目安です（江東区資料の表）。花芽は6月中旬〜7月中旬に枝先にでき始めるため、夏以降に枝先を切ると翌年の花が減ります。年2回発生するチャドクガの時期と、見つけた場合の扱い、業者に依頼する際の確認事項を自治体の資料をもとに整理します。";
@@ -150,6 +150,7 @@ export default function CamelliaSasanquaPage() {
       <Breadcrumb items={[{ label: "庭づくりガイド" }, { label: "ツバキ・サザンカの剪定" }]} />
 
       <GuideHeader title={TITLE} updatedIso={UPDATED_ISO} updatedLabel={UPDATED_LABEL}>
+        <strong>サザンカの剪定時期は花後〜4月上旬、ツバキは3月〜4月中旬です。どちらも花芽は6月中旬〜7月中旬に枝先（頂芽）にでき始めるため、剪定は花が終わってから初夏までに済ませます</strong>（江東区の資料の表。開花期はサザンカ11月下旬〜1月中旬、ツバキ11月中旬〜4月下旬。2026年11月21日確認）。
         ツバキ・サザンカの剪定は、ツバキが3月〜4月中旬、サザンカが花後〜4月上旬が目安です。花芽は6月中旬〜7月中旬に枝先にでき始めるため、夏以降に枝先を切り詰めると翌年の花が減ります。
         本ページでは、江東区・横浜市・杉並区の資料をもとに、剪定の時期と進め方、年2回発生するチャドクガへの注意、業者に依頼する際の確認事項を整理します。
       </GuideHeader>
