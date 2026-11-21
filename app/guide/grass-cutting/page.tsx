@@ -263,6 +263,7 @@ export default function GrassCuttingPage() {
           { href: "/guide/green-waste/", label: "剪定枝・刈った草の処分方法" },
           { href: "/guide/garden-safety/", label: "庭作業の事故を防ぐ" },
           { href: "/guide/spraying/", label: "住宅地で庭木の消毒を行う・依頼する場合" },
+          { href: "/guide/abandoned-farmland-mowing/", label: "耕作放棄地の草刈り" },
         ]}
       />
 

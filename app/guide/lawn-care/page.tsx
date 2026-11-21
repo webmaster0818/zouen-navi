@@ -377,6 +377,7 @@ export default function LawnCarePage() {
             { href: "/service/maintenance/", label: "庭木の年間メンテナンスカレンダー" },
             { href: "/cost/diy/", label: "DIY庭づくりガイド" },
             { href: "/plant/low-maintenance/", label: "手入れが容易な庭木のおすすめ" },
+            { href: "/guide/sodding-cost/", label: "芝張りの費用" },
           ].map((l) => (
             <li key={l.href}>
               <Link

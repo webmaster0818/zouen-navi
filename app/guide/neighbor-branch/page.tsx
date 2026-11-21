@@ -385,6 +385,7 @@ export default function NeighborBranchPage() {
             { href: "/ranking/pruning/", label: "剪定業者ランキング" },
             { href: "/guide/hedge-planting/", label: "生垣を新しく植える" },
             { href: "/guide/tree-size-reduction/", label: "大きくなりすぎた庭木を小さくする" },
+            { href: "/guide/city-hall-tree-felling/", label: "木の伐採は市役所に頼めるか" },
           ].map((l) => (
             <li key={l.href}>
               <Link

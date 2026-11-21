@@ -41,6 +41,9 @@ export const GUIDE_LINKS = [
   { href: "/guide/silver-center/", label: "シルバー人材センターへの依頼" },
   { href: "/guide/garden-cleaning/", label: "庭の掃除を業者に頼むとき" },
   { href: "/guide/tree-doctor/", label: "樹木医への相談" },
+  { href: "/guide/city-hall-tree-felling/", label: "木の伐採は市役所に頼めるか" },
+  { href: "/guide/sodding-cost/", label: "芝張りの費用" },
+  { href: "/guide/abandoned-farmland-mowing/", label: "耕作放棄地の草刈り" },
   { href: "/review/", label: "口コミ・評判まとめ" },
 ];
 
