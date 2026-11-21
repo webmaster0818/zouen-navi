@@ -202,6 +202,7 @@ export default function WeedingCostPage() {
           { href: "/guide/weed-control/", label: "庭の雑草対策" },
           { href: "/guide/green-waste/", label: "剪定枝・刈った草の処分方法" },
           { href: "/guide/silver-center/", label: "シルバー人材センターへの依頼" },
+          { href: "/guide/herbicide-spraying-cost/", label: "除草剤の散布を業者に頼む費用" },
           { href: "/cost/price/", label: "造園・庭の手入れの費用" },
         ]}
       />

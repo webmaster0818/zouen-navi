@@ -48,6 +48,9 @@ export const GUIDE_LINKS = [
   { href: "/guide/mansion-planting/", label: "マンションの植栽管理" },
   { href: "/guide/weeding-cost/", label: "草むしりを業者に頼む料金" },
   { href: "/guide/vacant-house-mowing-subsidy/", label: "空き家の草刈りに使える補助金" },
+  { href: "/guide/pine-pruning-cost/", label: "松の剪定を業者に頼む費用" },
+  { href: "/guide/silver-center-pine/", label: "シルバー人材センターに松の剪定を頼む料金" },
+  { href: "/guide/herbicide-spraying-cost/", label: "除草剤の散布を業者に頼む費用" },
   { href: "/review/", label: "口コミ・評判まとめ" },
 ];
 

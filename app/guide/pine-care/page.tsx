@@ -269,6 +269,8 @@ export default function PineCarePage() {
           { href: "/service/pruning/", label: "庭木の剪定費用と適した時期" },
           { href: "/guide/pest-disease/", label: "庭木の害虫と病気" },
           { href: "/guide/tree-doctor/", label: "樹木医に相談する場面" },
+          { href: "/guide/pine-pruning-cost/", label: "松の剪定を業者に頼む費用" },
+          { href: "/guide/silver-center-pine/", label: "シルバー人材センターに松の剪定を頼む料金" },
         ]}
       />
 

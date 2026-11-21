@@ -237,6 +237,7 @@ export default function SilverCenterPage() {
           { href: "/guide/garden-cleaning/", label: "庭の掃除を業者に頼むとき" },
           { href: "/guide/garden-safety/", label: "庭作業の事故を防ぐ" },
           { href: "/guide/garden-downsizing/", label: "庭じまいという選択" },
+          { href: "/guide/silver-center-pine/", label: "シルバー人材センターに松の剪定を頼む料金" },
         ]}
       />
 

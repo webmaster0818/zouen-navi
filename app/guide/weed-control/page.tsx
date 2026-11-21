@@ -373,6 +373,7 @@ export default function WeedControlPage() {
             { href: "/plant/low-maintenance/", label: "手入れが容易な庭木のおすすめ" },
             { href: "/ranking/", label: "造園・庭師業者ランキング" },
             { href: "/guide/grass-cutting/", label: "庭・空き地の草刈り｜刈る時期と回数の考え方" },
+            { href: "/guide/herbicide-spraying-cost/", label: "除草剤の散布を業者に頼む費用" },
           ].map((l) => (
             <li key={l.href}>
               <Link
