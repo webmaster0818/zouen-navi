@@ -388,6 +388,7 @@ export default function HedgeCarePage() {
             { href: "/guide/green-waste/", label: "剪定枝・刈った草の処分方法" },
             { href: "/service/maintenance/", label: "庭木の年間メンテナンスカレンダー" },
             { href: "/guide/hedge-planting/", label: "生垣を新しく植える" },
+            { href: "/guide/mansion-planting/", label: "マンションの植栽管理" },
           ].map((l) => (
             <li key={l.href}>
               <Link

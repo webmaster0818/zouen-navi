@@ -44,6 +44,10 @@ export const GUIDE_LINKS = [
   { href: "/guide/city-hall-tree-felling/", label: "木の伐採は市役所に頼めるか" },
   { href: "/guide/sodding-cost/", label: "芝張りの費用" },
   { href: "/guide/abandoned-farmland-mowing/", label: "耕作放棄地の草刈り" },
+  { href: "/guide/tall-tree-felling-cost/", label: "特殊伐採の費用" },
+  { href: "/guide/mansion-planting/", label: "マンションの植栽管理" },
+  { href: "/guide/weeding-cost/", label: "草むしりを業者に頼む料金" },
+  { href: "/guide/vacant-house-mowing-subsidy/", label: "空き家の草刈りに使える補助金" },
   { href: "/review/", label: "口コミ・評判まとめ" },
 ];
 

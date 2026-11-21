@@ -264,6 +264,8 @@ export default function GrassCuttingPage() {
           { href: "/guide/garden-safety/", label: "庭作業の事故を防ぐ" },
           { href: "/guide/spraying/", label: "住宅地で庭木の消毒を行う・依頼する場合" },
           { href: "/guide/abandoned-farmland-mowing/", label: "耕作放棄地の草刈り" },
+          { href: "/guide/weeding-cost/", label: "草むしりを業者に頼む料金" },
+          { href: "/guide/vacant-house-mowing-subsidy/", label: "空き家の草刈りに使える補助金" },
         ]}
       />
 

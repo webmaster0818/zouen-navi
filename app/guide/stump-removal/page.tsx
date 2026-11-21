@@ -233,6 +233,7 @@ export default function StumpRemovalPage() {
           { href: "/guide/garden-downsizing/", label: "庭じまいという選択" },
           { href: "/guide/tree-roots/", label: "庭木の根が塀・舗装・排水に影響しているとき" },
           { href: "/guide/dead-tree/", label: "庭木が枯れたかどうかの見分け方" },
+          { href: "/guide/tall-tree-felling-cost/", label: "特殊伐採の費用" },
         ]}
       />
 
