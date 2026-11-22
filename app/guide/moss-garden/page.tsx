@@ -4,14 +4,14 @@ import Link from "next/link";
 import Breadcrumb from "@/app/components/Breadcrumb";
 
 const PAGE_URL = "https://zouen-navi.com/guide/moss-garden/";
-const UPDATED_LABEL = "2026年10月12日";
-const UPDATED_ISO = "2026-10-12";
+const UPDATED_LABEL = "2026年11月22日";
+const UPDATED_ISO = "2026-11-22";
 const TITLE = "苔のある庭の手入れ｜生育条件・水やり・清掃と、生えてほしくない場所の苔";
 
 export const metadata: Metadata = {
   title: TITLE,
   description:
-    "苔は手間のかからない地面と考えられがちですが、条件が変わると数年で消えていきます。苔が育つ場所と消える場所の違い（日の当たり方・湿り気・水はけ・踏圧）、水やり、落ち葉や雑草の取り除き方、茶色くなった場合の確認点、通路やコンクリートに生える望まない苔、業者に依頼する際の伝え方を整理します。",
+    "苔のある庭の手入れの中心は、苔に当たる日の量を保つことと除草です。京都市の平安神宮神苑の苔を調べた信州大学の研究では、苔の分布は主に日射量、次いで雑草などの覆い具合で決まっていました。水やり、落ち葉の取り除き方、茶色くなった場合の確認点、業者への伝え方も整理します。",
   alternates: { canonical: PAGE_URL },
   openGraph: {
     images: OG_IMAGES,
@@ -31,6 +31,7 @@ const toc = [
   { id: "mg-unwanted", label: "通路やコンクリートに生える望まない苔" },
   { id: "mg-ask", label: "苔のある庭を業者に任せる際の伝え方" },
   { id: "mg-faq", label: "よくある質問" },
+  { id: "mg-sources", label: "本ページで参照した資料" },
 ];
 
 const conditions = [
@@ -213,6 +214,12 @@ export default function MossGardenPage() {
           <span className="w-px h-3 bg-border" />
           <span>造園ナビ編集部</span>
         </div>
+        <p className="text-[15px] leading-8 text-text-primary font-medium mb-4">
+          苔のある庭の手入れの中心は、苔に当たる日の量を保つことと、雑草を取り除くことです。信州大学農学部の研究（大石善隆、2011年）は、京都市の平安神宮神苑（日本庭園）で地面に生える主な苔9種を調べ、種類ごとの分布は主に日射量で、次いで草本（雑草など）の覆い具合で決まっていたとして、樹木の管理による日射量の調整と、除草による草本の抑制に着目した管理の方法を示しています。
+        </p>
+        <p className="text-[15px] leading-8 text-text-secondary mb-4">
+          同じ研究は、明るい場所や木のまばらな場所に生えるエゾスナゴケ・ハイゴケ・ウマスギゴケには、育った木の刈り込みや剪定で光の環境を保つことが必要とする一方、木の茂った場所に生えるコバノチョウチンゴケやアカイチイゴケは、上の枝を開くと生育環境が悪くなる可能性があるとしています。苔の種類によって合う明るさが異なるため、周囲の木を剪定・伐採する前に、残したい苔の範囲と種類を確かめてください。
+        </p>
         <p className="text-[15px] leading-8 text-text-secondary">
           苔は、一度根付けば手間のかからない地面と考えられがちです。しかし、上の木を伐採した、周囲に建物が建った、通り道が変わったといった小さな変化により、数年のうちに薄くなっていくことがあります。苔の手入れは、苔そのものより、苔が置かれた条件を維持することが中心となります。
         </p>
@@ -420,6 +427,25 @@ export default function MossGardenPage() {
             </div>
           ))}
         </div>
+      </section>
+
+      <section id="mg-sources" className="scroll-mt-20 mb-12">
+        <h2 className="text-xl font-bold text-text-primary border-l-4 border-primary pl-3 mb-5">
+          本ページで参照した資料
+        </h2>
+        <ul className="space-y-2 text-sm text-text-secondary list-disc list-inside">
+          <li>
+            <a
+              href="https://soar-ir.repo.nii.ac.jp/record/10472/files/Agriculture47-05.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary hover:underline"
+            >
+              大石善隆「日本庭園における地生蘚苔類の管理手法」信州大学農学部紀要 第47巻第1・2号（2011年）（PDF）
+            </a>
+          </li>
+        </ul>
+        <p className="mt-2 text-xs text-text-muted">確認日：2026年11月22日</p>
       </section>
 
       <section className="mb-10">
