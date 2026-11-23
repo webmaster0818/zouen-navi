@@ -5,14 +5,14 @@ import Breadcrumb from "@/app/components/Breadcrumb";
 import { AREA_WASTE_PAGES } from "@/app/components/AreaLinks";
 
 const PAGE_URL = "https://zouen-navi.com/guide/green-waste/";
-const UPDATED_LABEL = "2026年11月5日";
-const UPDATED_ISO = "2026-11-05";
+const UPDATED_LABEL = "2026年11月23日";
+const UPDATED_ISO = "2026-11-23";
 const TITLE = "剪定枝・刈った草の処分方法｜自治体回収・持ち込み・業者引き取りの使い分け";
 
 export const metadata: Metadata = {
   title: TITLE,
   description:
-    "庭の作業で最後に残るのは、剪定した枝と刈った草です。自治体の回収に出す、処理施設へ自分で持ち込む、作業を依頼した業者に引き取ってもらうといった方法について、それぞれの適否と、処分前に確認すべき規定、行ってはいけない処分方法を整理します。",
+    "家庭の剪定枝や刈った草は一般廃棄物で、出し方は市町村ごとに異なります（神戸市は燃えるごみ・50cm以下、奈良市は草木類・長さ30cm・太さ5cm以下）。自治体の回収・持ち込み・業者の引き取りの使い分けと、確認すべき規定、庭で燃やしてはいけない根拠を整理します。",
   alternates: { canonical: PAGE_URL },
   openGraph: {
     images: OG_IMAGES,
@@ -122,7 +122,7 @@ const orderPoints = [
 const ngItems = [
   {
     h: "庭で焼却する",
-    b: "廃棄物を野外で焼却することは、法律で原則として禁止されています。煙やにおいは近隣への影響も大きく、苦情や通報につながります。落ち葉である、少量であるといった理由で例外になるとは考えないでください。",
+    b: "廃棄物処理法第16条の2は、廃棄物の焼却を原則として禁止しています。例外は同法施行令第14条に定められたもの（たき火その他日常生活を営む上で通常行われる廃棄物の焼却であって軽微なもの など）に限られます。煙やにおいは近隣への影響も大きく、苦情や通報につながります。",
   },
   {
     h: "空き地や山林に廃棄する",
@@ -141,7 +141,7 @@ const ngItems = [
 const faqs = [
   {
     q: "剪定した枝は燃やすごみとして出せますか。",
-    a: "多くの地域で家庭から出る枝葉は可燃ごみとして扱われますが、長さ・太さ・一度に出せる量・まとめ方の条件が定められています。条件は自治体ごとに異なり、見直されることもあるため、お住まいの自治体が公開している最新の案内をご確認ください。土の付いた根や太い幹は対象外とされることがあります。",
+    a: "市町村によって異なります。神戸市は「木の枝（植木の剪定枝など）」を燃えるごみとしています。奈良市は令和8年6月から落ち葉・雑草・せん定枝木を「草木類」として分けて収集しており、燃やせるごみには出せません（いずれも2026年11月23日確認）。長さ・太さ・一度に出せる量・まとめ方の条件も市町村ごとに定められ、見直されることもあるため、お住まいの自治体が公開している最新の案内をご確認ください。",
   },
   {
     q: "量が多くて回収に出しきれません。",
@@ -200,10 +200,23 @@ export default function GreenWastePage() {
           <span className="w-px h-3 bg-border" />
           <span>造園ナビ編集部</span>
         </div>
-        <p className="text-[15px] leading-8 text-text-secondary">
-          庭の作業を終えた後、必ず手元に残るものがあります。剪定した枝と刈った草です。
-          作業そのものは半日で終わっても、処分方法が決まっていなければ、庭の隅に山積みのまま残り続けます。
-          本ページでは、処分方法の選択肢を整理し、剪定前に決めておくべき事項をまとめます。
+        <p className="text-[15px] leading-8 text-text-secondary mb-4">
+          家庭の庭から出た剪定枝や刈った草は、廃棄物処理法の一般廃棄物にあたり、市町村が一般廃棄物処理計画に従って収集・処分します（第2条・第6条の2）。
+          そのため出し方は市町村ごとに異なります。たとえば神戸市では「燃えるごみ」として、複数出すときは50cm以下に切って指定袋に入れ（1袋5kgまで、太い枝・幹は「大型ごみ」）、
+          奈良市では令和8年6月から「草木類」として4週間に1回、せん定枝木を長さ30cm・太さ5cm以下に切って出します（燃やせるごみには出せません）。
+        </p>
+        <p className="text-[15px] leading-8 text-text-secondary mb-4">
+          処分の方法は、自治体の回収に出す、処理施設へ自分で持ち込む、作業を依頼した業者に引き取ってもらう、庭の中で活用する、の主に4つです。
+          庭で燃やす方法は、廃棄物処理法第16条の2で原則として禁止されています。本ページでは、方法ごとの使い分けと、剪定前に確認すべき自治体の規定をまとめます。
+        </p>
+        <p className="text-sm leading-7 text-text-muted">
+          出典：
+          <a href="https://laws.e-gov.go.jp/law/345AC0000000137" className="text-primary underline underline-offset-2" target="_blank" rel="noopener noreferrer">廃棄物の処理及び清掃に関する法律（e-Gov法令検索）</a>
+          ・
+          <a href="https://faq.city.kobe.lg.jp/faq/show/1959?site_domain=default" className="text-primary underline underline-offset-2" target="_blank" rel="noopener noreferrer">神戸市FAQ「「木の枝（植木の剪定枝など）」は何ごみで捨てればいいですか？」</a>
+          ・
+          <a href="https://www.city.nara.lg.jp/uploaded/attachment/214018.pdf" className="text-primary underline underline-offset-2" target="_blank" rel="noopener noreferrer">奈良市「奈良市のごみについて」（PDF）</a>
+          （いずれも2026年11月23日確認）
         </p>
       </header>
 
