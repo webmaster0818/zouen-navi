@@ -4,8 +4,8 @@ import Link from "next/link";
 import Breadcrumb from "@/app/components/Breadcrumb";
 
 const PAGE_URL = "https://zouen-navi.com/guide/bamboo-vine/";
-const UPDATED_LABEL = "2026年10月28日";
-const UPDATED_ISO = "2026-10-28";
+const UPDATED_LABEL = "2026年11月24日";
+const UPDATED_ISO = "2026-11-24";
 const TITLE = "庭の竹・笹は地上を切っても地下茎が残る｜広がり方・止め方とつる植物の外し方";
 
 export const metadata: Metadata = {
@@ -159,13 +159,18 @@ const faqs = [
 const sources = [
   {
     org: "香川県 森林・林業政策課",
-    title: "２竹林整備の必要性（2026年10月28日確認）",
-    url: "https://www.pref.kagawa.lg.jp/midoriseibi/seibi/tikurin/2_seibi.html",
+    title: "２竹林整備の必要性（2026年11月24日確認）",
+    url: "https://www.pref.kagawa.lg.jp/rinsei/seibi/tikurin/2_seibi.html",
   },
   {
     org: "佐賀県 業務報告書",
-    title: "効率的な竹林拡大抑制手法の開発（2026年10月28日確認）",
+    title: "効率的な竹林拡大抑制手法の開発（2026年11月24日確認）",
     url: "https://www.pref.saga.lg.jp/kiji00367239/3_67239_129678_up_5luuobk1.pdf",
+  },
+  {
+    org: "群馬県林業試験場",
+    title: "除草剤を用いて竹林の拡大を防ぐ方法（2026年11月24日確認）",
+    url: "https://www.pref.gunma.jp/uploaded/attachment/45924.pdf",
   },
 ];
 
@@ -209,7 +214,7 @@ export default function BambooVinePage() {
           <span>造園ナビ編集部</span>
         </div>
         <p className="text-[15px] leading-8 text-text-secondary">
-          庭の竹・笹は、地上に出ている竹を切っても、地中を横に伸びる地下茎が残るため、翌年も同じ場所やその周りから生えてきます。香川県は、竹の地下茎は1年間に5m以上も伸びるといわれ、竹林では地表から30cm程度までに地下茎が集中するとしています。
+          庭の竹・笹は、地上に出ている竹を切っても、地中を横に伸びる地下茎が残るため、翌年も同じ場所やその周りから生えてきます。香川県は、竹の地下茎は1年間に5m以上も伸びるといわれ、竹林では地表から30cm程度までに地下茎が集中するとしています。群馬県林業試験場は、竹林を皆伐しても翌年に新しいタケが再生する事例が多い理由を、地下に張り巡らされた地下茎の節に1個ずつある側芽（芽子）から発生するためと説明しています。再生したタケの刈払いは、ほぼ生えてこなくなるまで続ける必要があり、数年かかると考えられるとしています（いずれも2026年11月24日確認）。
         </p>
         <div className="my-5 rounded-2xl border border-border bg-surface-alt p-5">
           <p className="font-bold text-text-primary mb-2 text-sm">要点</p>
