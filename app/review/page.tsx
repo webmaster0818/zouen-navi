@@ -14,6 +14,11 @@ export default function ReviewIndex() {
     <div className="max-w-3xl mx-auto px-4 py-8">
       <Breadcrumb items={[{ label: "口コミ・評判" }]} />
       <h1 className="text-2xl sm:text-3xl font-bold text-text-primary mt-2 mb-4">造園・お庭業者の口コミ・評判まとめ</h1>
+      <p className="text-[15px] leading-8 text-text-secondary mb-4">
+        お庭レスキュープロ（旧お庭マスター）の口コミは、公式サイトの口コミページ（剪定・お庭の手入れ・雑草除去・芝刈りの4ページ）に、2016年11月〜2018年6月の利用者の声14件が掲載されており、評価はすべて★5です。それより新しい口コミは公式サイトでは確認できません（2026年11月26日 公式サイトで確認）。声の内容の内訳と運営会社は
+        <Link href="/review/oniwa-master/" className="text-primary underline">お庭レスキュープロ（旧お庭マスター）の口コミ・評判</Link>
+        で整理しています。
+      </p>
       <p className="text-[15px] leading-8 text-text-secondary mb-8">
         実際にGoogleマップへ投稿された口コミと、各社の公開情報をもとに、造園・お庭サービスや比較サイトを中立的に検証します。掲載している口コミは、すべて実際に投稿された口コミまたは公式サイトに掲載された利用者の声です。
       </p>
