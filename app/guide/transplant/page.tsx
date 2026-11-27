@@ -4,8 +4,8 @@ import Link from "next/link";
 import Breadcrumb from "@/app/components/Breadcrumb";
 
 const PAGE_URL = "https://zouen-navi.com/guide/transplant/";
-const UPDATED_LABEL = "2026年9月30日";
-const UPDATED_ISO = "2026-09-30";
+const UPDATED_LABEL = "2026年11月27日";
+const UPDATED_ISO = "2026-11-27";
 const TITLE = "庭木の移植・植え替え｜移植するかどうかの判断と、根回しから活着までの手順";
 
 export const metadata: Metadata = {
@@ -234,7 +234,14 @@ export default function TransplantPage() {
           <span>造園ナビ編集部</span>
         </div>
         <p className="text-[15px] leading-8 text-text-secondary">
-          庭木の移植は、植栽の延長ではありません。地中に広がっている根を切り、土ごと持ち上げて、別の場所で再び根を張らせる作業であり、木にとっては数年分の蓄えを使う出来事です。そのため、「移植できますか」の前に「移植する必要がありますか」という問いを検討する必要があります。
+          庭木を移植する時期の目安は樹種で異なります。徳島県の資料「緑化樹の生産について」では、落葉樹（ケヤキ・カエデ類など）は秋の落葉後から12月中旬までと、2月中旬から3月下旬まで（自然に落葉してから翌春の発芽の少し前まで）が適期とされています。
+          マツ・スギなどの針葉樹は2月下旬から4月下旬が最もよく、それ以外では梅雨の間か9月中旬から10月下旬、ウバメガシ・モチ・ヤマモモなどの常緑広葉樹は春が最適とされています。
+          同資料は、移植するときは根回しと枝葉の切り込みをするとし、大木・老木やクロマツ・アカマツ・ケヤキなどは根回しが必要、ウバメガシ・カシ・ツバキなどは枝葉の切り込みで移植しやすいとしています（
+          <a href="https://www.pref.tokushima.lg.jp/file/attachment/436103.pdf" target="_blank" rel="noopener noreferrer" className="text-primary underline underline-offset-2">徳島県「緑化樹の生産について」（PDF）</a>
+          を2026年11月27日に確認）。地域の気候によって時期は前後します。
+        </p>
+        <p className="text-[15px] leading-8 text-text-secondary">
+          庭木の移植は、地中に広がっている根を切り、土ごと持ち上げて、別の場所で再び根を張らせる作業です。そのため、「移植できますか」の前に「移植する必要がありますか」という問いを検討する必要があります。
         </p>
         <p className="text-[15px] leading-8 text-text-secondary">
           本ページでは、移植を検討する場面と、移植以外の選択肢、木の大きさによって異なる難易度、時期の考え方、根回しという準備、掘り上げと運搬、植栽後の管理までを順に整理します。活着しない場合があるという前提も含めて解説します。
