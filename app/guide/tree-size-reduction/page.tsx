@@ -7,8 +7,8 @@ import {
 } from "@/app/components/GuideParts";
 
 const PAGE_URL = "https://zouen-navi.com/guide/tree-size-reduction/";
-const UPDATED_LABEL = "2026年10月17日";
-const UPDATED_ISO = "2026-10-17";
+const UPDATED_LABEL = "2026年11月28日";
+const UPDATED_ISO = "2026-11-28";
 const TITLE = "大きくなりすぎた庭木を小さくする｜高さを下げる剪定の考え方と、数年をかけて行う理由";
 const DESC =
   "大きくなりすぎた庭木は、一度の剪定で小さくすると、木が弱ったり、切った場所から勢いよく枝が伸びたりすることがあります。高さを下げる前に確認すること、数年をかけて段階的に小さくする考え方、剪定以外の選択肢、業者に依頼する際の伝え方を整理します。";
@@ -158,8 +158,11 @@ export default function TreeSizeReductionPage() {
       <Breadcrumb items={[{ label: "庭づくりガイド" }, { label: "大きくなりすぎた庭木" }]} />
 
       <GuideHeader title={TITLE} updatedIso={UPDATED_ISO} updatedLabel={UPDATED_LABEL}>
-        屋根に届くほど伸びた木や、隣家にはみ出すようになった木を、一度の剪定で小さくしたいという相談は少なくありません。
-        ただし、一度に多くの枝を切ると、木が弱ったり、切った場所から勢いよく枝が伸びたりして、かえって手入れが増えることがあります。
+        大きくなりすぎた木の高さを下げる剪定は、主枝や太い枝を短く切り詰める「強剪定」にあたります。
+        埼玉県の「街路樹剪定マニュアル」は、強剪定をすると直後の樹形は小さくなるものの、切り口付近から徒長枝が出やすく、枝が混み合って樹形を乱す原因になること、切り口が大きく木への負担が大きいため、樹勢の衰退につながるリスクもあることを挙げています。
+        やむを得ず行う場合の留意点として、同マニュアルは、樹種に応じた剪定適期に行うこと（夏に強剪定を行うと、木が光合成による栄養分を蓄えられずに衰弱し、剪定痕から腐朽が進むことがある）、太枝や幹を途中で切り落とすときは枝や幹の分岐部で切ること、切り口に防菌とゆ合促進の処理をすることを示しています（
+        <a href="https://www.pref.saitama.lg.jp/documents/4144/gairozyusenntei1.pdf" target="_blank" rel="noopener noreferrer" className="text-primary underline underline-offset-2">埼玉県県土整備部道路環境課「街路樹剪定マニュアル」（令和2年12月・PDF）</a>
+        を2026年11月28日に確認）。同マニュアルは街路樹向けの資料ですが、庭木でも一度に小さくせず、分岐部で切りながら数年に分けて高さを下げるのはこのためです。
         本ページでは、高さを下げる前に確認すること、数年をかけて小さくする考え方、切る位置による違い、剪定以外の選択肢、業者に依頼する際の伝え方を整理します。
       </GuideHeader>
 
